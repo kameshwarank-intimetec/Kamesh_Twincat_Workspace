@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="F_Multiply" Id="{db3107e0-a955-4414-a2d0-8c4a05246579}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_Multiply : DINT
+VAR_INPUT
+	nNum1 : INT;
+	nNum2 : INT;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[F_Multiply := nNum1 * nNum2;]]></ST>
+    </Implementation>
+    <LineIds Name="F_Multiply">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

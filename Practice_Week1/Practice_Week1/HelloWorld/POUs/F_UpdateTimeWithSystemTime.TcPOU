@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="F_UpdateTimeWithSystemTime" Id="{d547d8c5-553d-4f86-ab92-3bd997f19374}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_UpdateTimeWithSystemTime
+VAR_INPUT
+	stEvent : REFERENCE TO ST_Event;
+END_VAR
+VAR
+	fbGETSYSTEMTIME : GETSYSTEMTIME;
+	stFileTime : T_FILETIME;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbGETSYSTEMTIME(timeLoDW => stFileTime.dwLowDateTime,
+				timeHiDW => stFileTime.dwHighDateTime);
+stEvent.dtTimestamp := FILETIME_TO_DT(fileTime := stFileTime);]]></ST>
+    </Implementation>
+    <LineIds Name="F_UpdateTimeWithSystemTime">
+      <LineId Id="7" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

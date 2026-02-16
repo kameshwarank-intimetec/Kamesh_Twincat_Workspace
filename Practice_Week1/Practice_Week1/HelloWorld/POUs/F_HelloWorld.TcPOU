@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="F_HelloWorld" Id="{1b71dbe9-7d4c-445d-a8d7-fc2fe923832d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_HelloWorld
+VAR_INPUT
+END_VAR
+VAR
+	run: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT run THEN
+		ADSLOGSTR(msgCtrlMask := ADSLOG_MSGTYPE_ERROR OR ADSLOG_MSGTYPE_LOG,
+			msgFmtStr:= 'Hello world!!',
+			strArg:='');
+			
+		run := TRUE;
+END_IF ]]></ST>
+    </Implementation>
+    <LineIds Name="F_HelloWorld">
+      <LineId Id="8" Count="5" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

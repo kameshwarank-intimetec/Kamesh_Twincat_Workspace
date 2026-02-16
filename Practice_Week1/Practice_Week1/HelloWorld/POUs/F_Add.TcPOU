@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="F_Add" Id="{6051fc38-ff1c-466b-8fb6-384cb470a531}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_Add : INT
+VAR_INPUT
+	nFirstNum : INT;
+	nSecondNum : INT;
+END_VAR
+VAR_OUTPUT
+	nResult : INT;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[nResult := nFirstNum + nSecondNum;]]></ST>
+    </Implementation>
+    <LineIds Name="F_Add">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

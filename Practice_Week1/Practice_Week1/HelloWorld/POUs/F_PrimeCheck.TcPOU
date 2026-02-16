@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="F_PrimeCheck" Id="{132a477c-cae7-4a95-964a-acd88e85aa3b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_PrimeCheck : BOOL
+VAR_INPUT
+	nInputNum : INT;
+	
+END_VAR
+
+VAR
+	nLimit : INT;
+	nIterator : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+F_PrimeCheck := TRUE;
+IF nInputNum > 1 THEN
+	nLimit := nInputNum/2;
+	FOR nIterator := 2 TO nLimit  DO
+		IF (nInputNum MOD nIterator) = 0 THEN 
+			F_PrimeCheck := FALSE;
+			EXIT;
+		END_IF
+	END_FOR
+END_IF
+IF nInputNum <=1 THEN 
+	F_PrimeCheck := FALSE;
+	RETURN;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="F_PrimeCheck">
+      <LineId Id="29" Count="1" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="19" Count="2" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="22" Count="1" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="24" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Celcius_Fahrenheit" Id="{7cd4b268-9c6e-4409-9255-3aac73334e94}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION Celcius_Fahrenheit : REAL
+VAR_INPUT
+	fCelcius : REAL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Celcius_Fahrenheit := fCelcius * 1.8 + 32.0;]]></ST>
+    </Implementation>
+    <LineIds Name="Celcius_Fahrenheit">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

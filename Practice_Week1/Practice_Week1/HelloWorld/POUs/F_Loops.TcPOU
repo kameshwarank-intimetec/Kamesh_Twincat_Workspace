@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="F_Loops" Id="{4d37c3f4-a82b-4abe-9268-884651b5e606}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_Loops : INT 
+VAR_INPUT
+	nInputNum1 : INT;
+END_VAR
+VAR_OUTPUT
+	nResult1 : INT;
+	nResult2 : INT;
+	nResult3 : INT;
+END_VAR
+VAR
+	nCounter : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FOR nCounter := 1 TO nInputNum1 DO
+	nResult1 := nResult1 + nCounter;
+END_FOR
+
+nInputNum1 := 1;
+WHILE nInputNum1 <> 10 DO
+	nInputNum1 := nInputNum1 + 1;
+	nResult2 := nResult2 + nInputNum1;
+END_WHILE
+
+nCounter := 0;
+REPEAT
+	nCounter := nCounter + 1;
+	nResult3 := nResult3 + nCounter;
+	
+	UNTIL
+	nCounter = 10
+END_REPEAT
+
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="F_Loops">
+      <LineId Id="7" Count="0" />
+      <LineId Id="11" Count="1" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="28" Count="2" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="32" Count="2" />
+      <LineId Id="31" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{598b4b8b-37c5-42ed-b0a3-a3cc91ade347}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fFahrenheit : REAL;
+	stEventOne : ST_Event;
+	bFlag : BOOL := FALSE;
+	nSum : INT;
+	nProd : DINT;
+	bIsPrime : BOOL;
+	nResultFromLoop1 : INT;
+	nResultFromLoop2 : INT;
+	nResultFromLoop3 : INT;
+	nNum1 :INT := 22;
+	
+	stStudentReference1 : ST_Student;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+//IF NOT bFlag THEN 
+fFahrenheit := Celcius_Fahrenheit(fCelcius := 5.0);
+F_UpdateTimeWithSystemTime(stEventOne);
+F_Add(nFirstNum:= nNum1, nSecondNum:= 32,nResult => nSum );
+bFlag := TRUE;
+nProd := F_Multiply(123,432);
+bIsPrime := F_PrimeCheck(nInputNum := 17 );
+
+F_InitializeStudentDetails(stStudentReference1, 'Kamesh', 1 , 21);
+
+F_Loops(10,nResult1 => nResultFromLoop1, nResult2 => nResultFromLoop2, nResult3 => nResultFromLoop3);
+
+//END_IF
+
+
+
+
+
+		]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="14" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="91" Count="6" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

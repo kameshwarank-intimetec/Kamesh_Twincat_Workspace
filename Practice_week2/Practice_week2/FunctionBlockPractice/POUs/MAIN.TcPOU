@@ -3,11 +3,11 @@
   <POU Name="MAIN" Id="{6acb3596-614b-4bd6-88d1-a625d8d1eebd}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	nNum : DINT :=0;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[nNum := nNum + 1;]]></ST>
+      <ST><![CDATA[]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />

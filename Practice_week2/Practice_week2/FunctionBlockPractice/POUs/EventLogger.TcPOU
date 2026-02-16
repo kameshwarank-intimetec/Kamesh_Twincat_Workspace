@@ -3,17 +3,69 @@
   <POU Name="EventLogger" Id="{ce55a1a6-651b-4d1c-b136-d68617123420}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK EventLogger
 VAR_INPUT
-END_VAR
-VAR_OUTPUT
+	aEventBuffer : ARRAY[1..100] OF ST_Event;
 END_VAR
 VAR
+	nEventIndex : INT := 0;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
+    <Method Name="AddItem" Id="{4455ab25-cfdc-47e5-b737-25f2fac55736}">
+      <Declaration><![CDATA[METHOD AddItem : BOOL
+VAR_INPUT
+	eEventType: E_Event;
+	eEventSeverity : TcEventSeverity;
+	nEventIdentity : UDINT;
+	sEventText : STRING(255);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF  EventBufferisFull() THEN
+	nEventIndex := nEventIndex + 1;
+	aEventBuffer[nEventIndex].eEventType := eEventType;
+	aEventBuffer[nEventIndex].eEventSeverity := eEventSeverity;
+	aEventBuffer[nEventIndex].nEventIdentity := nEventIdentity;
+	aEventBuffer[nEventIndex].sEventText := sEventText;
+	UpdateTimeStampWithSystemTime(stEvent := aEventBuffer[nEventIndex]);
+	
+	AddItem := TRUE;
+ELSE
+	AddItem := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="EventBufferisFull" Id="{ccda9ec5-2620-4bdf-bcd2-83e095e31ea8}">
+      <Declaration><![CDATA[METHOD PRIVATE EventBufferisFull : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF nEventIndex > 100 THEN
+	EventBufferisFull := FALSE;
+ELSE
+	EventBufferisFull := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
     <LineIds Name="EventLogger">
-      <LineId Id="9" Count="0" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+    <LineIds Name="EventLogger.AddItem">
+      <LineId Id="10" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="14" Count="2" />
+      <LineId Id="19" Count="1" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="17" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="EventLogger.EventBufferisFull">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="1" />
+      <LineId Id="7" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

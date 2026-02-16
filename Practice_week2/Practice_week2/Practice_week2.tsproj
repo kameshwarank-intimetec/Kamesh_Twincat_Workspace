@@ -16,7 +16,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{1F89C792-11CA-4F95-8A3F-B82A81A7C150}" Name="FunctionBlockPractice" PrjFilePath="FunctionBlockPractice\FunctionBlockPractice.plcproj" TmcFilePath="FunctionBlockPractice\FunctionBlockPractice.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{850950DD-F3EC-C6C0-B778-215CDE1147F0}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{CB167C7B-FD63-D2B5-E159-1A25381DB381}">
 					<Name>FunctionBlockPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -36,7 +36,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{A2DF868C-552C-4ABB-ABFB-D4E96C1CC430}" Name="Practice_1" PrjFilePath="Practice_1\Practice_1.plcproj" TmcFilePath="Practice_1\Practice_1.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{43333334-1ABA-3530-89F6-313C25A91C22}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Practice_1\Practice_1.tmc" TmcHash="{43333334-1ABA-3530-89F6-313C25A91C22}">
 					<Name>Practice_1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

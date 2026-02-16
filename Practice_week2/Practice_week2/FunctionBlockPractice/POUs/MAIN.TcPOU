@@ -3,11 +3,16 @@
   <POU Name="MAIN" Id="{6acb3596-614b-4bd6-88d1-a625d8d1eebd}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	eEventType1 : E_Event := E_Event.Warning;
+	eEventSeverity1 : TcEventSeverity := TcEventSeverity.Critical;
+	nEventIdentity1 : UDINT := 32;
+	sEventText1 : STRING(255) :=  'This is a danger';
 	
+	EventLogger1 : EventLogger;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[EventLogger1.AddItem(eEventType:= eEventType1,eEventSeverity := eEventSeverity1,nEventIdentity := nEventIdentity1,sEventText := sEventText1 );]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />

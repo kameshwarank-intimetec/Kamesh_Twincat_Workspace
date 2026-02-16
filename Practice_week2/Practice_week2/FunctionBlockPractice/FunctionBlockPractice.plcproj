@@ -18,6 +18,9 @@
     <LibraryReferences>{2d3cf4e9-3503-4863-8f7f-e25b8d3ff785}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\E_Event.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_Event.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\UpdateTimeStampWithSystemTime.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Motor" Id="{7892ad7d-03d2-41b4-ab0b-76862df00861}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Motor
+VAR_INPUT
+	nMotorNum :DINT ;
+END_VAR
+VAR_OUTPUT
+	nMotorValue : DINT;
+END_VAR
+VAR
+	nMotorSpin : DINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[nMotorSpin := nMotorSpin + 1;
+nMotorValue := 200;]]></ST>
+    </Implementation>
+    <LineIds Name="Motor">
+      <LineId Id="15" Count="0" />
+      <LineId Id="19" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

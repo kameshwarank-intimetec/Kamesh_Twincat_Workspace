@@ -9,15 +9,35 @@ VAR
 	sEventText1 : STRING(255) :=  'This is a danger';
 	
 	EventLogger1 : EventLogger;
+	fbMotor1 : Motor;
+	
+	nMotorValue1 : DINT;
+	nMotorValue2 : DINT;
+	bMotorRunning : BOOL;
+	
+	bFlag : BOOL := TRUE;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[EventLogger1.AddItem(eEventType:= eEventType1,eEventSeverity := eEventSeverity1,nEventIdentity := nEventIdentity1,sEventText := sEventText1 );
-GVL_Sum.nNumber1 := GVL_Sum.nNumber1 + 1;]]></ST>
+      <ST><![CDATA[IF bFlag THEN
+	EventLogger1.AddItem(eEventType:= eEventType1,eEventSeverity := eEventSeverity1,nEventIdentity := nEventIdentity1,sEventText := sEventText1 );
+	GVL_Sum.nNumber1 := GVL_Sum.nNumber1 + 1;
+	 nMotorValue1 := fbMotor1.nMotorValue;
+	fbMotor1();
+	nMotorValue2 := fbMotor1.nMotorValue;
+	bFlag := FALSE;
+END_IF
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="2" Count="0" />
       <LineId Id="12" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="37" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="22" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

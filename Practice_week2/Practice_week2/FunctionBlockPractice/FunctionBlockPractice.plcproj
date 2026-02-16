@@ -37,6 +37,9 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Motor.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\UpdateTimeStampWithSystemTime.TcPOU">
       <SubType>Code</SubType>
     </Compile>

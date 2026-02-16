@@ -12,10 +12,12 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[EventLogger1.AddItem(eEventType:= eEventType1,eEventSeverity := eEventSeverity1,nEventIdentity := nEventIdentity1,sEventText := sEventText1 );]]></ST>
+      <ST><![CDATA[EventLogger1.AddItem(eEventType:= eEventType1,eEventSeverity := eEventSeverity1,nEventIdentity := nEventIdentity1,sEventText := sEventText1 );
+GVL_Sum.nNumber1 := GVL_Sum.nNumber1 + 1;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
+      <LineId Id="12" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

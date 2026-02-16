@@ -3,19 +3,19 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1f89c792-11ca-4f95-8a3f-b82a81a7c150}</ProjectGuid>
+    <ProjectGuid>{a2df868c-552c-4abb-abfb-d4e96c1cc430}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>FunctionBlockPractice</Name>
+    <Name>Practice_1</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
-    <Application>{5b4363f9-bdb2-468d-89ab-3ae7611d269f}</Application>
-    <TypeSystem>{aa42bffe-ae7a-477d-a174-7e47752d40dc}</TypeSystem>
-    <Implicit_Task_Info>{0e146623-faaa-4b1a-8b02-aa6b3ee791a4}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{3c367a4a-a65e-462e-ae12-5775925ce948}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{4bd0603a-1a6e-4f76-bd1d-426fb3f68cf9}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{2d3cf4e9-3503-4863-8f7f-e25b8d3ff785}</LibraryReferences>
+    <Application>{acf53d62-7c0d-4dad-bd62-15d3f72eb398}</Application>
+    <TypeSystem>{706ce3ba-977c-4080-86cb-62be81b5df0f}</TypeSystem>
+    <Implicit_Task_Info>{dd16cf4d-8538-4587-a1a3-18c604de253c}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{1b4a9a9c-3057-4622-96d0-032e842ddfb6}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{93ec996e-54c8-4690-b280-ada56ac82e1a}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{82558687-9ec1-4808-96aa-bb987a3a427a}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PlcTask.TcTTO">
@@ -46,15 +46,15 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FunctionBlockPractice.tmc">
+    <None Include="Practice_1.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
@@ -75,13 +75,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

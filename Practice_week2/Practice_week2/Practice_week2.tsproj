@@ -2,23 +2,57 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.71">
 	<Project ProjectGUID="{8667E58C-CC48-4804-9AD8-2EA0AF649371}" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
+			<Settings MaxCpus="8" NonWinCpus="1">
+				<Cpu CpuId="7"/>
+			</Settings>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
+				</Task>
+				<Task Id="4" Priority="21" CycleTime="100000" AmsPort="351" AdtTasks="true">
+					<Name>PlcTask1</Name>
 				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{1F89C792-11CA-4F95-8A3F-B82A81A7C150}" Name="FunctionBlockPractice" PrjFilePath="FunctionBlockPractice\FunctionBlockPractice.plcproj" TmcFilePath="FunctionBlockPractice\FunctionBlockPractice.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{850950DD-F3EC-C6C0-B778-215CDE1147F0}">
 					<Name>FunctionBlockPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
 						<Context>
-							<Id>1</Id>
-							<Name>Default</Name>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
 						</Context>
 					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{A2DF868C-552C-4ABB-ABFB-D4E96C1CC430}" Name="Practice_1" PrjFilePath="Practice_1\Practice_1.plcproj" TmcFilePath="Practice_1\Practice_1.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{43333334-1ABA-3530-89F6-313C25A91C22}">
+					<Name>Practice_1 Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>21</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="21" OTCID="#x08502041"/>
+					</TaskPouOids>
 				</Instance>
 			</Project>
 		</Plc>

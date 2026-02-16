@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1">
-  <POU Name="MAIN" Id="{6acb3596-614b-4bd6-88d1-a625d8d1eebd}">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{6acb3596-614b-4bd6-88d1-a625d8d1eebd}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	nNum : DINT :=0;
 END_VAR
-]]>
-    </Declaration>
+]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[nNum := nNum + 1;]]></ST>
     </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

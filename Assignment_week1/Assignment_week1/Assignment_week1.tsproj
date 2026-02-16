@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{27A0FE4D-2C8F-4B69-8647-005BAFA8532C}" Name="Quality_Analyzer" PrjFilePath="Quality_Analyzer\Quality_Analyzer.plcproj" TmcFilePath="Quality_Analyzer\Quality_Analyzer.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Quality_Analyzer\Quality_Analyzer.tmc" TmcHash="{0A23DDBA-AE09-3F89-46BE-CAF5496F2D2A}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Quality_Analyzer\Quality_Analyzer.tmc" TmcHash="{96F100F7-98B4-DD28-1121-BB1456A53CC6}">
 					<Name>Quality_Analyzer Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

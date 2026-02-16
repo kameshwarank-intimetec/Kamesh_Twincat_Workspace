@@ -13,9 +13,11 @@ END_VAR
     <Implementation>
       <ST><![CDATA[FOR nIterator := 1 TO 20 DO
 	IF aRefArray[nIterator] < 50 THEN
+		aRefArray[nIterator] := 0;
 		CountDefects := CountDefects + 1;
-	END_IF
-	IF aRefArray[nIterator] > 500 THEN
+	
+	ELSIF aRefArray[nIterator] > 500 THEN
+		aRefArray[nIterator] := 0;
 		CountDefects := CountDefects + 1;
 	END_IF
 END_FOR]]></ST>
@@ -23,8 +25,11 @@ END_FOR]]></ST>
     <LineIds Name="CountDefects">
       <LineId Id="7" Count="0" />
       <LineId Id="10" Count="0" />
+      <LineId Id="26" Count="0" />
       <LineId Id="13" Count="1" />
-      <LineId Id="16" Count="1" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="17" Count="0" />
       <LineId Id="15" Count="0" />
       <LineId Id="11" Count="0" />
     </LineIds>

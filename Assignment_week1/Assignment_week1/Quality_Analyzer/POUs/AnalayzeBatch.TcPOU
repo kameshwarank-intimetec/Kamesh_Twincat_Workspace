@@ -12,7 +12,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 AnalayzeBatch.fAverageWeight := CalculateAverage(aProdArray);
-FindMinMax(aProdArray, nMinWeight => AnalayzeBatch.fminWeight, nMaxWeight => AnalayzeBatch.fmaxWeight);
+FindMinMax(aProdArray, fMinWeight => AnalayzeBatch.fminWeight, fMaxWeight => AnalayzeBatch.fmaxWeight);
 AnalayzeBatch.nDefectiveCount := CountDefects(aProdArray);
 
 ]]></ST>

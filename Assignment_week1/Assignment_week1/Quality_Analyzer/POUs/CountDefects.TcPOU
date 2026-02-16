@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="CountDefects" Id="{4c35b219-d7dc-4f39-b38f-a6c35a698867}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION CountDefects : INT
+VAR_INPUT
+	aRefArray : REFERENCE TO ARRAY[1..20] OF REAL;
+END_VAR
+VAR
+	
+	nIterator: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FOR nIterator := 1 TO 20 DO
+	IF aRefArray[nIterator] < 50 THEN
+		CountDefects := CountDefects + 1;
+	END_IF
+	IF aRefArray[nIterator] > 500 THEN
+		CountDefects := CountDefects + 1;
+	END_IF
+END_FOR]]></ST>
+    </Implementation>
+    <LineIds Name="CountDefects">
+      <LineId Id="7" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

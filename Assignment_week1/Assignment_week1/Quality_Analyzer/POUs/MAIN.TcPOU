@@ -3,20 +3,25 @@
   <POU Name="MAIN" Id="{864c6c48-a6ed-4662-b6a7-4e5a364ffb3e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-aProductArray : ARRAY[1..20] OF REAL := [23,120,85,100,250,489.95,489.96,230,190,30,10,600,240,210,10000,8600,61,349.444,42.252,534.2];
+//aProductArray : ARRAY[1..20] OF REAL := [23,120,85,100,250,489.95,489.96,230,190,30,10,600,240,210,10000,8600,61,349.444,42.252,534.2];
+aProductArray : ARRAY[1..20] OF REAL;
 stProductAnalysis : ST_ProductStats;
 	bRun: BOOL:= TRUE;
+	nBase : INT ;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bRun THEN
+	RandomArrayGenerator(aProductArray,nBase);
 	stProductAnalysis := AnalyzeBatch(aProductArray);
-	bRun := FALSE;
+	//bRun := FALSE;
 END_IF
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="8" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="9" Count="0" />
       <LineId Id="12" Count="0" />
       <LineId Id="10" Count="0" />
       <LineId Id="2" Count="0" />

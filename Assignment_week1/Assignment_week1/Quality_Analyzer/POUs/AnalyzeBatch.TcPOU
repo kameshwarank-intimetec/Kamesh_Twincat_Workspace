@@ -11,6 +11,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
+
 AnalyzeBatch.nDefectiveCount := CountDefects(aProdArray);
 AnalyzeBatch.fAverageWeight := CalculateAverage( AnalyzeBatch.nDefectiveCount, aRefArray := aProdArray);
 FindMinMax(aProdArray, fMinWeight => AnalyzeBatch.fminWeight, fMaxWeight => AnalyzeBatch.fmaxWeight);
@@ -19,6 +20,7 @@ FindMinMax(aProdArray, fMinWeight => AnalyzeBatch.fminWeight, fMaxWeight => Anal
 ]]></ST>
     </Implementation>
     <LineIds Name="AnalyzeBatch">
+      <LineId Id="56" Count="0" />
       <LineId Id="48" Count="0" />
       <LineId Id="43" Count="4" />
       <LineId Id="13" Count="0" />

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="RandomArrayGenerator" Id="{509376b4-9bb7-48b0-8628-60ae4014733d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION RandomArrayGenerator : BOOL
+VAR_IN_OUT
+	aRefArray : ARRAY[1..20] OF REAL;
+	nBase : INT;
+END_VAR
+VAR
+	fbRandom : DRAND;
+	nIterator : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+nBase := nBase + 1;
+FOR nIterator  := 1 TO 20 DO
+	fbRandom(seed := nBase + nIterator);
+	aRefArray[nIterator] := LREAL_TO_REAL(fbRandom.Num * 700);
+END_FOR]]></ST>
+    </Implementation>
+    <LineIds Name="RandomArrayGenerator">
+      <LineId Id="17" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="16" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

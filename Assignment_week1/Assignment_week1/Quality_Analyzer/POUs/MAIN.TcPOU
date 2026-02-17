@@ -14,7 +14,7 @@ END_VAR
       <ST><![CDATA[IF bRun THEN
 	RandomArrayGenerator(aProductArray,nBase);
 	stProductAnalysis := AnalyzeBatch(aProductArray);
-	//bRun := FALSE;
+	bRun := FALSE;
 END_IF
 ]]></ST>
     </Implementation>

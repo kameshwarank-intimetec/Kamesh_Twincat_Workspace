@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="AddNums" Id="{63e600e2-a8d3-4326-9584-5f1f91a7a69d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION AddNums : INT
+VAR_INPUT
+	fbMotor1 : Motor;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF __ISVALIDREF(fbMotor1) THEN
+	AddNums := 1;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="AddNums">
+      <LineId Id="10" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="11" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

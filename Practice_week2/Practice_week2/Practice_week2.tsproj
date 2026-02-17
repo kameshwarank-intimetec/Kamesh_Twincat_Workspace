@@ -16,7 +16,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{1F89C792-11CA-4F95-8A3F-B82A81A7C150}" Name="FunctionBlockPractice" PrjFilePath="FunctionBlockPractice\FunctionBlockPractice.plcproj" TmcFilePath="FunctionBlockPractice\FunctionBlockPractice.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{566E01E6-A0E7-A4CE-40B4-4A1C457A8B63}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{2C5C8D4C-A85A-07D0-3B94-4D198E1B2154}">
 					<Name>FunctionBlockPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

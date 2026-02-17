@@ -11,6 +11,10 @@ VAR
 	EventLogger1 : EventLogger;
 	fbMotor1 : Motor;
 	
+	nNum1 : INT;
+	nNum2 : INT := 43;
+	nSum : INT;
+	
 	nMotorValue1 : DINT;
 	nMotorValue2 : DINT;
 	bMotorRunning : BOOL;
@@ -22,9 +26,11 @@ END_VAR
       <ST><![CDATA[IF bFlag THEN
 	EventLogger1.AddItem(eEventType:= eEventType1,eEventSeverity := eEventSeverity1,nEventIdentity := nEventIdentity1,sEventText := sEventText1 );
 	GVL_Sum.nNumber1 := GVL_Sum.nNumber1 + 1;
-	 nMotorValue1 := fbMotor1.nMotorValue;
+	nMotorValue1 := fbMotor1.nMotorValue;
 	fbMotor1();
 	nMotorValue2 := fbMotor1.nMotorValue;
+	nSum := AddNums(fbMotor1);
+	
 	bFlag := FALSE;
 END_IF
 ]]></ST>
@@ -35,7 +41,9 @@ END_IF
       <LineId Id="27" Count="0" />
       <LineId Id="35" Count="0" />
       <LineId Id="28" Count="0" />
-      <LineId Id="37" Count="1" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="56" Count="1" />
+      <LineId Id="38" Count="0" />
       <LineId Id="26" Count="0" />
       <LineId Id="22" Count="0" />
     </LineIds>

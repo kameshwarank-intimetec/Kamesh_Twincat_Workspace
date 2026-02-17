@@ -13,12 +13,10 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[nMotorSpin := nMotorSpin + 1;
-nMotorValue := 200;]]></ST>
+      <ST><![CDATA[nMotorSpin := nMotorSpin + 1;]]></ST>
     </Implementation>
     <LineIds Name="Motor">
       <LineId Id="15" Count="0" />
-      <LineId Id="19" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

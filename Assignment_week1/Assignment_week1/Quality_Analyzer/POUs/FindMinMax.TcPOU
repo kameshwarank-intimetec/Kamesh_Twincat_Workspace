@@ -3,7 +3,7 @@
   <POU Name="FindMinMax" Id="{0e96b9d6-e551-4295-95b3-fc614fdf8692}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION FindMinMax : REAL
 VAR_INPUT
-	aRefArray : REFERENCE TO ARRAY[1..20] OF REAL;
+	aRefArray : REFERENCE TO ARRAY[1..GVL.nMaximumSizeOfArray] OF REAL;
 END_VAR
 VAR_IN_OUT
 	
@@ -18,7 +18,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-FOR nIterator := 2 TO 20 DO
+FOR nIterator := 1 TO GVL.nMaximumSizeOfArray DO
 	
 	IF aRefArray[nIterator] = 0 THEN
 		CONTINUE;

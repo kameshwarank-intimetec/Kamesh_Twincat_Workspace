@@ -3,7 +3,7 @@
   <POU Name="AnalyzeBatch" Id="{41693958-d985-4cab-8020-bde87749fe76}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION AnalyzeBatch : ST_ProductStats
 VAR_INPUT
-	aProdArray : REFERENCE TO ARRAY[1..20] OF REAL ;
+	aProdArray : REFERENCE TO ARRAY[1..GVL.nMaximumSizeOfArray] OF REAL ;
 END_VAR
 VAR
 	

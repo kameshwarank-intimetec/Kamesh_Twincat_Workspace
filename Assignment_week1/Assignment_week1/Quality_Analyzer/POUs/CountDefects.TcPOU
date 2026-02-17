@@ -3,20 +3,21 @@
   <POU Name="CountDefects" Id="{4c35b219-d7dc-4f39-b38f-a6c35a698867}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION CountDefects : INT
 VAR_INPUT
-	aRefArray : REFERENCE TO ARRAY[1..20] OF REAL;
+	aRefArray : REFERENCE TO ARRAY[1..GVL.nMaximumSizeOfArray] OF REAL;
 END_VAR
 VAR
-	
+	nMinPossibleWeight : INT := 50;
+	nMaxPossibleWeight : INT := 500;
 	nIterator: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[FOR nIterator := 1 TO 20 DO
-	IF aRefArray[nIterator] < 50 THEN
+      <ST><![CDATA[FOR nIterator := 1 TO GVL.nMaximumSizeOfArray DO
+	IF aRefArray[nIterator] < nMinPossibleWeight THEN
 		aRefArray[nIterator] := 0;
 		CountDefects := CountDefects + 1;
 	
-	ELSIF aRefArray[nIterator] > 500 THEN
+	ELSIF aRefArray[nIterator] > nMaxPossibleWeight THEN
 		aRefArray[nIterator] := 0;
 		CountDefects := CountDefects + 1;
 	END_IF

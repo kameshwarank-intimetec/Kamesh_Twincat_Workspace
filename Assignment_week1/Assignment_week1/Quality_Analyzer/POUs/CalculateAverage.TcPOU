@@ -6,7 +6,7 @@ VAR_INPUT
 	nDefectCount :INT;
 END_VAR
 VAR_IN_OUT
-	aRefArray : ARRAY[1..20] OF REAL;
+	aRefArray : ARRAY[1..GVL.nMaximumSizeOfArray] OF REAL;
 END_VAR
 VAR
 	nSum : REAL := 0;
@@ -18,12 +18,14 @@ END_VAR
 	nSum := nSum + aRefArray[nIterator];
 END_FOR
 
-CalculateAverage := nSum / (20 - nDefectCount);
-]]></ST>
+IF nDefectCount <> GVL.nMaximumSizeOfArray THEN
+CalculateAverage := nSum / (GVL.nMaximumSizeOfArray - nDefectCount);
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="CalculateAverage">
       <LineId Id="7" Count="0" />
       <LineId Id="13" Count="1" />
+      <LineId Id="30" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="18" Count="0" />

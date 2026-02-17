@@ -5,21 +5,21 @@
 VAR_INPUT
 END_VAR
 VAR
-	run: BOOL;
+	nNum :DINT := 329;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF NOT run THEN
+      <ST><![CDATA[
 		ADSLOGSTR(msgCtrlMask := ADSLOG_MSGTYPE_ERROR OR ADSLOG_MSGTYPE_LOG,
 			msgFmtStr:= 'Hello world!!',
 			strArg:='');
-			
-		run := TRUE;
-END_IF ]]></ST>
+		ADSLOGDINT(msgCtrlMask := ADSLOG_MSGTYPE_WARN, msgFmtStr := 'value of num is %d', dintArg := nNum );
+]]></ST>
     </Implementation>
     <LineIds Name="F_HelloWorld">
-      <LineId Id="8" Count="5" />
-      <LineId Id="7" Count="0" />
+      <LineId Id="8" Count="3" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="22" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

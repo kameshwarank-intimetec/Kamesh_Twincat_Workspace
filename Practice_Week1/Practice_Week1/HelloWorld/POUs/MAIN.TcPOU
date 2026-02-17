@@ -19,8 +19,8 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-//IF NOT bFlag THEN 
-fFahrenheit := Celcius_Fahrenheit(fCelcius := 5.0);
+IF NOT bFlag THEN 
+(*fFahrenheit := Celcius_Fahrenheit(fCelcius := 5.0);
 F_UpdateTimeWithSystemTime(stEventOne);
 F_Add(nFirstNum:= nNum1, nSecondNum:= 32,nResult => nSum );
 bFlag := TRUE;
@@ -30,8 +30,10 @@ bIsPrime := F_PrimeCheck(nInputNum := 17 );
 F_InitializeStudentDetails(stStudentReference1, 'Kamesh', 1 , 21);
 
 F_Loops(10,nResult1 => nResultFromLoop1, nResult2 => nResultFromLoop2, nResult3 => nResultFromLoop3);
-
-//END_IF
+*)
+F_HelloWorld();
+bFlag := TRUE;
+END_IF
 
 
 
@@ -47,6 +49,7 @@ F_Loops(10,nResult1 => nResultFromLoop1, nResult2 => nResultFromLoop2, nResult3 
       <LineId Id="76" Count="0" />
       <LineId Id="75" Count="0" />
       <LineId Id="70" Count="0" />
+      <LineId Id="113" Count="1" />
       <LineId Id="49" Count="0" />
       <LineId Id="38" Count="0" />
       <LineId Id="34" Count="0" />

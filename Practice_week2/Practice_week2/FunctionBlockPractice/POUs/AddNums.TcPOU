@@ -3,7 +3,7 @@
   <POU Name="AddNums" Id="{63e600e2-a8d3-4326-9584-5f1f91a7a69d}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION AddNums : INT
 VAR_INPUT
-	fbMotor1 : Motor;
+	fbMotor1 :REFERENCE TO Motor;
 END_VAR
 VAR
 END_VAR

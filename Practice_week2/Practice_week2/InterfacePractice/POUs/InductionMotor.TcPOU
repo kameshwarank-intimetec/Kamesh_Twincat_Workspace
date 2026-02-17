@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="InductionMotor" Id="{5fdebe78-7443-4306-9eb8-872870658c14}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK InductionMotor IMPLEMENTS I_Motor
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	fRunning : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Start" Id="{f4a3ebe4-7b7c-44ea-9055-2c88dc1b1d9e}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fRunning := TRUE;
+Start := fRunning;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{b4a101f8-95f3-4e2f-a624-61d7c9362075}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fRunning := FALSE;
+Stop := fRunning;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="InductionMotor">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="InductionMotor.Start">
+      <LineId Id="4" Count="1" />
+    </LineIds>
+    <LineIds Name="InductionMotor.Stop">
+      <LineId Id="4" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

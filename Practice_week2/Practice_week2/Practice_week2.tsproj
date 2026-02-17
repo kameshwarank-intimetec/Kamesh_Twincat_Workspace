@@ -9,14 +9,14 @@
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
-				<Task Id="4" Priority="21" CycleTime="100000" AmsPort="351" AdtTasks="true">
-					<Name>PlcTask1</Name>
+				<Task Id="5" Priority="22" CycleTime="100000" AmsPort="352" AdtTasks="true">
+					<Name>PlcTask2</Name>
 				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{1F89C792-11CA-4F95-8A3F-B82A81A7C150}" Name="FunctionBlockPractice" PrjFilePath="FunctionBlockPractice\FunctionBlockPractice.plcproj" TmcFilePath="FunctionBlockPractice\FunctionBlockPractice.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{2C5C8D4C-A85A-07D0-3B94-4D198E1B2154}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{D6A3A16A-E49A-C9E5-60A3-3E6CF36E95D5}">
 					<Name>FunctionBlockPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -35,23 +35,23 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project GUID="{A2DF868C-552C-4ABB-ABFB-D4E96C1CC430}" Name="Practice_1" PrjFilePath="Practice_1\Practice_1.plcproj" TmcFilePath="Practice_1\Practice_1.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Practice_1\Practice_1.tmc" TmcHash="{43333334-1ABA-3530-89F6-313C25A91C22}">
-					<Name>Practice_1 Instance</Name>
+			<Project GUID="{0EC21DE7-AD04-438B-9FFF-CCA23B1D6AC6}" Name="InterfacePractice" PrjFilePath="InterfacePractice\InterfacePractice.plcproj" TmcFilePath="InterfacePractice\InterfacePractice.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{014F0AF0-6677-26AB-6786-D5598716FB01}">
+					<Name>InterfacePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
 						<Context>
 							<Id>0</Id>
 							<Name>PlcTask</Name>
 							<ManualConfig>
-								<OTCID>#x02010040</OTCID>
+								<OTCID>#x02010050</OTCID>
 							</ManualConfig>
-							<Priority>21</Priority>
+							<Priority>22</Priority>
 							<CycleTime>10000000</CycleTime>
 						</Context>
 					</Contexts>
 					<TaskPouOids>
-						<TaskPouOid Prio="21" OTCID="#x08502041"/>
+						<TaskPouOid Prio="22" OTCID="#x08502041"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

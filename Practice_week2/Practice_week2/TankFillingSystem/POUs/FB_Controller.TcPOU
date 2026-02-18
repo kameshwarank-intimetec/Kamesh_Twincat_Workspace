@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Controller" Id="{a3eb19ff-1505-4bf8-b69d-ca8845e7835d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Controller
+VAR_INPUT
+	fNewRate : REAL;
+	bPumpOn : BOOL;
+	bPumpOff : BOOL;
+END_VAR
+VAR
+	iPump : I_Pump;
+	iAdjustPump : I_AdjustablePump;
+	bAdjustable : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bPumpOn THEN
+	IF iPump <> 0 THEN
+		iPump.Start();
+		IsAdjustable();
+		IF bAdjustable THEN
+		iAdjustPump.SetFlowRate(fNewRate);
+		END_IF
+	END_IF
+END_IF
+IF bPumpOff THEN
+	IF iPump <> 0 THEN
+		iPump.Stop();
+	END_IF
+	
+END_IF
+]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{8a32dfa8-b2d8-4850-95e6-67b3bf47d6ab}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	_iPump : I_Pump;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[iPump := _iPump;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="IsAdjustable" Id="{8fc6ca95-5c23-4607-b5e9-90871c7b4005}">
+      <Declaration><![CDATA[METHOD IsAdjustable 
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bAdjustable := __QUERYINTERFACE(iPump, iAdjustPump);
+		]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Controller">
+      <LineId Id="13" Count="0" />
+      <LineId Id="29" Count="5" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="41" Count="2" />
+      <LineId Id="39" Count="1" />
+      <LineId Id="37" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Controller.FB_init">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Controller.IsAdjustable">
+      <LineId Id="6" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_AdjustablePump" Id="{47ee60e1-54f9-4251-a115-40bdc03eaf9f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AdjustablePump IMPLEMENTS I_AdjustablePump
+
+VAR
+	bRunning : BOOL;
+	fTotalVolume : REAL;
+	fFlowRate : REAL := 20;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bRunning THEN
+	fTotalVolume := fTotalVolume + fFlowRate;
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="GetFlowRate" Id="{9081578a-d6ae-49d4-94f2-f41e166fc8dd}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD GetFlowRate : REAL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[GetFlowRate := fFlowRate;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetTotalVolume" Id="{e8f654c5-f976-4a0b-a3bb-4e16d44c6672}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD GetTotalVolume : REAL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[GetTotalVolume := fTotalVolume;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetFlowRate" Id="{faee0fa6-0dbe-45b4-9bcc-c2da348c8215}">
+      <Declaration><![CDATA[METHOD SetFlowRate : BOOL
+VAR_INPUT
+	fNewRate : REAL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fFlowRate := fNewRate;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{ee90187c-98f6-49e2-96ab-50df4b18cc2d}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Start := bRunning := TRUE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{0d41d133-f600-4634-8863-771694af5da7}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bRunning := FALSE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_AdjustablePump">
+      <LineId Id="26" Count="1" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AdjustablePump.GetFlowRate">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AdjustablePump.GetTotalVolume">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AdjustablePump.SetFlowRate">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AdjustablePump.Start">
+      <LineId Id="4" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AdjustablePump.Stop">
+      <LineId Id="5" Count="0" />
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

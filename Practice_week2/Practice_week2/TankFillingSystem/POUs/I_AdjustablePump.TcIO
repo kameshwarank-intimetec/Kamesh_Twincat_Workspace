@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_AdjustablePump" Id="{148dce30-640d-4911-ac1d-63b30a1cb7ed}">
+    <Declaration><![CDATA[INTERFACE I_AdjustablePump EXTENDS I_Pump, __SYSTEM.IQueryInterface
+]]></Declaration>
+    <Method Name="SetFlowRate" Id="{e4e255d7-7992-44e2-aa39-b30bb0c1a410}">
+      <Declaration><![CDATA[METHOD SetFlowRate : BOOL
+VAR_INPUT
+	fNewRate : REAL;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

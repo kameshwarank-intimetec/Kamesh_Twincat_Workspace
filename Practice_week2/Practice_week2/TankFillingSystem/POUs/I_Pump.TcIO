@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_Pump" Id="{ea7fd118-907a-4da4-b0f0-ce22284fd583}">
+    <Declaration><![CDATA[INTERFACE I_Pump EXTENDS __SYSTEM.IQueryInterface
+]]></Declaration>
+    <Method Name="GetFlowRate" Id="{3263a391-b109-4005-91a9-10e115e5665b}">
+      <Declaration><![CDATA[METHOD GetFlowRate : REAL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="GetTotalVolume" Id="{7d729ab2-a39e-4bd5-a7c6-ea8d7a6128f0}">
+      <Declaration><![CDATA[METHOD GetTotalVolume : REAL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Start" Id="{23c5d9df-d554-4793-96f0-610c85052704}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{14700fc8-b9d0-4692-a353-642995c1933e}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

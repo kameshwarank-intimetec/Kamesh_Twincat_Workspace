@@ -15,6 +15,9 @@
 				<Task Id="4" Priority="21" CycleTime="100000" AmsPort="351" AdtTasks="true">
 					<Name>PlcTask1</Name>
 				</Task>
+				<Task Id="6" Priority="23" CycleTime="100000" AmsPort="353" AdtTasks="true">
+					<Name>PlcTask3</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
@@ -75,6 +78,26 @@
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="21" OTCID="#x08502081"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{0B33C4F3-94B0-4DDB-B097-C87E03C57CAB}" Name="TankFillingSystem" PrjFilePath="TankFillingSystem\TankFillingSystem.plcproj" TmcFilePath="TankFillingSystem\TankFillingSystem.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{CBA596EA-0746-1CE8-85D2-82FADA26BFFE}">
+					<Name>TankFillingSystem Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010060</OTCID>
+							</ManualConfig>
+							<Priority>23</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="23" OTCID="#x085020c1"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

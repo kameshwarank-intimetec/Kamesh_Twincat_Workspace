@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_FixedPump" Id="{85a93fcf-3d13-4ff8-a0e3-f9d7a51e2b47}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_FixedPump IMPLEMENTS I_Pump
+
+
+VAR CONSTANT
+	fFlowRate : REAL := 20 ;
+END_VAR
+VAR
+	bRunning : BOOL;
+	fTotalVolume : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bRunning THEN
+	fTotalVolume := fTotalVolume + fFlowRate;
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="GetFlowRate" Id="{a49ae1ce-71c1-4449-acd6-3dee743a172d}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD GetFlowRate : REAL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[GetFlowRate := fFlowRate;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetTotalVolume" Id="{3aa09673-e930-42b8-b918-48a9fc96d79a}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD GetTotalVolume : REAL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[GetTotalVolume := fTotalVolume;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{d8736705-b9f5-4ed1-bddd-ca7a242cf35c}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Start := bRunning := TRUE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{39ebd0e1-19e9-4be9-bae3-fe7a8cc9232b}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bRunning := FALSE;
+Stop := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_FixedPump">
+      <LineId Id="9" Count="0" />
+      <LineId Id="19" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_FixedPump.GetFlowRate">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_FixedPump.GetTotalVolume">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_FixedPump.Start">
+      <LineId Id="4" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_FixedPump.Stop">
+      <LineId Id="4" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

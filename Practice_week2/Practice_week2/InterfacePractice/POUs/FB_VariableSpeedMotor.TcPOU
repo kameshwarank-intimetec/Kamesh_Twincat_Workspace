@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_VariableSpeedMotor" Id="{630ec3ef-13ac-46cb-8e7d-096abd261b0e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_VariableSpeedMotor EXTENDS FB_VariableMotor
+
+VAR
+	fMotorSpeed : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="M_SetSpeed" Id="{927d1fbb-148a-4705-87a1-0436e018022a}">
+      <Declaration><![CDATA[METHOD M_SetSpeed : BOOL
+VAR_INPUT
+	fSpeedPercent : REAL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fMotorSpeed := fSpeedPercent;
+M_SetSpeed := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_VariableSpeedMotor">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_VariableSpeedMotor.M_SetSpeed">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

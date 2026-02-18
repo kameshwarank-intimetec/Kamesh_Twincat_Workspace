@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="AddNums" Id="{a995b3d7-7f8e-4745-80a7-aec1ee53f71a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION AddNums : INT
+VAR_INPUT
+	pNum : POINTER TO INT;
+END_VAR
+VAR
+	ppNum : POINTER TO POINTER TO INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+ppNum := ADR(pNum);
+ppNum^^ := 25;]]></ST>
+    </Implementation>
+    <LineIds Name="AddNums">
+      <LineId Id="7" Count="0" />
+      <LineId Id="13" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

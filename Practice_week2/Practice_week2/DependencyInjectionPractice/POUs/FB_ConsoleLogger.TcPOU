@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_ConsoleLogger" Id="{50349c97-3a06-4359-b976-d357416472e3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ConsoleLogger IMPLEMENTS  I_Logger
+
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="M_Log" Id="{c9bee7fa-eb16-44ec-81ae-589c1b94fb65}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD M_Log : BOOL
+VAR_INPUT
+	sMessage	: STRING(255);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_ERROR,
+			msgFmtStr := 'Console log: %s',
+			strArg := sMessage);]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_ConsoleLogger">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_ConsoleLogger.M_Log">
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

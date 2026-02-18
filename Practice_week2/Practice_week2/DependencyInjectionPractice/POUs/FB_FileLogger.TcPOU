@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_FileLogger" Id="{70e13956-18a1-4a1a-8300-b10668faf7f2}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_FileLogger IMPLEMENTS  I_Logger
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="M_Log" Id="{502db601-b68a-481a-a48d-fe6f6f65a7ae}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD M_Log : BOOL
+VAR_INPUT
+	sMessage	: STRING(255);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(
+			msgCtrlMask:= ADSLOG_MSGTYPE_ERROR,
+			msgFmtStr := 'File Log: %s',
+			strArg := sMessage );]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_FileLogger">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_FileLogger.M_Log">
+      <LineId Id="7" Count="1" />
+      <LineId Id="10" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

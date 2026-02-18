@@ -3,20 +3,37 @@
   <POU Name="MAIN" Id="{d8671499-345b-4312-95fc-c382a6413344}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fbMotor1 : InductionMotor;
+	
 	fMotorRunningStatus : BOOL;
+	fbFixedMotor1 : FB_FixedMotor;
+	iMotor : I_Motor;
+	fbVariableMotor1 : FB_VariableMotor;
+	
+	fbVariableMotor2 : FB_VariableSpeedMotor;
+	bRun : BOOL := TRUE;
+	
+	fbLight1 : FB_Light;
+	
+	fSpeed : REAL := 34.343;
+	bType : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-
-fMotorRunningStatus := fbMotor1.Start();
+MotorController(fbFixedMotor1, bRun,fSpeed );
+MotorController (fbVariableMotor1, bRun, fSpeed);
+MotorController (fbVariableMotor2 , bRun , fSpeed);
+fbVariableMotor2.M_SetSpeed(fspeed);
+bType := __QUERYINTERFACE(fbVariableMotor2 , iMotor);
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="7" Count="0" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="9" Count="1" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="40" Count="1" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="42" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

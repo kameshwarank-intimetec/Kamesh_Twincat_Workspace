@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{50e0f26c-511e-4869-b05c-88c6177a793d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbConsole1 : FB_ConsoleLogger;
+	fbFile1 : FB_FileLogger;
+	fbMachine1 : FB_Machine(fbFile1);
+	fbMachine2 : FB_Machine(fbConsole1);
+	
+	sMessageStr1 : STRING(255):= 'This is printed in console ';
+	sMessageStr2 : STRING(255) := 'This is written in file';
+	
+	bPass : BOOL := TRUE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bPass THEN
+	fbMachine1.M_Run(sMessageStr1);
+	fbMachine2.M_Run(sMessageStr2);
+	bPass := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="16" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

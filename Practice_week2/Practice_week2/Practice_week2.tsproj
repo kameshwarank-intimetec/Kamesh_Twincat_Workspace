@@ -12,11 +12,14 @@
 				<Task Id="5" Priority="22" CycleTime="100000" AmsPort="352" AdtTasks="true">
 					<Name>PlcTask2</Name>
 				</Task>
+				<Task Id="4" Priority="21" CycleTime="100000" AmsPort="351" AdtTasks="true">
+					<Name>PlcTask1</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{1F89C792-11CA-4F95-8A3F-B82A81A7C150}" Name="FunctionBlockPractice" PrjFilePath="FunctionBlockPractice\FunctionBlockPractice.plcproj" TmcFilePath="FunctionBlockPractice\FunctionBlockPractice.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{D6A3A16A-E49A-C9E5-60A3-3E6CF36E95D5}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{2C5C8D4C-A85A-07D0-3B94-4D198E1B2154}">
 					<Name>FunctionBlockPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -36,7 +39,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{0EC21DE7-AD04-438B-9FFF-CCA23B1D6AC6}" Name="InterfacePractice" PrjFilePath="InterfacePractice\InterfacePractice.plcproj" TmcFilePath="InterfacePractice\InterfacePractice.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{014F0AF0-6677-26AB-6786-D5598716FB01}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InterfacePractice\InterfacePractice.tmc" TmcHash="{2B45E352-E753-54D4-A1F5-B46D6FAEDFB4}">
 					<Name>InterfacePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -52,6 +55,26 @@
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="22" OTCID="#x08502041"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{A4BE95A0-32BD-46C6-8C98-2B296F7CE129}" Name="DependencyInjectionPractice" PrjFilePath="DependencyInjectionPractice\DependencyInjectionPractice.plcproj" TmcFilePath="DependencyInjectionPractice\DependencyInjectionPractice.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{2866F9FA-45F4-9A19-FC1E-D0B9756F36E1}">
+					<Name>DependencyInjectionPractice Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>21</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="21" OTCID="#x08502081"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

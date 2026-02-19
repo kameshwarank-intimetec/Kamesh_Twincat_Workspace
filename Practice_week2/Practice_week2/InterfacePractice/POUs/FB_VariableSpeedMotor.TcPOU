@@ -5,11 +5,37 @@
 
 VAR
 	fMotorSpeed : REAL;
+	fMotorPosition : REAL;
+	Trans_CylinderExtended: INT;
+	i_bSensorEnd: INT;
+	i_bSensorHome: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
+    <Property Name="fPosition" Id="{30ef72a5-9057-445b-bf43-6ed594d6ba8d}">
+      <Declaration><![CDATA[PROPERTY PUBLIC fPosition : REAL]]></Declaration>
+      <Get Name="Get" Id="{0eb752c9-0752-4161-969a-5e1fb01c139d}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fPosition := fMotorPosition;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{41a75720-7697-45a6-8c8f-d902995947c5}">
+        <Declaration><![CDATA[METHOD PRIVATE Set
+VAR
+END_VAR
+VAR_INPUT
+	fValue : REAL;
+END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fMotorPosition :=  fValue;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
     <Method Name="M_SetSpeed" Id="{927d1fbb-148a-4705-87a1-0436e018022a}">
       <Declaration><![CDATA[METHOD M_SetSpeed : BOOL
 VAR_INPUT
@@ -23,6 +49,12 @@ M_SetSpeed := TRUE;]]></ST>
     </Method>
     <LineIds Name="FB_VariableSpeedMotor">
       <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_VariableSpeedMotor.fPosition.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_VariableSpeedMotor.fPosition.Set">
+      <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_VariableSpeedMotor.M_SetSpeed">
       <LineId Id="5" Count="0" />

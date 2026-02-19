@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Vehicle" Id="{fdce45e9-053d-4216-8e52-03f7b816add1}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Vehicle
+
+VAR
+	bRunning : BOOL;
+	fFuelKilometerLimit : REAL;
+	bMoving : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="DriveMode" Id="{c80c79b6-3172-400f-8310-f1a6f829c893}">
+      <Declaration><![CDATA[METHOD DriveMode : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF bMoving THEN
+	bMoving := FALSE;
+	ELSE
+	bMoving := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Feuling" Id="{f82595bb-a993-4b3b-83cf-4f1c16adc682}">
+      <Declaration><![CDATA[METHOD Feuling : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{3938cef0-d2e3-43c3-8602-94c4ecbaecea}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bRunning := TRUE;
+Start := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{13197267-6a36-4b1e-807f-7bb9f08182f4}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bRunning := FALSE;
+Stop :=  TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Vehicle">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Vehicle.DriveMode">
+      <LineId Id="6" Count="1" />
+      <LineId Id="9" Count="1" />
+      <LineId Id="8" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Vehicle.Feuling">
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Vehicle.Start">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_Vehicle.Stop">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

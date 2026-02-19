@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Car" Id="{64f4a3f7-7bc8-4255-8be5-c373cd978fbd}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Car EXTENDS FB_Vehicle
+
+
+VAR_IN_OUT
+	fbEngine : FB_PetrolEngine;
+END_VAR
+VAR
+	fCurrentFuelLimit : REAL := 42342423;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF bMoving THEN
+	fCurrentFuelLimit := fCurrentFuelLimit - 20;
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="Feuling" Id="{74b70f8e-f221-4924-bec1-697fe9a436c5}">
+      <Declaration><![CDATA[METHOD Feuling : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bMoving := FALSE;
+fCurrentFuelLimit := fFuelKilometerLimit;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Car">
+      <LineId Id="23" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="14" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_Car.Feuling">
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

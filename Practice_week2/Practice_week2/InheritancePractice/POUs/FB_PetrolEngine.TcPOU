@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_PetrolEngine" Id="{d8e33b41-3fcf-4f3f-9526-e4217ebe6887}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PetrolEngine
+
+VAR
+	nEngineCc : INT;
+	fConsumption : REAL := 20;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="FB_PetrolEngine">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -16,15 +16,15 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bPass THEN
-	fbMachine1.M_Run(sMessageStr1);
+	fbMachine2.iLogger2 := fbFile1;
 	fbMachine2.M_Run(sMessageStr2);
 	bPass := FALSE;
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="18" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="0" />
       <LineId Id="21" Count="0" />
       <LineId Id="16" Count="0" />
     </LineIds>

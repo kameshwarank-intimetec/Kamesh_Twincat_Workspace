@@ -3,6 +3,7 @@
   <POU Name="FB_FileLogger" Id="{70e13956-18a1-4a1a-8300-b10668faf7f2}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_FileLogger IMPLEMENTS  I_Logger
 VAR
+	bCheck : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>

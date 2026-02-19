@@ -3,8 +3,12 @@
   <POU Name="FB_Machine" Id="{33cf73c4-3194-40ea-bb34-68f0dd01cccf}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Machine
 
+VAR_INPUT
+	iLogger2 : I_Logger;
+END_VAR
 VAR
 	iLogger : I_Logger;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -30,8 +34,8 @@ END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[
-IF iLogger <> 0 THEN
-	iLogger.M_Log(sMessage);
+IF iLogger2 <> 0 THEN
+	iLogger2.M_Log(sMessage);
 END_IF]]></ST>
       </Implementation>
     </Method>

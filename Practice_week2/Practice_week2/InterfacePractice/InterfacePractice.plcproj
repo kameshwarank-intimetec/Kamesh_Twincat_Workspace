@@ -27,9 +27,6 @@
     <Compile Include="POUs\FB_FixedMotor.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_Light.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\FB_VariableMotor.TcPOU">
       <SubType>Code</SubType>
     </Compile>

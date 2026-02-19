@@ -12,7 +12,6 @@ VAR
 	fbVariableMotor2 : FB_VariableSpeedMotor;
 	bRun : BOOL := TRUE;
 	
-	fbLight1 : FB_Light;
 	
 	fSpeed : REAL := 34.343;
 	bType : BOOL;
@@ -26,8 +25,6 @@ MotorController(fbFixedMotor1, bRun,fSpeed );
 MotorController (fbVariableMotor1, bRun, fSpeed);
 MotorController (fbVariableMotor2 , bRun , fSpeed);
 fbVariableMotor2.M_SetSpeed(fspeed);
-fbVariableMotor2.Set(432.323);
-fPosition := fbVariableMotor2.fPosition;
 bType := __QUERYINTERFACE(fbVariableMotor2 , iMotor);
 ]]></ST>
     </Implementation>
@@ -36,8 +33,6 @@ bType := __QUERYINTERFACE(fbVariableMotor2 , iMotor);
       <LineId Id="21" Count="0" />
       <LineId Id="26" Count="0" />
       <LineId Id="40" Count="1" />
-      <LineId Id="69" Count="0" />
-      <LineId Id="65" Count="0" />
       <LineId Id="47" Count="0" />
       <LineId Id="42" Count="0" />
     </LineIds>

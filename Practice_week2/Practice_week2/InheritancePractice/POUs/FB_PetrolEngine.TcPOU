@@ -4,7 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PetrolEngine
 
 VAR
-	nEngineCc : INT;
+	nEngineCc : INT := 1000;
 	fConsumption : REAL := 20;
 END_VAR
 ]]></Declaration>

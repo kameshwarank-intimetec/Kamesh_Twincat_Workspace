@@ -24,15 +24,13 @@ END_VAR
           <ST><![CDATA[fPosition := fMotorPosition;]]></ST>
         </Implementation>
       </Get>
-      <Set Name="Set" Id="{41a75720-7697-45a6-8c8f-d902995947c5}">
-        <Declaration><![CDATA[METHOD PRIVATE Set
+      <Set Name="Set" Id="{97e63715-075b-4faa-86dd-658263006794}">
+        <Declaration><![CDATA[PRIVATE
 VAR
 END_VAR
-VAR_INPUT
-	fValue : REAL;
-END_VAR]]></Declaration>
+]]></Declaration>
         <Implementation>
-          <ST><![CDATA[fMotorPosition :=  fValue;]]></ST>
+          <ST><![CDATA[fMotorPosition := fPosition;]]></ST>
         </Implementation>
       </Set>
     </Property>

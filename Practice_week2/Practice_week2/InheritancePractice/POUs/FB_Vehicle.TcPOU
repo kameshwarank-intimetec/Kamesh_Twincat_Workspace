@@ -5,7 +5,6 @@
 
 VAR
 	bRunning : BOOL;
-	fFuelKilometerLimit : REAL;
 	bMoving : BOOL;
 END_VAR
 ]]></Declaration>
@@ -58,8 +57,7 @@ Stop :=  TRUE;]]></ST>
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="FB_Vehicle.DriveMode">
-      <LineId Id="6" Count="1" />
-      <LineId Id="9" Count="1" />
+      <LineId Id="14" Count="3" />
       <LineId Id="8" Count="0" />
     </LineIds>
     <LineIds Name="FB_Vehicle.Feuling">

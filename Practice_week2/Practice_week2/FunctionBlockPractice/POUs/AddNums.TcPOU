@@ -13,7 +13,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 IF __ISVALIDREF(fbMotor1) THEN
-	AddNums := 1/nNum1;
+	//AddNums := 1/nNum1;
 	
 END_IF]]></ST>
     </Implementation>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Car" Id="{5fe7ec5a-d238-4042-ad4a-826fc3508585}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Car
+VAR_INPUT
+END_VAR
+VAR
+	sCarName : STRING(300);
+	fRunning : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="SetCarName" Id="{6261db08-61dc-413c-9bbc-d64417642136}">
+      <Declaration><![CDATA[METHOD SetCarName : REFERENCE TO FB_Car
+VAR_INPUT
+	sCarName : STRING(300);
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.sCarName := sCarName;
+SetCarName REF= THIS^;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{ee051c42-472a-4eec-9947-e2706b965e6f}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fRunning := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Car">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Car.SetCarName">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Car.Start">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

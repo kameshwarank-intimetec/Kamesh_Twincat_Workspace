@@ -9,6 +9,7 @@ VAR
 	sEventText1 : STRING(255) :=  'This is a danger';
 	
 	EventLogger1 : EventLogger;
+	fbCar : FB_Car;
 	fbMotor1 : Motor;
 	
 	nNum1 : INT;
@@ -32,6 +33,8 @@ END_VAR
 	nSum := AddNums(fbMotor1);
 	
 	bFlag := FALSE;
+	
+	fbCar.SetCarName('Tata Nexon').Start();
 END_IF
 ]]></ST>
     </Implementation>
@@ -44,6 +47,8 @@ END_IF
       <LineId Id="37" Count="0" />
       <LineId Id="56" Count="1" />
       <LineId Id="38" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="78" Count="0" />
       <LineId Id="26" Count="0" />
       <LineId Id="22" Count="0" />
     </LineIds>

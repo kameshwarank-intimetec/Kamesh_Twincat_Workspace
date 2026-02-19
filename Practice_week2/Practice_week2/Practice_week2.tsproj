@@ -22,7 +22,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{1F89C792-11CA-4F95-8A3F-B82A81A7C150}" Name="FunctionBlockPractice" PrjFilePath="FunctionBlockPractice\FunctionBlockPractice.plcproj" TmcFilePath="FunctionBlockPractice\FunctionBlockPractice.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{2C5C8D4C-A85A-07D0-3B94-4D198E1B2154}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{310C1569-DD20-7004-8867-2FE423B4E212}">
 					<Name>FunctionBlockPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -62,7 +62,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{A4BE95A0-32BD-46C6-8C98-2B296F7CE129}" Name="DependencyInjectionPractice" PrjFilePath="DependencyInjectionPractice\DependencyInjectionPractice.plcproj" TmcFilePath="DependencyInjectionPractice\DependencyInjectionPractice.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{2866F9FA-45F4-9A19-FC1E-D0B9756F36E1}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="DependencyInjectionPractice\DependencyInjectionPractice.tmc" TmcHash="{2866F9FA-45F4-9A19-FC1E-D0B9756F36E1}">
 					<Name>DependencyInjectionPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -82,7 +82,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{0B33C4F3-94B0-4DDB-B097-C87E03C57CAB}" Name="TankFillingSystem" PrjFilePath="TankFillingSystem\TankFillingSystem.plcproj" TmcFilePath="TankFillingSystem\TankFillingSystem.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{CBA596EA-0746-1CE8-85D2-82FADA26BFFE}">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TankFillingSystem\TankFillingSystem.tmc" TmcHash="{E130E253-4FFE-CBFC-C4C5-2DEEB01BEA63}">
 					<Name>TankFillingSystem Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

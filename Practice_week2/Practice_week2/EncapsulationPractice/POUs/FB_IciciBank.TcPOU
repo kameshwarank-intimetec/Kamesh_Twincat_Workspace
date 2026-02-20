@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_IciciBank" Id="{b3ccc089-4f38-4011-9826-7b384ddb5fc8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_IciciBank EXTENDS FB_Bank
+
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="M_Deposit" Id="{49045053-ad4d-4328-8980-783958c75bc1}">
+      <Declaration><![CDATA[METHOD FINAL M_Deposit : BOOL
+VAR_INPUT
+	fDepositAmount : REAL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_IciciBank">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_IciciBank.M_Deposit">
+      <LineId Id="6" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

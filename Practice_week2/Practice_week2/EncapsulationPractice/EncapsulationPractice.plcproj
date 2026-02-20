@@ -3,34 +3,31 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ba766831-95d1-431f-91a2-79281b144481}</ProjectGuid>
+    <ProjectGuid>{364ae314-1cc6-4def-8fef-bf355a3e8e6f}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>InheritancePractice</Name>
+    <Name>EncapsulationPractice</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
-    <Application>{19f9d9ce-29f0-41a7-8ded-fc917da85fc6}</Application>
-    <TypeSystem>{16d1b746-7ed1-4daf-9b8c-8823c3633de5}</TypeSystem>
-    <Implicit_Task_Info>{1b1c13fb-c4b2-4350-bbb9-3898385fa5fa}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{ba7e4ded-8084-41db-af2b-5c2e12ba9ca4}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{f26d0606-b94c-40a8-8c0e-39f60b352535}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{6fbdb125-a30d-4a7f-8f62-d45b7df3dea9}</LibraryReferences>
+    <Application>{ed80fdb6-8cbd-495e-8ced-fef976c9b4b7}</Application>
+    <TypeSystem>{b3f86599-8ecb-4853-bc96-457e9d7a24ec}</TypeSystem>
+    <Implicit_Task_Info>{17335056-a883-45da-a303-9a69cf08697c}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{726c5961-946e-4f9a-b442-b354fbc10257}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{5cfa7caf-2ac5-4d20-b99f-3f2f412df273}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{c909e788-c3f4-4e41-9f82-370b6a03c590}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_Car.TcPOU">
+    <Compile Include="POUs\Condition.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_PetrolEngine.TcPOU">
+    <Compile Include="POUs\FB_Bank.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Fb_Truck.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FB_Vehicle.TcPOU">
+    <Compile Include="POUs\FB_IciciBank.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -40,7 +37,6 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,15 +54,15 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="InheritancePractice.tmc">
+    <None Include="EncapsulationPractice.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -112,13 +108,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

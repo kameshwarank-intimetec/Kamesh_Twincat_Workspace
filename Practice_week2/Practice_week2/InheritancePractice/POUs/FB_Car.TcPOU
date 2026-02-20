@@ -5,57 +5,33 @@
 
 
 VAR_IN_OUT
-	fbEngine : FB_PetrolEngine;
+	
 END_VAR
 VAR
+	fbEngine : FB_PetrolEngine;
 	sCarName : STRING(300);
-	fTotalDistanceTravelled : REAL := 44324.45;
+	fTotalDistanceTravelled : REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 ]]></ST>
     </Implementation>
-    <Property Name="sName" Id="{7cde60f3-4cd5-4df4-8829-9a52fd1a560c}">
-      <Declaration><![CDATA[PROPERTY PUBLIC sName : STRING(300)]]></Declaration>
-      <Get Name="Get" Id="{4cbacd33-33c3-4086-8ba0-62f74bb74d6f}">
-        <Declaration><![CDATA[VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[sName := sCarName;]]></ST>
-        </Implementation>
-      </Get>
-      <Set Name="Set" Id="{fb10e4aa-4d61-4df3-8e88-d2b9e6e1a0fb}">
-        <Declaration><![CDATA[PUBLIC
-VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[sCarName := sName;]]></ST>
-        </Implementation>
-      </Set>
-    </Property>
-    <Method Name="TotalDistanceTravelled" Id="{3ccf0517-c735-4ed8-b326-542cc735d6b6}">
-      <Declaration><![CDATA[METHOD TotalDistanceTravelled : REAL
+    <Method Name="VehicleName" Id="{0c1aa78b-d601-4558-9aaa-d25b1e3c08b6}">
+      <Declaration><![CDATA[METHOD VehicleName : STRING
 VAR_INPUT
+	sName : STRING;
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[TotalDistanceTravelled := fTotalDistanceTravelled;]]></ST>
+        <ST><![CDATA[sVehicleName := CONCAT('Car name is ', sName);]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_Car">
       <LineId Id="23" Count="0" />
       <LineId Id="15" Count="0" />
     </LineIds>
-    <LineIds Name="FB_Car.sName.Get">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Car.sName.Set">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Car.TotalDistanceTravelled">
+    <LineIds Name="FB_Car.VehicleName">
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>

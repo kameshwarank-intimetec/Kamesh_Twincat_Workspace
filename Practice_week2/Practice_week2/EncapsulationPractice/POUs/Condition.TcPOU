@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Condition" Id="{fed83c72-9534-4b6f-9d43-f1c5a6d7568e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Condition
+VAR
+	nMark : INT := 88;
+	sGrade : STRING ;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[ACT_Case();]]></ST>
+    </Implementation>
+    <Action Name="ACT_Case" Id="{0a815743-c058-4e7f-88c5-956f4f75e7d1}">
+      <Implementation>
+        <ST><![CDATA[CASE nMark OF
+	 91..100:
+	sGrade := 'A';
+	81..90 :
+	sGrade:= 'B';
+	71..80:
+	sGrade:= 'C';
+	61..70:
+	sGrade:= 'D';
+	ELSE
+		sGrade:= 'F';
+	
+END_CASE]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="ACT_Condition" Id="{5ee9241c-1e79-49cd-834a-835364c5e10f}">
+      <Implementation>
+        <ST><![CDATA[IF nMark > 90 THEN
+	sGrade := 'A';
+	ELSIF nMark > 80 THEN
+		IF nMark > 85 THEN
+			sGrade := 'B+';
+		ELSE
+			sGrade := 'B';
+		END_IF
+	ELSIF nMark > 70 THEN
+		sGrade := 'C';
+	ELSIF nMark > 60 THEN
+		sGrade := 'D';
+	ELSE sGrade := 'F';
+END_IF]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="Condition">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="Condition.ACT_Case">
+      <LineId Id="1" Count="1" />
+      <LineId Id="4" Count="2" />
+      <LineId Id="8" Count="2" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="11" Count="1" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="3" Count="0" />
+    </LineIds>
+    <LineIds Name="Condition.ACT_Condition">
+      <LineId Id="2" Count="12" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

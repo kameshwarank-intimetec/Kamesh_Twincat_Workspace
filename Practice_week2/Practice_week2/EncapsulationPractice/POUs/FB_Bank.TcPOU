@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Bank" Id="{d56d0523-3941-407a-937d-e5d4e0e4bc5a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Bank
+VAR_INPUT
+	sBankName : STRING(200);
+END_VAR
+
+VAR
+	fBalance : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="fMoney" Id="{8824347c-e9d9-4936-bdea-922df011b715}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY fMoney : REAL]]></Declaration>
+      <Get Name="Get" Id="{238ef373-05c3-4513-85ef-0a7bc5990195}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fMoney := fBalance;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{b43ef411-2265-4a32-ac55-79f27981fea8}">
+        <Declaration><![CDATA[PRIVATE
+VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fBalance := fMoney;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="M_Deposit" Id="{43d1d39d-abc9-4455-a6e4-11b4165b22a6}">
+      <Declaration><![CDATA[METHOD M_Deposit : BOOL
+VAR_INPUT
+	fDepositAmount : REAL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fMoney := fDepositAmount;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_Withdrawal" Id="{c4e7d9f3-0a54-4fe8-adb5-dad00b7a3b92}">
+      <Declaration><![CDATA[METHOD M_Withdrawal : BOOL
+VAR_INPUT
+	fWithdrawAmount : REAL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF fWithdrawAmount <= fMoney THEN
+	fMoney := fMoney - fWithdrawAmount;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Bank">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Bank.fMoney.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Bank.fMoney.Set">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Bank.M_Deposit">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Bank.M_Withdrawal">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

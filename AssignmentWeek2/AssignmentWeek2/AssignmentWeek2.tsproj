@@ -16,7 +16,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{1F649754-7232-4E3A-B2CC-287ABAA3FF8D}" Name="MultiTankCoolingSystem" PrjFilePath="MultiTankCoolingSystem\MultiTankCoolingSystem.plcproj" TmcFilePath="MultiTankCoolingSystem\MultiTankCoolingSystem.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{9EB4068E-9C0F-1D5B-C286-EE53484F9D39}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{DBB7FBCD-0710-CA2E-CB36-0C09B8218D3D}">
 					<Name>MultiTankCoolingSystem Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

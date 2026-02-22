@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_TankController" Id="{d49f714c-8435-4f33-bc16-d19cf7467e69}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TankController IMPLEMENTS I_TankController
+VAR_IN_OUT
+	stTank : ST_TANK;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[THIS^.CheckSafety();
+THIS^.ApplyCooling();
+]]></ST>
+    </Implementation>
+    <Method Name="ApplyCooling" Id="{c1b48702-0de2-4894-9461-4ad1944baf13}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD ApplyCooling : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF stTank.bAlarm THEN
+	F_CoolTank(stTank);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CheckSafety" Id="{690d4314-9b02-4429-8769-3b48f9dada31}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD CheckSafety : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF F_CheckAlarm( pTank := ADR(stTank) ) THEN
+	stTank.bAlarm := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_TankController">
+      <LineId Id="14" Count="0" />
+      <LineId Id="12" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_TankController.ApplyCooling">
+      <LineId Id="4" Count="2" />
+    </LineIds>
+    <LineIds Name="FB_TankController.CheckSafety">
+      <LineId Id="4" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

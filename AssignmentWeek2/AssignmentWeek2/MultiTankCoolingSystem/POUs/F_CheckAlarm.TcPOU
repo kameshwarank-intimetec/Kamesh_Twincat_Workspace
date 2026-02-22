@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="F_CheckAlarm" Id="{15ea5920-b8b7-4680-99e1-92531c40edad}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_CheckAlarm : BOOL
+VAR_INPUT
+	pTank : POINTER TO ST_Tank;
+END_VAR
+VAR
+	fLevel : REAL := pTank^.fLevel;
+	fTemperature : REAL := pTank^.fTemperature;
+	fMaxTemperature : REAL := 80;
+	fMaxLevelPercentage : REAL := 90;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF (fLevel > fMaxLevelPercentage) OR (fTemperature > fMaxTemperature )THEN
+	F_CheckAlarm := TRUE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="F_CheckAlarm">
+      <LineId Id="11" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="12" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

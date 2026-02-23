@@ -5,7 +5,7 @@
 VAR
 	stTank1 : ST_Tank := (nId := 101,fTemperature := 80.3, fLevel := 80, bAlarm := FALSE );
 	stTank2 : ST_Tank  := (nId := 102,fTemperature := 72.5, fLevel := 70, bAlarm := FALSE );
-	stTank3 : ST_Tank  := (nId := 103,fTemperature := 90.8, fLevel := 90, bAlarm := FALSE );
+	stTank3 : ST_Tank  := (nId := 103,fTemperature := 90.8, fLevel := 95, bAlarm := FALSE );
 	
 	fbController : FB_TankController;
 	

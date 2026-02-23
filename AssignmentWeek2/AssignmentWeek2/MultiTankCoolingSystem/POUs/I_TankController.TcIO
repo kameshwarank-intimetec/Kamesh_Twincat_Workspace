@@ -15,5 +15,11 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
+    <Method Name="DispenseChemical" Id="{3a6fd6f1-e5b7-4545-96d4-3892704c8127}">
+      <Declaration><![CDATA[METHOD DispenseChemical : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
   </Itf>
 </TcPlcObject>

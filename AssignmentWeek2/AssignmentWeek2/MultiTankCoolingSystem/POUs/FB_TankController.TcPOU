@@ -13,8 +13,11 @@ END_VAR
       <ST><![CDATA[
 IF __ISVALIDREF(stTank) THEN
 	CheckSafety();
-	ApplyCooling();
-
+	IF stTank.bAlarm THEN
+		ApplyCooling();
+		DispenseChemical();
+	END_IF
+	
 	IF NOT stTank.bAlarm THEN
 		stTank.fTemperature := stTank.fTemperature + 5;
 	END_IF
@@ -40,10 +43,25 @@ METHOD CheckSafety : BOOL
 END_IF]]></ST>
       </Implementation>
     </Method>
+    <Method Name="DispenseChemical" Id="{d241761c-e1e3-4d70-816b-b992e91f2d02}">
+      <Declaration><![CDATA[METHOD DispenseChemical : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF stTank.bAlarm THEN
+	TransferChemical( pTank := ADR(stTank) );
+END_IF]]></ST>
+      </Implementation>
+    </Method>
     <LineIds Name="FB_TankController">
       <LineId Id="22" Count="0" />
       <LineId Id="38" Count="0" />
-      <LineId Id="42" Count="4" />
+      <LineId Id="42" Count="1" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="44" Count="2" />
       <LineId Id="40" Count="1" />
     </LineIds>
     <LineIds Name="FB_TankController.ApplyCooling">
@@ -52,6 +70,10 @@ END_IF]]></ST>
     </LineIds>
     <LineIds Name="FB_TankController.CheckSafety">
       <LineId Id="4" Count="2" />
+    </LineIds>
+    <LineIds Name="FB_TankController.DispenseChemical">
+      <LineId Id="9" Count="1" />
+      <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

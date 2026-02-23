@@ -10,13 +10,15 @@ VAR
 	fbController : FB_TankController;
 	iTankController : I_TankController;
 	
-	bStart : BOOl;
+	bStart : bool;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bStart THEN
 	fbController(stTank := stTank1);
 	bStart := FALSE;
+	fbController.
+	fbController.Addsum(32,323,42,232,432);
 END_IF
 
 ]]></ST>
@@ -25,6 +27,8 @@ END_IF
       <LineId Id="2" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="19" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="31" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="15" Count="0" />

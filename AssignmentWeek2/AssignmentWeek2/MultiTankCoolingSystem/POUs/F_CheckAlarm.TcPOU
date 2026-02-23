@@ -14,14 +14,17 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-IF (fLevel > fMaxLevelPercentage) OR (fTemperature > fMaxTemperature )THEN
-	F_CheckAlarm := TRUE;
+IF pTank <> 0 THEN
+	IF (fLevel > fMaxLevelPercentage) OR (fTemperature > fMaxTemperature )THEN
+		F_CheckAlarm := TRUE;
+	END_IF
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="F_CheckAlarm">
       <LineId Id="11" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="12" Count="1" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="26" Count="1" />
+      <LineId Id="24" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>

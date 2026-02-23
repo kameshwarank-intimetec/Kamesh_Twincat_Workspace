@@ -3,15 +3,22 @@
   <POU Name="FB_TankController" Id="{d49f714c-8435-4f33-bc16-d19cf7467e69}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_TankController IMPLEMENTS I_TankController
 VAR_IN_OUT
-	stTank : ST_TANK;
+	stTank : ST_Tank;
 END_VAR
 VAR
+
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[CheckSafety();
-ApplyCooling();
-]]></ST>
+      <ST><![CDATA[
+IF __ISVALIDREF(stTank) THEN
+	CheckSafety();
+	ApplyCooling();
+
+	IF NOT stTank.bAlarm THEN
+		stTank.fTemperature := stTank.fTemperature + 5;
+	END_IF
+END_IF]]></ST>
     </Implementation>
     <Method Name="ApplyCooling" Id="{c1b48702-0de2-4894-9461-4ad1944baf13}">
       <Declaration><![CDATA[{warning 'add method implementation '}
@@ -34,11 +41,14 @@ END_IF]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_TankController">
-      <LineId Id="14" Count="0" />
-      <LineId Id="12" Count="1" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="42" Count="4" />
+      <LineId Id="40" Count="1" />
     </LineIds>
     <LineIds Name="FB_TankController.ApplyCooling">
-      <LineId Id="4" Count="2" />
+      <LineId Id="9" Count="1" />
+      <LineId Id="6" Count="0" />
     </LineIds>
     <LineIds Name="FB_TankController.CheckSafety">
       <LineId Id="4" Count="2" />

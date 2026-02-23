@@ -8,7 +8,6 @@ VAR
 	stTank3 : ST_Tank  := (nId := 103,fTemperature := 90.8, fLevel := 90, bAlarm := FALSE );
 	
 	fbController : FB_TankController;
-	iTankController : I_TankController;
 	
 	bStart : bool;
 END_VAR
@@ -16,19 +15,19 @@ END_VAR
     <Implementation>
       <ST><![CDATA[IF bStart THEN
 	fbController(stTank := stTank1);
+	fbController(stTank := stTank2);
+	fbController(stTank := stTank3);
 	bStart := FALSE;
-	fbController.
-	fbController.Addsum(32,323,42,232,432);
 END_IF
 
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="17" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="46" Count="0" />
       <LineId Id="19" Count="0" />
-      <LineId Id="32" Count="0" />
-      <LineId Id="31" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="15" Count="0" />

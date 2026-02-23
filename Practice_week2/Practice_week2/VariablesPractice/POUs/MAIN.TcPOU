@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{e2595925-248a-4933-8312-1c95a489eb32}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	nNum : DINT := 60000;
+	fbMotor1 : FB_Motor ;
+	fbMotor2 : FB_Motor ;
+	bRun: BOOL;
+	num : INT;
+	bCopyStart : BOOL;
+END_VAR
+VAR PERSISTENT
+	num2 : INT := 323;
+END_VAR
+VAR CONSTANT
+	num3 : INT := 34;
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bRun THEN
+	fbMotor1.Start();
+	fbMotor1.Start();
+	num := fbMotor1.nNum;
+	fbMotor1.nNum := 433;
+	bCopyStart := fbMotor1.bStart;
+	bRun := FALSE;
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="9" Count="1" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="35" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

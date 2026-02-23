@@ -14,19 +14,23 @@ END_VAR
 fbBank.sBankName := 'sbi';
 fbBank.M_Deposit(4000);
 fbBank.M_Withdrawal(2000);
-
 fAmount2 := fbIciciBank.fMoney;
 fbIciciBank.sBankName := 'icici';
-fbIciciBank.M_Deposit(4000);
-fbIciciBank.M_Withdrawal(2000);]]></ST>
+//fbIciciBank.M_Deposit(4000);
+//fbIciciBank.M_Withdrawal(2000);
+fbIciciBank.Test();
+fbIciciBank.nNum1 := 32;
+fbBank();]]></ST>
     </Implementation>
     <Folder Name="VISUs" Id="{c4dd43bf-d2ea-4409-a659-a04952fc54ed}" />
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
       <LineId Id="8" Count="2" />
-      <LineId Id="13" Count="0" />
       <LineId Id="12" Count="0" />
       <LineId Id="15" Count="2" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="25" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

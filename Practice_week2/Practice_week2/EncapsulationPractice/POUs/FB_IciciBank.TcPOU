@@ -5,10 +5,24 @@
 
 VAR
 END_VAR
+VAR_STAT
+	nNum1 : int;
+END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
+    <Property Name="fMoney" Id="{059052f1-2590-4d0b-9a4f-e9b337189b30}">
+      <Declaration><![CDATA[PROPERTY PROTECTED fMoney : REAL]]></Declaration>
+      <Get Name="Get" Id="{e032d076-beed-4418-b9a7-9ffb0d774db7}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
     <Method Name="M_Deposit" Id="{49045053-ad4d-4328-8980-783958c75bc1}">
       <Declaration><![CDATA[METHOD FINAL M_Deposit : BOOL
 VAR_INPUT
@@ -19,11 +33,28 @@ END_VAR
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
+    <Method Name="Test" Id="{6380b9c6-805e-4634-be08-92fcac0b5558}">
+      <Declaration><![CDATA[METHOD Test : REAL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+Test := fMoney;]]></ST>
+      </Implementation>
+    </Method>
     <LineIds Name="FB_IciciBank">
       <LineId Id="9" Count="0" />
     </LineIds>
+    <LineIds Name="FB_IciciBank.fMoney.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
     <LineIds Name="FB_IciciBank.M_Deposit">
       <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_IciciBank.Test">
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -53,7 +53,6 @@ CASE eState OF
 	
 	
 END_CASE
-fbDrill();
 ]]></ST>
     </Implementation>
     <Transition Name="TRANS_DrillCheck" Id="{4ca51243-dbe5-483e-bebb-ad8ff64c1c2c}">
@@ -84,7 +83,6 @@ fbDrill();
       <LineId Id="33" Count="1" />
       <LineId Id="10" Count="0" />
       <LineId Id="8" Count="0" />
-      <LineId Id="67" Count="0" />
       <LineId Id="66" Count="0" />
     </LineIds>
     <LineIds Name="MAIN.TRANS_DrillCheck">

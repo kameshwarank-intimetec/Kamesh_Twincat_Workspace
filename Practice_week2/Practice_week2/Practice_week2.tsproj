@@ -151,7 +151,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9A690DF6-169F-488A-9569-E29BE6EEA05E}" Name="StateMachinePractice" PrjFilePath="StateMachinePractice\StateMachinePractice.plcproj" TmcFilePath="StateMachinePractice\StateMachinePractice.tmc" ReloadTmc="true" AmsPort="857" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="StateMachinePractice\StateMachinePractice.tmc" TmcHash="{B480BE39-1D60-5BD3-183C-D58B513F6161}">
+				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="StateMachinePractice\StateMachinePractice.tmc" TmcHash="{31D57545-8D97-251B-2964-BB3270F9CF9B}">
 					<Name>StateMachinePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

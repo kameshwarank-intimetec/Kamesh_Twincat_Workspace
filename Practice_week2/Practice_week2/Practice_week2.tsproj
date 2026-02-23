@@ -111,7 +111,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{BA766831-95D1-431F-91A2-79281B144481}" Name="InheritancePractice" PrjFilePath="InheritancePractice\InheritancePractice.plcproj" TmcFilePath="InheritancePractice\InheritancePractice.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InheritancePractice\InheritancePractice.tmc" TmcHash="{C6547F18-5700-14A2-C1C0-9C30894D00BB}">
+				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InheritancePractice\InheritancePractice.tmc" TmcHash="{C65B98C9-7638-27DF-76A3-08FD2FF5E2D5}">
 					<Name>InheritancePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -131,7 +131,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{364AE314-1CC6-4DEF-8FEF-BF355A3E8E6F}" Name="EncapsulationPractice" PrjFilePath="EncapsulationPractice\EncapsulationPractice.plcproj" TmcFilePath="EncapsulationPractice\EncapsulationPractice.tmc" ReloadTmc="true" AmsPort="856" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{8686C47A-231C-AB86-8198-F40E8571E765}">
+				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="EncapsulationPractice\EncapsulationPractice.tmc" TmcHash="{F6A8B55A-A8F1-F176-1BD4-0F1A1BC955A8}">
 					<Name>EncapsulationPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -151,7 +151,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9A690DF6-169F-488A-9569-E29BE6EEA05E}" Name="StateMachinePractice" PrjFilePath="StateMachinePractice\StateMachinePractice.plcproj" TmcFilePath="StateMachinePractice\StateMachinePractice.tmc" ReloadTmc="true" AmsPort="857" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{B480BE39-1D60-5BD3-183C-D58B513F6161}">
+				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="StateMachinePractice\StateMachinePractice.tmc" TmcHash="{B480BE39-1D60-5BD3-183C-D58B513F6161}">
 					<Name>StateMachinePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

@@ -11,17 +11,19 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[THIS^.TRANS_Check;]]></ST>
     </Implementation>
     <Transition Name="TRANS_Check" Id="{3e98b030-fb01-478e-be50-7cbc290f2709}">
       <Implementation>
-        <ST><![CDATA[TRANS_Check := bStart;]]></ST>
+        <ST><![CDATA[bStart := TRUE;
+TRANS_Check := bStart;]]></ST>
       </Implementation>
     </Transition>
     <LineIds Name="FB_Drill">
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="FB_Drill.TRANS_Check">
+      <LineId Id="2" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
   </POU>

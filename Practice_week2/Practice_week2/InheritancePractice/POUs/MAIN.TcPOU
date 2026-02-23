@@ -6,7 +6,7 @@ VAR
 	fbCar : FB_Car;
 	fbVehicle :REFERENCE TO FB_Vehicle;
 	fbTruck : FB_Truck;
-	iTransport : I_Transport;
+
 	bStart : BOOL;
 	bStop : BOOL;
 	sName : STRING(300);

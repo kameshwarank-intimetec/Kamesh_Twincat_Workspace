@@ -4,6 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Motor
 
 VAR_STAT
+	{attribute 'hide'}
 	nNum : INT;
 END_VAR
 VAR
@@ -11,7 +12,9 @@ VAR
 	bStart : BOOL := TRUE;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[IF TRANS_Check1 THEN
+	nNum := 10;
+END_IF]]></ST>
     </Implementation>
     <Method Name="Start" Id="{69721c44-875e-461f-8521-a56654156274}">
       <Declaration><![CDATA[METHOD Start : BOOL
@@ -24,11 +27,20 @@ END_VAR
         <ST><![CDATA[nNum := nNum + 1;]]></ST>
       </Implementation>
     </Method>
+    <Transition Name="TRANS_Check1" Id="{dbf37bd5-f80e-41e6-a317-05fc3b9cc5df}">
+      <Implementation>
+        <ST><![CDATA[TRANS_Check1 := TRUE;]]></ST>
+      </Implementation>
+    </Transition>
     <LineIds Name="FB_Motor">
       <LineId Id="9" Count="0" />
+      <LineId Id="18" Count="1" />
     </LineIds>
     <LineIds Name="FB_Motor.Start">
       <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Motor.TRANS_Check1">
+      <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -2,11 +2,12 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <POU Name="Fb_Truck" Id="{9292bc31-f0a9-40d0-badc-f9fec3c645f1}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK Fb_Truck EXTENDS FB_Vehicle
+
 VAR_INPUT
-END_VAR
-VAR_OUTPUT
+	
 END_VAR
 VAR
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -17,9 +18,12 @@ END_VAR
 VAR_INPUT
 	sName : STRING;
 END_VAR
+VAR
+	sVehicleName : STRING;
+END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[sVehicleName := CONCAT('Truck name is ', sName);]]></ST>
+        <ST><![CDATA[THIS^.sVehicleName := CONCAT('Truck name is ', sName);]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="Fb_Truck">

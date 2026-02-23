@@ -6,6 +6,9 @@ VAR
 	nNum : DINT := 60000;
 	fbMotor1 : FB_Motor ;
 	fbMotor2 : FB_Motor ;
+	
+	fbTata : FB_TataNexon ;
+	fbCar : POINTER TO FB_Car;
 	bRun: BOOL;
 	num : INT;
 	bCopyStart : BOOL;
@@ -19,16 +22,26 @@ END_VAR
 
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF bRun THEN
+      <ST><![CDATA[(*IF bRun THEN
 	fbMotor1.Start();
 	fbMotor1.Start();
 	num := fbMotor1.nNum;
 	fbMotor1.nNum := 433;
-	bCopyStart := fbMbRunbRunotor1.bStart;
+	bCopyStart := fbMotor1.bStart;
 	bRun := FALSE;
 END_IF
+IF TRANS1 THEN
+	fbCar^.Running();
+END_IF*)
+
+
 ]]></ST>
     </Implementation>
+    <Transition Name="TRANS1" Id="{11ed6e56-be5d-4a05-a3e9-39991f5af975}">
+      <Implementation>
+        <ST><![CDATA[TRANS1 := TRUE;]]></ST>
+      </Implementation>
+    </Transition>
     <LineIds Name="MAIN">
       <LineId Id="9" Count="1" />
       <LineId Id="13" Count="0" />
@@ -37,7 +50,15 @@ END_IF
       <LineId Id="32" Count="0" />
       <LineId Id="14" Count="0" />
       <LineId Id="11" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="60" Count="0" />
       <LineId Id="35" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.TRANS1">
+      <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

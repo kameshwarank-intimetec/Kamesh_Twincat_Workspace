@@ -33,8 +33,8 @@
 			</Tasks>
 		</System>
 		<Plc>
-			<Project GUID="{1F89C792-11CA-4F95-8A3F-B82A81A7C150}" Name="FunctionBlockPractice" PrjFilePath="FunctionBlockPractice\FunctionBlockPractice.plcproj" TmcFilePath="FunctionBlockPractice\FunctionBlockPractice.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{1BBF7BA1-B60D-19DF-1953-59920AD2EC4A}">
+			<Project Disabled="true" GUID="{1F89C792-11CA-4F95-8A3F-B82A81A7C150}" Name="FunctionBlockPractice" PrjFilePath="FunctionBlockPractice\FunctionBlockPractice.plcproj" TmcFilePath="FunctionBlockPractice\FunctionBlockPractice.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FunctionBlockPractice\FunctionBlockPractice.tmc" TmcHash="{F033B59C-6CF0-6851-E8DE-D0FB68D34FC3}">
 					<Name>FunctionBlockPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -53,8 +53,8 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project GUID="{0EC21DE7-AD04-438B-9FFF-CCA23B1D6AC6}" Name="InterfacePractice" PrjFilePath="InterfacePractice\InterfacePractice.plcproj" TmcFilePath="InterfacePractice\InterfacePractice.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InterfacePractice\InterfacePractice.tmc" TmcHash="{75437DBC-6D4E-D888-835E-4CC4A6A5E89C}">
+			<Project Disabled="true" GUID="{0EC21DE7-AD04-438B-9FFF-CCA23B1D6AC6}" Name="InterfacePractice" PrjFilePath="InterfacePractice\InterfacePractice.plcproj" TmcFilePath="InterfacePractice\InterfacePractice.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InterfacePractice\InterfacePractice.tmc" TmcHash="{23BF41A7-9DB6-A2B7-C049-525F812D3152}">
 					<Name>InterfacePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -73,8 +73,8 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project GUID="{A4BE95A0-32BD-46C6-8C98-2B296F7CE129}" Name="DependencyInjectionPractice" PrjFilePath="DependencyInjectionPractice\DependencyInjectionPractice.plcproj" TmcFilePath="DependencyInjectionPractice\DependencyInjectionPractice.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="DependencyInjectionPractice\DependencyInjectionPractice.tmc" TmcHash="{85E4DB64-17A8-910D-81A2-A1C7C6447EB9}">
+			<Project Disabled="true" GUID="{A4BE95A0-32BD-46C6-8C98-2B296F7CE129}" Name="DependencyInjectionPractice" PrjFilePath="DependencyInjectionPractice\DependencyInjectionPractice.plcproj" TmcFilePath="DependencyInjectionPractice\DependencyInjectionPractice.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="DependencyInjectionPractice\DependencyInjectionPractice.tmc" TmcHash="{FF9F622D-EF35-9E3F-B144-81234DEC9370}">
 					<Name>DependencyInjectionPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -93,8 +93,8 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project GUID="{0B33C4F3-94B0-4DDB-B097-C87E03C57CAB}" Name="TankFillingSystem" PrjFilePath="TankFillingSystem\TankFillingSystem.plcproj" TmcFilePath="TankFillingSystem\TankFillingSystem.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TankFillingSystem\TankFillingSystem.tmc" TmcHash="{044B5B66-069E-1FC6-F0A0-EF21F69203A3}">
+			<Project Disabled="true" GUID="{0B33C4F3-94B0-4DDB-B097-C87E03C57CAB}" Name="TankFillingSystem" PrjFilePath="TankFillingSystem\TankFillingSystem.plcproj" TmcFilePath="TankFillingSystem\TankFillingSystem.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TankFillingSystem\TankFillingSystem.tmc" TmcHash="{C6DC86CB-49DA-9AD3-931F-61D53A35E67E}">
 					<Name>TankFillingSystem Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -114,7 +114,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{BA766831-95D1-431F-91A2-79281B144481}" Name="InheritancePractice" PrjFilePath="InheritancePractice\InheritancePractice.plcproj" TmcFilePath="InheritancePractice\InheritancePractice.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InheritancePractice\InheritancePractice.tmc" TmcHash="{E03EB1EC-BD7F-28F4-AF1C-4FED0AACB300}">
+				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InheritancePractice\InheritancePractice.tmc" TmcHash="{EF7CEB83-7A36-4B58-7455-F3D866D9DE7A}">
 					<Name>InheritancePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -134,7 +134,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{364AE314-1CC6-4DEF-8FEF-BF355A3E8E6F}" Name="EncapsulationPractice" PrjFilePath="EncapsulationPractice\EncapsulationPractice.plcproj" TmcFilePath="EncapsulationPractice\EncapsulationPractice.tmc" ReloadTmc="true" AmsPort="856" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="EncapsulationPractice\EncapsulationPractice.tmc" TmcHash="{B42AAF66-5D7A-15A1-6C1C-61C4B1A16BBC}">
+				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="EncapsulationPractice\EncapsulationPractice.tmc" TmcHash="{883B2D91-6504-1FA1-32B8-A1998F18CA6D}">
 					<Name>EncapsulationPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -174,7 +174,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{1AD31A4D-55E0-4326-AAF9-27A78E0D9C48}" Name="VariablesPractice" PrjFilePath="VariablesPractice\VariablesPractice.plcproj" TmcFilePath="VariablesPractice\VariablesPractice.tmc" ReloadTmc="true" AmsPort="858" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085021c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{8D58FB06-43E9-F6CB-953E-78D6DCC5ADBA}">
+				<Instance Id="#x085021c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="VariablesPractice\VariablesPractice.tmc" TmcHash="{80F00369-619F-25B1-C687-5B3736943C30}">
 					<Name>VariablesPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

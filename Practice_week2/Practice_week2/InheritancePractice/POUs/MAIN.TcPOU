@@ -13,7 +13,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbVehicle REF= fbCar;
+      <ST><![CDATA[fbVehicle REF= fbTruck;
 fbVehicle.VehicleName('TATA');
 ]]></ST>
     </Implementation>

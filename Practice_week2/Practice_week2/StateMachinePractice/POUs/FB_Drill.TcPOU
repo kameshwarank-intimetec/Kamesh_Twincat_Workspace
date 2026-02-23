@@ -11,7 +11,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[THIS^.TRANS_Check;]]></ST>
+      <ST><![CDATA[]]></ST>
     </Implementation>
     <Transition Name="TRANS_Check" Id="{3e98b030-fb01-478e-be50-7cbc290f2709}">
       <Implementation>

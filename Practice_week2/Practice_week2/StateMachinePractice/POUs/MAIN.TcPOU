@@ -24,7 +24,7 @@ CASE eState OF
 	E_MachineState.IDLE :
 	bDrilling := FALSE;
 	bRetracting := FALSE;
-	IF MAIN.TRANS_DrillCheck THEN
+	IF TRANS_DrillCheck = TRUE THEN
 		eState := E_MachineState.Drilling;
 	END_IF
 	

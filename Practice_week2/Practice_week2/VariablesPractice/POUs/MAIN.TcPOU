@@ -24,7 +24,7 @@ END_VAR
 	fbMotor1.Start();
 	num := fbMotor1.nNum;
 	fbMotor1.nNum := 433;
-	bCopyStart := fbMotor1.bStart;
+	bCopyStart := fbMbRunbRunotor1.bStart;
 	bRun := FALSE;
 END_IF
 ]]></ST>

@@ -7,6 +7,9 @@ VAR
 	nResult : INT;
 	nMark : INT := 34;
 	sGrade : STRING;
+	
+	
+	
 END_VAR
 ]]></Declaration>
     <Implementation>

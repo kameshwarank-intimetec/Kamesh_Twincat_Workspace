@@ -3,13 +3,26 @@
   <POU Name="FB_TataNexon" Id="{899ab903-5695-4ffe-b13d-79245160d5f3}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_TataNexon EXTENDS FB_Car
 
+VAR_INPUT
+	nNum : INT;
+END_VAR
 VAR
 	bStart : BOOL;
+	bDriving : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
+    <Method Name="Drive" Id="{d4b51ee1-4e67-44d0-86ef-49496348bc8c}">
+      <Declaration><![CDATA[METHOD Drive : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bDriving := TRUE;]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="Start" Id="{e8e18b09-07b4-493b-8fdd-1ae28fb607d3}">
       <Declaration><![CDATA[METHOD  Start : BOOL
 VAR_INPUT
@@ -21,6 +34,9 @@ END_VAR
     </Method>
     <LineIds Name="FB_TataNexon">
       <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_TataNexon.Drive">
+      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="FB_TataNexon.Start">
       <LineId Id="5" Count="0" />

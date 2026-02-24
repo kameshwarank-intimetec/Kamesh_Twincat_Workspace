@@ -9,6 +9,9 @@ VAR
 	
 	fbTata : FB_TataNexon ;
 	fbCar : POINTER TO FB_Car;
+	
+	iVehicle : I_Vehicle;
+	pPoint1 : POINTER TO I_Vehicle;
 	bRun: BOOL;
 	num : INT;
 	bCopyStart : BOOL;
@@ -22,7 +25,7 @@ END_VAR
 
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(*IF bRun THEN
+      <ST><![CDATA[IF bRun THEN
 	fbMotor1.Start();
 	fbMotor1.Start();
 	num := fbMotor1.nNum;
@@ -31,10 +34,13 @@ END_VAR
 	bRun := FALSE;
 END_IF
 IF TRANS1 THEN
-	fbCar^.Running();
-END_IF*)
+	//fbCar^.Running();
+	fbTata();
+END_IF
+iVehicle := fbTata;
+pPoint1 := ADR(iVehicle);
 
-
+pPoint1^.Drive();
 ]]></ST>
     </Implementation>
     <Transition Name="TRANS1" Id="{11ed6e56-be5d-4a05-a3e9-39991f5af975}">
@@ -52,7 +58,10 @@ END_IF*)
       <LineId Id="11" Count="0" />
       <LineId Id="52" Count="0" />
       <LineId Id="59" Count="0" />
+      <LineId Id="81" Count="0" />
       <LineId Id="54" Count="0" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="84" Count="0" />
       <LineId Id="61" Count="0" />
       <LineId Id="60" Count="0" />
       <LineId Id="35" Count="0" />

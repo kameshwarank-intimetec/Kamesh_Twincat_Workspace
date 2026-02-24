@@ -154,7 +154,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9A690DF6-169F-488A-9569-E29BE6EEA05E}" Name="StateMachinePractice" PrjFilePath="StateMachinePractice\StateMachinePractice.plcproj" TmcFilePath="StateMachinePractice\StateMachinePractice.tmc" ReloadTmc="true" AmsPort="857" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="StateMachinePractice\StateMachinePractice.tmc" TmcHash="{A2A468FB-39C6-445F-FF4B-E6875C8EBC76}">
+				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="StateMachinePractice\StateMachinePractice.tmc" TmcHash="{8A9D8680-1854-9C55-AB59-4956D7EA52B3}">
 					<Name>StateMachinePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -174,7 +174,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{1AD31A4D-55E0-4326-AAF9-27A78E0D9C48}" Name="VariablesPractice" PrjFilePath="VariablesPractice\VariablesPractice.plcproj" TmcFilePath="VariablesPractice\VariablesPractice.tmc" ReloadTmc="true" AmsPort="858" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085021c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="VariablesPractice\VariablesPractice.tmc" TmcHash="{DCE3095A-A863-0B5D-975A-7DB092A45AAA}">
+				<Instance Id="#x085021c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="VariablesPractice\VariablesPractice.tmc" TmcHash="{DB4AA699-9C8E-78A3-D1A9-2A266BBEEC71}">
 					<Name>VariablesPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -194,7 +194,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{C762CE06-5364-4385-B20D-BCC34526BD09}" Name="AlternateCoolingSystem" PrjFilePath="AlternateCoolingSystem\AlternateCoolingSystem.plcproj" TmcFilePath="AlternateCoolingSystem\AlternateCoolingSystem.tmc" ReloadTmc="true" AmsPort="859" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502200" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="AlternateCoolingSystem\AlternateCoolingSystem.tmc" TmcHash="{6591E0F3-B06F-5971-9EDC-54A0B33D8301}">
+				<Instance Id="#x08502200" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="AlternateCoolingSystem\AlternateCoolingSystem.tmc" TmcHash="{C5C6C732-26E0-B073-D74A-9F34DFA2546D}">
 					<Name>AlternateCoolingSystem Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

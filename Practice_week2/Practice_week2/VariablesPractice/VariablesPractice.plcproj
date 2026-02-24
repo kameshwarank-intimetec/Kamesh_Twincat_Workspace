@@ -30,6 +30,9 @@
     <Compile Include="POUs\FB_TataNexon.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\I_Vehicle.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>

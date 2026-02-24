@@ -14,16 +14,12 @@ END_VAR
       <ST><![CDATA[IF __ISVALIDREF(rTank) THEN
 	IF rTank.fTemperature > fRequiredTemperature THEN
 		rTank.fTemperature := rTank.fTemperature - fCoolingSpeed;
-	ELSE
-		rTank.bAlarm := FALSE;
-		rTank.fTemperature := rTank.fTemperature + fCoolingSpeed;
 	END_IF
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="F_CoolTank">
       <LineId Id="10" Count="0" />
-      <LineId Id="23" Count="3" />
-      <LineId Id="38" Count="0" />
+      <LineId Id="23" Count="1" />
       <LineId Id="21" Count="1" />
     </LineIds>
   </POU>

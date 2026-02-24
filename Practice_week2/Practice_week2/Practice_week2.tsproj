@@ -113,7 +113,7 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project GUID="{BA766831-95D1-431F-91A2-79281B144481}" Name="InheritancePractice" PrjFilePath="InheritancePractice\InheritancePractice.plcproj" TmcFilePath="InheritancePractice\InheritancePractice.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
+			<Project Disabled="true" GUID="{BA766831-95D1-431F-91A2-79281B144481}" Name="InheritancePractice" PrjFilePath="InheritancePractice\InheritancePractice.plcproj" TmcFilePath="InheritancePractice\InheritancePractice.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
 				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InheritancePractice\InheritancePractice.tmc" TmcHash="{6E7EA062-7406-30AB-2925-8386BCF0EC32}">
 					<Name>InheritancePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
@@ -133,7 +133,7 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project GUID="{364AE314-1CC6-4DEF-8FEF-BF355A3E8E6F}" Name="EncapsulationPractice" PrjFilePath="EncapsulationPractice\EncapsulationPractice.plcproj" TmcFilePath="EncapsulationPractice\EncapsulationPractice.tmc" ReloadTmc="true" AmsPort="856" FileArchiveSettings="#x000e" SymbolicMapping="true">
+			<Project Disabled="true" GUID="{364AE314-1CC6-4DEF-8FEF-BF355A3E8E6F}" Name="EncapsulationPractice" PrjFilePath="EncapsulationPractice\EncapsulationPractice.plcproj" TmcFilePath="EncapsulationPractice\EncapsulationPractice.tmc" ReloadTmc="true" AmsPort="856" FileArchiveSettings="#x000e" SymbolicMapping="true">
 				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="EncapsulationPractice\EncapsulationPractice.tmc" TmcHash="{B42AAF66-5D7A-15A1-6C1C-61C4B1A16BBC}">
 					<Name>EncapsulationPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>

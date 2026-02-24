@@ -114,7 +114,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{BA766831-95D1-431F-91A2-79281B144481}" Name="InheritancePractice" PrjFilePath="InheritancePractice\InheritancePractice.plcproj" TmcFilePath="InheritancePractice\InheritancePractice.tmc" ReloadTmc="true" AmsPort="855" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InheritancePractice\InheritancePractice.tmc" TmcHash="{EF7CEB83-7A36-4B58-7455-F3D866D9DE7A}">
+				<Instance Id="#x08502100" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="InheritancePractice\InheritancePractice.tmc" TmcHash="{6E7EA062-7406-30AB-2925-8386BCF0EC32}">
 					<Name>InheritancePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -134,7 +134,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{364AE314-1CC6-4DEF-8FEF-BF355A3E8E6F}" Name="EncapsulationPractice" PrjFilePath="EncapsulationPractice\EncapsulationPractice.plcproj" TmcFilePath="EncapsulationPractice\EncapsulationPractice.tmc" ReloadTmc="true" AmsPort="856" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="EncapsulationPractice\EncapsulationPractice.tmc" TmcHash="{883B2D91-6504-1FA1-32B8-A1998F18CA6D}">
+				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="EncapsulationPractice\EncapsulationPractice.tmc" TmcHash="{B42AAF66-5D7A-15A1-6C1C-61C4B1A16BBC}">
 					<Name>EncapsulationPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -154,7 +154,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{9A690DF6-169F-488A-9569-E29BE6EEA05E}" Name="StateMachinePractice" PrjFilePath="StateMachinePractice\StateMachinePractice.plcproj" TmcFilePath="StateMachinePractice\StateMachinePractice.tmc" ReloadTmc="true" AmsPort="857" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="StateMachinePractice\StateMachinePractice.tmc" TmcHash="{8A9D8680-1854-9C55-AB59-4956D7EA52B3}">
+				<Instance Id="#x08502180" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="StateMachinePractice\StateMachinePractice.tmc" TmcHash="{A2A468FB-39C6-445F-FF4B-E6875C8EBC76}">
 					<Name>StateMachinePractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -174,7 +174,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{1AD31A4D-55E0-4326-AAF9-27A78E0D9C48}" Name="VariablesPractice" PrjFilePath="VariablesPractice\VariablesPractice.plcproj" TmcFilePath="VariablesPractice\VariablesPractice.tmc" ReloadTmc="true" AmsPort="858" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085021c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="VariablesPractice\VariablesPractice.tmc" TmcHash="{80F00369-619F-25B1-C687-5B3736943C30}">
+				<Instance Id="#x085021c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="VariablesPractice\VariablesPractice.tmc" TmcHash="{DCE3095A-A863-0B5D-975A-7DB092A45AAA}">
 					<Name>VariablesPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -190,6 +190,26 @@
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="27" OTCID="#x085021c1"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{C762CE06-5364-4385-B20D-BCC34526BD09}" Name="AlternateCoolingSystem" PrjFilePath="AlternateCoolingSystem\AlternateCoolingSystem.plcproj" TmcFilePath="AlternateCoolingSystem\AlternateCoolingSystem.tmc" ReloadTmc="true" AmsPort="859" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502200" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="AlternateCoolingSystem\AlternateCoolingSystem.tmc" TmcHash="{6591E0F3-B06F-5971-9EDC-54A0B33D8301}">
+					<Name>AlternateCoolingSystem Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010050</OTCID>
+							</ManualConfig>
+							<Priority>22</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="22" OTCID="#x08502201"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

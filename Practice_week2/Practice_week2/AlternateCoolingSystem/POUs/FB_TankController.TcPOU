@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_TankController" Id="{bd5580ac-b1f3-4fa5-92f5-0a91a9517670}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TankController IMPLEMENTS I_TankController
+
+
+VAR_IN_OUT
+	stTank : ST_Tank;
+END_VAR
+VAR
+	eState : E_TankState;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF __ISVALIDREF(stTank) THEN
+	eState := stTank.eState;
+	CheckSafety();
+	CASE eState OF
+		E_TankState.Idle:
+		
+		IF NOT stTank.bAlarm THEN
+			stTank.eState := E_TankState.Filling;
+		END_IF
+		E_TankState.Filling:
+		
+		IF NOT stTank.bAlarm THEN
+			stTank.eState := E_TankState.Filling;
+		END_IF
+		E_TankState.Processing:
+		
+		E_TankState.Dispensing:
+		
+		E_TankState.Cooling:
+		
+		E_TankState.Alarm:
+	END_CASE
+
+	
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="ApplyCooling" Id="{41f3f916-3681-4c60-b39a-5ab8cb364b13}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD ApplyCooling : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF stTank.bAlarm THEN
+	F_CoolTank(stTank);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CheckSafety" Id="{dee3a59f-b24f-4a00-879d-a7220b0c9cf6}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD CheckSafety : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF F_CheckAlarm( pTank := ADR(stTank) ) THEN
+	stTank.bAlarm := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="TransferChemical" Id="{f6ebb983-a058-4a80-a535-bcd72625ef5a}">
+      <Declaration><![CDATA[METHOD TransferChemical : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_TankController">
+      <LineId Id="22" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="42" Count="1" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="70" Count="3" />
+      <LineId Id="61" Count="1" />
+      <LineId Id="75" Count="1" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="63" Count="6" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="40" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_TankController.ApplyCooling">
+      <LineId Id="9" Count="1" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_TankController.CheckSafety">
+      <LineId Id="4" Count="2" />
+    </LineIds>
+    <LineIds Name="FB_TankController.TransferChemical">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

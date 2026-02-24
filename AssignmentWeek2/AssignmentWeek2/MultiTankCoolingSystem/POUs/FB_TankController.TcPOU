@@ -16,12 +16,12 @@ IF __ISVALIDREF(stTank) THEN
 		IF stTank.bTemperatureAlarm THEN
 			ApplyCooling();
 			RETURN;
-		END_IF
-		IF stTank.bLevelAlarm THEN
+			
+		ELSIF stTank.bLevelAlarm THEN
 			DispenseChemical();
 		END_IF
-	END_IF
-	IF NOT (stTank.bTemperatureAlarm) AND NOT (stTank.bLevelAlarm) THEN
+		
+	ELSE
 		TankProcessing();
 	END_IF
 END_IF]]></ST>
@@ -72,12 +72,14 @@ stTank.fLevel := stTank.fLevel + GVL.fProcessLevel;]]></ST>
       <LineId Id="42" Count="0" />
       <LineId Id="60" Count="0" />
       <LineId Id="64" Count="1" />
-      <LineId Id="72" Count="1" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="83" Count="0" />
       <LineId Id="70" Count="1" />
       <LineId Id="69" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="80" Count="1" />
       <LineId Id="59" Count="0" />
-      <LineId Id="45" Count="1" />
-      <LineId Id="40" Count="1" />
+      <LineId Id="41" Count="0" />
     </LineIds>
     <LineIds Name="FB_TankController.ApplyCooling">
       <LineId Id="9" Count="1" />

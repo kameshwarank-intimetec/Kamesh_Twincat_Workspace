@@ -6,21 +6,24 @@ VAR_INPUT
 	pTank : POINTER TO ST_Tank;
 END_VAR
 VAR
-	fRequiredLevel : REAL := 30;
-	fTransferSpeed : REAL := 10;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF pTank <> 0 THEN
-	IF pTank^.fLevel > fRequiredLevel THEN
-		pTank^.fLevel := pTank^.fLevel - fTransferSpeed;
+	IF pTank^.fLevel > GVL.fRequiredLevel THEN
+		pTank^.fLevel := pTank^.fLevel - GVL.fTransferSpeed;
+	ELSE
+		PTank^.bLevelAlarm := FALSE;
 	END_IF
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="TransferChemical">
       <LineId Id="7" Count="0" />
       <LineId Id="9" Count="0" />
-      <LineId Id="12" Count="1" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="22" Count="1" />
+      <LineId Id="25" Count="0" />
       <LineId Id="10" Count="0" />
     </LineIds>
   </POU>

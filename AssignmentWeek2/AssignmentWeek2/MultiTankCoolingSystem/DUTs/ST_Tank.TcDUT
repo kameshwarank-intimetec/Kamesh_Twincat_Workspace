@@ -6,7 +6,8 @@ STRUCT
 	nId : INT;
 	fTemperature : REAL;
 	fLevel : REAL;
-	bAlarm : BOOL;
+	bTemperatureAlarm : BOOL;
+	bLevelAlarm : BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

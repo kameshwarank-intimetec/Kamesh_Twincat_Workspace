@@ -8,15 +8,16 @@ END_VAR
 VAR
 	fLevel : REAL := pTank^.fLevel;
 	fTemperature : REAL := pTank^.fTemperature;
-	fMaxTemperature : REAL := 80;
-	fMaxLevelPercentage : REAL := 90;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 IF pTank <> 0 THEN
-	IF (fLevel > fMaxLevelPercentage) OR (fTemperature > fMaxTemperature )THEN
-		F_CheckAlarm := TRUE;
+	IF fLevel > GVL.fMaxLevelPercentage THEN
+		pTank^.bLevelAlarm := TRUE;
+	END_IF
+	IF fTemperature > GVL.fMaxTemperature THEN
+		pTank^.bTemperatureAlarm := TRUE;
 	END_IF
 END_IF]]></ST>
     </Implementation>
@@ -24,7 +25,9 @@ END_IF]]></ST>
       <LineId Id="11" Count="0" />
       <LineId Id="13" Count="0" />
       <LineId Id="26" Count="1" />
-      <LineId Id="24" Count="1" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="38" Count="2" />
+      <LineId Id="25" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

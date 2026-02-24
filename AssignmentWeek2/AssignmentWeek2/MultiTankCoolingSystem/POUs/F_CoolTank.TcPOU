@@ -6,16 +6,15 @@ VAR_INPUT
 	rTank : REFERENCE TO ST_Tank;
 END_VAR
 VAR
-	fCoolingSpeed : REAL := 3;
-	fRequiredTemperature : REAL := 50;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF __ISVALIDREF(rTank) THEN
-	IF rTank.fTemperature > fRequiredTemperature THEN
-		rTank.fTemperature := rTank.fTemperature - fCoolingSpeed;
+	IF rTank.fTemperature > GVL.fRequiredTemperature THEN
+		rTank.fTemperature := rTank.fTemperature - GVL.fCoolingSpeed;
 	ELSE
-		rTank.bAlarm := FALSE;
+		rTank.bTemperatureAlarm := FALSE;
 	END_IF
 END_IF]]></ST>
     </Implementation>

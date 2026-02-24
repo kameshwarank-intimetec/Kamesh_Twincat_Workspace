@@ -51,9 +51,9 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF stTank.bLevelAlarm THEN
-	TransferChemical( pTank := ADR(stTank) );
-END_IF]]></ST>
+        <ST><![CDATA[
+TransferChemical( pTank := ADR(stTank) );
+]]></ST>
       </Implementation>
     </Method>
     <Method Name="TankProcessing" Id="{39ed6fc7-899f-4f6a-9dac-2b7e80d90cff}">

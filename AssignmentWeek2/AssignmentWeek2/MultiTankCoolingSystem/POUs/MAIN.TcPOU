@@ -3,9 +3,9 @@
   <POU Name="MAIN" Id="{6b8a6ca2-acf4-4660-828c-fe5694732b70}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	stTank1 : ST_Tank := (nId := 101,fTemperature := 80.3, fLevel := 80 );
+	stTank1 : ST_Tank := (nId := 101,fTemperature := 80.2, fLevel := 96 );
 	stTank2 : ST_Tank  := (nId := 102,fTemperature := 72.5, fLevel := 70 );
-	stTank3 : ST_Tank  := (nId := 103,fTemperature := 90.8, fLevel := 95 );
+	stTank3 : ST_Tank  := (nId := 103,fTemperature := 34, fLevel := 95 );
 	
 	fbController : FB_TankController;
 	

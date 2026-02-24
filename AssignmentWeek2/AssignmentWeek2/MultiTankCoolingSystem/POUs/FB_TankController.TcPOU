@@ -41,7 +41,7 @@ F_CoolTank(stTank);
 METHOD CheckSafety : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[F_CheckAlarm( pTank := ADR(stTank) ) 
+        <ST><![CDATA[F_CheckAlarm( pTank := ADR(stTank) ) ;
 ]]></ST>
       </Implementation>
     </Method>

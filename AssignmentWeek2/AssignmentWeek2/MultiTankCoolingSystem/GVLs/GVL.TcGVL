@@ -5,10 +5,13 @@
 VAR_GLOBAL CONSTANT
 	fMaxTemperature : REAL := 80;
 	fMaxLevelPercentage: REAL := 90.0;
-	fCoolingSpeed : REAL := 3;
+	
 	fRequiredTemperature: REAL := 50.0;
 	fRequiredLevel : REAL := 30;
+	
+	fCoolingSpeed : REAL := 10;
 	fTransferSpeed : REAL := 10;
+	
 	fProcessLevel : REAL := 10;
 	fProcessTemperature : REAL := 5;
 END_VAR]]></Declaration>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <POU Name="TransferChemical" Id="{0653ac06-573f-4c7b-bf90-3d41a5ddce1e}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION TransferChemical : BOOL
+    <Declaration><![CDATA[FUNCTION TransferChemical
 VAR_INPUT
 	pTank : POINTER TO ST_Tank;
 END_VAR
@@ -11,10 +11,10 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF pTank <> 0 THEN
-	IF pTank^.fLevel > GVL.fRequiredLevel THEN
-		pTank^.fLevel := pTank^.fLevel - GVL.fTransferSpeed;
+	IF pTank^.fLevel > GVL.GC_TARGET_LEVEL_PERCENT THEN
+		pTank^.fLevel := pTank^.fLevel - GVL.GC_TRANSFER_RATE;
 	ELSE
-		PTank^.bLevelAlarm := FALSE;
+		pTank^.bLevelAlarm := FALSE;
 	END_IF
 END_IF]]></ST>
     </Implementation>

@@ -27,8 +27,8 @@ IF __ISVALIDREF(stTank) THEN
 END_IF]]></ST>
     </Implementation>
     <Method Name="ApplyCooling" Id="{c1b48702-0de2-4894-9461-4ad1944baf13}">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD ApplyCooling : BOOL
+      <Declaration><![CDATA[
+METHOD ApplyCooling 
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[
@@ -37,8 +37,8 @@ F_CoolTank(stTank);
       </Implementation>
     </Method>
     <Method Name="CheckSafety" Id="{690d4314-9b02-4429-8769-3b48f9dada31}">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD CheckSafety : BOOL
+      <Declaration><![CDATA[
+METHOD CheckSafety
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[F_CheckAlarm( pTank := ADR(stTank) ) ;
@@ -46,7 +46,7 @@ METHOD CheckSafety : BOOL
       </Implementation>
     </Method>
     <Method Name="DispenseChemical" Id="{d241761c-e1e3-4d70-816b-b992e91f2d02}">
-      <Declaration><![CDATA[METHOD DispenseChemical : BOOL
+      <Declaration><![CDATA[METHOD DispenseChemical 
 VAR_INPUT
 END_VAR
 ]]></Declaration>
@@ -57,13 +57,13 @@ TransferChemical( pTank := ADR(stTank) );
       </Implementation>
     </Method>
     <Method Name="TankProcessing" Id="{39ed6fc7-899f-4f6a-9dac-2b7e80d90cff}">
-      <Declaration><![CDATA[METHOD TankProcessing : BOOL
+      <Declaration><![CDATA[METHOD TankProcessing
 VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[stTank.fTemperature := stTank.fTemperature + GVL.fProcessTemperature;
-stTank.fLevel := stTank.fLevel + GVL.fProcessLevel;]]></ST>
+        <ST><![CDATA[stTank.fTemperature := stTank.fTemperature + GVL.GC_PROCESS_TEMP;
+stTank.fLevel := stTank.fLevel + GVL.GC_PROCESS_LEVEL;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_TankController">

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <POU Name="F_CheckAlarm" Id="{15ea5920-b8b7-4680-99e1-92531c40edad}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION F_CheckAlarm : BOOL
+    <Declaration><![CDATA[FUNCTION F_CheckAlarm
 VAR_INPUT
 	pTank : POINTER TO ST_Tank;
 END_VAR
@@ -13,10 +13,10 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 IF pTank <> 0 THEN
-	IF fLevel > GVL.fMaxLevelPercentage THEN
+	IF fLevel > GVL.GC_MAX_LEVEL_PERCENT THEN
 		pTank^.bLevelAlarm := TRUE;
 	END_IF
-	IF fTemperature > GVL.fMaxTemperature THEN
+	IF fTemperature > GVL.GC_MAX_TEMPERATURE THEN
 		pTank^.bTemperatureAlarm := TRUE;
 	END_IF
 END_IF]]></ST>

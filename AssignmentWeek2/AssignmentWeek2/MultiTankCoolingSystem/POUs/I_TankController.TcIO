@@ -4,19 +4,19 @@
     <Declaration><![CDATA[INTERFACE I_TankController
 ]]></Declaration>
     <Method Name="ApplyCooling" Id="{d010dc96-5077-445e-9fd3-273069478e21}">
-      <Declaration><![CDATA[METHOD ApplyCooling : BOOL
+      <Declaration><![CDATA[METHOD ApplyCooling 
 VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
     <Method Name="CheckSafety" Id="{822e6ffb-3777-4f38-b443-13017b990ca7}">
-      <Declaration><![CDATA[METHOD CheckSafety : BOOL
+      <Declaration><![CDATA[METHOD CheckSafety
 VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
     <Method Name="DispenseChemical" Id="{3a6fd6f1-e5b7-4545-96d4-3892704c8127}">
-      <Declaration><![CDATA[METHOD DispenseChemical : BOOL
+      <Declaration><![CDATA[METHOD DispenseChemical 
 VAR_INPUT
 END_VAR
 ]]></Declaration>

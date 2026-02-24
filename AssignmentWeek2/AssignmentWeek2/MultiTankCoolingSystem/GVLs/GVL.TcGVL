@@ -3,17 +3,17 @@
   <GVL Name="GVL" Id="{2fb9fffc-91f2-4040-b4c7-3f897fd92de1}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL CONSTANT
-	fMaxTemperature : REAL := 80;
-	fMaxLevelPercentage: REAL := 90.0;
-	
-	fRequiredTemperature: REAL := 50.0;
-	fRequiredLevel : REAL := 30;
-	
-	fCoolingSpeed : REAL := 10;
-	fTransferSpeed : REAL := 10;
-	
-	fProcessLevel : REAL := 10;
-	fProcessTemperature : REAL := 5;
+    GC_MAX_TEMPERATURE          : REAL := 80.0;    
+    GC_MAX_LEVEL_PERCENT        : REAL := 90.0;   
+    
+    GC_TARGET_TEMPERATURE       : REAL := 50.0;   
+    GC_TARGET_LEVEL_PERCENT     : REAL := 30.0;    
+    
+    GC_COOLING_RATE             : REAL := 10.0;   
+    GC_TRANSFER_RATE            : REAL := 10.0;   
+    
+    GC_PROCESS_LEVEL     : REAL := 10.0;    
+    GC_PROCESS_TEMP       : REAL := 5.0;     
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

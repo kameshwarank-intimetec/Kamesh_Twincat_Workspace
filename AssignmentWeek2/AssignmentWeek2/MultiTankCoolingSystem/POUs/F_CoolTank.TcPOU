@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <POU Name="F_CoolTank" Id="{1f0e7e1c-76a6-4d5d-b4ea-ed11eac8e562}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION F_CoolTank : BOOL
+    <Declaration><![CDATA[FUNCTION F_CoolTank 
 VAR_INPUT
 	rTank : REFERENCE TO ST_Tank;
 END_VAR
@@ -11,8 +11,8 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF __ISVALIDREF(rTank) THEN
-	IF rTank.fTemperature > GVL.fRequiredTemperature THEN
-		rTank.fTemperature := rTank.fTemperature - GVL.fCoolingSpeed;
+	IF rTank.fTemperature > GVL.GC_TARGET_TEMPERATURE THEN
+		rTank.fTemperature := rTank.fTemperature - GVL.GC_COOLING_RATE;
 	ELSE
 		rTank.bTemperatureAlarm := FALSE;
 	END_IF

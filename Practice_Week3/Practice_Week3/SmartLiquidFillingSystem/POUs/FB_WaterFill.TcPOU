@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_WaterFill" Id="{53e94c71-6a86-4b7b-a0ff-ca1ba8f74720}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WaterFill IMPLEMENTS I_FillingStrategy
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="ExecuteFill" Id="{f491145d-5092-41c9-9b26-cf7d3b849cf9}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD ExecuteFill: BOOL
+VAR_INPUT
+	stBottle : REFERENCE TO ST_Bottle;
+END_VAR
+
+VAR CONSTANT
+	cFILLING_SPEED: REAL := 10;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF __ISVALIDREF(stBottle) THEN
+	IF stBottle.fCurrentLevel >= stBottle.fTargetLevel THEN
+		ExecuteFill := TRUE;
+	ELSE
+		stBottle.fCurrentLevel := stBottle.fCurrentLevel + cFILLING_SPEED;
+		ExecuteFill := FALSE;
+	END_IF
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_WaterFill">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WaterFill.ExecuteFill">
+      <LineId Id="20" Count="6" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

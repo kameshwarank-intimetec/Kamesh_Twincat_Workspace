@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_FillingStrategy" Id="{519cdf10-2323-421f-84b3-4f02b8705776}">
+    <Declaration><![CDATA[INTERFACE I_FillingStrategy
+]]></Declaration>
+    <Method Name="ExecuteFill" Id="{db11ecaa-1951-495f-a7e4-c8be23aae2e1}">
+      <Declaration><![CDATA[METHOD ExecuteFill : BOOL
+VAR_INPUT
+	stBottle : REFERENCE TO ST_Bottle;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

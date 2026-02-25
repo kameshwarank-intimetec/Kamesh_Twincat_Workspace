@@ -12,6 +12,9 @@
 				<Task Id="5" Priority="21" CycleTime="100000" AmsPort="352" AdtTasks="true">
 					<Name>PlcTask2</Name>
 				</Task>
+				<Task Id="6" Priority="23" CycleTime="100000" AmsPort="353" AdtTasks="true">
+					<Name>PlcTask3</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
@@ -55,8 +58,8 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project GUID="{F6479F5B-D043-4C04-92B8-AEF9EB424EC5}" Name="FileWritingStateMachine" PrjFilePath="FileWritingStateMachine\FileWritingStateMachine.plcproj" TmcFilePath="FileWritingStateMachine\FileWritingStateMachine.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{57C3E4BE-F955-F513-738B-281EB622059D}">
+			<Project Disabled="true" GUID="{F6479F5B-D043-4C04-92B8-AEF9EB424EC5}" Name="FileWritingStateMachine" PrjFilePath="FileWritingStateMachine\FileWritingStateMachine.plcproj" TmcFilePath="FileWritingStateMachine\FileWritingStateMachine.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="FileWritingStateMachine\FileWritingStateMachine.tmc" TmcHash="{57C3E4BE-F955-F513-738B-281EB622059D}">
 					<Name>FileWritingStateMachine Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -72,6 +75,26 @@
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="21" OTCID="#x08502081"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{044A65DD-2299-486C-86A1-9A81AD1B9F29}" Name="SmartLiquidFillingSystem" PrjFilePath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.plcproj" TmcFilePath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.tmc" TmcHash="{0160A137-814D-150A-2255-775AE5433708}">
+					<Name>SmartLiquidFillingSystem Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010060</OTCID>
+							</ManualConfig>
+							<Priority>23</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="23" OTCID="#x085020c1"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{503e582f-e132-4453-86b2-ff7b3fc71ee6}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	bStart : BOOL;
+	
+	stBottle1 : ST_Bottle := (nId := 101, fTargetLevel := 70, eLiquidType := E_LiquidType.HONEY);
+	stBottle2 : ST_Bottle := (nId := 102, fTargetLevel := 85, eLiquidType := E_LiquidType.SODA);
+	stBottle3 : ST_Bottle := (nId := 103, fTargetLevel := 90, eLiquidType := E_LiquidType.WATER);
+	
+	
+	fbStationController1 : FB_StationController;
+	fbStationController2: FB_StationController;
+	fbStationController3 : FB_StationController;
+	
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bStart THEN
+	fbStationController1(stBottle := stBottle1);
+	fbStationController2(stBottle := stBottle2);
+	//fbStationController3(stBottle := stBottle3);
+	bStart := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="18" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

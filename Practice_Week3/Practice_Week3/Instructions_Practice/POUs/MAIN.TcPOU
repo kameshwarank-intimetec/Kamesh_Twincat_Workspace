@@ -9,7 +9,6 @@ VAR
 	sGrade : STRING;
 	
 	
-	
 END_VAR
 ]]></Declaration>
     <Implementation>

@@ -20,21 +20,10 @@ METHOD ApplyCooling
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
-    <Method Name="CheckSafety" Id="{8b875647-f6f6-45de-ab91-5423d7d1628d}">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD CheckSafety
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[]]></ST>
-      </Implementation>
-    </Method>
     <LineIds Name="FB_TankController">
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="FB_TankController.ApplyCooling">
-      <LineId Id="4" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_TankController.CheckSafety">
       <LineId Id="4" Count="0" />
     </LineIds>
   </POU>

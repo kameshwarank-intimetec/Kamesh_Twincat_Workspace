@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{a3d65056-a026-4064-93e5-092b5fb5e321}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	bStart : BOOL;
+	fbCsv : FB_CsvFileWriter;
+	iFileWriter : I_FileWriter;
+	sMessage : STRING := 'This is third message in the file';
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[iFileWriter := fbCsv;
+
+IF bStart THEN
+	iFileWriter.WriteEvent(sMessage);
+	bStart := FALSE;
+END_IF
+fbCsv();]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="14" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

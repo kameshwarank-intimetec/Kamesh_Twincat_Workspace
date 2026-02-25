@@ -79,7 +79,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{044A65DD-2299-486C-86A1-9A81AD1B9F29}" Name="SmartLiquidFillingSystem" PrjFilePath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.plcproj" TmcFilePath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.tmc" TmcHash="{0160A137-814D-150A-2255-775AE5433708}">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.tmc" TmcHash="{3627AFFD-30C5-4AA2-3CCA-D5CA556F2D4E}">
 					<Name>SmartLiquidFillingSystem Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

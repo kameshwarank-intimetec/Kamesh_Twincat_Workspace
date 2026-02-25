@@ -5,22 +5,18 @@
 VAR_INPUT
 	stBottle : REFERENCE TO ST_Bottle;
 END_VAR
-VAR
-	fbHoneyFill : FB_HoneyFill;
-	fbSodaFill : FB_SodaFill;
-	fbWaterFill : FB_WaterFill;
-END_VAR
+
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[CASE stBottle.eLiquidType OF
 	E_LiquidType.HONEY:
-	F_StrategyFunction := fbHoneyFill;
+	F_StrategyFunction := GVL_References.g_fbHoneyFill ;
 	
 	E_LiquidType.SODA:
-	F_StrategyFunction := fbSodaFill;
+	F_StrategyFunction := GVL_References.g_fbSodaFill;
 	
 	E_LiquidType.WATER:
-	F_StrategyFunction := fbWaterFill;
+	F_StrategyFunction := GVL_References.g_fbWaterFill;
 END_CASE]]></ST>
     </Implementation>
     <LineIds Name="F_StrategyFunction">

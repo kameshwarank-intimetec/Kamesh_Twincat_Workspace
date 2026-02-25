@@ -6,11 +6,14 @@
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
+				<Task Id="4" Priority="22" CycleTime="100000" AmsPort="351" AdtTasks="true">
+					<Name>PlcTask1</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{C2DB4470-D9EF-47EB-AF9F-1B763A13C195}" Name="Instructions_Practice" PrjFilePath="Instructions_Practice\Instructions_Practice.plcproj" TmcFilePath="Instructions_Practice\Instructions_Practice.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A849E359-EF5E-E76F-3B4D-01F24D8167C3}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Instructions_Practice\Instructions_Practice.tmc" TmcHash="{E243875C-A579-A293-FEE0-00E35622924A}">
 					<Name>Instructions_Practice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -26,6 +29,26 @@
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{C762CE06-5364-4385-B20D-BCC34526BD09}" Name="AlternateCoolingSystem" PrjFilePath="AlternateCoolingSystem\AlternateCoolingSystem.plcproj" TmcFilePath="AlternateCoolingSystem\AlternateCoolingSystem.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="AlternateCoolingSystem\AlternateCoolingSystem.tmc" TmcHash="{FA767724-5A60-7F2B-BE4A-D07869DEE08F}">
+					<Name>AlternateCoolingSystem Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>22</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="22" OTCID="#x08502041"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

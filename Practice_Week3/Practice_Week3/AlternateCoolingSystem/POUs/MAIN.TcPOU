@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{2c746bd3-19f4-4202-bd9b-780eacf3677c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	stTank1 : ST_Tank := (nId := 101,fTemperature := 80.3, fLevel := 80, bAlarm := FALSE );
+	stTank2 : ST_Tank  := (nId := 102,fTemperature := 72.5, fLevel := 70, bAlarm := FALSE );
+	stTank3 : ST_Tank  := (nId := 103,fTemperature := 90.8, fLevel := 90, bAlarm := FALSE );
+	
+	fbController1 : FB_TankController(stTank1);
+	fbController2 : FB_TankController(stTank2);
+	fbController3 : FB_PressureTankController(stTank3);
+	
+	aTankArray : ARRAY[1..cNUMBER_OF_TANKS] OF I_TankController := [fbController1, fbController2, fbController3];
+	i : INT ;
+	bStart : bool;
+END_VAR
+VAR CONSTANT
+	cNUMBER_OF_TANKS :INT :=3;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bStart THEN
+	FOR i := 1 TO cNUMBER_OF_TANKS DO
+		IF aTankArray[i] <> 0 THEN
+			aTankArray[i].StartController();
+		END_IF
+	END_FOR
+	bStart := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="6" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="32" Count="1" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

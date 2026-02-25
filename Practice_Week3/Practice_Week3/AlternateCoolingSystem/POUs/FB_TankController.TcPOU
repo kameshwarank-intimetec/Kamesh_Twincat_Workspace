@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_TankController" Id="{bd5580ac-b1f3-4fa5-92f5-0a91a9517670}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TankController IMPLEMENTS I_TankController
+
+VAR
+	stTank :REFERENCE TO ST_Tank;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+]]></ST>
+    </Implementation>
+    <Method Name="ApplyCooling" Id="{41f3f916-3681-4c60-b39a-5ab8cb364b13}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD ApplyCooling : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF stTank.bAlarm THEN
+	F_CoolTank(stTank);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CheckSafety" Id="{dee3a59f-b24f-4a00-879d-a7220b0c9cf6}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD CheckSafety : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF F_CheckAlarm( pTank := ADR(stTank) ) THEN
+	stTank.bAlarm := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_init" Id="{2140c440-63a9-4e57-8204-fd7f2509214b}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	_stTank : REFERENCE TO ST_TANK;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[stTank REF= _stTank;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StartController" Id="{b987e19a-3d4a-4066-8261-4d90245bafb8}">
+      <Declaration><![CDATA[METHOD StartController
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF __ISVALIDREF(stTank) THEN
+	CheckSafety();
+	ApplyCooling();
+
+	IF NOT stTank.bAlarm THEN
+		stTank.fTemperature := stTank.fTemperature + 5;
+	END_IF
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_TankController">
+      <LineId Id="22" Count="0" />
+      <LineId Id="41" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_TankController.ApplyCooling">
+      <LineId Id="9" Count="1" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_TankController.CheckSafety">
+      <LineId Id="4" Count="2" />
+    </LineIds>
+    <LineIds Name="FB_TankController.FB_init">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_TankController.StartController">
+      <LineId Id="6" Count="6" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

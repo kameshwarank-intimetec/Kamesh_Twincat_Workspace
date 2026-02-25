@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_PressureTankController" Id="{c0b4c13a-140e-4022-b223-c32a65958e4f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PressureTankController EXTENDS FB_TankController
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="ControlPressure" Id="{9a6bd7d1-25c3-4fb7-9840-43f13dd7b328}">
+      <Declaration><![CDATA[METHOD ControlPressure 
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StartController" Id="{499e4360-ec20-4d53-945e-57af21e713b6}">
+      <Declaration><![CDATA[METHOD StartController
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.StartController();
+ControlPressure();]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_PressureTankController">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PressureTankController.ControlPressure">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PressureTankController.StartController">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

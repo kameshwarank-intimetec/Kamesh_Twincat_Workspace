@@ -21,7 +21,7 @@ END_VAR
       <ST><![CDATA[IF bStart THEN
 	fbStationController1(stBottle := stBottle1);
 	fbStationController2(stBottle := stBottle2);
-	//fbStationController3(stBottle := stBottle3);
+	fbStationController3(stBottle := stBottle3);
 	bStart := FALSE;
 END_IF]]></ST>
     </Implementation>

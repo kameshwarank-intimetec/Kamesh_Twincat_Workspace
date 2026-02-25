@@ -14,7 +14,7 @@ END_VAR
     </Implementation>
     <Method Name="ExecuteFill" Id="{f491145d-5092-41c9-9b26-cf7d3b849cf9}">
       <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD ExecuteFill: BOOL
+METHOD ExecuteFill : BOOL
 VAR_INPUT
 	stBottle : REFERENCE TO ST_Bottle;
 END_VAR

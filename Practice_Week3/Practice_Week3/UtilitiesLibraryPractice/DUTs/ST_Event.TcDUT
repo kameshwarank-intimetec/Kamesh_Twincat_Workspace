@@ -4,9 +4,11 @@
     <Declaration><![CDATA[TYPE ST_Event :
 STRUCT
 	eEventType : E_EventType;
-	
+	eEventSeverity : TcEventSeverity;
+	nEventIdentity : UDINT;
+	sEventText : STRING(255);
+	dtTimestamp : DATE_AND_TIME;
 END_STRUCT
-END_TYPE
-]]></Declaration>
+END_TYPE]]></Declaration>
   </DUT>
 </TcPlcObject>

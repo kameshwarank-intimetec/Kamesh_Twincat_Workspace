@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_EventBuffer" Id="{27e4b659-e0b1-4369-a11b-5735855fd715}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EventBuffer
+
+VAR
+	fbBuffer : FB_MemRingBuffer;
+	aEventArray : ARRAY[0..MAX_EVENTS_TO_BE_STORED] OF BYTE ;
+END_VAR
+VAR CONSTANT
+	MAX_NUMBER_OF_EVENTS : INT := 5;
+	SIZE_OF_EVENT : UDINT := SIZEOF(ST_Event);
+	MAX_EVENTS_TO_BE_STORED : UDINT := SIZE_OF_EVENT * MAX_NUMBER_OF_EVENTS;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="AddEvent" Id="{cb791f98-61bb-4818-a50d-d15cd34f7659}">
+      <Declaration><![CDATA[METHOD AddEvent
+VAR_INPUT
+	stEvent : ST_Event;
+END_VAR
+VAR_OUTPUT
+	bError : BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbBuffer.A_AddTail(
+					pWrite := ADR(stEvent),
+					cbWrite := SIZEOF(stEvent),
+					pBuffer := ADR(aEventArray),
+					cbBuffer := SIZEOF(aEventArray)
+					);
+bError := NOT fbBuffer.bOk;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetAndRemoveEvent" Id="{63e2e7d6-1f08-4ffe-afbc-350459c07e80}">
+      <Declaration><![CDATA[METHOD GetAndRemoveEvent
+VAR_OUTPUT
+	stEvent: ST_Event;
+	bError: BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbBuffer.A_RemoveHead(
+					pRead := ADR(stEvent),
+					cbRead := SIZEOF(stEvent),
+					pBuffer := ADR(aEventArray),
+					cbBuffer := SIZEOF(aEventArray)
+					);
+bError := NOT fbBuffer.bOk;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_EventBuffer">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventBuffer.AddEvent">
+      <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="3" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="13" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventBuffer.GetAndRemoveEvent">
+      <LineId Id="6" Count="5" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

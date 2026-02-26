@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_ProfilerPractice" Id="{3a919baf-a0c6-4189-ac62-1047e3e3c772}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ProfilerPractice
+
+VAR
+	fbProfiler : PROFILER;
+	stProfilerResult : PROFILERSTRUCT;
+	nFactorial : ULINT;
+	n : ULINT := 1000;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbProfiler(START := TRUE, RESET := FALSE);
+Factorial(n := n , nFactorialValue => nFactorial );
+fbProfiler(START := FALSE);
+stProfilerResult := fbProfiler.DATA;]]></ST>
+    </Implementation>
+    <Method Name="Factorial" Id="{795a7f79-0c5e-4563-8b2d-5ee31d6886a1}">
+      <Declaration><![CDATA[METHOD Factorial
+VAR_INPUT
+	n : ULINT;
+END_VAR
+VAR
+	nCounter : ULINT;
+END_VAR
+VAR_OUTPUT
+	nFactorialValue : ULINT := 1;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[FOR nCounter := 1 TO n DO
+	nFactorialValue := nFactorialValue * nCounter;
+END_FOR]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_ProfilerPractice">
+      <LineId Id="9" Count="0" />
+      <LineId Id="19" Count="2" />
+    </LineIds>
+    <LineIds Name="FB_ProfilerPractice.Factorial">
+      <LineId Id="5" Count="0" />
+      <LineId Id="8" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

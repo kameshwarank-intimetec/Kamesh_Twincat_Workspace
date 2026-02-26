@@ -3,6 +3,8 @@
   <DUT Name="ST_Event" Id="{ccd5bd52-0650-478b-815a-fbae2d7d1e9c}">
     <Declaration><![CDATA[TYPE ST_Event :
 STRUCT
+	eEventType : E_EventType;
+	
 END_STRUCT
 END_TYPE
 ]]></Declaration>

@@ -12,16 +12,16 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 IF bStart THEN
-	//fbTimerPulse();
+	fbTimerPulse();
 	//fbToggle();
-	fbTrigger();
+	//fbTrigger();
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="9" Count="0" />
       <LineId Id="31" Count="1" />
       <LineId Id="35" Count="1" />
-      <LineId Id="33" Count="0" />
+      <LineId Id="38" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

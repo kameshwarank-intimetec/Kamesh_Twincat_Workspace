@@ -18,6 +18,9 @@
 				<Task Id="7" Priority="24" CycleTime="100000" AmsPort="354" AdtTasks="true">
 					<Name>PlcTask4</Name>
 				</Task>
+				<Task Id="8" Priority="25" CycleTime="100000" AmsPort="355" AdtTasks="true">
+					<Name>PlcTask5</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
@@ -81,7 +84,7 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project GUID="{044A65DD-2299-486C-86A1-9A81AD1B9F29}" Name="SmartLiquidFillingSystem" PrjFilePath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.plcproj" TmcFilePath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
+			<Project Disabled="true" GUID="{044A65DD-2299-486C-86A1-9A81AD1B9F29}" Name="SmartLiquidFillingSystem" PrjFilePath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.plcproj" TmcFilePath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
 				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="SmartLiquidFillingSystem\SmartLiquidFillingSystem.tmc" TmcHash="{318A17F3-70FE-6E9B-8487-84EAE25FB33F}">
 					<Name>SmartLiquidFillingSystem Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
@@ -119,6 +122,18 @@
 					<TaskPouOids>
 						<TaskPouOid Prio="24" OTCID="#x08502101"/>
 					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{F1822DE5-B6C6-411F-BD74-436368D83E73}" Name="UtilitiesLibraryPractice" PrjFilePath="UtilitiesLibraryPractice\UtilitiesLibraryPractice.plcproj" TmcFilePath="UtilitiesLibraryPractice\UtilitiesLibraryPractice.tmc" ReloadTmc="true" AmsPort="856" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+					<Name>UtilitiesLibraryPractice Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>1</Id>
+							<Name>Default</Name>
+						</Context>
+					</Contexts>
 				</Instance>
 			</Project>
 		</Plc>

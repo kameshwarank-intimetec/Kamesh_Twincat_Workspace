@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{12b2fffa-9e32-409e-9fc5-570eed32ce65}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR	
+	fbToggle : FB_Toggle;
+	fbTimerPulse : FB_TimerPulse;
+	bStart : BOOL;
+	fbTrigger : FB_Triggers;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF bStart THEN
+	//fbTimerPulse();
+	//fbToggle();
+	fbTrigger();
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="9" Count="0" />
+      <LineId Id="31" Count="1" />
+      <LineId Id="35" Count="1" />
+      <LineId Id="33" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

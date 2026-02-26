@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Triggers" Id="{e08d19c1-115f-4243-816b-1bdb02e9830e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Triggers
+
+VAR
+	fbRTrig : R_TRIG;
+	fbFTrig : F_TRIG;
+	bTrigger : BOOL := TRUE;
+	bRCount : INT ;
+	bFCount : INT ;
+	bCycleCount : UDINT ;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbRTrig( CLK := bTrigger );
+fbFTrig (CLK := bTrigger );
+IF fbRTrig.Q THEN
+	bRCount := bRCount + 1;
+END_IF
+IF fbFTrig.Q THEN
+	bFCount := bFCount + 1;
+END_IF
+bCycleCount := bCycleCount + 1;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Triggers">
+      <LineId Id="15" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="16" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

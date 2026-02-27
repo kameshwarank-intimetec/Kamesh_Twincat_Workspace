@@ -13,7 +13,7 @@ END_VAR
       <ST><![CDATA[
 IF bStart THEN
 	fbTimerPulse();
-	//fbToggle();
+	fbToggle();
 	//fbTrigger();
 END_IF]]></ST>
     </Implementation>

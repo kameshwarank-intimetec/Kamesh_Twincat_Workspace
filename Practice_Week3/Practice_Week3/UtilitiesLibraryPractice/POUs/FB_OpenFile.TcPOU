@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_OpenFile" Id="{1cf29e12-b6d9-442c-996b-692ed06927eb}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_OpenFile
+
+VAR
+	fbStartProcess : NT_StartProcess := (NETID := '',TMOUT := T#5S );
+	bError : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbStartProcess(PATHSTR := 'C:\Windows\notepad.exe',
+				DIRNAME := 'D:\Temp\',
+				COMNDLINE := 'Event.txt',
+				START := TRUE
+				);
+bError := fbStartProcess.ERR;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_OpenFile">
+      <LineId Id="9" Count="0" />
+      <LineId Id="12" Count="2" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="16" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

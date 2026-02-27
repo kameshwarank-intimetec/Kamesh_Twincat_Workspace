@@ -16,6 +16,8 @@ VAR
 	bStart: BOOL;
 	
 	fbProfilerPractice : FB_ProfilerPractice;
+	
+	fbOpenFile : FB_OpenFile;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -30,7 +32,9 @@ IF bRemoveEvent THEN
 END_IF
 IF bStart THEN
 	fbProfilerPractice();
-END_IF]]></ST>
+END_IF
+
+fbOpenFile();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
@@ -43,6 +47,8 @@ END_IF]]></ST>
       <LineId Id="24" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="25" Count="2" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="34" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -125,7 +125,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{F1822DE5-B6C6-411F-BD74-436368D83E73}" Name="UtilitiesLibraryPractice" PrjFilePath="UtilitiesLibraryPractice\UtilitiesLibraryPractice.plcproj" TmcFilePath="UtilitiesLibraryPractice\UtilitiesLibraryPractice.tmc" ReloadTmc="true" AmsPort="856" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="UtilitiesLibraryPractice\UtilitiesLibraryPractice.tmc" TmcHash="{98FF4944-7F69-6A7D-408E-AD5D2FE8BCE0}">
+				<Instance Id="#x08502140" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="UtilitiesLibraryPractice\UtilitiesLibraryPractice.tmc" TmcHash="{E5FE0DCC-A394-AA4F-F012-E71B26E0138F}">
 					<Name>UtilitiesLibraryPractice Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Factory" Id="{ceceda62-7ae7-4377-8eaa-3edcee35a4c3}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Factory
+
+VAR
+	fbTon : TON;
+	fbTof : TOF;
+	
+	bMotorOn : BOOL;
+	bFanOn : BOOL;
+	
+	tFanStartDelay : TIME := T#3S;
+	tFanOffDelay : TIME := T#10s;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+	fbTon(IN := bMotorOn, PT := tFanStartDelay);
+	IF fbTon.Q THEN
+		bFanOn := TRUE;
+	END_IF
+	fbTof(IN := bMotorOn , PT := tFanOffDelay);
+	IF NOT fbTof.Q THEN
+		bFanOn := FALSE;
+	END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Factory">
+      <LineId Id="9" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="2" />
+      <LineId Id="30" Count="2" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="19" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

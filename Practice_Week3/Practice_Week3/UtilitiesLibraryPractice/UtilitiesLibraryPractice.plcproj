@@ -39,10 +39,18 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\TimerExample1\FB_Factory.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TimerExample2\FB_LeakDetection.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\TimerExample2" />
+    <Folder Include="POUs\TimerExample1" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

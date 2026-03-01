@@ -4,8 +4,9 @@
     <Declaration><![CDATA[INTERFACE I_WashStrategy
 ]]></Declaration>
     <Method Name="GetDuration" Id="{4f214b80-74b8-4b0b-a1e0-7484f2ccb3ff}">
-      <Declaration><![CDATA[METHOD GetDuration
+      <Declaration><![CDATA[METHOD GetDuration : TIME
 VAR_INPUT
+	stWash : REFERENCE TO ST_Wash;
 END_VAR
 ]]></Declaration>
     </Method>

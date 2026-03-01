@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_SoftWash" Id="{db75bac4-9ece-4aa1-ad1b-7ea85c57614e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SoftWash IMPLEMENTS I_WashStrategy
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="GetDuration" Id="{5610f62e-d353-4b19-81ab-f8bc1457e3bd}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD GetDuration
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{1fc56eb1-f0aa-426e-a966-3c9d946c4f4e}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{35f600ee-1d7f-4132-bc7c-9dbc289bcc2e}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_SoftWash">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SoftWash.GetDuration">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SoftWash.Start">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SoftWash.Stop">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

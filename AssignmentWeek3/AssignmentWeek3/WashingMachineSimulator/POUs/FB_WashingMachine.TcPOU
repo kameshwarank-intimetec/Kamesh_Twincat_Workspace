@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_WashingMachine" Id="{533b8205-1e07-4998-827d-1f3b127b70ad}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WashingMachine
+
+VAR_IN_OUT
+	stWash : ST_Wash;
+END_VAR
+VAR
+	eMachineState : E_MachineState;
+	tTotalTime : TIME ;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="eState" Id="{9eb26405-ab77-4215-9e4b-5261859df458}">
+      <Declaration><![CDATA[PROPERTY eState : E_MachineState]]></Declaration>
+      <Get Name="Get" Id="{75450bf7-8a2e-4da7-bf7a-4c0318bbb720}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[eState := eMachineState;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{0a692673-5a45-4181-a89f-b89da7cd827c}">
+        <Declaration><![CDATA[PRIVATE
+VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[eMachineState := eState;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="SelectStrategy" Id="{6ef3cceb-1fa2-4f2e-af62-8c5ba15a6afb}">
+      <Declaration><![CDATA[METHOD PRIVATE SelectStrategy : I_WashStrategy
+VAR_INPUT
+END_VAR
+VAR
+	fbHeavyWash : FB_HeavyWash;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SelectStrategy := fbHeavyWash;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{d04ebe96-dff9-4b6d-8e28-83c84e090aa8}">
+      <Declaration><![CDATA[METHOD Start : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{eedaa334-e689-4c2e-9e59-a00d7921cfb5}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="tRemainingTime" Id="{2ae82297-0e7a-47c1-bf6f-19f0329c494b}">
+      <Declaration><![CDATA[PROPERTY tRemainingTime : TIME]]></Declaration>
+      <Get Name="Get" Id="{008e38d0-36e6-4810-b6c3-8a0942dcf1d6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[tRemainingTime := tTotalTime;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{d8e58f91-fb47-41b8-be75-38907c1b1b1d}">
+        <Declaration><![CDATA[PRIVATE
+VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[tTotalTime := tRemainingTime;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_WashingMachine">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.eState.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.eState.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.SelectStrategy">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.Start">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.Stop">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.tRemainingTime.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.tRemainingTime.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

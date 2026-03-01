@@ -3,8 +3,8 @@
   <Itf Name="I_Motor" Id="{926770be-804f-46bd-b05e-5e636180ea19}">
     <Declaration><![CDATA[INTERFACE I_Motor
 ]]></Declaration>
-    <Method Name="Rotate" Id="{aaad3284-11bd-4160-b75b-0be7ba28ec3b}">
-      <Declaration><![CDATA[METHOD Rotate : BOOL
+    <Method Name="Start" Id="{aaad3284-11bd-4160-b75b-0be7ba28ec3b}">
+      <Declaration><![CDATA[METHOD Start : BOOL
 VAR_INPUT
 	
 END_VAR

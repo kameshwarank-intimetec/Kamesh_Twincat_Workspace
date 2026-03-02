@@ -18,7 +18,6 @@ VAR
 	nRinseCount : INT;
 	
 	fbTimer : TON ;
-	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -31,9 +30,9 @@ IF __ISVALIDREF(stWash) THEN
 	
 	CASE eMachineState OF
 		E_MachineState.IDLE:
-			bRunning := Start();
-			eMachineState := E_MachineState.CONFIGURING;
-			
+			IF bRunning THEN
+				eMachineState := E_MachineState.CONFIGURING;
+			END_IF
 			
 		E_MachineState.CONFIGURING:
 			nRinseCount := 0;
@@ -48,7 +47,7 @@ IF __ISVALIDREF(stWash) THEN
 			END_IF
 		
 		E_MachineState.FILLING:
-			IF iWaterController.StartFill() THEN
+			IF NOT iWaterController.StartFill() THEN
 				eMachineState := E_MachineState.WASHING;
 			END_IF
 				
@@ -66,17 +65,19 @@ IF __ISVALIDREF(stWash) THEN
 						eMachineState := E_MachineState.FILLING;
 					END_IF
 				END_IF
+				
 		E_MachineState.DRYING:
 			IF iWashStrategy.StartSpin() THEN
 				eMachineState := E_MachineState.COMPLETED;
 			END_IF
 			
 			E_MachineState.COMPLETED:
-			bRunning := FALSE;
+			Stop();
 			fbTimer( IN := bRunning);
 			
 		E_MachineState.ERROR:
-		
+			Stop();
+			
 		
 	END_CASE
 	
@@ -103,9 +104,8 @@ END_VAR
       </Set>
     </Property>
     <Method Name="SelectMotor" Id="{ca951e7e-739c-49fb-acab-b80aa14296a5}">
-      <Declaration><![CDATA[METHOD SelectMotor : I_Motor
-VAR_INPUT
-END_VAR
+      <Declaration><![CDATA[METHOD PRIVATE SelectMotor : I_Motor
+
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[SelectMotor := GVL_References.fbMotor;]]></ST>
@@ -113,11 +113,7 @@ END_VAR
     </Method>
     <Method Name="SelectStrategy" Id="{6ef3cceb-1fa2-4f2e-af62-8c5ba15a6afb}">
       <Declaration><![CDATA[METHOD PRIVATE SelectStrategy : I_WashStrategy
-VAR_INPUT
-END_VAR
-VAR
-	
-END_VAR]]></Declaration>
+]]></Declaration>
       <Implementation>
         <ST><![CDATA[CASE stWash.eWashStrategy OF
 	E_Strategy.SOFT :
@@ -133,30 +129,24 @@ END_CASE]]></ST>
       </Implementation>
     </Method>
     <Method Name="SelectWaterController" Id="{96fd3fe0-7873-43ae-a291-313852a54e2c}">
-      <Declaration><![CDATA[METHOD SelectWaterController : I_WaterController
-VAR_INPUT
-END_VAR
+      <Declaration><![CDATA[METHOD PRIVATE SelectWaterController : I_WaterController
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[SelectWaterController :=  GVL_References.fbWaterController;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Start" Id="{d04ebe96-dff9-4b6d-8e28-83c84e090aa8}">
-      <Declaration><![CDATA[METHOD Start : BOOL
-VAR_INPUT
-END_VAR
+      <Declaration><![CDATA[METHOD Start
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[Start := TRUE;]]></ST>
+        <ST><![CDATA[bRunning := TRUE;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Stop" Id="{eedaa334-e689-4c2e-9e59-a00d7921cfb5}">
-      <Declaration><![CDATA[METHOD Stop : BOOL
-VAR_INPUT
-END_VAR
+      <Declaration><![CDATA[METHOD Stop
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[bRunning := FALSE;]]></ST>
       </Implementation>
     </Method>
     <Property Name="tRemainingTime" Id="{2ae82297-0e7a-47c1-bf6f-19f0329c494b}">
@@ -187,9 +177,8 @@ END_VAR
       <LineId Id="9" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="21" Count="1" />
-      <LineId Id="124" Count="0" />
-      <LineId Id="207" Count="0" />
-      <LineId Id="182" Count="1" />
+      <LineId Id="220" Count="2" />
+      <LineId Id="183" Count="0" />
       <LineId Id="118" Count="0" />
       <LineId Id="208" Count="0" />
       <LineId Id="175" Count="0" />
@@ -214,6 +203,7 @@ END_VAR
       <LineId Id="199" Count="1" />
       <LineId Id="198" Count="0" />
       <LineId Id="80" Count="0" />
+      <LineId Id="225" Count="0" />
       <LineId Id="86" Count="1" />
       <LineId Id="203" Count="1" />
       <LineId Id="88" Count="0" />
@@ -221,7 +211,7 @@ END_VAR
       <LineId Id="205" Count="0" />
       <LineId Id="210" Count="0" />
       <LineId Id="33" Count="0" />
-      <LineId Id="209" Count="0" />
+      <LineId Id="223" Count="1" />
       <LineId Id="206" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="20" Count="0" />

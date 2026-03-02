@@ -23,9 +23,7 @@ END_VAR
 ]]></Declaration>
     </Method>
     <Method Name="Stop" Id="{57200dc2-4fdc-418d-afba-84f2bfe13a2b}">
-      <Declaration><![CDATA[METHOD Stop : BOOL
-VAR_INPUT
-END_VAR
+      <Declaration><![CDATA[METHOD Stop
 ]]></Declaration>
     </Method>
   </Itf>

@@ -43,8 +43,7 @@ END_VAR
     </Method>
     <Method Name="StartSpin" Id="{0bc1b6f3-2a77-45d0-8b68-67eb4e57f35a}">
       <Declaration><![CDATA[METHOD StartSpin : BOOL
-VAR_INPUT
-END_VAR
+
 
 ]]></Declaration>
       <Implementation>
@@ -71,7 +70,7 @@ END_VAR]]></Declaration>
 bWashing := TRUE;
 fbWashTimer( IN := bWashing, PT := tWashTime);
 IF NOT fbWashTimer.Q THEN
-	iMotorRef.ForwardSpin(nMotorWashSpeed);
+	iMotorRef.WashSpin(nMotorWashSpeed);
 ELSE
 	iMotorRef.Stop();
 	bWashing := FALSE;

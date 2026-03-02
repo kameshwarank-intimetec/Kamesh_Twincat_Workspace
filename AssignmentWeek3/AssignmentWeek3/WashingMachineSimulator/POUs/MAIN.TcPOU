@@ -14,16 +14,18 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bStart THEN
-	fbWashingMachine(stWash := stWash1);
-	eWashingMachineState := fbWashingMachine.eState;
-	tRemainingTime := fbWashingMachine.tRemainingTime;
-END_IF]]></ST>
+	fbWashingMachine.Start();
+END_IF
+fbWashingMachine(stWash := stWash1);
+eWashingMachineState := fbWashingMachine.eState;
+tRemainingTime := fbWashingMachine.tRemainingTime;]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="9" Count="0" />
-      <LineId Id="11" Count="0" />
-      <LineId Id="24" Count="1" />
+      <LineId Id="25" Count="0" />
       <LineId Id="12" Count="0" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="26" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

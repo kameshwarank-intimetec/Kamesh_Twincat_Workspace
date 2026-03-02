@@ -50,19 +50,17 @@ END_IF]]></ST>
 METHOD StartFill : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[bInletValve := TRUE;
+        <ST><![CDATA[StartFill := bInletValve := TRUE;
 fbWaterTimer( IN := bInletValve, PT := tFillingTime);
 IF fbWaterTimer.Q THEN
 	bInletValve := FALSE;
-	StartFill := TRUE;
+	StartFill := FALSE;
 	fbWaterTimer( IN := bInletValve);
 END_IF]]></ST>
       </Implementation>
     </Method>
     <Method Name="Stop" Id="{5fc106ba-0ed7-49a2-81c6-6d53439a16ca}">
-      <Declaration><![CDATA[METHOD Stop : BOOL
-VAR_INPUT
-END_VAR
+      <Declaration><![CDATA[METHOD Stop
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[bInletValve := bOutletValve := FALSE;]]></ST>

@@ -68,7 +68,7 @@ END_VAR]]></Declaration>
 bWashing := TRUE;
 fbWashTimer( IN := bWashing, PT := tWashTime);
 IF NOT fbWashTimer.Q THEN
-	iMotorRef.ForwardSpin(nMotorWashSpeed);
+	iMotorRef.WashSpin(nMotorWashSpeed);
 ELSE
 	iMotorRef.Stop();
 	bWashing := FALSE;

@@ -10,14 +10,12 @@
     </Method>
     <Method Name="GetRinseCount" Id="{d1479411-9084-463d-9218-d4168bf7208e}">
       <Declaration><![CDATA[METHOD GetRinseCount : INT
-VAR_INPUT
-END_VAR
+
 ]]></Declaration>
     </Method>
     <Method Name="StartSpin" Id="{fbca942d-b036-4ba4-a09d-4d9eaf80a064}">
       <Declaration><![CDATA[METHOD StartSpin : BOOL
-VAR_INPUT
-END_VAR
+
 ]]></Declaration>
     </Method>
     <Method Name="StartWash" Id="{8dab1351-8746-429b-81bf-0dda65a2482f}">
@@ -29,8 +27,6 @@ END_VAR
     </Method>
     <Method Name="Stop" Id="{08bd247e-b3d3-42fe-b628-1d39af0f0cac}">
       <Declaration><![CDATA[METHOD Stop
-VAR_INPUT
-END_VAR
 ]]></Declaration>
     </Method>
   </Itf>

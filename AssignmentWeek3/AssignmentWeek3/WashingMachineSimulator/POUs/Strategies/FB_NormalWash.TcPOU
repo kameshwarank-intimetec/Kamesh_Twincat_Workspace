@@ -12,8 +12,16 @@ END_VAR
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <Method Name="GetDrySpinDuration" Id="{f1b5f004-2fb0-48a9-bbac-34df605393df}">
-      <Declaration><![CDATA[sMETHOD GetDry : BOOL
+    <Method Name="GetDuration" Id="{8a29e230-838d-43a3-91a5-5fe3abf18f33}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD GetDuration : TIME
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetRinseCount" Id="{ed14ee3b-bdb8-4ff8-9ba6-d9ceaff581ab}">
+      <Declaration><![CDATA[METHOD GetRinseCount : INT
 VAR_INPUT
 END_VAR
 ]]></Declaration>
@@ -21,17 +29,21 @@ END_VAR
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
-    <Method Name="GetWashDuration" Id="{8a29e230-838d-43a3-91a5-5fe3abf18f33}">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD GetWashDuration
+    <Method Name="StartSpin" Id="{d4159490-279d-4bb9-9bc6-a33a50e094da}">
+      <Declaration><![CDATA[METHOD StartSpin : BOOL
+VAR_INPUT
+END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Start" Id="{5d96b91b-8f5c-464e-8848-f2528787bc71}">
+    <Method Name="StartWash" Id="{5d96b91b-8f5c-464e-8848-f2528787bc71}">
       <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD Start
+METHOD StartWash : BOOL
+VAR_INPUT
+	iMotor : I_Motor;
+END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[]]></ST>
@@ -48,13 +60,16 @@ METHOD Stop
     <LineIds Name="FB_NormalWash">
       <LineId Id="9" Count="0" />
     </LineIds>
-    <LineIds Name="FB_NormalWash.GetDrySpinDuration">
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_NormalWash.GetWashDuration">
+    <LineIds Name="FB_NormalWash.GetDuration">
       <LineId Id="4" Count="0" />
     </LineIds>
-    <LineIds Name="FB_NormalWash.Start">
+    <LineIds Name="FB_NormalWash.GetRinseCount">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_NormalWash.StartSpin">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_NormalWash.StartWash">
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="FB_NormalWash.Stop">

@@ -3,8 +3,10 @@
   <POU Name="MAIN" Id="{0dbc5495-60a6-448c-a4e7-d500a20e79f9}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	stWash1 : ST_Wash := (nWaterLevel := 4, eWashStrategy := E_Strategy.NORMAL );
-	fbWashingMachine : FB_WashingMachine;
+	stWash1 : ST_Wash := (nWaterLevel := 4, eWashStrategy := E_Strategy.SOFT );
+	fbMotor : FB_BaseMotor;
+	fbWaterController : FB_WaterController;
+	fbWashingMachine : FB_WashingMachine( _iMotor := fbMotor, _iWaterController := fbWaterController );
 	bStart: BOOL;
 END_VAR
 ]]></Declaration>

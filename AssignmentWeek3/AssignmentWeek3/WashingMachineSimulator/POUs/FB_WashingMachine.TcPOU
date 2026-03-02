@@ -14,11 +14,11 @@ VAR
 	eMachineState : E_MachineState;
 	tTotalTime : TIME ;
 	bRunning : BOOL;
-	tBaseTime : TIME := T#1S;
+	tBaseTime : TIME := T#10S;
+	nRinseCount : INT;
 	
 	fbTimer : TON ;
-	fbMotorTimer1 : TON;
-	fbMotorTimer2 : TOF;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -27,39 +27,51 @@ IF __ISVALIDREF(stWash) THEN
 	
 	CASE eMachineState OF
 		E_MachineState.IDLE:
-		bRunning := Start();
-		iWashStrategy := SelectStrategy();
-		iWaterController := SelectWaterController();
-		iMotor : SelectMotor();
-		IF iWashStrategy <> 0 AND iWaterController <> 0 AND iMotor <> 0 THEN
-			eMachineState := E_MachineState.FILLING;
-		ELSE
-			eMachineState := E_MachineState.ERROR;
-		END_IF
+			bRunning := Start();
+			eMachineState := E_MachineState.CONFIGURING;
+			
+			
+		E_MachineState.CONFIGURING:
+			iWashStrategy := SelectStrategy();
+			IF iWashStrategy <> 0 AND iWaterController <> 0 AND iMotor <> 0 THEN
+				tTotalTime := iWaterController.GetDuration(stWash) + iWashStrategy.GetDuration();
+				eMachineState := E_MachineState.FILLING;
+				fbTimer (IN := bRunning , PT := tTotalTime);
+			ELSE
+				eMachineState := E_MachineState.ERROR;
+			END_IF
 		
 		E_MachineState.FILLING:
-		fbTimer( IN := iWaterController.StartFill(), PT := tBaseTime * stWash.nWaterLevel );
-		IF fbTimer.ET > (fbTimer.PT * 3/4) THEN
-			eMachineState := E_MachineState.WASHING;
-		END_IF
+			iWaterController.StartFill();
+			IF iWaterController.StartFill() THEN
+				eMachineState := E_MachineState.WASHING;
+			END_IF
+				
 		E_MachineState.WASHING:
-		IF fbTimer.Q THEN
-			fbTimer(IN := iWaterController.Stop());
-		END_IF
-		fbMotorTimer1( IN:= iMotor.ForwardSpin())
-		IF fbMotorTimer1.Q THEN
-			eMachineState := E_MachineState.DRAINING;
-		END_IF
+			IF iWashStrategy.StartWash(iMotor) THEN
+				eMachineState := E_MachineState.DRAINING;
+			END_IF
 		
 		E_MachineState.DRAINING:
-		
-		
-		E_MachineState.SPINNING:
-		
+			iWaterController.StartDrain();
+				IF NOT iWaterController.StartDrain() THEN
+					nRinseCount := nRinseCount + 1;
+					IF nRinseCount = iWashStrategy.GetRinseCount() THEN
+						eMachineState := E_MachineState.DRYING;
+						ELSE
+							eMachineState := E_MachineState.FILLING;
+					END_IF
+				END_IF
+		E_MachineState.DRYING:
+		IF iWashStrategy.StartSpin() THEN
+			eMachineState := E_MachineState.COMPLETED;
+		END_IF
 		
 		E_MachineState.COMPLETED:
-		
+		bRunning := FALSE;
+		fbTimer( IN := bRunning);
 		E_MachineState.ERROR:
+		
 	END_CASE
 	
 END_IF]]></ST>
@@ -84,13 +96,27 @@ END_VAR
         </Implementation>
       </Set>
     </Property>
+    <Method Name="FB_init" Id="{04b259e4-eaf8-42f3-bd95-96938e4657c7}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	_iMotor : I_Motor;
+	_iWaterController : I_WaterController;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[iMotor := _iMotor;
+iWaterController := _iWaterController;]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="SelectMotor" Id="{ca951e7e-739c-49fb-acab-b80aa14296a5}">
       <Declaration><![CDATA[METHOD SelectMotor : I_Motor
 VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[SelectMotor := GVL_References.fbMotor;]]></ST>
       </Implementation>
     </Method>
     <Method Name="SelectStrategy" Id="{6ef3cceb-1fa2-4f2e-af62-8c5ba15a6afb}">
@@ -98,20 +124,18 @@ END_VAR
 VAR_INPUT
 END_VAR
 VAR
-	fbNormalWash : FB_NormalWash;
-	fbHeavyWash : FB_HeavyWash;
-	fbSoftWash : FB_SoftWash;
+	
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[CASE stWash.eWashStrategy OF
 	E_Strategy.SOFT :
-	SelectStrategy := fbSoftWash;
+	SelectStrategy :=  GVL_References.fbSoftWash;
 	
 	E_Strategy.NORMAL :
-	SelectStrategy := fbNormalWash;
+	SelectStrategy :=  GVL_References.fbNormalWash;
 	
 	E_Strategy.HARD :
-	SelectStrategy := fbHeavyWash;
+	SelectStrategy :=  GVL_References.fbHeavyWash;
 	
 END_CASE]]></ST>
       </Implementation>
@@ -122,7 +146,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[SelectWaterController :=  GVL_References.fbWaterController;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Start" Id="{d04ebe96-dff9-4b6d-8e28-83c84e090aa8}">
@@ -168,30 +192,41 @@ END_VAR
       <LineId Id="9" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="21" Count="1" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="119" Count="0" />
-      <LineId Id="122" Count="0" />
-      <LineId Id="136" Count="0" />
-      <LineId Id="44" Count="0" />
-      <LineId Id="123" Count="0" />
-      <LineId Id="125" Count="1" />
       <LineId Id="124" Count="0" />
+      <LineId Id="207" Count="0" />
+      <LineId Id="182" Count="1" />
       <LineId Id="118" Count="0" />
+      <LineId Id="175" Count="0" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="185" Count="0" />
+      <LineId Id="179" Count="0" />
+      <LineId Id="186" Count="0" />
+      <LineId Id="180" Count="1" />
+      <LineId Id="171" Count="1" />
       <LineId Id="25" Count="0" />
-      <LineId Id="121" Count="0" />
-      <LineId Id="66" Count="0" />
-      <LineId Id="131" Count="0" />
+      <LineId Id="189" Count="0" />
       <LineId Id="129" Count="0" />
+      <LineId Id="187" Count="1" />
+      <LineId Id="162" Count="0" />
       <LineId Id="27" Count="0" />
-      <LineId Id="133" Count="2" />
-      <LineId Id="132" Count="0" />
-      <LineId Id="138" Count="2" />
+      <LineId Id="140" Count="0" />
+      <LineId Id="190" Count="1" />
       <LineId Id="76" Count="0" />
       <LineId Id="29" Count="0" />
+      <LineId Id="192" Count="1" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="195" Count="0" />
+      <LineId Id="197" Count="0" />
+      <LineId Id="199" Count="1" />
+      <LineId Id="198" Count="0" />
       <LineId Id="80" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="86" Count="2" />
-      <LineId Id="31" Count="2" />
+      <LineId Id="86" Count="1" />
+      <LineId Id="203" Count="1" />
+      <LineId Id="88" Count="0" />
+      <LineId Id="31" Count="1" />
+      <LineId Id="205" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="206" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="20" Count="0" />
       <LineId Id="19" Count="0" />
@@ -201,6 +236,10 @@ END_VAR
     </LineIds>
     <LineIds Name="FB_WashingMachine.eState.Set">
       <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.FB_init">
+      <LineId Id="7" Count="0" />
+      <LineId Id="10" Count="0" />
     </LineIds>
     <LineIds Name="FB_WashingMachine.SelectMotor">
       <LineId Id="5" Count="0" />

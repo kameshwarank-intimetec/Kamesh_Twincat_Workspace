@@ -3,22 +3,27 @@
   <Itf Name="I_WashStrategy" Id="{6c2c2703-ab12-4238-99e3-cc10feaf744e}">
     <Declaration><![CDATA[INTERFACE I_WashStrategy
 ]]></Declaration>
-    <Method Name="GetDrySpinDuration" Id="{324383dc-ea0a-45f0-bdf6-eb7201ccf735}">
-      <Declaration><![CDATA[sMETHOD GetDry : BOOL
+    <Method Name="GetDuration" Id="{4f214b80-74b8-4b0b-a1e0-7484f2ccb3ff}">
+      <Declaration><![CDATA[METHOD GetDuration : TIME
+
+]]></Declaration>
+    </Method>
+    <Method Name="GetRinseCount" Id="{d1479411-9084-463d-9218-d4168bf7208e}">
+      <Declaration><![CDATA[METHOD GetRinseCount : INT
 VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Method Name="GetWashDuration" Id="{4f214b80-74b8-4b0b-a1e0-7484f2ccb3ff}">
-      <Declaration><![CDATA[METHOD GetWashDuration : TIME
+    <Method Name="StartSpin" Id="{fbca942d-b036-4ba4-a09d-4d9eaf80a064}">
+      <Declaration><![CDATA[METHOD StartSpin : BOOL
 VAR_INPUT
-	stWash : REFERENCE TO ST_Wash;
 END_VAR
 ]]></Declaration>
     </Method>
-    <Method Name="Start" Id="{8dab1351-8746-429b-81bf-0dda65a2482f}">
-      <Declaration><![CDATA[METHOD Start
+    <Method Name="StartWash" Id="{8dab1351-8746-429b-81bf-0dda65a2482f}">
+      <Declaration><![CDATA[METHOD StartWash : BOOL
 VAR_INPUT
+	iMotor : I_Motor;
 END_VAR
 ]]></Declaration>
     </Method>

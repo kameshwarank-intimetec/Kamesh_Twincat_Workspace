@@ -3,6 +3,13 @@
   <Itf Name="I_WaterController" Id="{012b58e9-6e55-44d0-9c5b-8788f5458c55}">
     <Declaration><![CDATA[INTERFACE I_WaterController
 ]]></Declaration>
+    <Method Name="GetDuration" Id="{b3a329eb-3e42-46bb-a615-ebad9e5af793}">
+      <Declaration><![CDATA[METHOD GetDuration : TIME
+VAR_INPUT
+	stWash : REFERENCE TO ST_Wash;
+END_VAR
+]]></Declaration>
+    </Method>
     <Method Name="StartDrain" Id="{25053972-740d-4e05-b8dd-5a7435364f92}">
       <Declaration><![CDATA[METHOD StartDrain : BOOL
 VAR_INPUT

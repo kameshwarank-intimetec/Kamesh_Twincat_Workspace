@@ -41,7 +41,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[n]]></ST>
+        <ST><![CDATA[bEnable := TRUE;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Stop" Id="{6ac747cd-6170-4826-8baa-995ada24ee4f}">

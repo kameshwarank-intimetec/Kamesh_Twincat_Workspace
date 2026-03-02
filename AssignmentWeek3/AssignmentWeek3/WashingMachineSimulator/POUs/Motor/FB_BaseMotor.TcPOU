@@ -11,17 +11,6 @@ END_VAR
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <Method Name="BackwardSpin" Id="{a9fd3b77-b5fb-444e-8219-337111ee392b}">
-      <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD BackwardSpin : BOOL
-VAR_INPUT
-	nMotorSpeed	: INT;
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[]]></ST>
-      </Implementation>
-    </Method>
     <Method Name="DrySpin" Id="{ef8e60bc-43e2-4077-a193-f1d492cbfc42}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD DrySpin : BOOL
@@ -55,9 +44,6 @@ END_VAR
     </Method>
     <LineIds Name="FB_BaseMotor">
       <LineId Id="9" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_BaseMotor.BackwardSpin">
-      <LineId Id="7" Count="0" />
     </LineIds>
     <LineIds Name="FB_BaseMotor.DrySpin">
       <LineId Id="7" Count="0" />

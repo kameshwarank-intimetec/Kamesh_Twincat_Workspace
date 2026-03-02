@@ -14,7 +14,7 @@ VAR
 	eMachineState : E_MachineState;
 	tTotalTime : TIME ;
 	bRunning : BOOL;
-	tBaseTime : TIME := T#10S;
+	tBaseTime : TIME := T#5S;
 	nRinseCount : INT;
 	
 	fbTimer : TON ;
@@ -23,6 +23,10 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
+IF tTotalTime <> T#0S THEN
+	fbTimer (IN := bRunning , PT := tTotalTime);
+END_IF
+
 IF __ISVALIDREF(stWash) THEN
 	
 	CASE eMachineState OF
@@ -32,17 +36,18 @@ IF __ISVALIDREF(stWash) THEN
 			
 			
 		E_MachineState.CONFIGURING:
+			nRinseCount := 0;
 			iWashStrategy := SelectStrategy();
+			iMotor := SelectMotor();
+			iWaterController := SelectWaterController();
 			IF iWashStrategy <> 0 AND iWaterController <> 0 AND iMotor <> 0 THEN
-				tTotalTime := iWaterController.GetDuration(stWash) + iWashStrategy.GetDuration();
+				tTotalTime := iWaterController.GetDuration(stWash) * iWashStrategy.GetRinseCount() + iWashStrategy.GetDuration();
 				eMachineState := E_MachineState.FILLING;
-				fbTimer (IN := bRunning , PT := tTotalTime);
 			ELSE
 				eMachineState := E_MachineState.ERROR;
 			END_IF
 		
 		E_MachineState.FILLING:
-			iWaterController.StartFill();
 			IF iWaterController.StartFill() THEN
 				eMachineState := E_MachineState.WASHING;
 			END_IF
@@ -53,24 +58,25 @@ IF __ISVALIDREF(stWash) THEN
 			END_IF
 		
 		E_MachineState.DRAINING:
-			iWaterController.StartDrain();
 				IF NOT iWaterController.StartDrain() THEN
 					nRinseCount := nRinseCount + 1;
 					IF nRinseCount = iWashStrategy.GetRinseCount() THEN
 						eMachineState := E_MachineState.DRYING;
-						ELSE
-							eMachineState := E_MachineState.FILLING;
+					ELSE
+						eMachineState := E_MachineState.FILLING;
 					END_IF
 				END_IF
 		E_MachineState.DRYING:
-		IF iWashStrategy.StartSpin() THEN
-			eMachineState := E_MachineState.COMPLETED;
-		END_IF
-		
-		E_MachineState.COMPLETED:
-		bRunning := FALSE;
-		fbTimer( IN := bRunning);
+			IF iWashStrategy.StartSpin() THEN
+				eMachineState := E_MachineState.COMPLETED;
+			END_IF
+			
+			E_MachineState.COMPLETED:
+			bRunning := FALSE;
+			fbTimer( IN := bRunning);
+			
 		E_MachineState.ERROR:
+		
 		
 	END_CASE
 	
@@ -96,20 +102,6 @@ END_VAR
         </Implementation>
       </Set>
     </Property>
-    <Method Name="FB_init" Id="{04b259e4-eaf8-42f3-bd95-96938e4657c7}">
-      <Declaration><![CDATA[METHOD FB_init : BOOL
-VAR_INPUT
-	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
-	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
-	_iMotor : I_Motor;
-	_iWaterController : I_WaterController;
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[iMotor := _iMotor;
-iWaterController := _iWaterController;]]></ST>
-      </Implementation>
-    </Method>
     <Method Name="SelectMotor" Id="{ca951e7e-739c-49fb-acab-b80aa14296a5}">
       <Declaration><![CDATA[METHOD SelectMotor : I_Motor
 VAR_INPUT
@@ -171,10 +163,11 @@ END_VAR
       <Declaration><![CDATA[PROPERTY tRemainingTime : TIME]]></Declaration>
       <Get Name="Get" Id="{008e38d0-36e6-4810-b6c3-8a0942dcf1d6}">
         <Declaration><![CDATA[VAR
+	
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[tRemainingTime := tTotalTime;]]></ST>
+          <ST><![CDATA[tRemainingTime := tTotalTime - fbTimer.ET;]]></ST>
         </Implementation>
       </Get>
       <Set Name="Set" Id="{d8e58f91-fb47-41b8-be75-38907c1b1b1d}">
@@ -188,6 +181,8 @@ END_VAR
       </Set>
     </Property>
     <LineIds Name="FB_WashingMachine">
+      <LineId Id="214" Count="1" />
+      <LineId Id="218" Count="1" />
       <LineId Id="17" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="18" Count="0" />
@@ -196,15 +191,14 @@ END_VAR
       <LineId Id="207" Count="0" />
       <LineId Id="182" Count="1" />
       <LineId Id="118" Count="0" />
+      <LineId Id="208" Count="0" />
       <LineId Id="175" Count="0" />
+      <LineId Id="216" Count="1" />
       <LineId Id="178" Count="0" />
       <LineId Id="185" Count="0" />
-      <LineId Id="179" Count="0" />
-      <LineId Id="186" Count="0" />
-      <LineId Id="180" Count="1" />
+      <LineId Id="179" Count="2" />
       <LineId Id="171" Count="1" />
       <LineId Id="25" Count="0" />
-      <LineId Id="189" Count="0" />
       <LineId Id="129" Count="0" />
       <LineId Id="187" Count="1" />
       <LineId Id="162" Count="0" />
@@ -213,7 +207,7 @@ END_VAR
       <LineId Id="190" Count="1" />
       <LineId Id="76" Count="0" />
       <LineId Id="29" Count="0" />
-      <LineId Id="192" Count="1" />
+      <LineId Id="193" Count="0" />
       <LineId Id="201" Count="0" />
       <LineId Id="195" Count="0" />
       <LineId Id="197" Count="0" />
@@ -225,7 +219,9 @@ END_VAR
       <LineId Id="88" Count="0" />
       <LineId Id="31" Count="1" />
       <LineId Id="205" Count="0" />
+      <LineId Id="210" Count="0" />
       <LineId Id="33" Count="0" />
+      <LineId Id="209" Count="0" />
       <LineId Id="206" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="20" Count="0" />
@@ -236,10 +232,6 @@ END_VAR
     </LineIds>
     <LineIds Name="FB_WashingMachine.eState.Set">
       <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_WashingMachine.FB_init">
-      <LineId Id="7" Count="0" />
-      <LineId Id="10" Count="0" />
     </LineIds>
     <LineIds Name="FB_WashingMachine.SelectMotor">
       <LineId Id="5" Count="0" />

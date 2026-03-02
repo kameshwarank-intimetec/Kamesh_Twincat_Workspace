@@ -7,7 +7,7 @@ VAR
 	bInletValve : BOOL;
 	bOutletValve : BOOL;
 	
-	tBaseTime : TIME := T#10S;
+	tBaseTime : TIME := T#5S;
 	tFillingTime : TIME ;
 	tDrainingTime : TIME ;
 	

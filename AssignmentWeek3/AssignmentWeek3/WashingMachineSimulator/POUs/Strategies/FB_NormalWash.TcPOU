@@ -2,59 +2,87 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <POU Name="FB_NormalWash" Id="{3a7130f4-98e7-4e05-a785-86970010f516}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_NormalWash IMPLEMENTS I_WashStrategy
-VAR_INPUT
-END_VAR
-VAR_OUTPUT
-END_VAR
 VAR
-END_VAR
-]]></Declaration>
+	
+	nRinseCount : INT := 1;
+	iMotorRef : I_Motor;
+	bWashing : BOOL;
+	bDrying : BOOL;
+	
+	tWashTime : TIME := T#7S;
+	nMotorWashSpeed : INT := 200;
+	
+	nMotorDrySpeed : INT := 850; 
+	nMotorDryTime : TIME := T#10S;
+	
+	fbWashTimer : TON;
+END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <Method Name="GetDuration" Id="{8a29e230-838d-43a3-91a5-5fe3abf18f33}">
+    <Method Name="GetDuration" Id="{b5b70cb8-03b7-4354-8055-c86cab03175a}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD GetDuration : TIME
-]]></Declaration>
+VAR
+END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[GetDuration := tWashTime * (nRinseCount+1) + nMotorDryTime ;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="GetRinseCount" Id="{ed14ee3b-bdb8-4ff8-9ba6-d9ceaff581ab}">
+    <Method Name="GetRinseCount" Id="{03515c40-f598-4215-bace-ab8f6e9aa6e5}">
       <Declaration><![CDATA[METHOD GetRinseCount : INT
 VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[GetRinseCount := nRinseCount+1;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="StartSpin" Id="{d4159490-279d-4bb9-9bc6-a33a50e094da}">
+    <Method Name="StartSpin" Id="{3e0160ad-333c-4fad-a335-dc57c6bab799}">
       <Declaration><![CDATA[METHOD StartSpin : BOOL
 VAR_INPUT
 END_VAR
+
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[bDrying := TRUE;
+fbWashTimer( IN := bDrying, PT := nMotorDryTime);
+IF NOT fbWashTimer.Q THEN
+	iMotorRef.DrySpin(nMotorDrySpeed);
+ELSE
+	iMotorRef.Stop();
+	bDrying := FALSE;
+	fbWashTimer( IN := bDrying);
+	StartSpin := TRUE;
+END_IF]]></ST>
       </Implementation>
     </Method>
-    <Method Name="StartWash" Id="{5d96b91b-8f5c-464e-8848-f2528787bc71}">
+    <Method Name="StartWash" Id="{69dd0ee7-099b-4517-9527-988e14f55875}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD StartWash : BOOL
 VAR_INPUT
 	iMotor : I_Motor;
-END_VAR
-]]></Declaration>
+END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[iMotorRef := iMotor;
+bWashing := TRUE;
+fbWashTimer( IN := bWashing, PT := tWashTime);
+IF NOT fbWashTimer.Q THEN
+	iMotorRef.ForwardSpin(nMotorWashSpeed);
+ELSE
+	iMotorRef.Stop();
+	bWashing := FALSE;
+	fbWashTimer( IN := bWashing);
+	StartWash := TRUE;
+END_IF]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Stop" Id="{6de0414a-4a56-4f90-9038-d4f00b94516c}">
+    <Method Name="Stop" Id="{b09bc4bf-8e6a-44e6-9d9f-bed3ba5c8b26}">
       <Declaration><![CDATA[{warning 'add method implementation '}
 METHOD Stop
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[bWashing := FALSE;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_NormalWash">
@@ -67,10 +95,18 @@ METHOD Stop
       <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="FB_NormalWash.StartSpin">
+      <LineId Id="7" Count="8" />
       <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="FB_NormalWash.StartWash">
       <LineId Id="4" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="15" Count="0" />
     </LineIds>
     <LineIds Name="FB_NormalWash.Stop">
       <LineId Id="4" Count="0" />

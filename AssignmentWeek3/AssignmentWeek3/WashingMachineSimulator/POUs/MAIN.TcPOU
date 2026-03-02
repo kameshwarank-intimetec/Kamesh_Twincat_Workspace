@@ -4,20 +4,26 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	stWash1 : ST_Wash := (nWaterLevel := 4, eWashStrategy := E_Strategy.SOFT );
-	fbMotor : FB_BaseMotor;
-	fbWaterController : FB_WaterController;
-	fbWashingMachine : FB_WashingMachine( _iMotor := fbMotor, _iWaterController := fbWaterController );
+	
+	fbWashingMachine : FB_WashingMachine();
 	bStart: BOOL;
+	
+	eWashingMachineState : E_MachineState;
+	tRemainingTime : TIME;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bStart THEN
 	fbWashingMachine(stWash := stWash1);
+	eWashingMachineState := fbWashingMachine.eState;
+	tRemainingTime := fbWashingMachine.tRemainingTime;
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="9" Count="0" />
-      <LineId Id="11" Count="1" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="24" Count="1" />
+      <LineId Id="12" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

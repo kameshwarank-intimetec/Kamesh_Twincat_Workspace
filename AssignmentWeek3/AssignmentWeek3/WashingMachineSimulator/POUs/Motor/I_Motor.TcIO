@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_Motor" Id="{926770be-804f-46bd-b05e-5e636180ea19}">
+    <Declaration><![CDATA[INTERFACE I_Motor
+]]></Declaration>
+    <Method Name="BackwardSpin" Id="{d93a06aa-29f7-40b7-b4a0-b7908f03256e}">
+      <Declaration><![CDATA[METHOD BackwardSpin : BOOL
+VAR_INPUT
+	nMotorSpeed : INT;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="DrySpin" Id="{2d17a97c-320f-442a-b73f-4d22dc8dd440}">
+      <Declaration><![CDATA[METHOD DrySpin : BOOL
+VAR_INPUT
+	nMotorSpeed : INT;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="ForwardSpin" Id="{42bbddb8-6174-49a2-9ced-f394ddff1965}">
+      <Declaration><![CDATA[METHOD ForwardSpin : BOOL
+VAR_INPUT
+	nMotorSpeed : INT;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{985aa12f-6584-4cba-b670-0479dc0cbaf6}">
+      <Declaration><![CDATA[METHOD Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

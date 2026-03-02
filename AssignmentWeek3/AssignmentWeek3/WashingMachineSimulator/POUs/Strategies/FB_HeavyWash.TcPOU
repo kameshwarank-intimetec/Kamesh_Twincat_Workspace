@@ -2,19 +2,34 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <POU Name="FB_HeavyWash" Id="{9f802e7e-d184-4f69-9a2e-1ffb9c72b5ed}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_HeavyWash IMPLEMENTS I_WashStrategy
-VAR_INPUT
-END_VAR
-VAR_OUTPUT
-END_VAR
+
 VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <Method Name="GetDuration" Id="{ec67eb37-0347-4b70-b83b-68d9b1c95420}">
+    <Method Name="GetDrySpinDuration" Id="{e38e6bab-0d8b-4512-8957-ba0b9cc131b4}">
+      <Declaration><![CDATA[sMETHOD GetDry : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetRinseCount" Id="{eda082a6-3a5a-4023-9350-45fbfbf96f1a}">
+      <Declaration><![CDATA[METHOD GetRinseCount
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetWashDuration" Id="{ec67eb37-0347-4b70-b83b-68d9b1c95420}">
       <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD GetDuration
+METHOD GetWashDuration
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[]]></ST>
@@ -39,7 +54,13 @@ METHOD Stop
     <LineIds Name="FB_HeavyWash">
       <LineId Id="9" Count="0" />
     </LineIds>
-    <LineIds Name="FB_HeavyWash.GetDuration">
+    <LineIds Name="FB_HeavyWash.GetDrySpinDuration">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_HeavyWash.GetRinseCount">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_HeavyWash.GetWashDuration">
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="FB_HeavyWash.Start">

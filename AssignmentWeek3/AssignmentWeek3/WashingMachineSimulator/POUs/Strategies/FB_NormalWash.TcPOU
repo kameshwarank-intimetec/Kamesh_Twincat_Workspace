@@ -12,9 +12,18 @@ END_VAR
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <Method Name="GetDuration" Id="{8a29e230-838d-43a3-91a5-5fe3abf18f33}">
+    <Method Name="GetDrySpinDuration" Id="{f1b5f004-2fb0-48a9-bbac-34df605393df}">
+      <Declaration><![CDATA[sMETHOD GetDry : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetWashDuration" Id="{8a29e230-838d-43a3-91a5-5fe3abf18f33}">
       <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD GetDuration
+METHOD GetWashDuration
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[]]></ST>
@@ -39,7 +48,10 @@ METHOD Stop
     <LineIds Name="FB_NormalWash">
       <LineId Id="9" Count="0" />
     </LineIds>
-    <LineIds Name="FB_NormalWash.GetDuration">
+    <LineIds Name="FB_NormalWash.GetDrySpinDuration">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_NormalWash.GetWashDuration">
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="FB_NormalWash.Start">

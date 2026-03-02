@@ -3,8 +3,14 @@
   <Itf Name="I_WashStrategy" Id="{6c2c2703-ab12-4238-99e3-cc10feaf744e}">
     <Declaration><![CDATA[INTERFACE I_WashStrategy
 ]]></Declaration>
-    <Method Name="GetDuration" Id="{4f214b80-74b8-4b0b-a1e0-7484f2ccb3ff}">
-      <Declaration><![CDATA[METHOD GetDuration : TIME
+    <Method Name="GetDrySpinDuration" Id="{324383dc-ea0a-45f0-bdf6-eb7201ccf735}">
+      <Declaration><![CDATA[sMETHOD GetDry : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="GetWashDuration" Id="{4f214b80-74b8-4b0b-a1e0-7484f2ccb3ff}">
+      <Declaration><![CDATA[METHOD GetWashDuration : TIME
 VAR_INPUT
 	stWash : REFERENCE TO ST_Wash;
 END_VAR

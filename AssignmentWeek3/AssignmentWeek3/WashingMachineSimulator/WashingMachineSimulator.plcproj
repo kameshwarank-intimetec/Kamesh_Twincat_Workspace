@@ -36,16 +36,19 @@
     <Compile Include="POUs\FB_WashingMachine.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\I_Motor.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\I_WashStrategy.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Strategies\FB_DualMotor.TcPOU">
+    <Compile Include="POUs\Motor\FB_BaseMotor.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Motor\I_Motor.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Pump\FB_WaterController.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Pump\I_WaterController.TcIO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Strategies\FB_HeavyWash.TcPOU">
@@ -57,10 +60,15 @@
     <Compile Include="POUs\Strategies\FB_SoftWash.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Strategies\I_WashStrategy.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\Motor" />
+    <Folder Include="POUs\Pump" />
     <Folder Include="POUs\Strategies" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

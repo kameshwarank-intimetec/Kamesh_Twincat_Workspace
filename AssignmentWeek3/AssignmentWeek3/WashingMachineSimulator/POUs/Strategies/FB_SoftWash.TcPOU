@@ -3,28 +3,36 @@
   <POU Name="FB_SoftWash" Id="{db75bac4-9ece-4aa1-ad1b-7ea85c57614e}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SoftWash IMPLEMENTS I_WashStrategy
 
-VAR_OUTPUT
-	fMotorSpeed : INT := 100;
-	fSpinningTime : TIME := T#2s;
-END_VAR
 VAR
-	tBaseTime : TIME := T#5S;
+	tWashTime : TIME := T#5S;
+	nRinseCount : INT := 1;
+	nMotorWashSpeed : INT := 100;
+	nMotorSpinSpeed : INT := 700; 
 END_VAR
 
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <Method Name="GetDuration" Id="{5610f62e-d353-4b19-81ab-f8bc1457e3bd}">
+    <Method Name="GetDrySpinDuration" Id="{0a0a7225-dde3-4522-9539-48307216de21}">
+      <Declaration><![CDATA[sMETHOD GetDry : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetWashDuration" Id="{5610f62e-d353-4b19-81ab-f8bc1457e3bd}">
       <Declaration><![CDATA[{warning 'add method implementation '}
-METHOD GetDuration : TIME
+METHOD GetWashDuration : TIME
 VAR_INPUT
 	stWash : REFERENCE TO ST_Wash;
 END_VAR
 VAR
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[GetDuration := tBaseTime * stWash.nWaterLevel;]]></ST>
+        <ST><![CDATA[GetWashDuration := tBaseTime * stWash.nWaterLevel;]]></ST>
       </Implementation>
     </Method>
     <Method Name="Start" Id="{1fc56eb1-f0aa-426e-a966-3c9d946c4f4e}">
@@ -48,7 +56,10 @@ METHOD Stop
     <LineIds Name="FB_SoftWash">
       <LineId Id="9" Count="0" />
     </LineIds>
-    <LineIds Name="FB_SoftWash.GetDuration">
+    <LineIds Name="FB_SoftWash.GetDrySpinDuration">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SoftWash.GetWashDuration">
       <LineId Id="4" Count="0" />
     </LineIds>
     <LineIds Name="FB_SoftWash.Start">

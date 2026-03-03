@@ -15,6 +15,7 @@ VAR
 	tTotalTime : TIME ;
 	bRunning : BOOL;
 	tBaseTime : TIME := T#5S;
+	tRemainingWashingTime : TIME ;
 	nRinseCount : INT;
 	
 	fbTimer : TON ;
@@ -24,6 +25,7 @@ END_VAR
       <ST><![CDATA[
 IF tTotalTime <> T#0S THEN
 	fbTimer (IN := bRunning , PT := tTotalTime);
+	tRemainingTime := fbTimer.PT - fbTimer.ET;
 END_IF
 
 IF __ISVALIDREF(stWash) THEN
@@ -41,6 +43,7 @@ IF __ISVALIDREF(stWash) THEN
 			iWaterController := SelectWaterController();
 			IF iWashStrategy <> 0 AND iWaterController <> 0 AND iMotor <> 0 THEN
 				tTotalTime := iWaterController.GetDuration(stWash) * iWashStrategy.GetRinseCount() + iWashStrategy.GetDuration();
+				tRemainingTime := tTotalTime;
 				eMachineState := E_MachineState.FILLING;
 			ELSE
 				eMachineState := E_MachineState.ERROR;
@@ -71,7 +74,7 @@ IF __ISVALIDREF(stWash) THEN
 				eMachineState := E_MachineState.COMPLETED;
 			END_IF
 			
-			E_MachineState.COMPLETED:
+		E_MachineState.COMPLETED:
 			Stop();
 			fbTimer( IN := bRunning);
 			
@@ -122,7 +125,7 @@ END_VAR
 	E_Strategy.NORMAL :
 	SelectStrategy :=  GVL_References.fbNormalWash;
 	
-	E_Strategy.HARD :
+	E_Strategy.HEAVY :
 	SelectStrategy :=  GVL_References.fbHeavyWash;
 	
 END_CASE]]></ST>
@@ -153,11 +156,11 @@ END_CASE]]></ST>
       <Declaration><![CDATA[PROPERTY tRemainingTime : TIME]]></Declaration>
       <Get Name="Get" Id="{008e38d0-36e6-4810-b6c3-8a0942dcf1d6}">
         <Declaration><![CDATA[VAR
-	
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[tRemainingTime := tTotalTime - fbTimer.ET;]]></ST>
+          <ST><![CDATA[tRemainingTime := tRemainingWashingTime;
+]]></ST>
         </Implementation>
       </Get>
       <Set Name="Set" Id="{d8e58f91-fb47-41b8-be75-38907c1b1b1d}">
@@ -166,13 +169,15 @@ VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[tTotalTime := tRemainingTime;]]></ST>
+          <ST><![CDATA[tRemainingWashingTime := tRemainingTime;]]></ST>
         </Implementation>
       </Set>
     </Property>
     <LineIds Name="FB_WashingMachine">
       <LineId Id="214" Count="1" />
-      <LineId Id="218" Count="1" />
+      <LineId Id="218" Count="0" />
+      <LineId Id="246" Count="0" />
+      <LineId Id="219" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="18" Count="0" />
@@ -185,6 +190,7 @@ END_VAR
       <LineId Id="216" Count="1" />
       <LineId Id="178" Count="0" />
       <LineId Id="185" Count="0" />
+      <LineId Id="245" Count="0" />
       <LineId Id="179" Count="2" />
       <LineId Id="171" Count="1" />
       <LineId Id="25" Count="0" />
@@ -247,6 +253,7 @@ END_VAR
       <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="FB_WashingMachine.tRemainingTime.Get">
+      <LineId Id="6" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_WashingMachine.tRemainingTime.Set">

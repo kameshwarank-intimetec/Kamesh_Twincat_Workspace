@@ -9,7 +9,7 @@ VAR
 	bWashing : BOOL;
 	bDrying : BOOL;
 	
-	tWashTime : TIME := T#7S;
+	tWashTime : TIME := T#15S;
 	nMotorWashSpeed : INT := 200;
 	
 	nMotorDrySpeed : INT := 850; 

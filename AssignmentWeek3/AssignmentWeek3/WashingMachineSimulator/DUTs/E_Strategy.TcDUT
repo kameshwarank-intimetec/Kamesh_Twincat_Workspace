@@ -7,7 +7,7 @@ TYPE E_Strategy :
 (
 	SOFT := 0,
 	NORMAL,
-	HARD
+	HEAVY
 );
 END_TYPE
 ]]></Declaration>

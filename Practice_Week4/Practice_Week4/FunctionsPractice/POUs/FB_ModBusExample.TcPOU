@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_ModBusExample" Id="{ce5a885b-c4f4-47d9-b1de-e3517741924d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ModBusExample
+
+VAR
+	fbReadCoil : FB_MBReadCoils;
+	nReadValue : BYTE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbReadCoil(
+	sIPAddr:= '172.22.1.14', 
+	nTCPPort:= 502 , 
+	nUnitID:=16#FF , 
+	nQuantity:= 1, 
+	nMBAddr:= 0, 
+	cbLength:= SIZEOF(nReadValue), 
+	pDestAddr:= ADR(nReadValue) , 
+	bExecute:= TRUE, 
+	tTimeout:= , 
+	bBusy=> , 
+	bError=> , 
+	nErrId=> , 
+	cbRead=> );]]></ST>
+    </Implementation>
+    <LineIds Name="FB_ModBusExample">
+      <LineId Id="11" Count="12" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

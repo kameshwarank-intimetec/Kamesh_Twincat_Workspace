@@ -19,10 +19,13 @@ IF NOT fbTof.Q	THEN
 	bStart := TRUE;
 END_IF
 
+
 ]]></ST>
     </Implementation>
     <LineIds Name="FB_Toggle">
-      <LineId Id="13" Count="8" />
+      <LineId Id="13" Count="7" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="21" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>

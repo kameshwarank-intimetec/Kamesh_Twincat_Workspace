@@ -39,7 +39,8 @@ END_IF
 
 //fbOpenFile();
 //fbFactory();
-fbLeakDetection();]]></ST>
+fbLeakDetection();
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
@@ -55,6 +56,7 @@ fbLeakDetection();]]></ST>
       <LineId Id="35" Count="0" />
       <LineId Id="34" Count="0" />
       <LineId Id="55" Count="1" />
+      <LineId Id="78" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

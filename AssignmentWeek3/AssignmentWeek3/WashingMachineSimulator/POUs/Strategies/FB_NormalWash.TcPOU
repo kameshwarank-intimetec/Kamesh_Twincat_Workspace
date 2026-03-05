@@ -3,8 +3,8 @@
   <POU Name="FB_NormalWash" Id="{3a7130f4-98e7-4e05-a785-86970010f516}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_NormalWash IMPLEMENTS I_WashStrategy
 VAR
-	
-	nRinseCount : INT := 1;
+	nWashCount : INT := 1;
+	nRinseCount : INT := 2;
 	iMotorRef : I_Motor;
 	bWashing : BOOL;
 	bDrying : BOOL;
@@ -26,7 +26,7 @@ METHOD GetDuration : TIME
 VAR
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[GetDuration := tWashTime * (nRinseCount+1) + nMotorDryTime ;]]></ST>
+        <ST><![CDATA[GetDuration := tWashTime * (nRinseCount + nWashCount) + nMotorDryTime ;]]></ST>
       </Implementation>
     </Method>
     <Method Name="GetRinseCount" Id="{03515c40-f598-4215-bace-ab8f6e9aa6e5}">
@@ -35,7 +35,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[GetRinseCount := nRinseCount+1;]]></ST>
+        <ST><![CDATA[GetRinseCount := nRinseCount + nWashCount;]]></ST>
       </Implementation>
     </Method>
     <Method Name="StartSpin" Id="{3e0160ad-333c-4fad-a335-dc57c6bab799}">

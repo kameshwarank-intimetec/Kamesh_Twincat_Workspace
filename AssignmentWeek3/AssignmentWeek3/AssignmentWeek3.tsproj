@@ -13,7 +13,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{75F927F5-10C7-40A5-932C-B7FA9B38CD1C}" Name="WashingMachineSimulator" PrjFilePath="WashingMachineSimulator\WashingMachineSimulator.plcproj" TmcFilePath="WashingMachineSimulator\WashingMachineSimulator.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="WashingMachineSimulator\WashingMachineSimulator.tmc" TmcHash="{C6675911-F2B3-A564-7911-DEDD0F2AC40B}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="WashingMachineSimulator\WashingMachineSimulator.tmc" TmcHash="{F72B55BF-697E-61C4-9EAF-A03FBADC6F61}">
 					<Name>WashingMachineSimulator Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

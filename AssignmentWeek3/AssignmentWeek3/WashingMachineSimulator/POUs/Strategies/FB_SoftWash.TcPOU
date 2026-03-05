@@ -4,7 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SoftWash IMPLEMENTS I_WashStrategy
 
 VAR
-	
+	nWashCount : INT := 1;
 	nRinseCount : INT := 1;
 	iMotorRef : I_Motor;
 	bWashing : BOOL;
@@ -29,7 +29,7 @@ METHOD GetDuration : TIME
 VAR
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[GetDuration := tWashTime * (nRinseCount+1) + nMotorDryTime ;]]></ST>
+        <ST><![CDATA[GetDuration := tWashTime * (nRinseCount + nWashCount) + nMotorDryTime ;]]></ST>
       </Implementation>
     </Method>
     <Method Name="GetRinseCount" Id="{a4f0e20d-04de-4f2a-9742-23b6eaab6815}">
@@ -38,7 +38,7 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[GetRinseCount := nRinseCount+1;]]></ST>
+        <ST><![CDATA[GetRinseCount := nRinseCount + nWashCount;]]></ST>
       </Implementation>
     </Method>
     <Method Name="StartSpin" Id="{0bc1b6f3-2a77-45d0-8b68-67eb4e57f35a}">

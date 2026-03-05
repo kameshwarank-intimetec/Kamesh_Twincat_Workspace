@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_ModBusWriteExample" Id="{0b542982-ca5c-41c8-b6f9-2115a310dee0}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ModBusWriteExample
+
+VAR
+	fbWriteCoil : FB_MBWriteSingleCoil;
+	nWriteValue : WORD := 16#FF00;
+	fbTrig : R_TRIG;
+	eState : (WAIT, TRIGGER, WRITE);
+	nadsErrNumber : UDINT; 
+	// Mapping a bit for a Coil (Address 0 in Modbus Poll)
+    bMyCoil AT %MX0.0 : BOOL; 
+    
+    // Mapping a word for a Holding Register (Address 0 in Modbus Poll)
+    nMyRegister AT %MB0 : WORD;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// 1. Always call the FB so it can process its internal state
+fbWriteCoil(
+	sIPAddr:= '127.0.0.1' , 
+	nTCPPort:= 50502, 
+	nUnitID:= 1, 
+	nMBAddr:= 0 , 
+	nValue:= nWriteValue
+	);
+fbTrig();
+
+CASE eState OF
+	WAIT: 
+		fbWriteCoil.bExecute := FALSE; // Reset trigger for next time
+		IF fbTrig.Q THEN
+			eState := TRIGGER;
+		END_IF
+	
+	TRIGGER:
+		fbWriteCoil.bExecute := TRUE; // Start the rising edge
+		eState := WRITE;
+		
+	
+	WRITE:
+		IF NOT fbWriteCoil.bBusy THEN
+			IF fbWriteCoil.bError THEN
+				nadsErrNumber := fbWriteCoil.nErrId;
+			ELSE
+				// Success! nReadValue now contains your data
+				nadsErrNumber := 0;
+			END_IF
+			
+			fbWriteCoil.bExecute := FALSE; // Turn off the request
+			eState := WAIT;
+		END_IF
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_ModBusWriteExample">
+      <LineId Id="158" Count="33" />
+      <LineId Id="28" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

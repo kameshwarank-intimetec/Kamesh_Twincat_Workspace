@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_ModBusReadExample" Id="{ce5a885b-c4f4-47d9-b1de-e3517741924d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ModBusReadExample
+
+VAR
+	fbReadCoil : FB_MBReadCoils;
+	nReadValue : BYTE;
+	fbTrig : R_TRIG;
+	eState : (WAIT, TRIGGER, READ);
+	nadsErrNumber : UDINT; 
+	// Mapping a bit for a Coil (Address 0 in Modbus Poll)
+    bMyCoil AT %MX0.0 : BOOL; 
+    
+    // Mapping a word for a Holding Register (Address 0 in Modbus Poll)
+    nMyRegister AT %MB0 : WORD;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// 1. Always call the FB so it can process its internal state
+fbReadCoil(
+	sIPAddr    := '127.0.0.1', 
+	nTCPPort   := 50502, 
+	nUnitID    := 1, // Changed to 1, check your slave settings
+	nQuantity  := 1, 
+	nMBAddr    := 0, 
+	cbLength   := SIZEOF(nReadValue), 
+	pDestAddr  := ADR(nReadValue), 
+	tTimeout   := T#5S
+);
+
+fbTrig();
+
+CASE eState OF
+	WAIT: 
+		fbReadCoil.bExecute := FALSE; // Reset trigger for next time
+		IF fbTrig.Q THEN
+			eState := TRIGGER;
+		END_IF
+	
+	TRIGGER:
+		fbReadCoil.bExecute := TRUE; // Start the rising edge
+		eState := READ;
+		
+	READ:
+		IF NOT fbReadCoil.bBusy THEN
+			IF fbReadCoil.bError THEN
+				nadsErrNumber := fbReadCoil.nErrId;
+			ELSE
+				// Success! nReadValue now contains your data
+				nadsErrNumber := 0;
+			END_IF
+			
+			fbReadCoil.bExecute := FALSE; // Turn off the request
+			eState := WAIT;
+		END_IF
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_ModBusReadExample">
+      <LineId Id="62" Count="36" />
+      <LineId Id="28" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

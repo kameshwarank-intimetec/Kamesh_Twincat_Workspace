@@ -77,6 +77,8 @@ IF __ISVALIDREF(stWash) THEN
 		E_MachineState.COMPLETED:
 			Stop();
 			fbTimer( IN := bRunning);
+			tTotalTime := T#0S;
+			tRemainingTime := tTotalTime;
 			
 		E_MachineState.ERROR:
 			Stop();
@@ -215,6 +217,7 @@ END_VAR
       <LineId Id="88" Count="0" />
       <LineId Id="31" Count="1" />
       <LineId Id="205" Count="0" />
+      <LineId Id="266" Count="1" />
       <LineId Id="210" Count="0" />
       <LineId Id="33" Count="0" />
       <LineId Id="223" Count="1" />

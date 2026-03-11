@@ -50,7 +50,7 @@ artifacts/
 *_i.h
 *.ilk
 *.meta
-*.obj
+#*.obj
 *.pch
 *.pdb
 *.pgc
@@ -262,8 +262,8 @@ __pycache__/
 *.project.~u
 
 # --- TwinCAT Temporary Files (DO NOT PUSH) ---
-*.tmc
-*.tpy
+#*.tmc
+#*.tpy
 *.ads
 *.xti
 *.bak
@@ -348,37 +348,3 @@ _Config/
 *.pid
 *.log
 
-# Ignore TwinCAT compiled binaries and temp files
-_Config/
-_Boot/
-*.compileinfo
-LineIDs.obj
-LineIDs.vis
-# --- TwinCAT HMI (TE2000) Specifics ---
-# Ignore the local engineering server (the cause of your .pid error)
-.engineering_servers/
-
-# # Ignore local user settings and layout caches
-# .hmiframework/
-# .hmipkgs/
-# *.user
-
-# Ignore build output and published files
-bin/
-obj/
-publish/
-
-# --- TwinCAT PLC Specifics ---
-# Ignore compiled binaries and visualization line IDs
-_Config/
-_Boot/
-*.compileinfo
-*.bak
-LineIDs.obj
-LineIDs.vis
-*.tmc.unm
-
-# --- Windows/System ---
-Thumbs.db
-Desktop.ini
-.DS_Store

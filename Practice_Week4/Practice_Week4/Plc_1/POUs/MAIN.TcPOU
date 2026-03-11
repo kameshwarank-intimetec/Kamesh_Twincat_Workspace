@@ -1,27 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <POU Name="MAIN" Id="{6f8a7c5c-65cf-49f7-b333-8561dc956ed3}" SpecialFunc="None">
+  <POU Name="MAIN" Id="{fbcf839e-58f6-4279-ae35-e59b3861a9d2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fbRead : FB_ModBusReadExample;
-	fbWrite : FB_ModBusWriteExample;
-	
+	bStart : BOOL;
+	bRunning : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbRead();
-fbWrite();
-IF GVL.bStart THEN
-	GVL.nCounter := GVL.nCounter + 1;
-	
+      <ST><![CDATA[IF bStart THEN
+	bRunning := TRUE;
+ELSE
+	bRunning := FALSE;
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
       <LineId Id="8" Count="0" />
-      <LineId Id="16" Count="1" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="18" Count="0" />
+      <LineId Id="10" Count="1" />
+      <LineId Id="9" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

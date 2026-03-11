@@ -11,16 +11,11 @@ END_VAR
     <Implementation>
       <ST><![CDATA[fbRead();
 fbWrite();
-IF GVL.bStart THEN
-	GVL.nCounter := GVL.nCounter + 1;
-	
-END_IF]]></ST>
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
       <LineId Id="8" Count="0" />
-      <LineId Id="16" Count="1" />
-      <LineId Id="20" Count="0" />
       <LineId Id="18" Count="0" />
     </LineIds>
   </POU>

@@ -358,10 +358,10 @@ LineIDs.vis
 # Ignore the local engineering server (the cause of your .pid error)
 .engineering_servers/
 
-# Ignore local user settings and layout caches
-.hmiframework/
-.hmipkgs/
-*.user
+# # Ignore local user settings and layout caches
+# .hmiframework/
+# .hmipkgs/
+# *.user
 
 # Ignore build output and published files
 bin/

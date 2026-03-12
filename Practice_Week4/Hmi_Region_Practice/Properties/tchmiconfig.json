@@ -35,28 +35,30 @@
       "type": "Stylesheet"
     }
   ],
-  "userControls": [
+  "userControls": [],
+  "content": [
     {
-      "url": "UserControl1.usercontrol"
+      "url": "Contents/Content1.content",
+      "preload": false
+    },
+    {
+      "url": "Contents/Content2.content",
+      "preload": false
     }
   ],
-  "content": [],
   "views": [
     {
       "url": "Desktop.view",
+      "preload": false
+    },
+    {
+      "url": "View1.view",
       "preload": false
     }
   ],
   "userFunctions": [],
   "symbols": {
-    "internal": {
-      "Boolean_1": {
-        "value": true,
-        "type": "tchmi:general#/definitions/BOOL",
-        "persist": false,
-        "readonly": false
-      }
-    }
+    "internal": {}
   },
   "trigger": [],
   "actionTemplates": [],

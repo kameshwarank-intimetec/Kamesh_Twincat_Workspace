@@ -10,7 +10,7 @@
 
   <div id="ViewDesktopBeckhoffLogo" data-tchmi-type="tchmi-image" 
        data-tchmi-src="Images/Beckhoff_Logo.svg"
-       data-tchmi-left="20" data-tchmi-top="20" 
+       data-tchmi-left="58" data-tchmi-top="11" 
        data-tchmi-width="194" data-tchmi-height="57">
 
   </div>
@@ -572,4 +572,9 @@
   "color": "None"
 }
 </script>
+
+<div id="UserControl1_1" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="197" data-tchmi-height-unit="px" data-tchmi-left="287" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl1.usercontrol" data-tchmi-top="444" data-tchmi-top-unit="px" data-tchmi-width="325" data-tchmi-width-unit="px">
+
+</div>
+
 </div>

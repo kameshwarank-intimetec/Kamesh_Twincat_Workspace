@@ -1,0 +1,37 @@
+﻿{
+  "parameters": [
+    {
+      "name": "data-tchmi-control1",
+      "displayName": "control1",
+      "visible": true,
+      "type": "tchmi:general#/definitions/STRING(80)",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "control1",
+      "propertySetterName": "setControl1",
+      "propertyGetterName": "getControl1"
+    },
+    {
+      "name": "data-tchmi-control2",
+      "displayName": "control2",
+      "visible": true,
+      "type": "tchmi:general#/definitions/String",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "control2",
+      "propertySetterName": "setControl2",
+      "propertyGetterName": "getControl2"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "C:/TwinCAT/Functions/TE2000-HMI-Engineering/Infrastructure/TcHmiFramework/Latest/Schema/UserControlConfig.Schema.json",
+  "description": "NewUserControl "
+}

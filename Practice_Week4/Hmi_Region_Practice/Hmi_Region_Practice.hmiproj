@@ -10,10 +10,10 @@
     <HmiTitle>Please enter your Title...</HmiTitle>
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
-    <Name>Hmi_Practice_1</Name>
-    <HmiCommunicationRouterPort>10101</HmiCommunicationRouterPort>
+    <Name>Hmi_Region_Practice</Name>
+    <HmiCommunicationRouterPort>10102</HmiCommunicationRouterPort>
     <HmiFrameworkVersion>Latest</HmiFrameworkVersion>
-    <HmiCommunicationServerPort>3000</HmiCommunicationServerPort>
+    <HmiCommunicationServerPort>3002</HmiCommunicationServerPort>
     <HmiInitial>1.10.1342.3</HmiInitial>
     <HmiRecent>1.10.1342.3</HmiRecent>
   </PropertyGroup>
@@ -25,7 +25,7 @@
   <Import Project="$(TwinCATHmi_Targets)" />
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>f8e8f10c-50fa-449d-89c9-ed798c5c45d5</ProjectGuid>
+    <ProjectGuid>53418321-884c-423e-ab3b-63d98b99122a</ProjectGuid>
     <RootNamespace>TwinCAT3HmiProject</RootNamespace>
     <AssemblyName>TwinCAT3HmiProject</AssemblyName>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
@@ -83,10 +83,7 @@
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <Target Name="Clean" DependsOnTargets="BaseClean" />
   <ItemGroup>
-    <Content Include="UserControl1.usercontrol">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="UserControl1.usercontrol.json">
+    <Content Include="View1.view">
       <SubType>Content</SubType>
     </Content>
     <Folder Include=".hmipkgs" />
@@ -97,6 +94,7 @@
     <Folder Include="Imports\Images" />
     <Folder Include="Imports\Videos" />
     <Folder Include="Localization" />
+    <Folder Include="Contents" />
     <Folder Include="Server\Extensions\ADS" />
     <Folder Include="Server\Extensions\TcHmiEventLogger" />
     <Folder Include="Server\Extensions\TcHmiLua" />
@@ -110,7 +108,7 @@
     <Folder Include="Themes\Base\" />
     <Folder Include="Fonts" />
     <Folder Include="Server">
-      <WorkingDirectory>Hmi_Practice_1</WorkingDirectory>
+      <WorkingDirectory>Hmi_Region_Practice</WorkingDirectory>
     </Folder>
     <Folder Include="Server\Extensions" />
     <Content Include=".tfignore">
@@ -124,6 +122,12 @@
     <Content Include=".hmipkgs\packages.hmipkgs">
       <SubType>Content</SubType>
       <Visible>true</Visible>
+    </Content>
+    <Content Include="Contents\Content1.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Contents\Content2.content">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="FavIcon.ico">
       <SubType>Content</SubType>

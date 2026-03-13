@@ -1,4 +1,29 @@
 {
-    "recipeList": {},
-    "recipeTypeList": {}
+    "recipeList": {
+        "Recipe_1": {
+            "recipeTypeName": "Recipe1",
+            "values": {
+                "PLC4.MAIN.bToggle": false
+            }
+        }
+    },
+    "recipeTypeList": {
+        "Recipe1": {
+            "members": {
+                "PLC4.MAIN.bToggle": {
+                    "defaultValue": false,
+                    "enabled": true,
+                    "group": "",
+                    "order": 0,
+                    "schema": {},
+                    "symbol": "PLC4.MAIN.bToggle",
+                    "unit": ""
+                }
+            },
+            "options": {
+                "enabled": "None"
+            },
+            "recipeTypeNames": []
+        }
+    }
 }

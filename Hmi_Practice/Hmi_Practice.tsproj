@@ -12,6 +12,9 @@
 				<Task Id="5" Priority="22" CycleTime="100000" AmsPort="352" AdtTasks="true">
 					<Name>PlcTask2</Name>
 				</Task>
+				<Task Id="6" Priority="23" CycleTime="100000" AmsPort="353" AdtTasks="true">
+					<Name>PlcTask3</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
@@ -56,7 +59,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{4C4FD00B-3855-49E7-B972-57040AD84833}" Name="Practice_3" PrjFilePath="Practice_3\Practice_3.plcproj" TmcFilePath="Practice_3\Practice_3.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{AC252C87-53A6-48C9-FBBC-8C15DC37DAA4}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Practice_3\Practice_3.tmc" TmcHash="{AC252C87-53A6-48C9-FBBC-8C15DC37DAA4}">
 					<Name>Practice_3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -72,6 +75,26 @@
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="22" OTCID="#x08502081"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{94B4E7B2-B0F6-4779-B2DA-C5ADE1A67F7F}" Name="Practice_4" PrjFilePath="Practice_4\Practice_4.plcproj" TmcFilePath="Practice_4\Practice_4.tmc" ReloadTmc="true" AmsPort="854" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x085020c0" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{2DD888FF-BE61-7800-85DA-FED63065E789}">
+					<Name>Practice_4 Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010060</OTCID>
+							</ManualConfig>
+							<Priority>23</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="23" OTCID="#x085020c1"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

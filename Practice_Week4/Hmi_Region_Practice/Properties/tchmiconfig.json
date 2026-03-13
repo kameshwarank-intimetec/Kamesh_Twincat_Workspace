@@ -35,7 +35,11 @@
       "type": "Stylesheet"
     }
   ],
-  "userControls": [],
+  "userControls": [
+    {
+      "url": "UserControl/UserControl1.usercontrol"
+    }
+  ],
   "content": [
     {
       "url": "Contents/Content1.content",
@@ -56,12 +60,79 @@
       "preload": false
     }
   ],
-  "userFunctions": [],
+  "userFunctions": [
+    {
+      "url": "Functions/Function_1.js"
+    }
+  ],
   "symbols": {
     "internal": {}
   },
   "trigger": [],
-  "actionTemplates": [],
+  "actionTemplates": [
+    {
+      "name": "ToggleBool",
+      "description": "Toggles the boolean value of a variable",
+      "category": "Action Templates",
+      "actions": [
+        {
+          "objectType": "Condition",
+          "active": true,
+          "expressions": [
+            {
+              "compare1": {
+                "objectType": "Symbol",
+                "symbolExpression": "%tp%BoolParameter%/tp%"
+              },
+              "compare2": {
+                "objectType": "StaticValue",
+                "valueType": "tchmi:general#/definitions/BOOL",
+                "value": true
+              },
+              "compareOperator": "==",
+              "logic": null
+            }
+          ],
+          "true": [
+            {
+              "objectType": "WriteToSymbol",
+              "active": true,
+              "symbolExpression": "%tp%BoolParameter%/tp%",
+              "valueType": "tchmi:general#/definitions/BOOL",
+              "value": {
+                "objectType": "StaticValue",
+                "valueType": "tchmi:general#/definitions/BOOL",
+                "value": false
+              },
+              "asyncWait": true
+            }
+          ],
+          "false": [
+            {
+              "objectType": "WriteToSymbol",
+              "active": true,
+              "symbolExpression": "%tp%BoolParameter%/tp%",
+              "valueType": "tchmi:general#/definitions/BOOL",
+              "value": {
+                "objectType": "StaticValue",
+                "valueType": "tchmi:general#/definitions/BOOL",
+                "value": true
+              },
+              "asyncWait": true
+            }
+          ],
+          "asyncWait": true
+        }
+      ],
+      "parameters": [
+        {
+          "name": "BoolParameter",
+          "type": "tchmi:general#/definitions/BOOL",
+          "description": ""
+        }
+      ]
+    }
+  ],
   "languages": {
     "de-DE": "Localization\\de-DE.localization",
     "en-US": "Localization\\en-US.localization"

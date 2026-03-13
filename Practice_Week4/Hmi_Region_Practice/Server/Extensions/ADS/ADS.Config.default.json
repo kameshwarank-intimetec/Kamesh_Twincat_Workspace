@@ -9,6 +9,12 @@
             "SYMBOLS": {},
             "USE_WHITELISTING": false
         },
+        "PLC4": {
+            "ENABLED": true,
+            "NETID": "127.0.0.1.1.1",
+            "PORT": 854,
+            "SYMBOLS": {}
+        },
         "plc3": {
             "ENABLED": true,
             "NETID": "127.0.0.1.1.1",

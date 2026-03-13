@@ -24,7 +24,19 @@
     "DEFAULTTIMEFORMATLOCALE": "client",
     "DEFAULTTIMEZONE": "client",
     "DEFAULTUSERGROUP": "__SystemUsers",
-    "DEFINITIONS": {},
+    "DEFINITIONS": {
+        "PLC4.ST_Device": {
+            "properties": {
+                "nDeviceValue": {
+                    "$ref": "tchmi:general#/definitions/INT"
+                },
+                "sDeviceName": {
+                    "$ref": "tchmi:general#/definitions/STRING(80)"
+                }
+            },
+            "type": "object"
+        }
+    },
     "DEFLATECOMPRESSIONLEVEL": 5,
     "DISCOVERY": 2,
     "ENDPOINTS": [
@@ -1712,6 +1724,76 @@
                 "writeValue": {
                     "type": "string"
                 }
+            },
+            "USEMAPPING": true
+        },
+        "PLC4.MAIN.bNum1": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC4::MAIN::bNum1",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/INT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC4.MAIN.bToggle": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC4::MAIN::bToggle",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC4.MAIN.stDevice1": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC4::MAIN::stDevice1",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC4.ST_Device"
+            },
+            "USEMAPPING": true
+        },
+        "PLC4.MAIN.stDevice1.nDeviceValue": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC4::MAIN::stDevice1::nDeviceValue",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/INT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC4.MAIN.stDevice1.sDeviceName": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC4::MAIN::stDevice1::sDeviceName",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/STRING(80)"
+            },
+            "USEMAPPING": true
+        },
+        "PLC4.MAIN.stDevice2.nDeviceValue": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC4::MAIN::stDevice2::nDeviceValue",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/INT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC4.MAIN.stDevice2.sDeviceName": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC4::MAIN::stDevice2::sDeviceName",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/STRING(80)"
             },
             "USEMAPPING": true
         },

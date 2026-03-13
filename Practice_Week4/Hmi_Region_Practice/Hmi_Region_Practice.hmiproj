@@ -83,6 +83,18 @@
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <Target Name="Clean" DependsOnTargets="BaseClean" />
   <ItemGroup>
+    <Content Include="Functions\Function_1.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\Function_1.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\UserControl1.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\UserControl1.usercontrol.json">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="View1.view">
       <SubType>Content</SubType>
     </Content>
@@ -95,6 +107,8 @@
     <Folder Include="Imports\Videos" />
     <Folder Include="Localization" />
     <Folder Include="Contents" />
+    <Folder Include="Functions" />
+    <Folder Include="UserControl" />
     <Folder Include="Server\Extensions\ADS" />
     <Folder Include="Server\Extensions\TcHmiEventLogger" />
     <Folder Include="Server\Extensions\TcHmiLua" />

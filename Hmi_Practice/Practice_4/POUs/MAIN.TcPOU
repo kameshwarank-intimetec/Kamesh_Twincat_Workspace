@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{3898c263-ef8a-4860-8627-fa76abac468b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	stDevice1 : ST_Device := (sDeviceName := 'Poco x6', nDeviceValue := 10000);
+	stDevice2 : ST_Device := (sDeviceName := 'Samsung s23', nDeviceValue := 30000);
+	bToggle : BOOL;
+	bNum1 : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,6 +1,6 @@
 ﻿<div id="Content1" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="700" data-tchmi-height="500">
 
-<div id="btn_Start" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="505" data-tchmi-left-unit="px" data-tchmi-text="Start" data-tchmi-top="62" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+<div id="btn_Start" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="503" data-tchmi-left-unit="px" data-tchmi-text="Start" data-tchmi-top="41" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
 
 
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
@@ -171,6 +171,68 @@
 
 <div id="TcHmiTextblock_5" data-tchmi-type="tchmi-textblock" data-tchmi-height="34" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Remaining Time :" data-tchmi-top="215" data-tchmi-top-unit="px" data-tchmi-width="163" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="23">
 
+</div>
+
+<div id="btn_Reset" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="502" data-tchmi-left-unit="px" data-tchmi-text="Reset" data-tchmi-top="121" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "btn_Reset.onPressed",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "expressions": [
+          {
+            "compare1": {
+              "objectType": "Symbol",
+              "symbolExpression": "%s%PLC1.MAIN.eWashingMachineState%/s%"
+            },
+            "compare2": {
+              "objectType": "StaticValue",
+              "valueType": "tchmi:server#/definitions/PLC1.E_MachineState",
+              "value": 5
+            },
+            "compareOperator": "==",
+            "logic": null
+          }
+        ],
+        "true": [
+          {
+            "objectType": "WriteToSymbol",
+            "active": true,
+            "symbolExpression": "%s%PLC1.MAIN.eWashingMachineState%/s%",
+            "valueType": "tchmi:server#/definitions/PLC1.E_MachineState",
+            "value": {
+              "objectType": "StaticValue",
+              "valueType": "tchmi:server#/definitions/PLC1.E_MachineState",
+              "value": 0
+            },
+            "asyncWait": true
+          },
+          {
+            "objectType": "WriteToSymbol",
+            "active": true,
+            "symbolExpression": "%s%PLC1.MAIN.bStart%/s%",
+            "valueType": "tchmi:general#/definitions/BOOL",
+            "value": {
+              "objectType": "StaticValue",
+              "valueType": "tchmi:general#/definitions/BOOL",
+              "value": false
+            },
+            "asyncWait": true
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
 </div>
 
 </div>

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_MachineController" Id="{ef67becc-e70d-412b-b4ad-4db246967a51}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_MachineController
+
+VAR
+	iConveyer : I_Conveyer;
+	ePreviousMachineState : E_MachineState;
+	fbTimer : TON;
+	tWaitTime : TIME := T#2s;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF GVL_HMI.bStop THEN
+	fbTimer(IN := FALSE, PT := tWaitTime);
+	GVL_HMI.bStop := FALSE;
+	ePreviousMachineState := GVL_HMI.eMachineState ;
+	GVL_HMI.eMachineState := E_MachineState.STOPPED;
+END_IF
+
+CASE GVL_HMI.eMachineState OF
+	E_MachineState.IDLE :
+		IF GVL_HMI.bStart THEN
+			GVL_HMI.bStart := FALSE;
+			IF iConveyer <> 0 THEN
+					fbTimer(IN := FALSE, PT := tWaitTime);
+					ePreviousMachineState := GVL_HMI.eMachineState ;
+					GVL_HMI.eMachineState := E_MachineState.WAIT_FOR_BOTTLE;
+			ELSE
+				GVL_HMI.bAlarmLamp := TRUE;
+				ePreviousMachineState := GVL_HMI.eMachineState ;
+				GVL_HMI.eMachineState := E_MachineState.ERROR;
+			END_IF
+		END_IF
+		
+	E_MachineState.WAIT_FOR_BOTTLE :
+		iConveyer.Start();
+		IF GVL_HMI.bBottleSensor THEN
+			fbTimer(IN := TRUE, PT := tWaitTime);
+			IF fbTimer.Q THEN
+				fbTimer(IN := FALSE);
+				iConveyer.Stop();
+				ePreviousMachineState := GVL_HMI.eMachineState ;
+				GVL_HMI.eMachineState := E_MachineState.FILLING;
+			END_IF
+		END_IF
+	
+	E_MachineState.FILLING :
+		GVL_HMI.bFillingValve := TRUE;
+		IF GVL_HMI.bLevelSensor THEN
+			fbTimer(IN := TRUE, PT := tWaitTime);
+			IF fbTimer.Q THEN
+				fbTimer(IN := FALSE);
+				GVL_HMI.bFillingValve := FALSE;
+				ePreviousMachineState := GVL_HMI.eMachineState ;
+				GVL_HMI.eMachineState := E_MachineState.COMPLETED;
+			END_IF
+		END_IF
+	
+	E_MachineState.COMPLETED :
+		fbTimer(IN := TRUE, PT := tWaitTime);
+		IF fbTimer.Q THEN
+			fbTimer(IN := FALSE);
+			GVL_HMI.bLevelSensor := FALSE;
+			GVL_HMI.nBottleCounter := GVL_HMI.nBottleCounter + 1;
+			iConveyer.Start();
+			GVL_HMI.bBottleSensor := FALSE;
+			ePreviousMachineState := GVL_HMI.eMachineState ;
+			GVL_HMI.eMachineState := E_MachineState.WAIT_FOR_BOTTLE;
+		END_IF
+	
+	E_MachineState.STOPPED :
+		fbTimer(IN := TRUE, PT := tWaitTime);
+		IF fbTimer.Q THEN
+			fbTimer(IN := FALSE);
+			iConveyer.Stop();
+			GVL_HMI.bFillingValve := FALSE;
+			IF GVL_HMI.bStart THEN
+				GVL_HMI.bStart := FALSE;
+				GVL_HMI.eMachineState := ePreviousMachineState;
+			END_IF
+		END_IF
+	E_MachineState.ERROR :
+		iConveyer.Stop();
+		GVL_HMI.bFillingValve := FALSE;
+		IF GVL_HMI.bReset THEN
+			GVL_HMI.bReset := FALSE;
+			GVL_HMI.bAlarmLamp := FALSE;
+			GVL_HMI.eMachineState := ePreviousMachineState;
+		END_IF
+	
+END_CASE]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{87659227-88b5-4fb8-8a31-a04d98ebd634}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	_iConveyer : I_Conveyer;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[iConveyer := _iConveyer;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_MachineController">
+      <LineId Id="90" Count="0" />
+      <LineId Id="189" Count="0" />
+      <LineId Id="91" Count="9" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="155" Count="0" />
+      <LineId Id="157" Count="0" />
+      <LineId Id="103" Count="4" />
+      <LineId Id="109" Count="4" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="159" Count="0" />
+      <LineId Id="170" Count="0" />
+      <LineId Id="163" Count="1" />
+      <LineId Id="160" Count="1" />
+      <LineId Id="117" Count="4" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="165" Count="0" />
+      <LineId Id="171" Count="0" />
+      <LineId Id="168" Count="1" />
+      <LineId Id="166" Count="1" />
+      <LineId Id="125" Count="2" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="172" Count="0" />
+      <LineId Id="180" Count="0" />
+      <LineId Id="175" Count="4" />
+      <LineId Id="173" Count="1" />
+      <LineId Id="134" Count="1" />
+      <LineId Id="141" Count="1" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="183" Count="4" />
+      <LineId Id="181" Count="1" />
+      <LineId Id="143" Count="8" />
+      <LineId Id="14" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MachineController.FB_init">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

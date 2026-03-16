@@ -13,6 +13,7 @@ VAR_GLOBAL
 	bConveyerRunning : BOOL;
 	bFillingValve : BOOL;
 	bAlarmLamp : BOOL;
+	eAlarmState : E_AlarmState;
 	
 	nBottleCounter : UDINT ;
 	eMachineMode : E_MachineMode;

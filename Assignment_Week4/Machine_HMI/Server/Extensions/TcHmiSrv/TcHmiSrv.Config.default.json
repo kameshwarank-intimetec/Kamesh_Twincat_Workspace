@@ -25,6 +25,62 @@
     "DEFAULTTIMEZONE": "client",
     "DEFAULTUSERGROUP": "__SystemUsers",
     "DEFINITIONS": {
+        "PLC1.E_AlarmState": {
+            "allOf": [
+                {
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ],
+                    "options": [
+                        {
+                            "label": "OFF",
+                            "value": 0
+                        },
+                        {
+                            "label": "LEVEL_SENSOR",
+                            "value": 1
+                        },
+                        {
+                            "label": "BOTTLE_SENSOR",
+                            "value": 2
+                        },
+                        {
+                            "label": "CONVEYER",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "$ref": "tchmi:general#/definitions/INT16"
+                }
+            ]
+        },
+        "PLC1.E_MachineMode": {
+            "allOf": [
+                {
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "options": [
+                        {
+                            "label": "Manual",
+                            "value": 0
+                        },
+                        {
+                            "label": "Auto",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "$ref": "tchmi:general#/definitions/INT16"
+                }
+            ]
+        },
         "PLC1.E_MachineState": {
             "allOf": [
                 {
@@ -1816,6 +1872,26 @@
             "MAPPING": "PLC1::GVL_HMI::bStop",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.eAlarmState": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_HMI::eAlarmState",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_AlarmState"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_HMI.eMachineMode": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_HMI::eMachineMode",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_MachineMode"
             },
             "USEMAPPING": true
         },

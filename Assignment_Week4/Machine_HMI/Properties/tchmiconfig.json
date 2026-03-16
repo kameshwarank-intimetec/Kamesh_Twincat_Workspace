@@ -51,6 +51,15 @@
   "userFunctions": [
     {
       "url": "Functions/EnumValueConverter.js"
+    },
+    {
+      "url": "Functions/EnumAlarmMessageConverter.js"
+    },
+    {
+      "url": "Functions/AlarmSignalColor.js"
+    },
+    {
+      "url": "Functions/EnumModeChange.js"
     }
   ],
   "symbols": {

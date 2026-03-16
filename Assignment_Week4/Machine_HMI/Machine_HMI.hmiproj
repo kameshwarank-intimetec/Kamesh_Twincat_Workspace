@@ -136,6 +136,24 @@
       <SubType>Content</SubType>
       <Visible>true</Visible>
     </Content>
+    <Content Include="Functions\AlarmSignalColor.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\AlarmSignalColor.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\EnumAlarmMessageConverter.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\EnumAlarmMessageConverter.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\EnumModeChange.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\EnumModeChange.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Functions\EnumValueConverter.function.json">
       <SubType>Content</SubType>
     </Content>

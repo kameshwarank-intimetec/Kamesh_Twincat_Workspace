@@ -18,6 +18,9 @@
     <LibraryReferences>{d03ded74-7003-47d8-86a1-8160796d519b}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Class Diagram.TcCD">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\E_AlarmState.TcDUT">
       <SubType>Code</SubType>
     </Compile>

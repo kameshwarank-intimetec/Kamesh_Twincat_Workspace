@@ -51,7 +51,7 @@
 </script>
 </div>
 
-<div id="MachineState" data-tchmi-type="tchmi-textblock" data-tchmi-height="57" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="133" data-tchmi-top-unit="px" data-tchmi-width="179" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text="%f%EnumValueConverter(%s%PLC1.GVL_HMI.eMachineState%/s%)%/f%" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px">
+<div id="txt_MachineState" data-tchmi-type="tchmi-textblock" data-tchmi-height="57" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="133" data-tchmi-top-unit="px" data-tchmi-width="179" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text="%f%EnumValueConverter(%s%PLC1.GVL_HMI.eMachineState%/s%)%/f%" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
@@ -349,7 +349,7 @@
 </script>
 </div>
 
-<div id="ConveyerStatus" data-tchmi-type="tchmi-textblock" data-tchmi-height="57" data-tchmi-height-unit="px" data-tchmi-left="235" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.GVL_HMI.bConveyerRunning%/s%" data-tchmi-top="133" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px">
+<div id="txt_ConveyerStatus" data-tchmi-type="tchmi-textblock" data-tchmi-height="57" data-tchmi-height-unit="px" data-tchmi-left="235" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.GVL_HMI.bConveyerRunning%/s%" data-tchmi-top="133" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
@@ -378,7 +378,7 @@
 </script>
 </div>
 
-<div id="BottleCounter" data-tchmi-type="tchmi-textblock" data-tchmi-height="53" data-tchmi-height-unit="px" data-tchmi-left="427" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.GVL_HMI.nBottleCounter%/s%" data-tchmi-top="133" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="23" data-tchmi-text-font-size-unit="px">
+<div id="txt_BottleCounter" data-tchmi-type="tchmi-textblock" data-tchmi-height="53" data-tchmi-height-unit="px" data-tchmi-left="427" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.GVL_HMI.nBottleCounter%/s%" data-tchmi-top="133" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="23" data-tchmi-text-font-size-unit="px">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
@@ -575,7 +575,7 @@
 
 
 
-<div id="ConveyerStatus_1" data-tchmi-type="tchmi-textblock" data-tchmi-height="34" data-tchmi-height-unit="px" data-tchmi-left="176" data-tchmi-left-unit="px" data-tchmi-top="243" data-tchmi-top-unit="px" data-tchmi-width="414" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px" data-tchmi-text="%f%EnumAlarmMessageConverter(%s%PLC1.GVL_HMI.eAlarmState%/s%)%/f%">
+<div id="txt_AlarmMessage" data-tchmi-type="tchmi-textblock" data-tchmi-height="34" data-tchmi-height-unit="px" data-tchmi-left="183" data-tchmi-left-unit="px" data-tchmi-top="233" data-tchmi-top-unit="px" data-tchmi-width="414" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px" data-tchmi-text="%f%EnumAlarmMessageConverter(%s%PLC1.GVL_HMI.eAlarmState%/s%)%/f%">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
@@ -610,11 +610,11 @@
   "color": "None"
 }
 </script>
-<div id="AlarmMessage" data-tchmi-type="tchmi-textblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="176" data-tchmi-left-unit="px" data-tchmi-text="Alarm Message" data-tchmi-top="217" data-tchmi-top-unit="px" data-tchmi-width="137" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size-unit="px">
+<div id="AlarmMessage" data-tchmi-type="tchmi-textblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="159" data-tchmi-left-unit="px" data-tchmi-text="Alarm Message" data-tchmi-top="209" data-tchmi-top-unit="px" data-tchmi-width="137" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size-unit="px">
 
 </div>
 
-<div id="MachineMode" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="606" data-tchmi-left-unit="px" data-tchmi-top="138" data-tchmi-top-unit="px" data-tchmi-width="132" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size-unit="px" data-tchmi-text-font-size="21" data-tchmi-text="%f%EnumModeChange(%s%PLC1.GVL_HMI.eMachineMode%/s%)%/f%">
+<div id="btn_MachineMode" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="606" data-tchmi-left-unit="px" data-tchmi-top="138" data-tchmi-top-unit="px" data-tchmi-width="132" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size-unit="px" data-tchmi-text-font-size="21" data-tchmi-text="%f%EnumModeChange(%s%PLC1.GVL_HMI.eMachineMode%/s%)%/f%">
 
 
 

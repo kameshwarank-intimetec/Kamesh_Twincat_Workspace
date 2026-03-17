@@ -38,7 +38,7 @@
   "userControls": [],
   "content": [
     {
-      "url": "Contents/Content1.content",
+      "url": "Contents/MainControl.content",
       "preload": false
     }
   ],

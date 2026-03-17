@@ -121,7 +121,7 @@
       <SubType>Content</SubType>
       <Visible>true</Visible>
     </Content>
-    <Content Include="Contents\Content1.content">
+    <Content Include="Contents\MainControl.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="FavIcon.ico">

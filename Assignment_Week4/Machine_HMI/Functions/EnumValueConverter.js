@@ -9,7 +9,7 @@
 
 (function (TcHmi) {
 
-    var EnumValueConverter = function (par1) {
+    var EnumValueConverter = function (eMachineState) {
         let stateNames = [
             "IDLE",              
             "WAIT_FOR_BOTTLE",   
@@ -19,7 +19,7 @@
             "ERROR"              
         ];
 
-        return stateNames[par1] || "UNKNOWN STATE";
+        return stateNames[eMachineState];
     };
     
     TcHmi.Functions.registerFunction('EnumValueConverter', EnumValueConverter);

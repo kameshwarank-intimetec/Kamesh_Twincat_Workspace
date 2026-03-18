@@ -644,10 +644,12 @@
 }
 </script>
 
+
+
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "event": "MachineMode.onPressed",
+    "event": "btn_MachineMode.onPressed",
     "actions": [
       {
         "objectType": "Condition",

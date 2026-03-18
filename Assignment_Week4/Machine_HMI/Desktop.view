@@ -8,7 +8,7 @@
      data-tchmi-background-image-height="100" data-tchmi-background-image-width="100"
      data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width-unit="%" data-tchmi-left-unit="px" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-height-unit="px">
 
-<div id="reg_MainRegion" data-tchmi-type="tchmi-region" data-tchmi-height="400" data-tchmi-height-unit="px" data-tchmi-left="300" data-tchmi-left-unit="px" data-tchmi-top="135" data-tchmi-top-unit="px" data-tchmi-width="800" data-tchmi-width-unit="px" data-tchmi-target-content="Contents/MainControl.content">
+<div id="reg_MainRegion" data-tchmi-type="tchmi-region" data-tchmi-height="396" data-tchmi-height-unit="px" data-tchmi-left="188" data-tchmi-left-unit="px" data-tchmi-top="138" data-tchmi-top-unit="px" data-tchmi-width="800" data-tchmi-width-unit="px" data-tchmi-target-content="Contents/MainControl.content">
 
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">

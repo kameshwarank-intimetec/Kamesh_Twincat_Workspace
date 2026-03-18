@@ -31,7 +31,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MACHINEMODE"</v>
                   <v n="AttributeParent">{0425caa7-0fca-467f-b7a7-2cece76509d0}</v>
-                  <v n="AttributeObjectGuid">{c0d667b3-269d-4b6b-8336-ce36b38b69af}</v>
+                  <v n="AttributeObjectGuid">{3a142f4c-493d-4051-a1c3-b09fdc7b32f6}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -45,7 +45,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MACHINEMODE"</v>
                   <v n="AttributeParent">{0425caa7-0fca-467f-b7a7-2cece76509d0}</v>
-                  <v n="AttributeObjectGuid">{46fe9550-7448-4fdb-9083-b64efc6724b4}</v>
+                  <v n="AttributeObjectGuid">{0a8bda12-d492-4e1c-af1c-66b64f8babd0}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -120,7 +120,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{ac3883b1-ca1a-4d98-b198-106beea1b7c0}</v>
+                  <v n="AttributeObjectGuid">{9b772dc6-7087-4289-8ed3-680e96bc8de1}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -134,7 +134,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{fb8e93b2-986d-41b2-89d3-e12f40152b25}</v>
+                  <v n="AttributeObjectGuid">{4711c1aa-2809-475e-85ee-528e795b996a}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -148,7 +148,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{657d4fb7-2158-47cf-a796-be9d7e8c8e95}</v>
+                  <v n="AttributeObjectGuid">{14cc7e27-9389-460e-9ffe-ed026c22f2a6}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -162,7 +162,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{4a00e217-fc2a-4e01-a804-2c84b24001ca}</v>
+                  <v n="AttributeObjectGuid">{3387b07d-6bee-4571-81f2-532e73cdfc9c}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -176,7 +176,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{894e3f05-d6f0-47f3-accb-6bde2b2f00aa}</v>
+                  <v n="AttributeObjectGuid">{eeefed5f-5ee8-490c-964d-e4173640f4eb}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -190,7 +190,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{214d7cf2-8c13-49a8-b270-169af8d71953}</v>
+                  <v n="AttributeObjectGuid">{577ea587-579a-4162-b0c3-492ea7e56cb3}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -204,7 +204,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{f5e907da-6c1f-4a36-b2c7-eb41e399d794}</v>
+                  <v n="AttributeObjectGuid">{1ac70864-8b4e-4b7d-9ed9-8a3c3914b873}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -218,7 +218,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{cedd0468-7ffd-4d87-b1e5-54cde65f8c42}</v>
+                  <v n="AttributeObjectGuid">{f7aeeae5-cc80-4ea8-b5c6-722a203b176e}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -232,7 +232,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_AlarmState"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{040ce95e-e66f-4a21-81bd-d74dcaa16ad0}</v>
+                  <v n="AttributeObjectGuid">{c8467bb0-2517-4294-8918-2801d107b54c}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -246,7 +246,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"UDINT"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{03550fe5-96c7-4f9e-8e71-af033f3b6e8b}</v>
+                  <v n="AttributeObjectGuid">{0af1568c-2b33-480e-86c2-4116676fcb3c}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -260,7 +260,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MachineMode"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{38467447-42a7-4e8d-b5c1-e45aa12ceeae}</v>
+                  <v n="AttributeObjectGuid">{d5dd89b2-2418-4fe3-aea8-1c62b3e2ca1d}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -274,7 +274,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MachineState"</v>
                   <v n="AttributeParent">{72c67734-bad7-4451-b499-be4b8c05e0c1}</v>
-                  <v n="AttributeObjectGuid">{02b7edb2-431e-4123-84e8-e394f742113e}</v>
+                  <v n="AttributeObjectGuid">{f0db92e7-aec2-44ff-961b-167dcbbce7b5}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -434,7 +434,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_Conveyer"</v>
                   <v n="AttributeParent">{8da3d096-1754-40ee-b80d-caff5cf9410f}</v>
-                  <v n="AttributeObjectGuid">{08e2ae31-858c-4445-bfa2-4db16e5d9313}</v>
+                  <v n="AttributeObjectGuid">{daa93d8e-4ae2-4c36-91f7-82723aa2622a}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -448,7 +448,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"FB_MachineController"</v>
                   <v n="AttributeParent">{8da3d096-1754-40ee-b80d-caff5cf9410f}</v>
-                  <v n="AttributeObjectGuid">{1337f557-9d1d-487a-b905-cdab07e54495}</v>
+                  <v n="AttributeObjectGuid">{ab540f43-8103-4304-9b9b-06b44080edfd}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -608,7 +608,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MACHINESTATE"</v>
                   <v n="AttributeParent">{a719bc55-830b-4b24-bab3-0045d5a36331}</v>
-                  <v n="AttributeObjectGuid">{0a188cfb-9455-4833-ab65-64d90fd5ae1b}</v>
+                  <v n="AttributeObjectGuid">{63c285eb-5ba5-4ad7-a979-898995481341}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -622,7 +622,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MACHINESTATE"</v>
                   <v n="AttributeParent">{a719bc55-830b-4b24-bab3-0045d5a36331}</v>
-                  <v n="AttributeObjectGuid">{ada627cd-e6c6-4b64-8806-0cdbb1313d9b}</v>
+                  <v n="AttributeObjectGuid">{15417b2e-7ae8-4868-88c3-9f97781c04b7}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -636,7 +636,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MACHINESTATE"</v>
                   <v n="AttributeParent">{a719bc55-830b-4b24-bab3-0045d5a36331}</v>
-                  <v n="AttributeObjectGuid">{c0fbc301-3ece-4719-bad4-8e425965cf1e}</v>
+                  <v n="AttributeObjectGuid">{ebcc35a4-a499-41db-bba1-9d2c29e32a75}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -650,7 +650,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MACHINESTATE"</v>
                   <v n="AttributeParent">{a719bc55-830b-4b24-bab3-0045d5a36331}</v>
-                  <v n="AttributeObjectGuid">{fff4aaa4-68ac-4a19-a3fc-070a703a96bd}</v>
+                  <v n="AttributeObjectGuid">{0f4a0f8b-7292-450b-8c2c-7be24e1d7f95}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -664,7 +664,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MACHINESTATE"</v>
                   <v n="AttributeParent">{a719bc55-830b-4b24-bab3-0045d5a36331}</v>
-                  <v n="AttributeObjectGuid">{16bd7c65-3c45-4150-a3b4-eac95279be82}</v>
+                  <v n="AttributeObjectGuid">{a7a40ac0-f6b1-4736-83bd-6691790b5864}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -678,7 +678,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MACHINESTATE"</v>
                   <v n="AttributeParent">{a719bc55-830b-4b24-bab3-0045d5a36331}</v>
-                  <v n="AttributeObjectGuid">{e9439080-cf10-4aa8-9ea9-189b46c027b3}</v>
+                  <v n="AttributeObjectGuid">{2a24d5f1-57cf-4a96-a5f1-cad8b84fac5f}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -753,7 +753,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_ALARMSTATE"</v>
                   <v n="AttributeParent">{c07ba835-0eff-418e-87a4-e3c136acc91e}</v>
-                  <v n="AttributeObjectGuid">{282dddcb-798f-41fa-bde5-221e5acadb4d}</v>
+                  <v n="AttributeObjectGuid">{b75a6567-5e6d-4ced-bf83-c6984e090123}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -767,7 +767,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_ALARMSTATE"</v>
                   <v n="AttributeParent">{c07ba835-0eff-418e-87a4-e3c136acc91e}</v>
-                  <v n="AttributeObjectGuid">{f91818de-df85-452d-8115-1dc838f42a3e}</v>
+                  <v n="AttributeObjectGuid">{802fa2f5-7b1c-40e2-b54e-65787320b719}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -781,7 +781,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_ALARMSTATE"</v>
                   <v n="AttributeParent">{c07ba835-0eff-418e-87a4-e3c136acc91e}</v>
-                  <v n="AttributeObjectGuid">{ec4d5169-13b2-472e-9bb7-7ad26b4c4bdd}</v>
+                  <v n="AttributeObjectGuid">{c95d2c65-e3fb-40c7-9c5b-2fb5c3e4bf60}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -795,7 +795,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_ALARMSTATE"</v>
                   <v n="AttributeParent">{c07ba835-0eff-418e-87a4-e3c136acc91e}</v>
-                  <v n="AttributeObjectGuid">{bfa745b6-65b6-4c23-8631-c075c8e6f278}</v>
+                  <v n="AttributeObjectGuid">{18a600d1-426c-4dde-89ec-d72991b9898c}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -870,7 +870,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"I_Conveyer"</v>
                   <v n="AttributeParent">{ef67becc-e70d-412b-b4ad-4db246967a51}</v>
-                  <v n="AttributeObjectGuid">{ed5468d6-a9a9-4f60-9ec4-fbbb1175b6c5}</v>
+                  <v n="AttributeObjectGuid">{5d7a66d1-5929-4787-a3eb-2d48ba14695f}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -884,7 +884,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"E_MachineState"</v>
                   <v n="AttributeParent">{ef67becc-e70d-412b-b4ad-4db246967a51}</v>
-                  <v n="AttributeObjectGuid">{7156939f-8842-4047-8087-dd2620d12958}</v>
+                  <v n="AttributeObjectGuid">{fc627c34-8c60-4bd3-80b0-1aeb299227ad}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -898,7 +898,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"TON"</v>
                   <v n="AttributeParent">{ef67becc-e70d-412b-b4ad-4db246967a51}</v>
-                  <v n="AttributeObjectGuid">{0a83de42-e62e-4d67-8605-a0e0db72ec93}</v>
+                  <v n="AttributeObjectGuid">{32266281-73ec-4f0e-8c33-1978b9836b6c}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -912,7 +912,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"TIME"</v>
                   <v n="AttributeParent">{ef67becc-e70d-412b-b4ad-4db246967a51}</v>
-                  <v n="AttributeObjectGuid">{ab70c4cf-8f4f-4a6d-a3fe-0e1f816b332a}</v>
+                  <v n="AttributeObjectGuid">{237fe362-b3e3-4aff-b5a1-a02e8c2f788b}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -926,7 +926,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"TIME"</v>
                   <v n="AttributeParent">{ef67becc-e70d-412b-b4ad-4db246967a51}</v>
-                  <v n="AttributeObjectGuid">{78b14423-9090-4325-83b8-3fe0fb00e5ee}</v>
+                  <v n="AttributeObjectGuid">{311c90d0-66e2-4877-af05-20886ca81b84}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -940,7 +940,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"TON"</v>
                   <v n="AttributeParent">{ef67becc-e70d-412b-b4ad-4db246967a51}</v>
-                  <v n="AttributeObjectGuid">{616cc997-9758-4d13-ae19-1190aaae3d6b}</v>
+                  <v n="AttributeObjectGuid">{f8ddc451-4e6d-462d-ab38-031b2a4f7777}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
               </l>
@@ -1710,7 +1710,7 @@
           </o>
           <v n="IsFastStateDiagram">false</v>
           <l n="StereoTypeProfile" t="ArrayList" />
-          <v n="RelationRoleID">16</v>
+          <v n="RelationRoleID">24</v>
           <d n="PositionSerialization" t="Hashtable" />
         </o>
       </Data>

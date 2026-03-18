@@ -343,3 +343,10 @@ LineIDs.dbg.bak
 
 _Boot/
 _Config/
+# Ignore TwinCAT HMI temporary engineering servers
+.engineering_servers/
+# Ignore temporary PID files
+*.pid
+# Ignore build outputs
+bin/
+obj/

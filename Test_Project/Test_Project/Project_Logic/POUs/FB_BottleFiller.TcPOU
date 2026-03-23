@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_BottleFiller" Id="{9cb8cf01-0ea3-43ab-b787-0cb5775d9ae4}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_BottleFiller
+VAR_INPUT
+	bLevelSensor : BOOL;
+END_VAR
+VAR
+	bFillingValve : BOOL;
+	bValvePressure : DINT ;
+	bisTankEmpty : BOOL;
+END_VAR
+VAR_OUTPUT
+	bFilling : BOOL;
+	bSpeed : DINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="SetValvePressure" Id="{f3c5295d-588f-4712-9439-4d32f5671a47}">
+      <Declaration><![CDATA[METHOD SetValvePressure
+VAR_INPUT
+	bPressureValue : DINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bValvePressure := bPressureValue;
+bSpeed := bValvePressure -10;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StartFilling" Id="{851d32b8-1dd9-4740-bfa9-12e36ba93498}">
+      <Declaration><![CDATA[METHOD StartFilling : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF bisTankEmpty THEN
+	bFilling := bFillingValve := TRUE;
+	
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StopFilling" Id="{feb6e664-1480-4b85-8cdd-d94997f7425d}">
+      <Declaration><![CDATA[METHOD StopFilling : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF bLevelSensor THEN
+	bFilling := bFillingValve := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_BottleFiller">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BottleFiller.SetValvePressure">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BottleFiller.StartFilling">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BottleFiller.StopFilling">
+      <LineId Id="6" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -3,39 +3,48 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f9d3ba40-9c2b-4868-a849-616d4377f687}</ProjectGuid>
+    <ProjectGuid>{f4099dab-152a-42cf-bd9c-f054aba010af}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>Practice_TDD</Name>
+    <Name>Test_Project</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
-    <Application>{a3ccbd8e-b4c7-47ae-b049-4cd4b33d2e0c}</Application>
-    <TypeSystem>{20d5ce5f-6a90-4307-b1f3-d002bcc91c70}</TypeSystem>
-    <Implicit_Task_Info>{0c8995fc-ec5e-4496-bef3-96387ce2a4a5}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{e480a666-443a-4a25-9560-6c2435f5d27f}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{fde1990a-dcd5-4769-8ac6-0700b4bf3499}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{0778f8cb-03fa-400e-bcca-eac0b44f5cba}</LibraryReferences>
+    <Application>{67850137-8bbe-4635-a159-4522ca9926bc}</Application>
+    <TypeSystem>{50d62aff-c064-4dc2-a647-02e08b23abf0}</TypeSystem>
+    <Implicit_Task_Info>{c63dbab5-b88c-4c3a-a1f9-043d0f1c689b}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{4a5e5b43-184a-4598-8075-27436f37b361}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{bc8de000-0cab-4b62-b612-13de359dd01b}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{7695b034-ef6b-4863-a896-39ae1d0ffce6}</LibraryReferences>
+    <Company>
+    </Company>
+    <Released>false</Released>
+    <Title>
+    </Title>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="GVLs\GVL_IO.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
+    <Compile Include="POUs\PRG_TEST.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TESTs\FB_BottleFiller_Test.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="TESTs" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="Project_Logic_1">
+      <DefaultResolution>Project_Logic_1, * (InTimeTec)</DefaultResolution>
+      <Namespace>Project_Logic_1</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -48,17 +57,26 @@
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="TcUnit">
+      <DefaultResolution>TcUnit, * (www.tcunit.org)</DefaultResolution>
+      <Namespace>TcUnit</Namespace>
+    </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Practice_TDD.tmc">
+    <None Include="Test_Project.tmc">
       <SubType>Content</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="Project_Logic_1">
+      <Resolution>Project_Logic_1, * (InTimeTec)</Resolution>
+    </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
@@ -79,13 +97,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

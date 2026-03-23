@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_BottleFiller_Test" Id="{ee18a254-76ee-4cdc-a982-a7ec347d4bf4}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_BottleFiller_Test EXTENDS FB_TestSuite
+
+VAR	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TurningOnTheValveIfValveIsEmpty();]]></ST>
+    </Implementation>
+    <Method Name="SettingThePressure" Id="{c9e7dafd-786c-4278-98e3-3c594573f1e3}">
+      <Declaration><![CDATA[METHOD SettingThePressure
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="TurningOnTheValveIfValveIsEmpty" Id="{4769dfd1-bd24-40b1-a8cd-ee27c407d8a7}">
+      <Declaration><![CDATA[METHOD TurningOnTheValveIfValveIsEmpty
+VAR_INPUT
+END_VAR
+VAR
+	fbBottleFiller : FB_BottleFiller;
+	fbBottle : FB_BottleFiller;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[TEST('TurningOnTheValveIfValveIsEmpty');
+
+fbBottleFiller.StartFilling();
+AssertTrue(Condition := fbBottleFiller.bFilling,
+		   Message := 'Tank is not Empty');
+
+fbBottleFiller.bisTankEmpty := TRUE;
+fbBottleFiller.StartFilling();
+
+AssertFalse(Condition := fbBottleFiller.bFilling, 
+			 Message := 'Tank is filling');
+TEST_FINISHED();
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_BottleFiller_Test">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BottleFiller_Test.SettingThePressure">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BottleFiller_Test.TurningOnTheValveIfValveIsEmpty">
+      <LineId Id="5" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="15" Count="1" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="24" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

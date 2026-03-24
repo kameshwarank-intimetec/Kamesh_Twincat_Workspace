@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="E_ConveyorMode" Id="{5338500f-fac0-44cd-8fd9-f53eb270aabb}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_ConveyorMode :
+(
+    IDLE            := 0,
+    
+    RECEIVING_IN    := 1,   
+    WAITING_FOR_PICK := 2,  // Ready for Crane to pick parcel
+    
+    RECEIVING_OUT   := 10,  // Ready for Crane to drop parcel
+    DISCHARGING_OUT := 11,  
+    
+    MANUAL_STOP     := 98,
+    FAULT           := 99
+);
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

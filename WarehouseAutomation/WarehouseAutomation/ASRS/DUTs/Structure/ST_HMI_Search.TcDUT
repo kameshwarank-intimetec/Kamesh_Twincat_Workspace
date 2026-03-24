@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="ST_HMI_Search" Id="{c9c72fcc-7109-4e1e-91d3-0c560d8c7ec6}">
+    <Declaration><![CDATA[TYPE ST_HMI_Search :
+STRUCT
+    (* Input from Operator *)
+    sSearchID       : STRING(20);   
+    bTriggerSearch  : BOOL;         
+    
+    (* Output to HMI *)
+    bMatchFound     : BOOL;         
+    nFoundCol       : INT;          
+    nFoundRow       : INT;          
+    nFoundDepth     : INT;          
+    
+    (* Selection Detail for Popup *)
+    stSelectedParcel : ST_Parcel;   
+    eSelectedStatus  : E_SlotStatus;
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

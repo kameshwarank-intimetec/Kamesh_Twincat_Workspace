@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="ST_Parcel" Id="{fedd5bad-befe-434b-a633-22b4d21cf8cb}">
+    <Declaration><![CDATA[TYPE ST_Parcel :
+STRUCT
+    sID             : STRING(20);   
+    fWeight         : REAL;         
+    nCategory       : INT;          
+    dtEntryTime     : DT;           
+    nDestination    : INT;          
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

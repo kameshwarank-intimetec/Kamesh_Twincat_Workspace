@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="ST_StorageSlot" Id="{8c5b9e40-0bdf-4706-a4ad-2bd3ae991ab3}">
+    <Declaration><![CDATA[TYPE ST_StorageSlot :
+STRUCT
+    eStatus         : E_SlotStatus; // Current status from Enum
+    stParcelData    : ST_Parcel;    // The actual data of the box
+    bIsRearSlot     : BOOL;         // Metadata to identify depth
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

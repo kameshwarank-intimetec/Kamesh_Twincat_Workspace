@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="GVL_Config" Id="{5b1cc540-97bc-40e2-9967-3c0bc43dc6d5}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+    (* Storage Dimensions *)
+    MAX_COLUMNS       : INT := 10;
+    MAX_ROWS          : INT := 4;  
+    MAX_DEPTH         : INT := 2;  
+
+    (* Operational Limits *)
+    WEIGHT_LIMIT_C1   : REAL := 100.0; 
+    WEIGHT_LIMIT_C2   : REAL := 200.0; 
+
+    (* Simulation Parameters *)
+    CRANE_SPEED_X     : LREAL := 2.5;  // Units per second
+    CRANE_SPEED_Y     : LREAL := 1.2;  // Units per second
+    CONVEYOR_SPEED    : LREAL := 1.5;  // Meters per second
+    
+    (* Fixed Timings *)
+    T_PICK_PLACE      : TIME := T#2S; 
+    T_SCAN_DELAY      : TIME := T#500MS;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

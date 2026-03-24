@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="E_SlotStatus" Id="{556070d3-f6d0-4472-bbaa-8ebecfb18432}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_SlotStatus :
+(
+    EMPTY           := 0,
+    RESERVED_IN     := 1,   // Crane is currently moving to store here
+    OCCUPIED        := 2,   // Item is physically present
+    RESERVED_OUT    := 3,   // Crane is currently moving to retrieve here
+    BLOCKED         := 4,   // Slot is physically damaged or unusable
+    SHUFFLE_TARGET  := 5    // Temporary status during restacking
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

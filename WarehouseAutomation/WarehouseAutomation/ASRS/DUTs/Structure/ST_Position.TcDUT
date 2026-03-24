@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="ST_Position" Id="{c3149a51-2378-4739-8c9d-810bb7f7f930}">
+    <Declaration><![CDATA[TYPE ST_Pos :
+STRUCT
+    fPosX           : LREAL; // Horizontal position (Columns)
+    fPosY           : LREAL; // Vertical position (Rows)
+    fPosZ           : LREAL; // Depth position (Forks)
+    
+    nColIndex       : INT;   // Target Column Index (1..10)
+    nRowIndex       : INT;   // Target RowIndex (1..4)
+    nDepthIndex     : INT;   // Target Depth (1=Front, 2=Rear)
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

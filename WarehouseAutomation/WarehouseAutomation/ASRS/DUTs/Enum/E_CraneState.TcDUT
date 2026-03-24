@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="E_CraneState" Id="{05e9afc7-510b-4439-a9a0-1c745ad96aa1}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_CraneState :
+(
+    IDLE            := 0,
+    MOVING_TO_PICK  := 1,
+    PICKING         := 2,
+    MOVING_TO_PLACE := 3,
+    PLACING         := 4,
+    
+    (* Shuffle Logic States *)
+    SHUFFLE_START   := 10,
+    SHUFFLE_PICK    := 11,
+    SHUFFLE_MOVE    := 12,
+    SHUFFLE_PLACE   := 13,
+    
+    (* Safety & Maintenance *)
+    RETURNING_HOME  := 20,
+    FAULT           := 99
+);
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -4,6 +4,8 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	fbBottle : FB_BottleFiller;
+	bFlag : BOOL := TRUE;
+	nNum : INT := 43;
 END_VAR
 ]]></Declaration>
     <Implementation>

@@ -5,6 +5,11 @@
 			<Settings MaxCpus="8" NonWinCpus="1">
 				<Cpu CpuId="7"/>
 			</Settings>
+			<Licenses>
+				<Target>
+					<ManualSelect>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</ManualSelect>
+				</Target>
+			</Licenses>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
@@ -16,7 +21,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{F4099DAB-152A-42CF-BD9C-F054ABA010AF}" Name="Test_Project" PrjFilePath="Test_Project\Test_Project.plcproj" TmcFilePath="Test_Project\Test_Project.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{E093ABAE-01CF-CA5D-2659-295BF198DC1A}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Test_Project\Test_Project.tmc" TmcHash="{833F9E76-FB02-5287-46EE-155581B798A3}">
 					<Name>Test_Project Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -36,7 +41,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{EED4FEC4-4C56-4DF1-8536-0C88C33E325D}" Name="Project_Logic" PrjFilePath="Project_Logic\Project_Logic.plcproj" TmcFilePath="Project_Logic\Project_Logic.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{387C6C5A-004D-1734-2BF0-28D19A04166E}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Project_Logic\Project_Logic.tmc" TmcHash="{7A1FBB83-7CD6-7DA2-4A7C-1488222A14DE}">
 					<Name>Project_Logic Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

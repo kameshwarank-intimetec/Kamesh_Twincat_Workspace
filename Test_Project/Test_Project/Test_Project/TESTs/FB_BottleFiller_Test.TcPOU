@@ -29,12 +29,13 @@ END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[TEST('TurningOnTheValveIfValveIsEmpty');
 
+fbBottleFiller.bisTankEmpty := TRUE;
 fbBottleFiller.StartFilling();
 AssertTrue(Condition := fbBottleFiller.bFilling,
 		   Message := 'Tank is not Empty');
 
-fbBottleFiller.bisTankEmpty := TRUE;
-fbBottleFiller.StartFilling();
+fbBottleFiller.bLevelSensor := TRUE;
+fbBottleFiller.StopFilling();
 
 AssertFalse(Condition := fbBottleFiller.bFilling, 
 			 Message := 'Tank is filling');
@@ -50,6 +51,7 @@ TEST_FINISHED();
     </LineIds>
     <LineIds Name="FB_BottleFiller_Test.TurningOnTheValveIfValveIsEmpty">
       <LineId Id="5" Count="0" />
+      <LineId Id="32" Count="0" />
       <LineId Id="14" Count="0" />
       <LineId Id="11" Count="0" />
       <LineId Id="9" Count="0" />

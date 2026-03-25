@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="E_ActuatorState" Id="{7107f5be-1d8e-4d59-9917-3d5a8b2b61c4}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_ActuatorState :
+(
+    RETRACTED       := 0,   // Blocker is DOWN / RAT is DOWN (Parcel can pass)
+    
+    TRANSITIONING   := 1,   // Moving between positions (Simulated travel time)
+    
+    EXTENDED        := 2,   // Blocker is UP / RAT is UP (Parcel is stopped/lifted)
+    
+    FAULT           := 99   // Mechanical failure (e.g., stuck halfway)
+);
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

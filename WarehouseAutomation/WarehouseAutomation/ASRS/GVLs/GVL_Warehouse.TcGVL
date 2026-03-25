@@ -3,21 +3,24 @@
   <GVL Name="GVL_Warehouse" Id="{7912caad-9423-41dd-9258-18bbbf3fb6ef}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL PERSISTENT
-    (* Master Rack Array: [Columns, Rows] *)
+    (* The Master Rack Matrix: [1..10 Columns, 1..4 Rows] *)
+    // Total 40 Slots. Each slot contains its status and parcel DNA.
     arrRack : ARRAY[1..GVL_Config.MAX_COLUMNS, 1..GVL_Config.MAX_ROWS] OF ST_StorageSlot;
-	
-	  (* Simulation Statistics *)
-    nTotalStoredCount  : UDINT;
-    nTotalRetrievedCount : UDINT;
+    
+    (* Life Cycle Statistics (Saved across power cycles) *)
+    nTotalStoredCount    : UDINT; // Total boxes processed since project start
+    nTotalRetrievedCount : UDINT; // Total boxes sent out to the dock
+    
+    (* System Metadata *)
+    sWarehouseName      : STRING := 'IntimeTec_ASRS_01';
+    bInventoryInitialized : BOOL := FALSE; // Flag to run the first-time setup
 END_VAR
 
 VAR_GLOBAL
-    (* Global System Status *)
-    bSystemAutoMode    : BOOL := FALSE;
-    bEmergencyStop     : BOOL := FALSE;
-    
-  	(* Global HMI Status *)
-    sSystemStatusMsg   : STRING(80) := 'System Ready';
+    (* Real-time Status (Reset on power off) *)
+    bSystemAutoMode     : BOOL := FALSE;
+    bEmergencyStopActive : BOOL := FALSE;
+    sSystemStatusMsg    : STRING(80) := 'System Ready'; // For HMI Header
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

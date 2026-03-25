@@ -5,21 +5,23 @@
 {attribute 'strict'}
 TYPE E_CraneState :
 (
-    IDLE            := 0,
-    MOVING_TO_PICK  := 1,
-    PICKING         := 2,
-    MOVING_TO_PLACE := 3,
-    PLACING         := 4,
+    IDLE            := 0,   // Waiting for a command from the Manager
     
-    (* Shuffle Logic States *)
-    SHUFFLE_START   := 10,
-    SHUFFLE_PICK    := 11,
-    SHUFFLE_MOVE    := 12,
-    SHUFFLE_PLACE   := 13,
+    (* Standard Storage Cycle *)
+    MOVING_TO_PICK  := 1,   // Traveling to the Aisle Conveyor station
+    PICKING         := 2,   // Extending forks and lifting the parcel
+    MOVING_TO_PLACE := 3,   // Traveling to the target Rack [Col, Row]
+    PLACING         := 4,   // Extending forks and dropping the parcel
     
-    (* Safety & Maintenance *)
-    RETURNING_HOME  := 20,
-    FAULT           := 99
+    (* Double-Deep Shuffle Sequence *)
+    SHUFFLE_START   := 10,  // Identifying if a front box blocks a rear target
+    SHUFFLE_PICK    := 11,  // Picking the "blocking" box
+    SHUFFLE_MOVE    := 12,  // Moving blocking box to temporary buffer slot
+    SHUFFLE_PLACE   := 13,  // Dropping blocking box before finishing original task
+    
+    (* Recovery & Safety *)
+    RETURNING_HOME  := 20,  // Moving to [0,0] for calibration or after Reset
+    FAULT           := 99   // Emergency Stop or mechanical timeout
 );
 END_TYPE]]></Declaration>
   </DUT>

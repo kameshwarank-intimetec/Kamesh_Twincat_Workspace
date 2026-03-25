@@ -12,6 +12,15 @@
         <Declaration><![CDATA[]]></Declaration>
       </Set>
     </Property>
+    <Property Name="bError" Id="{dba9e56a-fa95-4628-91da-91952417a079}">
+      <Declaration><![CDATA[PROPERTY bError : BOOL]]></Declaration>
+      <Get Name="Get" Id="{2f446fee-cced-48e9-870d-c06d674ed1e1}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{52bc36fd-d084-4d8c-948d-897b2f25555b}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
     <Property Name="eState" Id="{a9bdf396-aa83-4303-b1e4-3394e6e9ec16}">
       <Declaration><![CDATA[PROPERTY eState : E_CraneState]]></Declaration>
       <Get Name="Get" Id="{7f733256-00d7-4d73-a94d-be26431832f6}">
@@ -24,6 +33,7 @@
     <Method Name="M_MoveToPostion" Id="{0c5d9832-797d-4201-9156-b0ce7022f959}">
       <Declaration><![CDATA[METHOD M_MoveToPostion : BOOL
 VAR_INPUT
+	stTarget : ST_Position;
 END_VAR
 ]]></Declaration>
     </Method>
@@ -35,6 +45,12 @@ END_VAR
     </Method>
     <Method Name="M_Place" Id="{07225ac2-4374-48d0-8e94-d3310713b1c4}">
       <Declaration><![CDATA[METHOD M_Place : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="M_Reset" Id="{b2067ad9-ddf1-4741-9e86-70964d6c99b1}">
+      <Declaration><![CDATA[METHOD M_Reset : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>

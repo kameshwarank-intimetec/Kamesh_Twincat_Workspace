@@ -3,42 +3,43 @@
   <GVL Name="GVL_IO" Id="{188d908f-b3e5-47c1-a697-e6e007a07ac5}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-    // --- INFEED SECTION ---
-    xPE_Infeed              : BOOL; // Sensor: Parcel at entry gate
-    xBlocker_Infeed_Open    : BOOL; // Actuator: Open/Close entry gate
+    // --- Entry Point ---
+    bInfeedSensor           : BOOL; // Box detected at start
+    bInfeedBlocker          : BOOL; // Stop/Release at entry
     
-    // Aisle 1 (Lightweight)
-    xPE_Loop_Pre_Aisle1     : BOOL; // Sensor: Approach to Aisle 1
-    xBlocker_Aisle1_Active  : BOOL; // Actuator: Stop parcel for RAT 1
-    xRAT1_Lift_Up           : BOOL; // Actuator: Raise RAT 1 chains
-    xRAT1_Travel_Forward    : BOOL; // Actuator: Move parcel into Aisle 1
+    // --- Main Loop Junctions ---
+    // Aisle 1 - Small Parcels
+    bAisle1ApproachSensor   : BOOL; // Detect box coming to Aisle 1
+    bAisle1StopBlocker      : BOOL; // Physical pin to center the box
+    bAisle1RatLift          : BOOL; // Raise transfer chains
+    bAisle1RatTravel        : BOOL; // Move box into Aisle 1
     
-    // Aisle 2 (Heavyweight)
-    xPE_Loop_Pre_Aisle2     : BOOL; // Sensor: Approach to Aisle 2
-    xBlocker_Aisle2_Active  : BOOL; // Actuator: Stop parcel for RAT 2
-    xRAT2_Lift_Up           : BOOL; // Actuator: Raise RAT 2 chains
-    xRAT2_Travel_Forward    : BOOL; // Actuator: Move parcel into Aisle 2
+    // Aisle 2 - Heavy Parcels
+    bAisle2ApproachSensor   : BOOL; // Detect box coming to Aisle 2
+    bAisle2StopBlocker      : BOOL; // Physical pin to center the box
+    bAisle2RatLift          : BOOL; // Raise transfer chains
+    bAisle2RatTravel        : BOOL; // Move box into Aisle 2
     
-    // Outfeed
-    xPE_Loop_Pre_Outfeed    : BOOL; // Sensor: Approach to Outfeed
-    xBlocker_Outfeed_Active : BOOL; // Actuator: Stop parcel for Outfeed RAT
-    xRAT3_Lift_Up           : BOOL; // Actuator: Raise Outfeed RAT
-    xRAT3_Travel_Forward    : BOOL; // Actuator: Move parcel to Outfeed
+    // Outfeed Junction
+    bOutfeedApproachSensor  : BOOL; 
+    bOutfeedStopBlocker     : BOOL; 
+    bOutfeedRatLift         : BOOL; 
+    bOutfeedRatTravel       : BOOL; 
     
-    // --- AISLE CONVEYORS (Bi-Directional) ---
-    xPE_Aisle1_Entry        : BOOL; // Sensor: Parcel entered Aisle 1
-    xPE_Crane1_AtStation    : BOOL; // Sensor: Parcel at Crane 1 Pick Point
-    xMotor_Aisle1_Run       : BOOL; 
-    xMotor_Aisle1_Reverse   : BOOL; // Reverse for Retrieval
+    // --- Aisle Conveyors ---
+    bAisle1EntrySensor      : BOOL; // Box has successfully turned into Aisle 1
+    bAisle1CraneStation     : BOOL; // Box is at the Crane 1 pick point
+    bAisle1MotorForward     : BOOL; 
+    bAisle1MotorReverse     : BOOL; 
     
-    xPE_Aisle2_Entry        : BOOL; // Sensor: Parcel entered Aisle 2
-    xPE_Crane2_AtStation    : BOOL; // Sensor: Parcel at Crane 2 Pick Point
-    xMotor_Aisle2_Run       : BOOL;
-    xMotor_Aisle2_Reverse   : BOOL; // Reverse for Retrieval
+    bAisle2EntrySensor      : BOOL; // Box has successfully turned into Aisle 2
+    bAisle2CraneStation     : BOOL; // Box is at the Crane 2 pick point
+    bAisle2MotorForward     : BOOL; 
+    bAisle2MotorReverse     : BOOL; 
     
-    // --- OUTFEED ---
-    xPE_Outfeed_Final       : BOOL; // Sensor: Parcel reached exit dock
-    xMotor_Outfeed_Run      : BOOL;
+    // --- Exit ---
+    bExitDockSensor         : BOOL; // Box reached final destination
+    bExitMotor              : BOOL; 
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

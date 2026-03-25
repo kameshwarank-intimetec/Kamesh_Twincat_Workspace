@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <Itf Name="I_Transport" Id="{79695f05-cf47-4e8b-96fd-9364dffb9874}">
-    <Declaration><![CDATA[INTERFACE I_Transport
+  <Itf Name="I_Conveyor" Id="{79695f05-cf47-4e8b-96fd-9364dffb9874}">
+    <Declaration><![CDATA[INTERFACE I_Conveyor
 ]]></Declaration>
     <Property Name="bOccupied" Id="{c9acc93a-6b8f-48c7-a488-6008eeb0af8a}">
       <Declaration><![CDATA[PROPERTY bOccupied : BOOL]]></Declaration>

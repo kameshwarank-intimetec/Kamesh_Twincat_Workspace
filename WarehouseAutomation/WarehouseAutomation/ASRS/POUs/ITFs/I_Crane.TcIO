@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <Itf Name="I_Retriever" Id="{0aaef61f-066b-45f1-a3b6-75f98e8b3795}">
-    <Declaration><![CDATA[INTERFACE I_Retriever
+  <Itf Name="I_Crane" Id="{0aaef61f-066b-45f1-a3b6-75f98e8b3795}">
+    <Declaration><![CDATA[INTERFACE I_Crane
 ]]></Declaration>
     <Property Name="bBusy" Id="{7a2e4410-aaa1-4e68-8768-d894eb967ba7}">
       <Declaration><![CDATA[PROPERTY bBusy : BOOL]]></Declaration>

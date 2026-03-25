@@ -61,13 +61,46 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Class Diagram.TcCD">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Controller\FB_AisleController.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Controller\FB_CraneController.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Controller\FB_InFeedController.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Controller\FB_LoopController.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Controller\FB_OutFeedController.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Entity\FB_BiDirectionConveyer.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Entity\FB_Conveyor.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Entity\FB_Crane.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Entity\FB_RAT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_WareHouseController.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\ITFs\I_Crane.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\ITFs\I_Conveyor.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Retriever\I_Retriever.TcIO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Transport\I_Transport.TcIO">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -76,8 +109,9 @@
     <Folder Include="DUTs\Enum" />
     <Folder Include="DUTs\Structure" />
     <Folder Include="GVLs" />
-    <Folder Include="POUs\Transport" />
-    <Folder Include="POUs\Retriever" />
+    <Folder Include="POUs\ITFs" />
+    <Folder Include="POUs\Controller" />
+    <Folder Include="POUs\Entity" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -135,6 +169,12 @@
               <d n="Values" t="Hashtable" />
             </o>
           </d>
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
+        <o>
+          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
+          <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" />
         </o>
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>

@@ -3,23 +3,30 @@
   <GVL Name="GVL_Config" Id="{5b1cc540-97bc-40e2-9967-3c0bc43dc6d5}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL CONSTANT
-    (* Storage Dimensions *)
-    MAX_COLUMNS       : INT := 10;
-    MAX_ROWS          : INT := 4;  
-    MAX_DEPTH         : INT := 2;  
-
-    (* Operational Limits *)
-    WEIGHT_LIMIT_C1   : REAL := 100.0; 
-    WEIGHT_LIMIT_C2   : REAL := 200.0; 
-
-    (* Simulation Parameters *)
-    CRANE_SPEED_X     : LREAL := 2.5;  // Units per second
-    CRANE_SPEED_Y     : LREAL := 1.2;  // Units per second
-    CONVEYOR_SPEED    : LREAL := 1.5;  // Meters per second
+    (* --- Warehouse Dimensions --- *)
+    MAX_COLUMNS         : INT := 10;
+    MAX_ROWS            : INT := 4;
+    TOTAL_SLOTS         : INT := 40; // 10 Columns x 4 Rows
     
-    (* Fixed Timings *)
-    T_PICK_PLACE      : TIME := T#2S; 
-    T_SCAN_DELAY      : TIME := T#500MS;
+    (* --- Weight Thresholds (KG) --- *)
+    WEIGHT_LIMIT_AISLE1 : REAL := 100.0; // Lightweight Aisle
+    WEIGHT_LIMIT_AISLE2 : REAL := 200.0; // Heavyweight Aisle
+    
+    (* --- Simulation Speeds (Units/Sec) --- *)
+    SIM_CONVEYOR_SPEED  : LREAL := 0.5;  // Loop speed (m/s)
+    SIM_CRANE_X_SPEED   : LREAL := 2.0;  // Horizontal speed (m/s)
+    SIM_CRANE_Y_SPEED   : LREAL := 1.0;  // Vertical speed (m/s)
+    
+    (* --- Physical Coordinates (mm) --- *)
+    COLUMN_SPACING      : LREAL := 1200.0; // Distance between columns
+    ROW_SPACING         : LREAL := 800.0;  // Distance between rows
+    HOME_X              : LREAL := 0.0;
+    HOME_Y              : LREAL := 0.0;
+    
+    (* --- Safety & Logic Timers --- *)
+    T_GATE_TIMEOUT      : TIME := T#5S;    // Alarm if gate fails to move
+    T_JAM_DETECTION     : TIME := T#8S;    // Alarm if sensor blocked too long
+    T_RAT_LIFT_TIME     : TIME := T#1500MS; // Time for RAT chains to rise
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

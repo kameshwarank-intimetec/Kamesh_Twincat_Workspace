@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="ST_CraneHardware" Id="{3067b45b-ac6b-4fb2-9993-54bc7c93ecd8}">
+    <Declaration><![CDATA[TYPE ST_CraneHardware :
+STRUCT
+    (* --- Motion Control (Feedback from Tc2_MC2) --- *)
+    fActualPosX         : LREAL; // Horizontal position (mm) - Column tracking
+    fActualPosY         : LREAL; // Vertical position (mm) - Row tracking
+    bAxisX_Ready        : BOOL;  // Drive Status: X-Axis powered and no faults
+    bAxisY_Ready        : BOOL;  // Drive Status: Y-Axis powered and no faults
+    
+    (* --- Fork Mechanism (Z-Axis) --- *)
+    xSolenoid_Extend    : BOOL;  // Output: Push forks into the rack
+    xSolenoid_Retract   : BOOL;  // Output: Pull forks back to carriage
+    xLimit_Extended     : BOOL;  // Input Sensor: Confirm forks are fully out
+    xLimit_Retracted    : BOOL;  // Input Sensor: Confirm forks are fully home
+    
+    (* --- Load Detection --- *)
+    xSensor_OnForks     : BOOL;  // Sensor: Confirms a box is physically on the crane
+    fLoadWeight_Verify  : REAL;  // Load Cell: Measured weight on the crane carriage
+    
+    (* --- Safety --- *)
+    xEmergencyStop_OK   : BOOL;  // Input: Local E-Stop for this specific crane
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

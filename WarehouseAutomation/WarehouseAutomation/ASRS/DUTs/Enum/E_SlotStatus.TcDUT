@@ -5,14 +5,18 @@
 {attribute 'strict'}
 TYPE E_SlotStatus :
 (
-    EMPTY           := 0,
-    RESERVED_IN     := 1,   // Crane is currently moving to store here
-    OCCUPIED        := 2,   // Item is physically present
-    RESERVED_OUT    := 3,   // Crane is currently moving to retrieve here
-    BLOCKED         := 4,   // Slot is physically damaged or unusable
-    SHUFFLE_TARGET  := 5    // Temporary status during restacking
+    EMPTY           := 0,   // Slot is clear and available
+    
+    RESERVED_IN     := 1,   // Inbound Manager has claimed this for a box on the loop
+    
+    OCCUPIED        := 2,   // Box is physically present in the rack
+    
+    RESERVED_OUT    := 3,   // Retrieval request active; Crane is on the way to pick
+    
+    BLOCKED         := 4,   // Maintenance mode: Slot is physically broken or restricted
+    
+    SHUFFLE_LOCKED  := 5    // Double-Deep logic: This slot is being moved to reach the one behind
 );
-END_TYPE
-]]></Declaration>
+END_TYPE]]></Declaration>
   </DUT>
 </TcPlcObject>

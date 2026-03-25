@@ -3,9 +3,19 @@
   <DUT Name="ST_StorageSlot" Id="{8c5b9e40-0bdf-4706-a4ad-2bd3ae991ab3}">
     <Declaration><![CDATA[TYPE ST_StorageSlot :
 STRUCT
-    eStatus         : E_SlotStatus; // Current status from Enum
-    stParcelData    : ST_Parcel;    // The actual data of the box
-    bIsRearSlot     : BOOL;         // Metadata to identify depth
+    (* Occupancy Status *)
+    eStatus         : E_SlotStatus; // IDLE, RESERVED, OCCUPIED, BLOCKED
+    
+    (* The Contents *)
+    stParcel        : ST_Parcel;    // The actual box data (DNA)
+
+    (* Physical Configuration *)
+    bIsDeepSlot     : BOOL;         // TRUE = Rear Position, FALSE = Front Position
+    nPartnerIndex   : INT;          // The index of the slot in front/behind this one
+    
+    (* Maintenance & Logic *)
+    bMaintenance    : BOOL;         // Set to TRUE if the rack shelf is broken
+  
 END_STRUCT
 END_TYPE]]></Declaration>
   </DUT>

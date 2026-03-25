@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="GVL_IO" Id="{188d908f-b3e5-47c1-a697-e6e007a07ac5}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+    // --- INFEED SECTION ---
+    xPE_Infeed              : BOOL; // Sensor: Parcel at entry gate
+    xBlocker_Infeed_Open    : BOOL; // Actuator: Open/Close entry gate
+    
+    // Aisle 1 (Lightweight)
+    xPE_Loop_Pre_Aisle1     : BOOL; // Sensor: Approach to Aisle 1
+    xBlocker_Aisle1_Active  : BOOL; // Actuator: Stop parcel for RAT 1
+    xRAT1_Lift_Up           : BOOL; // Actuator: Raise RAT 1 chains
+    xRAT1_Travel_Forward    : BOOL; // Actuator: Move parcel into Aisle 1
+    
+    // Aisle 2 (Heavyweight)
+    xPE_Loop_Pre_Aisle2     : BOOL; // Sensor: Approach to Aisle 2
+    xBlocker_Aisle2_Active  : BOOL; // Actuator: Stop parcel for RAT 2
+    xRAT2_Lift_Up           : BOOL; // Actuator: Raise RAT 2 chains
+    xRAT2_Travel_Forward    : BOOL; // Actuator: Move parcel into Aisle 2
+    
+    // Outfeed
+    xPE_Loop_Pre_Outfeed    : BOOL; // Sensor: Approach to Outfeed
+    xBlocker_Outfeed_Active : BOOL; // Actuator: Stop parcel for Outfeed RAT
+    xRAT3_Lift_Up           : BOOL; // Actuator: Raise Outfeed RAT
+    xRAT3_Travel_Forward    : BOOL; // Actuator: Move parcel to Outfeed
+    
+    // --- AISLE CONVEYORS (Bi-Directional) ---
+    xPE_Aisle1_Entry        : BOOL; // Sensor: Parcel entered Aisle 1
+    xPE_Crane1_AtStation    : BOOL; // Sensor: Parcel at Crane 1 Pick Point
+    xMotor_Aisle1_Run       : BOOL; 
+    xMotor_Aisle1_Reverse   : BOOL; // Reverse for Retrieval
+    
+    xPE_Aisle2_Entry        : BOOL; // Sensor: Parcel entered Aisle 2
+    xPE_Crane2_AtStation    : BOOL; // Sensor: Parcel at Crane 2 Pick Point
+    xMotor_Aisle2_Run       : BOOL;
+    xMotor_Aisle2_Reverse   : BOOL; // Reverse for Retrieval
+    
+    // --- OUTFEED ---
+    xPE_Outfeed_Final       : BOOL; // Sensor: Parcel reached exit dock
+    xMotor_Outfeed_Run      : BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

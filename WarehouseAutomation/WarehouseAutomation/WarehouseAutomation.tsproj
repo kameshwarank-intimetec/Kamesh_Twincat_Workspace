@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.71">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.71" TcVersionFixed="true">
 	<Project ProjectGUID="{8C7DA959-346D-4EA4-B3B9-15BB2F1FACB0}" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
 			<Tasks>
@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{D7E5A6AA-69BB-4343-89A2-F80D8804284D}" Name="ASRS" PrjFilePath="ASRS\ASRS.plcproj" TmcFilePath="ASRS\ASRS.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="ASRS\ASRS.tmc" TmcHash="{5705CE5C-DDD8-5D4B-2D2E-4FB2FEC5F3D8}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="ASRS\ASRS.tmc" TmcHash="{A3FFAA9B-7393-85C0-01F9-82EA563CB11B}">
 					<Name>ASRS Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

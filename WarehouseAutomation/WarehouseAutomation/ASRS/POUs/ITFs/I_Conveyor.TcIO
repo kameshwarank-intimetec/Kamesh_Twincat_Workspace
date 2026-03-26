@@ -3,24 +3,12 @@
   <Itf Name="I_Conveyor" Id="{79695f05-cf47-4e8b-96fd-9364dffb9874}">
     <Declaration><![CDATA[INTERFACE I_Conveyor
 ]]></Declaration>
-    <Property Name="bOccupied" Id="{c9acc93a-6b8f-48c7-a488-6008eeb0af8a}">
-      <Declaration><![CDATA[PROPERTY bOccupied : BOOL]]></Declaration>
-      <Get Name="Get" Id="{49011979-9998-412e-9dad-7bf1b1982af2}">
-        <Declaration><![CDATA[]]></Declaration>
-      </Get>
-      <Set Name="Set" Id="{9cae3bd8-98bb-4139-b19e-d188c30ecd02}">
-        <Declaration><![CDATA[]]></Declaration>
-      </Set>
-    </Property>
     <Property Name="eMode" Id="{b3a2cf31-50ff-4212-bb5d-f5315b579633}">
       <Declaration><![CDATA[PROPERTY eMode : E_ConveyorMode
 ]]></Declaration>
       <Get Name="Get" Id="{91cd94a6-8124-4b17-aa62-eef95d98fd70}">
         <Declaration><![CDATA[]]></Declaration>
       </Get>
-      <Set Name="Set" Id="{6359936c-f76f-4018-9da6-0e0b9fb90406}">
-        <Declaration><![CDATA[]]></Declaration>
-      </Set>
     </Property>
     <Property Name="fCurrentSpeed" Id="{2380c4b5-8bda-4483-be69-9d50c0877aa3}">
       <Declaration><![CDATA[PROPERTY fCurrentSpeed : LREAL]]></Declaration>
@@ -31,21 +19,14 @@
         <Declaration><![CDATA[]]></Declaration>
       </Set>
     </Property>
-    <Method Name="M_Divert" Id="{e45ca485-9837-4e48-bdfe-7ec21838192d}">
-      <Declaration><![CDATA[METHOD M_Divert : BOOL
-VAR_INPUT
-	bOpen : BOOL;
-END_VAR
-]]></Declaration>
-    </Method>
-    <Method Name="M_reset" Id="{2c3869a7-9ecd-4f88-8df5-2c1fd23ea136}">
-      <Declaration><![CDATA[METHOD M_reset : BOOL
+    <Method Name="M_Reset" Id="{2c3869a7-9ecd-4f88-8df5-2c1fd23ea136}">
+      <Declaration><![CDATA[METHOD M_Reset : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Method Name="M_run" Id="{9d109452-f5fe-4bde-932b-0963eea8677a}">
-      <Declaration><![CDATA[METHOD M_run : BOOL
+    <Method Name="M_Run" Id="{9d109452-f5fe-4bde-932b-0963eea8677a}">
+      <Declaration><![CDATA[METHOD M_Run : BOOL
 VAR_INPUT
 	bForward : BOOL;
 END_VAR

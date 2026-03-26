@@ -1,18 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <POU Name="FB_RAT" Id="{a53e8369-ccc0-4a67-aaae-0302ede3efed}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_RAT
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_RAT IMPLEMENTS I_Diverter
 VAR_INPUT
+    bEnable             : BOOL;    // Master Safety Enable
+    bReset              : BOOL;    // Manual Fault Reset
+    
+    // Physical Sensors (Mapped from GVL_IO)
+    bSensorOccupied     : BOOL;    // Box centered on RAT
+    bSensorIsUp         : BOOL;    // Limit Switch: Raised
+    bSensorIsDown       : BOOL;    // Limit Switch: Lowered
 END_VAR
+
 VAR_OUTPUT
+    bError              : BOOL;    // Mechanical or Timeout Fault
+    eStatus             : E_DiverterState := E_DiverterState.IDLE;
 END_VAR
+
 VAR
-END_VAR
-]]></Declaration>
+    // Physical Actuator Commands
+    bLiftUp             : BOOL;    // Solenoid valve for pneumatic lift
+    bTravelMotorRun     : BOOL;    // Transfer motor to push into Aisle
+    // Safety Timers
+    fbLiftTimer         : TON;     // Fault if lift doesn't reach switch
+    fbTravelTimer       : TON;     // Fault if box doesn't clear the RAT
+END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[// 1. Emergency & Reset Handling
+IF NOT bEnable THEN
+    bLiftUp := bTravelMotorRun := FALSE;
+    eStatus := E_DiverterState.IDLE;
+ELSIF bReset THEN
+    bError  := FALSE;
+    eStatus := E_DiverterState.IDLE;
+END_IF
+
+// 2. The RAT State Machine (The Sequence)
+CASE eStatus OF
+    
+    E_DiverterState.IDLE:
+        bLiftUp         := FALSE;
+        bTravelMotorRun := FALSE;
+
+    E_DiverterState.LIFTING:
+        bLiftUp := TRUE; // Engage Pneumatics
+        // Transition: Only proceed once the physical 'Up' switch is triggered
+        IF bSensorIsUp THEN
+            eStatus := E_DiverterState.Diverting;
+        END_IF
+
+    E_DiverterState.Diverting:
+        bLiftUp         := TRUE;
+        bTravelMotorRun := TRUE; // Push box into the Aisle station
+        
+        // Transition: Once the box clears the RAT sensor, wait for it to fully exit
+        IF NOT bSensorOccupied THEN
+            eStatus := E_DiverterState.LOWERING;
+        END_IF
+
+    E_DiverterState.LOWERING:
+        bTravelMotorRun := FALSE;
+        bLiftUp         := FALSE; // Disengage Pneumatics
+        
+        // Transition: Back to IDLE once the 'Down' switch is confirmed
+        IF bSensorIsDown THEN
+            eStatus := E_DiverterState.IDLE;
+        END_IF
+
+    E_DiverterState.FAULT:
+        bLiftUp         := FALSE;
+        bTravelMotorRun := FALSE;
+        bError          := TRUE;
+
+END_CASE
+
+// 3. Safety Monitoring (Mechanical Protection)
+fbLiftTimer(IN := (eStatus = E_DiverterState.LIFTING OR eStatus = E_DiverterState.LOWERING), PT := T#4S);
+IF fbLiftTimer.Q THEN
+    eStatus := E_DiverterState.FAULT;
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="FB_RAT">
+      <LineId Id="64" Count="51" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>

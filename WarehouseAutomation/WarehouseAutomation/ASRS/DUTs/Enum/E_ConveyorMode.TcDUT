@@ -1,25 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
-  <DUT Name="E_ConveyorMode" Id="{5338500f-fac0-44cd-8fd9-f53eb270aabb}">
+  <DUT Name="E_ConveyorMode" Id="{4072e045-d8cc-403a-b758-02a99a473424}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'strict'}
 TYPE E_ConveyorMode :
 (
-    IDLE            := 0,   // Belt is stopped; no activity
-    
-    RECEIVING_FROM_LOOP := 1,   // RAT is pushing a parcel onto the Aisle belt
-    TRANSPORT_TO_CRANE  := 2,   // Moving parcel toward the Pick Point
-    WAITING_FOR_PICK    := 3,   // Parcel at Pick Point; waiting for a Crane
-    
-    READY_FOR_DROP      := 10,  // Empty belt; waiting for a Crane to drop a box
-    RECEIVING_FROM_CRANE:= 11,  // Crane is currently dropping a parcel
-    TRANSPORT_TO_LOOP   := 12,  // Moving parcel toward the RAT junction
-    WAITING_FOR_LOOP    := 13,  // Parcel at junction; waiting for Loop clearance
-    
-    RECIRCULATING       := 20,  // Loop mode: Box missed its turn
-    MANUAL_STOP         := 98,  
-    FAULT               := 99   
+	IDLE := 0,
+	MOVING := 1,
+	STOPPED := 2,
+	FAULT := 3
 );
-END_TYPE]]></Declaration>
+END_TYPE
+]]></Declaration>
   </DUT>
 </TcPlcObject>

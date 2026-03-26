@@ -1,19 +1,138 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <POU Name="FB_Conveyor" Id="{ed03983f-d198-4ac9-879a-8e59f2a470c9}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_Conveyor
-VAR_INPUT
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Conveyor IMPLEMENTS I_Conveyor
+
+
+VAR
+    fbJamTimer : TON;     // Safety
+	bMotorRun : BOOL;
+	eConveyorMode : E_ConveyorMode := E_ConveyorMode.IDLE;
+	fSpeed : LREAL := 10;
+	
 END_VAR
 VAR_OUTPUT
-END_VAR
-VAR
+    bError   : BOOL;    // Mechanical or Timeout Fault
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+CASE eConveyorMode OF
+    
+    E_ConveyorMode.IDLE:
+        
+	E_ConveyorMode.MOVING:
+	
+		bMotorRun := TRUE;
+	
+	E_ConveyorMode.STOPPED:
+	
+		bMotorRun := FALSE;
+    
+    E_ConveyorMode.FAULT:
+  
+        bError := TRUE;
+
+END_CASE
+]]></ST>
+    </Implementation>
+    <Property Name="eMode" Id="{93bcf49b-3d79-4a77-9d65-b954d0bde3e6}">
+      <Declaration><![CDATA[PROPERTY eMode : E_ConveyorMode]]></Declaration>
+      <Get Name="Get" Id="{c45f8c33-0696-435d-8bec-1713d609f972}">
+        <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
-    <Implementation>
-      <ST><![CDATA[]]></ST>
-    </Implementation>
+        <Implementation>
+          <ST><![CDATA[eMode := eConveyorMode;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="fCurrentSpeed" Id="{4f347ecc-ed89-496a-8973-577dcafb4f2d}">
+      <Declaration><![CDATA[PROPERTY fCurrentSpeed : LREAL]]></Declaration>
+      <Get Name="Get" Id="{316926ca-cc66-446c-b07e-f68329ff8cdf}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fCurrentSpeed := fSpeed;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{41aeba6d-d6b9-479f-afee-597838a69cc8}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[fSpeed := fCurrentSpeed;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="M_Reset" Id="{037e77d5-23ba-4d32-8e95-90026c70d231}">
+      <Declaration><![CDATA[METHOD M_Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// Clear errors and return to Idle
+bError  := FALSE;
+eConveyorMode   := E_ConveyorMode.IDLE;
+M_Reset := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_Run" Id="{a7d5cb89-0f31-4144-916e-2fb38e8e7dea}">
+      <Declaration><![CDATA[METHOD M_Run : BOOL
+VAR_INPUT
+	bForward : BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+// Trigger the state machine to start moving
+IF eConveyorMode <> E_ConveyorMode.FAULT AND bForward THEN
+    eConveyorMode := E_ConveyorMode.MOVING;
+    M_Run := TRUE;
+ELSE
+    M_Run := FALSE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_Stop" Id="{fae86b96-e10a-48b3-9ea1-9af47ce85337}">
+      <Declaration><![CDATA[METHOD M_Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// Force the state back to Idle
+eConveyorMode  := E_ConveyorMode.STOPPED;
+M_Stop := TRUE;]]></ST>
+      </Implementation>
+    </Method>
     <LineIds Name="FB_Conveyor">
+      <LineId Id="264" Count="3" />
+      <LineId Id="270" Count="0" />
+      <LineId Id="302" Count="6" />
+      <LineId Id="283" Count="2" />
+      <LineId Id="287" Count="2" />
       <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Conveyor.eMode.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Conveyor.fCurrentSpeed.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Conveyor.fCurrentSpeed.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Conveyor.M_Reset">
+      <LineId Id="6" Count="2" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Conveyor.M_Run">
+      <LineId Id="7" Count="6" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Conveyor.M_Stop">
+      <LineId Id="12" Count="1" />
+      <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

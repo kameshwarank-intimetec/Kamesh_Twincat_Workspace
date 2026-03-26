@@ -3,16 +3,74 @@
   <POU Name="FB_InFeedController" Id="{ff4e95ef-2fe1-4fc4-a99c-7d6bb92f39bb}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_InFeedController
 VAR_INPUT
+    bEnable             : BOOL;    // System Master Enable
+    bReset              : BOOL;    // Global Reset
+    bLoopIsReady        : BOOL;    // Handshake from FB_LoopController
 END_VAR
+
 VAR_OUTPUT
+    bInFeedBusy         : BOOL;    // Tells WarehouseManager we are processing
+    bError              : BOOL;    // Global Error
 END_VAR
+
 VAR
-END_VAR
-]]></Declaration>
+    // THE MUSCLE: Instance of your FB_Conveyor shown in screenshot
+    fbInFeedConveyor      : FB_Conveyor;
+    // Internal State for the Process
+    nState  : (WAITING_FOR_PARCEL, REQUEST_RELEASE, TRANSFERRING, WAITING_FOR_CLEAR, FAULT); 
+END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[// 1. Always call the Muscle to update its internal State Machine
+// Pass physical GVL_IO directly to the Entity
+fbInFeedConveyor();
+
+
+// 2. The InFeed Process Brain
+CASE nState OF
+    
+    	WAITING_FOR_PARCEL : // IDLE: Waiting for a parcel to reach the entry point
+			bInFeedBusy := FALSE;
+			IF GVL_IO.bInFeedSensor THEN
+				nState := TRANSFERRING; // Box detected
+			END_IF
+
+   		TRANSFERRING: // REQUEST_LOOP: Asking the LoopController for permission to release
+			bInFeedBusy := TRUE;
+			fbInFeedConveyor.M_Run(bForward := TRUE); 
+			IF GVL_IO.bRAT1Sensor THEN
+				fbInFeedConveyor.M_Stop();
+				nState := WAITING_FOR_CLEAR;
+			END_IF
+
+   		WAITING_FOR_CLEAR :
+		
+			IF NOT GVL_IO.bRAT1Sensor THEN
+				nState := WAITING_FOR_PARCEL;
+			END_IF
+
+    	FAULT: // ERROR HANDLING
+			bError := fbInFeedConveyor.bError;
+			IF bReset THEN
+				nState := WAITING_FOR_PARCEL; 
+			END_IF
+
+END_CASE]]></ST>
     </Implementation>
     <LineIds Name="FB_InFeedController">
+      <LineId Id="188" Count="2" />
+      <LineId Id="195" Count="0" />
+      <LineId Id="198" Count="11" />
+      <LineId Id="213" Count="0" />
+      <LineId Id="228" Count="1" />
+      <LineId Id="231" Count="0" />
+      <LineId Id="230" Count="0" />
+      <LineId Id="216" Count="1" />
+      <LineId Id="232" Count="0" />
+      <LineId Id="219" Count="1" />
+      <LineId Id="222" Count="4" />
+      <LineId Id="234" Count="0" />
+      <LineId Id="233" Count="0" />
+      <LineId Id="227" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>

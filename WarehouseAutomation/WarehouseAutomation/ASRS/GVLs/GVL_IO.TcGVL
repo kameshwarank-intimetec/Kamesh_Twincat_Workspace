@@ -4,9 +4,11 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
     // --- Entry Point ---
-    bInfeedSensor           : BOOL; // Box detected at start
+    bInfeedSensor      : BOOL; // Box detected at start
     bInfeedBlocker          : BOOL; // Stop/Release at entry
     
+	
+	bRAT1Sensor : BOOL;
     // --- Main Loop Junctions ---
     // Aisle 1 - Small Parcels
     bAisle1ApproachSensor   : BOOL; // Detect box coming to Aisle 1
@@ -38,7 +40,7 @@ VAR_GLOBAL
     bAisle2MotorReverse     : BOOL; 
     
     // --- Exit ---
-    bExitDockSensor         : BOOL; // Box reached final destination
+    bOutFeedSensor         : BOOL; // Box reached final destination
     bExitMotor              : BOOL; 
 END_VAR]]></Declaration>
   </GVL>

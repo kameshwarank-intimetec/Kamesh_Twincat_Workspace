@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_Diverter" Id="{84cfe86d-85ae-4d1c-a69c-ff269d5b2ee5}">
+    <Declaration><![CDATA[INTERFACE I_Diverter
+]]></Declaration>
+    <Property Name="eDiverterState" Id="{0974b58c-2385-482f-ae71-131bd077706b}">
+      <Declaration><![CDATA[PROPERTY eDiverterState : E_DiverterState]]></Declaration>
+      <Get Name="Get" Id="{984d6012-4ded-4dfa-9623-8c712ff36ed1}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{cfa013da-26b1-4ab4-b891-c29a2220c7d8}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Method Name="M_Divert" Id="{2d3fe93f-960d-429f-b1f1-329724642645}">
+      <Declaration><![CDATA[METHOD M_Divert : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="M_Stop" Id="{f0500e49-24fb-429f-84e9-e23a384785f0}">
+      <Declaration><![CDATA[METHOD M_Stop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

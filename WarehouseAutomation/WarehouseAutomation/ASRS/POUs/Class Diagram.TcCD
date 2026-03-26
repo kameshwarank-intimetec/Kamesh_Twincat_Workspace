@@ -2396,66 +2396,6 @@
               <v n="ARGBElementColor">0</v>
               <v n="ZOrder">0U</v>
             </o>
-            <v>9bbb15e2-4ac3-4493-ba62-1b0aee54c0f3</v>
-            <o>
-              <v n="DocumenationName">"FB_BiDirectionConveyer"</v>
-              <n n="AttributeTrigger" />
-              <v n="ExcludedFromBuild">false</v>
-              <v n="PropertiesLoaded">false</v>
-              <d n="Properties" t="Hashtable" />
-              <l n="AttributesArray" t="ArrayList" />
-              <v n="PropertyID">-1</v>
-              <v n="MethodsLoaded">false</v>
-              <d n="MethodList" t="Hashtable" />
-              <v n="MethodID">-1</v>
-              <v n="ActivityID">-1</v>
-              <v n="IecObjectSemantic">2</v>
-              <d n="MethodStereotypContainer" t="Hashtable" />
-              <o n="ElementVisualisation" t="ClassElementVisualisation">
-                <v n="ShowAttributes">true</v>
-                <v n="ShowMethods">true</v>
-                <a n="DockingPopulation" cet="Int32">AAAAAAAAAAAAAAAAAAAAAA==</a>
-                <v n="ColumnIndex">3</v>
-                <v n="RowIndex">1</v>
-                <v n="RepresentedElement">5</v>
-                <v n="IsElementVisible">true</v>
-                <v n="TopPosition">601</v>
-                <v n="LeftPosition">2278</v>
-                <v n="WidthValue">164</v>
-                <v n="MinWidthValue">0</v>
-                <v n="Height">48</v>
-                <v n="MinHeight">0</v>
-                <v n="AutomaticLayout">true</v>
-                <d n="DockingPoints" t="Hashtable" />
-              </o>
-              <n n="StereotypeContainer" />
-              <v n="LibraryPath">""</v>
-              <v n="ObjectGuid">{9bbb15e2-4ac3-4493-ba62-1b0aee54c0f3}</v>
-              <v n="HasGraphicalRepresentation">true</v>
-              <v n="bIsVisualisationChanged">false</v>
-              <v n="IsType" t="UMLType">UMLClassElement</v>
-              <v n="_MaxDoCycleCalls" t="Int16">32767</v>
-              <v n="DefaultCellSizeX">70</v>
-              <v n="DefaultCellSizeY">47</v>
-              <v n="IsDocumentation">false</v>
-              <v n="Area">{4a5b65c9-a97c-4eca-8b53-fae4b7a43fe1}</v>
-              <v n="ParsedMethods">false</v>
-              <v n="ParsedProperties">false</v>
-              <v n="GeneratorId">0</v>
-              <v n="UserDefined">true</v>
-              <v n="ElementID">5</v>
-              <v n="ElementObjectGuid">{9bbb15e2-4ac3-4493-ba62-1b0aee54c0f3}</v>
-              <v n="ParentGuid">{00000000-0000-0000-0000-000000000000}</v>
-              <v n="ContainerGuid">{00000000-0000-0000-0000-000000000000}</v>
-              <v n="ShowedStereotype">{43a9219b-39a1-4172-9482-f92743297a2a}</v>
-              <v n="ReplacewithImage">false</v>
-              <v n="AutomaticLayout">true</v>
-              <v n="PositionCounter">1L</v>
-              <v n="UMLPosition">-1L</v>
-              <v n="IsModified">false</v>
-              <v n="ARGBElementColor">0</v>
-              <v n="ZOrder">0U</v>
-            </o>
             <v>a53e8369-ccc0-4a67-aaae-0302ede3efed</v>
             <o>
               <v n="DocumenationName">"FB_RAT"</v>
@@ -2508,66 +2448,6 @@
               <v n="ParentGuid">{00000000-0000-0000-0000-000000000000}</v>
               <v n="ContainerGuid">{00000000-0000-0000-0000-000000000000}</v>
               <v n="ShowedStereotype">{176b13db-687f-47e4-ae18-aa18566bd657}</v>
-              <v n="ReplacewithImage">false</v>
-              <v n="AutomaticLayout">true</v>
-              <v n="PositionCounter">1L</v>
-              <v n="UMLPosition">-1L</v>
-              <v n="IsModified">false</v>
-              <v n="ARGBElementColor">0</v>
-              <v n="ZOrder">0U</v>
-            </o>
-            <v>b92e7889-f852-4a96-a33c-3002a177f6c5</v>
-            <o>
-              <v n="DocumenationName">"FB_Crane"</v>
-              <n n="AttributeTrigger" />
-              <v n="ExcludedFromBuild">false</v>
-              <v n="PropertiesLoaded">false</v>
-              <d n="Properties" t="Hashtable" />
-              <l n="AttributesArray" t="ArrayList" />
-              <v n="PropertyID">-1</v>
-              <v n="MethodsLoaded">false</v>
-              <d n="MethodList" t="Hashtable" />
-              <v n="MethodID">-1</v>
-              <v n="ActivityID">-1</v>
-              <v n="IecObjectSemantic">2</v>
-              <d n="MethodStereotypContainer" t="Hashtable" />
-              <o n="ElementVisualisation" t="ClassElementVisualisation">
-                <v n="ShowAttributes">true</v>
-                <v n="ShowMethods">true</v>
-                <a n="DockingPopulation" cet="Int32">AAAAAAAAAAAAAAAAAAAAAA==</a>
-                <v n="ColumnIndex">1</v>
-                <v n="RowIndex">1</v>
-                <v n="RepresentedElement">3</v>
-                <v n="IsElementVisible">true</v>
-                <v n="TopPosition">601</v>
-                <v n="LeftPosition">766</v>
-                <v n="WidthValue">100</v>
-                <v n="MinWidthValue">0</v>
-                <v n="Height">48</v>
-                <v n="MinHeight">0</v>
-                <v n="AutomaticLayout">true</v>
-                <d n="DockingPoints" t="Hashtable" />
-              </o>
-              <n n="StereotypeContainer" />
-              <v n="LibraryPath">""</v>
-              <v n="ObjectGuid">{b92e7889-f852-4a96-a33c-3002a177f6c5}</v>
-              <v n="HasGraphicalRepresentation">true</v>
-              <v n="bIsVisualisationChanged">false</v>
-              <v n="IsType" t="UMLType">UMLClassElement</v>
-              <v n="_MaxDoCycleCalls" t="Int16">32767</v>
-              <v n="DefaultCellSizeX">70</v>
-              <v n="DefaultCellSizeY">47</v>
-              <v n="IsDocumentation">false</v>
-              <v n="Area">{5740fafa-b419-4990-8753-ea8e9297bd55}</v>
-              <v n="ParsedMethods">false</v>
-              <v n="ParsedProperties">false</v>
-              <v n="GeneratorId">0</v>
-              <v n="UserDefined">true</v>
-              <v n="ElementID">3</v>
-              <v n="ElementObjectGuid">{b92e7889-f852-4a96-a33c-3002a177f6c5}</v>
-              <v n="ParentGuid">{00000000-0000-0000-0000-000000000000}</v>
-              <v n="ContainerGuid">{00000000-0000-0000-0000-000000000000}</v>
-              <v n="ShowedStereotype">{e42aa108-8e7f-4449-af3e-047888574fe6}</v>
               <v n="ReplacewithImage">false</v>
               <v n="AutomaticLayout">true</v>
               <v n="PositionCounter">1L</v>

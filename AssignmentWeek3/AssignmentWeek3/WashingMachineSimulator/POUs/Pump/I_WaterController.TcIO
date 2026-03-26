@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_WaterController" Id="{012b58e9-6e55-44d0-9c5b-8788f5458c55}">
+    <Declaration><![CDATA[INTERFACE I_WaterController
+]]></Declaration>
+    <Method Name="GetDuration" Id="{b3a329eb-3e42-46bb-a615-ebad9e5af793}">
+      <Declaration><![CDATA[METHOD GetDuration : TIME
+VAR_INPUT
+	stWash : REFERENCE TO ST_Wash;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="StartDrain" Id="{25053972-740d-4e05-b8dd-5a7435364f92}">
+      <Declaration><![CDATA[METHOD StartDrain : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="StartFill" Id="{47c7ab24-b7a8-4e8f-b304-04490c99e0a1}">
+      <Declaration><![CDATA[METHOD StartFill : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Stop" Id="{57200dc2-4fdc-418d-afba-84f2bfe13a2b}">
+      <Declaration><![CDATA[METHOD Stop
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

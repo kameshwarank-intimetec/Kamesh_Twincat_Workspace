@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="E_Strategy" Id="{76587609-89b4-4d0e-a78b-113f0f29ba04}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_Strategy :
+(
+	SOFT := 0,
+	NORMAL,
+	HEAVY
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="ST_Wash" Id="{8ae3c9b4-99f1-4974-9113-2b578a6d7aa1}">
+    <Declaration><![CDATA[TYPE ST_Wash :
+STRUCT
+	nWaterLevel : INT := 1 ;
+	eWashStrategy : E_Strategy := E_Strategy.SOFT;
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

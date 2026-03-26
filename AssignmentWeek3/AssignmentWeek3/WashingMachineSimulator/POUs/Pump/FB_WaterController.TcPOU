@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_WaterController" Id="{7607c710-6c9a-4822-8ef3-44a38a1af84a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WaterController IMPLEMENTS I_WaterController
+
+VAR
+	bInletValve : BOOL;
+	bOutletValve : BOOL;
+	
+	tBaseTime : TIME := T#5S;
+	tFillingTime : TIME ;
+	tDrainingTime : TIME ;
+	
+	fbWaterTimer : TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="GetDuration" Id="{d6c6978b-fca7-424e-b214-ba7165bb22b2}">
+      <Declaration><![CDATA[METHOD GetDuration : TIME
+VAR_INPUT
+	stWash : REFERENCE TO ST_Wash;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+tFillingTime := tBaseTime * stWash.nWaterLevel;
+tDrainingTime := tBaseTime * stWash.nWaterLevel;
+GetDuration := tFillingTime + tDrainingTime;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StartDrain" Id="{e16c08f7-9931-405a-b27b-99e175bb7de5}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD StartDrain : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+StartDrain := bOutletValve := TRUE;
+fbWaterTimer( IN := bOutletValve, PT := tFillingTime);
+IF fbWaterTimer.Q THEN
+	bOutletValve := FALSE;
+	StartDrain := FALSE;
+	fbWaterTimer( IN := bOutletValve);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StartFill" Id="{486a3f2d-fad5-4077-a4a6-f327b9894499}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD StartFill : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[StartFill := bInletValve := TRUE;
+fbWaterTimer( IN := bInletValve, PT := tFillingTime);
+IF fbWaterTimer.Q THEN
+	bInletValve := FALSE;
+	StartFill := FALSE;
+	fbWaterTimer( IN := bInletValve);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{5fc106ba-0ed7-49a2-81c6-6d53439a16ca}">
+      <Declaration><![CDATA[METHOD Stop
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bInletValve := bOutletValve := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_WaterController">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WaterController.GetDuration">
+      <LineId Id="8" Count="2" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WaterController.StartDrain">
+      <LineId Id="7" Count="6" />
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WaterController.StartFill">
+      <LineId Id="9" Count="0" />
+      <LineId Id="4" Count="0" />
+      <LineId Id="10" Count="1" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WaterController.Stop">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

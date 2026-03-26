@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="GVL_References" Id="{b44de6da-9732-49ef-9607-d87e175c08b8}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	fbSoftWash : FB_SoftWash;
+	fbNormalWash : FB_NormalWash;
+	fbHeavyWash : FB_HeavyWash;
+	
+	fbMotor : FB_BaseMotor;
+	fbWaterController : FB_WaterController;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

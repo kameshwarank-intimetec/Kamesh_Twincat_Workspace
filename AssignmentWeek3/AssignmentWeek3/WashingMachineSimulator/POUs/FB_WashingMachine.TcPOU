@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_WashingMachine" Id="{533b8205-1e07-4998-827d-1f3b127b70ad}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WashingMachine
+
+VAR_IN_OUT
+	stWash : ST_Wash;
+END_VAR
+VAR
+	iWashStrategy : I_WashStrategy;
+	iMotor : I_Motor;
+	iWaterController : I_WaterController;
+	
+	eMachineState : E_MachineState;
+	tTotalTime : TIME ;
+	bRunning : BOOL;
+	tBaseTime : TIME := T#5S;
+	tRemainingWashingTime : TIME ;
+	nRinseCount : INT;
+	
+	fbTimer : TON ;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF tTotalTime <> T#0S THEN
+	fbTimer (IN := bRunning , PT := tTotalTime);
+	tRemainingTime := fbTimer.PT - fbTimer.ET;
+END_IF
+
+IF __ISVALIDREF(stWash) THEN
+	
+	CASE eMachineState OF
+		E_MachineState.IDLE:
+			IF bRunning THEN
+				eMachineState := E_MachineState.CONFIGURING;
+			END_IF
+			
+		E_MachineState.CONFIGURING:
+			nRinseCount := 0;
+			iWashStrategy := SelectStrategy();
+			iMotor := SelectMotor();
+			iWaterController := SelectWaterController();
+			IF iWashStrategy <> 0 AND iWaterController <> 0 AND iMotor <> 0 THEN
+				tTotalTime := iWaterController.GetDuration(stWash) * iWashStrategy.GetRinseCount() + iWashStrategy.GetDuration();
+				tRemainingTime := tTotalTime;
+				eMachineState := E_MachineState.FILLING;
+			ELSE
+				eMachineState := E_MachineState.ERROR;
+			END_IF
+		
+		E_MachineState.FILLING:
+			IF NOT iWaterController.StartFill() THEN
+				eMachineState := E_MachineState.WASHING;
+			END_IF
+				
+		E_MachineState.WASHING:
+			IF iWashStrategy.StartWash(iMotor) THEN
+				eMachineState := E_MachineState.DRAINING;
+			END_IF
+		
+		E_MachineState.DRAINING:
+				IF NOT iWaterController.StartDrain() THEN
+					nRinseCount := nRinseCount + 1;
+					IF nRinseCount = iWashStrategy.GetRinseCount() THEN
+						eMachineState := E_MachineState.DRYING;
+					ELSE
+						eMachineState := E_MachineState.FILLING;
+					END_IF
+				END_IF
+				
+		E_MachineState.DRYING:
+			IF iWashStrategy.StartSpin() THEN
+				eMachineState := E_MachineState.COMPLETED;
+			END_IF
+			
+		E_MachineState.COMPLETED:
+			Stop();
+			fbTimer( IN := bRunning);
+			tTotalTime := T#0S;
+			tRemainingTime := tTotalTime;
+			
+		E_MachineState.ERROR:
+			Stop();
+			
+		
+	END_CASE
+	
+END_IF]]></ST>
+    </Implementation>
+    <Property Name="eState" Id="{9eb26405-ab77-4215-9e4b-5261859df458}">
+      <Declaration><![CDATA[PROPERTY eState : E_MachineState]]></Declaration>
+      <Get Name="Get" Id="{75450bf7-8a2e-4da7-bf7a-4c0318bbb720}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[eState := eMachineState;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{0a692673-5a45-4181-a89f-b89da7cd827c}">
+        <Declaration><![CDATA[PRIVATE
+VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[eMachineState := eState;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="SelectMotor" Id="{ca951e7e-739c-49fb-acab-b80aa14296a5}">
+      <Declaration><![CDATA[METHOD PRIVATE SelectMotor : I_Motor
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SelectMotor := GVL_References.fbMotor;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SelectStrategy" Id="{6ef3cceb-1fa2-4f2e-af62-8c5ba15a6afb}">
+      <Declaration><![CDATA[METHOD PRIVATE SelectStrategy : I_WashStrategy
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE stWash.eWashStrategy OF
+	E_Strategy.SOFT :
+	SelectStrategy :=  GVL_References.fbSoftWash;
+	
+	E_Strategy.NORMAL :
+	SelectStrategy :=  GVL_References.fbNormalWash;
+	
+	E_Strategy.HEAVY :
+	SelectStrategy :=  GVL_References.fbHeavyWash;
+	
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SelectWaterController" Id="{96fd3fe0-7873-43ae-a291-313852a54e2c}">
+      <Declaration><![CDATA[METHOD PRIVATE SelectWaterController : I_WaterController
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SelectWaterController :=  GVL_References.fbWaterController;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Start" Id="{d04ebe96-dff9-4b6d-8e28-83c84e090aa8}">
+      <Declaration><![CDATA[METHOD Start
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bRunning := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{eedaa334-e689-4c2e-9e59-a00d7921cfb5}">
+      <Declaration><![CDATA[METHOD Stop
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bRunning := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="tRemainingTime" Id="{2ae82297-0e7a-47c1-bf6f-19f0329c494b}">
+      <Declaration><![CDATA[PROPERTY tRemainingTime : TIME]]></Declaration>
+      <Get Name="Get" Id="{008e38d0-36e6-4810-b6c3-8a0942dcf1d6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[tRemainingTime := tRemainingWashingTime;
+]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{d8e58f91-fb47-41b8-be75-38907c1b1b1d}">
+        <Declaration><![CDATA[PRIVATE
+VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[tRemainingWashingTime := tRemainingTime;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_WashingMachine">
+      <LineId Id="214" Count="1" />
+      <LineId Id="218" Count="0" />
+      <LineId Id="246" Count="0" />
+      <LineId Id="219" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="21" Count="1" />
+      <LineId Id="220" Count="2" />
+      <LineId Id="183" Count="0" />
+      <LineId Id="118" Count="0" />
+      <LineId Id="208" Count="0" />
+      <LineId Id="175" Count="0" />
+      <LineId Id="216" Count="1" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="185" Count="0" />
+      <LineId Id="245" Count="0" />
+      <LineId Id="179" Count="2" />
+      <LineId Id="171" Count="1" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="129" Count="0" />
+      <LineId Id="187" Count="1" />
+      <LineId Id="162" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="140" Count="0" />
+      <LineId Id="190" Count="1" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="193" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="195" Count="0" />
+      <LineId Id="197" Count="0" />
+      <LineId Id="199" Count="1" />
+      <LineId Id="198" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="225" Count="0" />
+      <LineId Id="86" Count="1" />
+      <LineId Id="203" Count="1" />
+      <LineId Id="88" Count="0" />
+      <LineId Id="31" Count="1" />
+      <LineId Id="205" Count="0" />
+      <LineId Id="266" Count="1" />
+      <LineId Id="210" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="223" Count="1" />
+      <LineId Id="206" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.eState.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.eState.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.SelectMotor">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.SelectStrategy">
+      <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="18" Count="1" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.SelectWaterController">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.Start">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.Stop">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.tRemainingTime.Get">
+      <LineId Id="6" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_WashingMachine.tRemainingTime.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

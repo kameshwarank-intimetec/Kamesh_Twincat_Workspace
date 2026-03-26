@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{0dbc5495-60a6-448c-a4e7-d500a20e79f9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	stWash1 : ST_Wash := (nWaterLevel := 4, eWashStrategy := E_Strategy.NORMAL );
+	
+	fbWashingMachine : FB_WashingMachine();
+	bStart: BOOL;
+	
+	eWashingMachineState : E_MachineState;
+	tRemainingTime : TIME;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bStart THEN
+	fbWashingMachine.Start();
+END_IF
+fbWashingMachine(stWash := stWash1);
+eWashingMachineState := fbWashingMachine.eState;
+tRemainingTime := fbWashingMachine.tRemainingTime;]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="9" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="26" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

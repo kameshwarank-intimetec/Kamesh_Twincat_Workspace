@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_BaseMotor" Id="{fc772ccd-6811-433f-bdff-1beb293d4214}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_BaseMotor IMPLEMENTS I_Motor
+
+VAR
+	nMotorSpeed : INT;
+	bEnable : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="DrySpin" Id="{ef8e60bc-43e2-4077-a193-f1d492cbfc42}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD DrySpin
+VAR_INPUT
+	nMotorSpeed	: INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable := TRUE;
+This^.nMotorSpeed := nMotorSpeed;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{6ac747cd-6170-4826-8baa-995ada24ee4f}">
+      <Declaration><![CDATA[METHOD Stop 
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="WashSpin" Id="{e526ef12-d8c4-41df-8d3e-ca783664064a}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD WashSpin
+VAR_INPUT
+	nMotorSpeed	: INT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bEnable := TRUE;
+This^.nMotorSpeed := nMotorSpeed;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_BaseMotor">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseMotor.DrySpin">
+      <LineId Id="7" Count="0" />
+      <LineId Id="13" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseMotor.Stop">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseMotor.WashSpin">
+      <LineId Id="7" Count="0" />
+      <LineId Id="13" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

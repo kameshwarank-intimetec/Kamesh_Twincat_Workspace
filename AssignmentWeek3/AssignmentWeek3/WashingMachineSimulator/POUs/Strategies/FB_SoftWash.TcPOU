@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_SoftWash" Id="{db75bac4-9ece-4aa1-ad1b-7ea85c57614e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SoftWash IMPLEMENTS I_WashStrategy
+
+VAR
+	nWashCount : INT := 1;
+	nRinseCount : INT := 1;
+	iMotorRef : I_Motor;
+	bWashing : BOOL;
+	bDrying : BOOL;
+	
+	tWashTime : TIME := T#10S;
+	nMotorWashSpeed : INT := 100;
+	
+	nMotorDrySpeed : INT := 700; 
+	nMotorDryTime : TIME := T#7S;
+	
+	fbWashTimer : TON;
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="GetDuration" Id="{5610f62e-d353-4b19-81ab-f8bc1457e3bd}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD GetDuration : TIME
+VAR
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[GetDuration := tWashTime * (nRinseCount + nWashCount) + nMotorDryTime ;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetRinseCount" Id="{a4f0e20d-04de-4f2a-9742-23b6eaab6815}">
+      <Declaration><![CDATA[METHOD GetRinseCount : INT
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[GetRinseCount := nRinseCount + nWashCount;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StartSpin" Id="{0bc1b6f3-2a77-45d0-8b68-67eb4e57f35a}">
+      <Declaration><![CDATA[METHOD StartSpin : BOOL
+
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bDrying := TRUE;
+fbWashTimer( IN := bDrying, PT := nMotorDryTime);
+IF NOT fbWashTimer.Q THEN
+	iMotorRef.DrySpin(nMotorDrySpeed);
+ELSE
+	iMotorRef.Stop();
+	bDrying := FALSE;
+	fbWashTimer( IN := bDrying);
+	StartSpin := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StartWash" Id="{1fc56eb1-f0aa-426e-a966-3c9d946c4f4e}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD StartWash : BOOL
+VAR_INPUT
+	iMotor : I_Motor;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[iMotorRef := iMotor;
+bWashing := TRUE;
+fbWashTimer( IN := bWashing, PT := tWashTime);
+IF NOT fbWashTimer.Q THEN
+	iMotorRef.WashSpin(nMotorWashSpeed);
+ELSE
+	iMotorRef.Stop();
+	bWashing := FALSE;
+	fbWashTimer( IN := bWashing);
+	StartWash := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{35f600ee-1d7f-4132-bc7c-9dbc289bcc2e}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bWashing := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_SoftWash">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SoftWash.GetDuration">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SoftWash.GetRinseCount">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SoftWash.StartSpin">
+      <LineId Id="7" Count="8" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SoftWash.StartWash">
+      <LineId Id="4" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SoftWash.Stop">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

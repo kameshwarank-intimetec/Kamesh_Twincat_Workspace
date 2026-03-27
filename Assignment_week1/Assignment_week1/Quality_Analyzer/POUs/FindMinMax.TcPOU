@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FindMinMax" Id="{0e96b9d6-e551-4295-95b3-fc614fdf8692}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION FindMinMax : REAL
+VAR_INPUT
+	aRefArray : REFERENCE TO ARRAY[1..GVL.nMaximumSizeOfArray] OF REAL;
+END_VAR
+VAR_IN_OUT
+	
+END_VAR
+VAR
+	nIterator : INT;
+END_VAR
+VAR_OUTPUT
+	fMinWeight : REAL ;
+	fMaxWeight : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+FOR nIterator := 1 TO GVL.nMaximumSizeOfArray DO
+	
+	IF aRefArray[nIterator] = 0 THEN
+		CONTINUE;
+	END_IF
+	
+	IF fMinWeight = 0 THEN
+		fMinWeight := aRefArray[nIterator];
+		fMaxWeight := aRefArray[nIterator];
+	END_IF
+	
+	IF aRefArray[nIterator] < fMinWeight THEN
+		fMinWeight := aRefArray[nIterator];
+	END_IF
+	
+	IF aRefArray[nIterator] > fMaxWeight THEN
+		fMaxWeight := aRefArray[nIterator];
+	END_IF
+	
+END_FOR]]></ST>
+    </Implementation>
+    <LineIds Name="FindMinMax">
+      <LineId Id="23" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="42" Count="2" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="45" Count="1" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="24" Count="1" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="20" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

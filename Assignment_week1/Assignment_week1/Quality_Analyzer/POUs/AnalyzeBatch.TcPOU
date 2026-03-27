@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="AnalyzeBatch" Id="{41693958-d985-4cab-8020-bde87749fe76}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION AnalyzeBatch : ST_ProductStats
+VAR_INPUT
+	aProdArray : REFERENCE TO ARRAY[1..GVL.nMaximumSizeOfArray] OF REAL ;
+END_VAR
+VAR
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+AnalyzeBatch.nDefectiveCount := CountDefects(aProdArray);
+AnalyzeBatch.fAverageWeight := CalculateAverage( AnalyzeBatch.nDefectiveCount, aRefArray := aProdArray);
+FindMinMax(aProdArray, fMinWeight => AnalyzeBatch.fminWeight, fMaxWeight => AnalyzeBatch.fmaxWeight);
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="AnalyzeBatch">
+      <LineId Id="56" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="43" Count="4" />
+      <LineId Id="13" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

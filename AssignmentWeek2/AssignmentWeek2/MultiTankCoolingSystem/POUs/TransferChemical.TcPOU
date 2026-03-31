@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="TransferChemical" Id="{0653ac06-573f-4c7b-bf90-3d41a5ddce1e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION TransferChemical
+VAR_INPUT
+	pTank : POINTER TO ST_Tank;
+END_VAR
+VAR
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF pTank <> 0 THEN
+	IF pTank^.fLevel > GVL.GC_TARGET_LEVEL_PERCENT THEN
+		pTank^.fLevel := pTank^.fLevel - GVL.GC_TRANSFER_RATE;
+	ELSE
+		pTank^.bLevelAlarm := FALSE;
+	END_IF
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="TransferChemical">
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="22" Count="1" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="10" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

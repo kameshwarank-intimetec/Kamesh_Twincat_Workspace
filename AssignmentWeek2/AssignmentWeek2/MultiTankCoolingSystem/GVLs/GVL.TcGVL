@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="GVL" Id="{2fb9fffc-91f2-4040-b4c7-3f897fd92de1}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+    GC_MAX_TEMPERATURE          : REAL := 80.0;    
+    GC_MAX_LEVEL_PERCENT        : REAL := 90.0;   
+    
+    GC_TARGET_TEMPERATURE       : REAL := 50.0;   
+    GC_TARGET_LEVEL_PERCENT     : REAL := 30.0;    
+    
+    GC_COOLING_RATE             : REAL := 10.0;   
+    GC_TRANSFER_RATE            : REAL := 10.0;   
+    
+    GC_PROCESS_LEVEL     : REAL := 10.0;    
+    GC_PROCESS_TEMP       : REAL := 5.0;     
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

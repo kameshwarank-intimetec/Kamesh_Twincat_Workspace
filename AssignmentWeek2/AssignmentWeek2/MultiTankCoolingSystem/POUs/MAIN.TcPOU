@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{6b8a6ca2-acf4-4660-828c-fe5694732b70}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	stTank1 : ST_Tank := (nId := 101,fTemperature := 80.2, fLevel := 96 );
+	stTank2 : ST_Tank  := (nId := 102,fTemperature := 72.5, fLevel := 70 );
+	stTank3 : ST_Tank  := (nId := 103,fTemperature := 34, fLevel := 95 );
+	
+	fbController : FB_TankController;
+	bStart : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bStart THEN
+	fbController(stTank := stTank1);
+	fbController(stTank := stTank2);
+	fbController(stTank := stTank3);
+	bStart := FALSE;
+END_IF
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

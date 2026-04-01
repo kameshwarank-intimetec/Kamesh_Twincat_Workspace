@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{f2a3b4c5-d6e7-8901-f012-234567890123}" SpecialFunc="None">
+    <Declaration>PROGRAM MAIN
+VAR
+    fbWarehouse : FB_WareHouseController;
+    bFirstScan  : BOOL := TRUE;
+END_VAR</Declaration>
+    <Implementation>
+      <ST>IF bFirstScan THEN
+    GVL_Warehouse.bSystemAutoMode := FALSE;
+    GVL_Warehouse.bEmergencyStop  := FALSE;
+    GVL_Warehouse.sSystemStatusMsg:= 'System Ready';
+    IF NOT GVL_Warehouse.bRackInitialized THEN
+        fbWarehouse.M_InitRack();
+    END_IF
+    bFirstScan := FALSE;
+END_IF
+
+fbWarehouse();</ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

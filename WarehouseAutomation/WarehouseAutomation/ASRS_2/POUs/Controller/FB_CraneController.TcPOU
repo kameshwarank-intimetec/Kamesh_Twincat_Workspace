@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_CraneController" Id="{a8b9c0d1-e2f3-4567-8901-234567890123}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CraneController
+VAR_INPUT
+    nAisleNumber    : INT;
+	iCrane          : I_Crane;
+END_VAR
+VAR_OUTPUT
+    bBusy           : BOOL;
+    bError          : BOOL;
+    bPickDone       : BOOL;
+    bDropDone       : BOOL;
+END_VAR
+
+VAR
+    stAisleStation  : ST_Position;
+    stRackTarget    : ST_Position;
+    bJobPending     : BOOL;
+    bIsStore        : BOOL;
+    nState          : (IDLE, DISPATCHING, EXECUTING, DONE) := IDLE;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Wire physical IO based on aisle
+IF nAisleNumber = 1 THEN
+    GVL_IO.bCrane1MotorX  := iCrane.bBusy AND GVL_IO.fCrane1PosX <> 0.0;
+    GVL_IO.bCrane1MotorY  := iCrane.bBusy AND GVL_IO.fCrane1PosY <> 0.0;
+END_IF
+
+bBusy  := iCrane.bBusy;
+bError := iCrane.bError;
+
+CASE nState OF
+
+    IDLE:
+        bPickDone := FALSE;
+        bDropDone := FALSE;
+        IF bJobPending THEN
+            nState := DISPATCHING;
+        END_IF
+
+    DISPATCHING:
+        stAisleStation.fTargetX        := GVL_Config.HOME_X;
+        stAisleStation.fTargetY        := GVL_Config.HOME_Y;
+        stAisleStation.bIsAisleStation := TRUE;
+        IF bIsStore THEN
+            iCrane.M_StartJob(stPick := stAisleStation, stPlace := stRackTarget);
+        ELSE
+            iCrane.M_StartJob(stPick := stRackTarget, stPlace := stAisleStation);
+        END_IF
+        bJobPending := FALSE;
+        nState      := EXECUTING;
+
+    EXECUTING:
+        IF iCrane.eState = E_CraneState.IDLE THEN
+            IF bIsStore THEN
+                bDropDone := TRUE;
+            ELSE
+                bPickDone := TRUE;
+            END_IF
+            nState := DONE;
+        END_IF
+
+    DONE:
+        bDropDone := FALSE;
+        bPickDone := FALSE;
+        nState    := IDLE;
+
+END_CASE
+
+IF iCrane.bError THEN
+    bJobPending := FALSE;
+    nState      := IDLE;
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="M_AssignRetrieve" Id="{dd000002-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[METHOD M_AssignRetrieve : BOOL
+VAR_INPUT
+    stPos : ST_Position;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF nState <> IDLE OR bJobPending THEN
+    M_AssignRetrieve := FALSE;
+    RETURN;
+END_IF
+stRackTarget     := stPos;
+bIsStore         := FALSE;
+bJobPending      := TRUE;
+M_AssignRetrieve := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_AssignStore" Id="{dd000001-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[METHOD M_AssignStore : BOOL
+VAR_INPUT
+    stPos : ST_Position;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF nState <> IDLE OR bJobPending THEN
+    M_AssignStore := FALSE;
+    RETURN;
+END_IF
+stRackTarget  := stPos;
+bIsStore      := TRUE;
+bJobPending   := TRUE;
+M_AssignStore := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_CraneController">
+      <LineId Id="3" Count="49" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_CraneController.M_AssignRetrieve">
+      <LineId Id="3" Count="6" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_CraneController.M_AssignStore">
+      <LineId Id="3" Count="6" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

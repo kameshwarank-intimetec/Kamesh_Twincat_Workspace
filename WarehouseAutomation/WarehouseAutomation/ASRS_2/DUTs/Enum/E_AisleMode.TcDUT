@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="E_AisleMode" Id="{d4e5f6a7-b8c9-0123-def0-456789012345}">
+    <Declaration>{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_AisleMode :
+(
+    IDLE                := 0,
+    RECEIVING_FROM_LOOP := 10,
+    TRANSPORT_TO_CRANE  := 20,
+    WAITING_FOR_PICK    := 30,
+    READY_FOR_DROP      := 40,
+    TRANSPORT_TO_LOOP   := 50,
+    FAULT               := 99
+);
+END_TYPE</Declaration>
+  </DUT>
+</TcPlcObject>

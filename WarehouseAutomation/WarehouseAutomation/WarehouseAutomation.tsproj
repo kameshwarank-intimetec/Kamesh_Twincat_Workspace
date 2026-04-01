@@ -2,6 +2,11 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.71" TcVersionFixed="true">
 	<Project ProjectGUID="{8C7DA959-346D-4EA4-B3B9-15BB2F1FACB0}" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
+			<Licenses>
+				<Target>
+					<ManualSelect>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</ManualSelect>
+				</Target>
+			</Licenses>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
@@ -12,26 +17,6 @@
 			</Tasks>
 		</System>
 		<Plc>
-			<Project GUID="{D7E5A6AA-69BB-4343-89A2-F80D8804284D}" Name="ASRS" PrjFilePath="ASRS\ASRS.plcproj" TmcFilePath="ASRS\ASRS.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="ASRS\ASRS.tmc" TmcHash="{2DAA47F4-C3F0-8FA7-FCAA-1A858E647562}">
-					<Name>ASRS Instance</Name>
-					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-					<Contexts>
-						<Context>
-							<Id>0</Id>
-							<Name>PlcTask</Name>
-							<ManualConfig>
-								<OTCID>#x02010030</OTCID>
-							</ManualConfig>
-							<Priority>20</Priority>
-							<CycleTime>10000000</CycleTime>
-						</Context>
-					</Contexts>
-					<TaskPouOids>
-						<TaskPouOid Prio="20" OTCID="#x08502001"/>
-					</TaskPouOids>
-				</Instance>
-			</Project>
 			<Project GUID="{CC11F134-E441-4F0F-8EB9-58F617CCC73D}" Name="ASRS_Test" PrjFilePath="ASRS_Test\ASRS_Test.plcproj" TmcFilePath="ASRS_Test\ASRS_Test.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
 				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="ASRS_Test\ASRS_Test.tmc" TmcHash="{B620913F-8529-0712-26B9-BCB0A6C12F7A}">
 					<Name>ASRS_Test Instance</Name>
@@ -49,6 +34,26 @@
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="21" OTCID="#x08502041"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{D7E5A6AA-69BB-4343-89A2-F80D8804284D}" Name="ASRS_2" PrjFilePath="ASRS_2\ASRS_2.plcproj" TmcFilePath="ASRS_2\ASRS_2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="ASRS_2\ASRS_2.tmc" TmcHash="{B8718280-FA52-83EA-0A5A-68276546A596}">
+					<Name>ASRS_2 Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Contexts>
+						<Context>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>

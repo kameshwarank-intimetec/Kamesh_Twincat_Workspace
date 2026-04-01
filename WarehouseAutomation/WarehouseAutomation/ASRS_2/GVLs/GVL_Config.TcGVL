@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="GVL_Config" Id="{5b1cc540-97bc-40e2-9967-3c0bc43dc6d5}">
+    <Declaration>{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+    MAX_COLUMNS         : INT := 10;
+    MAX_ROWS            : INT := 4;
+
+    WEIGHT_LIMIT_HEAVY  : REAL := 100.0;
+
+    COLUMN_SPACING      : LREAL := 1200.0;
+    ROW_SPACING         : LREAL := 800.0;
+    HOME_X              : LREAL := 0.0;
+    HOME_Y              : LREAL := 0.0;
+
+    T_RAT_LIFT_TIMEOUT  : TIME := T#4S;
+    T_CRANE_MOVE_TIMEOUT: TIME := T#60S;
+    T_FORK_TIMEOUT      : TIME := T#8S;
+    T_JAM_TIMEOUT       : TIME := T#10S;
+
+    CRANE_POS_TOLERANCE : LREAL := 5.0;
+    CRANE1_AISLE        : INT   := 1;
+    CRANE2_AISLE        : INT   := 2;
+END_VAR</Declaration>
+  </GVL>
+</TcPlcObject>

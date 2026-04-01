@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_LoopController" Id="{d5e6f7a8-b9c0-1234-5678-901234567890}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_LoopController
+VAR_INPUT
+    nTargetAisle    : INT;
+    bOutfeedRequest : BOOL;
+	iLoopBelt       : I_Conveyor;
+    iAisle1Rat      : I_Diverter;
+    iAisle2Rat      : I_Diverter;
+    iOutfeedRat     : I_Diverter;
+END_VAR
+VAR_OUTPUT
+    bLoopReady      : BOOL;
+    bError          : BOOL;
+END_VAR
+
+VAR
+    nState : (MONITORING, DIVERT_A1, DIVERT_A2, DIVERT_OUT) := MONITORING;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Write physical outputs
+GVL_IO.bLoopMotor          := iLoopBelt.bMotorRun;
+GVL_IO.bAisle1RatLift      := iAisle1Rat.bLiftUp;
+GVL_IO.bAisle1RatTravel    := iAisle1Rat.bTravelMotorRun;
+GVL_IO.bAisle2RatLift      := iAisle2Rat.bLiftUp;
+GVL_IO.bAisle2RatTravel    := iAisle2Rat.bTravelMotorRun;
+GVL_IO.bOutfeedRatLift     := iOutfeedRat.bLiftUp;
+GVL_IO.bOutfeedRatTravel   := iOutfeedRat.bTravelMotorRun;
+
+CASE nState OF
+
+    MONITORING:
+        bLoopReady := TRUE;
+        iLoopBelt.M_Run(bForward := TRUE);
+
+        // Parcel at Aisle 1 junction and Aisle 1 is the target
+        IF GVL_IO.bAisle1ApproachSensor AND nTargetAisle = 1
+            AND iAisle1Rat.eState = E_DiverterState.IDLE THEN
+            GVL_IO.bAisle1StopBlocker := TRUE;
+            nState := DIVERT_A1;
+
+        // Parcel at Aisle 2 junction and Aisle 2 is the target
+        ELSIF GVL_IO.bAisle2ApproachSensor AND nTargetAisle = 2
+            AND iAisle2Rat.eState = E_DiverterState.IDLE THEN
+            GVL_IO.bAisle2StopBlocker := TRUE;
+            nState := DIVERT_A2;
+
+        // Parcel at outfeed junction
+        ELSIF GVL_IO.bOutfeedApproachSensor AND bOutfeedRequest
+            AND iOutfeedRat.eState = E_DiverterState.IDLE THEN
+            GVL_IO.bOutfeedStopBlocker := TRUE;
+            nState := DIVERT_OUT;
+        END_IF
+
+    DIVERT_A1:
+        bLoopReady := FALSE;
+        // Parcel centered on RAT sensor - execute divert
+        IF GVL_IO.bRat1Sensor THEN
+            iLoopBelt.M_Stop();
+            GVL_IO.bAisle1StopBlocker := FALSE;
+            iAisle1Rat.M_Divert();
+        END_IF
+        IF iAisle1Rat.eState = E_DiverterState.DONE AND NOT GVL_IO.bRat1Sensor THEN
+			iAisle1Rat.M_Stop();
+            nState := MONITORING;
+        END_IF
+
+    DIVERT_A2:
+        bLoopReady := FALSE;
+        IF GVL_IO.bRat2Sensor THEN
+            iLoopBelt.M_Stop();
+            GVL_IO.bAisle2StopBlocker := FALSE;
+            iAisle2Rat.M_Divert();
+        END_IF
+        IF iAisle2Rat.eState = E_DiverterState.DONE AND NOT GVL_IO.bRat2Sensor THEN
+			iAisle2Rat.M_Stop();
+            nState := MONITORING;
+        END_IF
+
+    DIVERT_OUT:
+        bLoopReady := FALSE;
+        IF GVL_IO.bOutfeedRatSensor THEN
+            iLoopBelt.M_Stop();
+            GVL_IO.bOutfeedStopBlocker := FALSE;
+            iOutfeedRat.M_Divert();
+        END_IF
+        IF iOutfeedRat.eState = E_DiverterState.IDLE AND NOT GVL_IO.bOutfeedRatSensor THEN
+            nState := MONITORING;
+        END_IF
+
+END_CASE
+
+bError := iLoopBelt.bError OR iAisle1Rat.bError OR iAisle2Rat.bError OR iOutfeedRat.bError;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_LoopController">
+      <LineId Id="3" Count="42" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="46" Count="10" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="57" Count="15" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

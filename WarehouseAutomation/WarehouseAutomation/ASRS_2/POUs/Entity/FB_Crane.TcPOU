@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Crane" Id="{c9d0e1f2-a3b4-5678-cdef-901234567890}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Crane IMPLEMENTS I_Crane
+VAR_INPUT
+    fPosX           : LREAL;
+    fPosY           : LREAL;
+    bForksHome      : BOOL;
+    bForksExtended  : BOOL;
+END_VAR
+VAR_OUTPUT
+    bCraneBusy           : BOOL;
+    bCraneError          : BOOL;
+    eCraneState          : E_CraneState := E_CraneState.IDLE;
+    bMotorX         : BOOL;
+    bMotorY         : BOOL;
+    bForksOut       : BOOL;
+END_VAR
+VAR
+    stPickPos       : ST_Position;
+    stPlacePos      : ST_Position;
+    fbMoveTimeout   : TON;
+    fbForkTimeout   : TON;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//fbMoveTimeout(IN := bMotorX OR bMotorY, PT := GVL_Config.T_CRANE_MOVE_TIMEOUT);
+//fbForkTimeout(IN := bForksOut AND NOT bForksExtended, PT := GVL_Config.T_FORK_TIMEOUT);
+
+IF fbMoveTimeout.Q OR fbForkTimeout.Q THEN
+    eCraneState := E_CraneState.FAULT;
+END_IF
+
+CASE eCraneState OF
+    E_CraneState.IDLE:
+        bCraneBusy    := FALSE;
+        bMotorX  := FALSE;
+        bMotorY  := FALSE;
+        bForksOut:= FALSE;
+
+    E_CraneState.MOVING_TO_PICK:
+        bCraneBusy   := TRUE;
+        bMotorX := TRUE;
+        bMotorY := TRUE;
+        IF ABS(fPosX - stPickPos.fTargetX) < GVL_Config.CRANE_POS_TOLERANCE AND
+           ABS(fPosY - stPickPos.fTargetY) < GVL_Config.CRANE_POS_TOLERANCE THEN
+            bMotorX := FALSE;
+            bMotorY := FALSE;
+            eCraneState  := E_CraneState.PICKING;
+        END_IF
+
+    E_CraneState.PICKING:
+        bCraneBusy    := TRUE;
+        bForksOut:= TRUE;
+        IF bForksExtended THEN
+            eCraneState := E_CraneState.MOVING_TO_PLACE;
+        END_IF
+
+    E_CraneState.MOVING_TO_PLACE:
+        bCraneBusy    := TRUE;
+        bForksOut:= FALSE;
+        IF bForksHome THEN
+            bMotorX := TRUE;
+            bMotorY := TRUE;
+        END_IF
+        IF ABS(fPosX - stPlacePos.fTargetX) < GVL_Config.CRANE_POS_TOLERANCE AND
+           ABS(fPosY - stPlacePos.fTargetY) < GVL_Config.CRANE_POS_TOLERANCE THEN
+            bMotorX := FALSE;
+            bMotorY := FALSE;
+            eCraneState  := E_CraneState.PLACING;
+        END_IF
+
+    E_CraneState.PLACING:
+        bCraneBusy    := TRUE;
+        bForksOut:= TRUE;
+        IF bForksExtended THEN
+            bForksOut := FALSE;
+            bCraneBusy     := FALSE;
+            eCraneState    := E_CraneState.IDLE;
+        END_IF
+
+    E_CraneState.RETURNING_HOME:
+        bCraneBusy   := TRUE;
+        bMotorX := TRUE;
+        bMotorY := TRUE;
+        IF ABS(fPosX - GVL_Config.HOME_X) < GVL_Config.CRANE_POS_TOLERANCE AND
+           ABS(fPosY - GVL_Config.HOME_Y) < GVL_Config.CRANE_POS_TOLERANCE THEN
+            bMotorX := FALSE;
+            bMotorY := FALSE;
+            bCraneBusy   := FALSE;
+            eCraneState  := E_CraneState.IDLE;
+        END_IF
+
+    E_CraneState.FAULT:
+        bMotorX  := FALSE;
+        bMotorY  := FALSE;
+        bForksOut:= FALSE;
+        bCraneBusy    := FALSE;
+        bCraneError   := TRUE;
+END_CASE]]></ST>
+    </Implementation>
+    <Property Name="bBusy" Id="{cc000001-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[PROPERTY bBusy : BOOL]]></Declaration>
+      <Get Name="Get" Id="{cc000002-0000-0000-0000-000000000001}">
+        <Declaration><![CDATA[VAR END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[bBusy := bCraneBusy;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="bError" Id="{cc000003-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[PROPERTY bError : BOOL]]></Declaration>
+      <Get Name="Get" Id="{cc000004-0000-0000-0000-000000000001}">
+        <Declaration><![CDATA[VAR END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[bError := bCraneError;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="eState" Id="{cc000005-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[PROPERTY eState : E_CraneState]]></Declaration>
+      <Get Name="Get" Id="{cc000006-0000-0000-0000-000000000001}">
+        <Declaration><![CDATA[VAR END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[eState := eCraneState;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="M_Reset" Id="{cc000008-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[METHOD M_Reset
+VAR_INPUT
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bCraneError := FALSE;
+eCraneState := E_CraneState.RETURNING_HOME;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_StartJob" Id="{cc000007-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[METHOD M_StartJob : BOOL
+VAR_INPUT
+    stPick  : ST_Position;
+    stPlace : ST_Position;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF eCraneState <> E_CraneState.IDLE THEN
+    M_StartJob := FALSE;
+    RETURN;
+END_IF
+stPickPos  := stPick;
+stPlacePos := stPlace;
+eCraneState     := E_CraneState.MOVING_TO_PICK;
+M_StartJob := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Crane">
+      <LineId Id="302" Count="72" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Crane.bBusy.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Crane.bError.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Crane.eState.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Crane.M_Reset">
+      <LineId Id="3" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Crane.M_StartJob">
+      <LineId Id="3" Count="6" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

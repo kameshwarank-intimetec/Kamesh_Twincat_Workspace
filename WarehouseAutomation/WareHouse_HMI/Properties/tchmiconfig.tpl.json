@@ -35,8 +35,25 @@
       "type": "Stylesheet"
     }
   ],
-  "userControls": [],
-  "content": [],
+  "userControls": [
+    {
+      "url": "UserControl/DataShowing.usercontrol"
+    }
+  ],
+  "content": [
+    {
+      "url": "Content/Content1.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Home.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Operations.content",
+      "preload": false
+    }
+  ],
   "views": [
     {
       "url": "Desktop.view",

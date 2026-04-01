@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_Conveyor" Id="{3a4b5c6d-e7f8-9012-abcd-ef1234567890}">
+    <Declaration>INTERFACE I_Conveyor
+</Declaration>
+    <Property Name="bError" Id="{4b5c6d7e-f8a9-0123-bcde-f23456789012}">
+      <Declaration>PROPERTY bError : BOOL</Declaration>
+      <Get Name="Get" Id="{5c6d7e8f-a9b0-1234-cdef-345678901234}">
+        <Declaration />
+      </Get>
+    </Property>
+    <Property Name="bMotorRun" Id="{6d7e8f9a-b0c1-2345-def0-456789012345}">
+      <Declaration>PROPERTY bMotorRun : BOOL</Declaration>
+      <Get Name="Get" Id="{7e8f9a0b-c1d2-3456-ef01-567890123456}">
+        <Declaration />
+      </Get>
+    </Property>
+    <Property Name="bMotorReverse" Id="{8f9a0b1c-d2e3-4567-f012-678901234567}">
+      <Declaration>PROPERTY bMotorReverse : BOOL</Declaration>
+      <Get Name="Get" Id="{9a0b1c2d-e3f4-5678-0123-789012345678}">
+        <Declaration />
+      </Get>
+    </Property>
+    <Method Name="M_Run" Id="{0b1c2d3e-f4a5-6789-1234-890123456789}">
+      <Declaration>METHOD M_Run
+VAR_INPUT
+    bForward : BOOL;
+END_VAR
+</Declaration>
+    </Method>
+    <Method Name="M_Stop" Id="{1c2d3e4f-a5b6-7890-2345-901234567890}">
+      <Declaration>METHOD M_Stop
+VAR_INPUT
+END_VAR
+</Declaration>
+    </Method>
+    <Method Name="M_Reset" Id="{2d3e4f5a-b6c7-8901-3456-012345678901}">
+      <Declaration>METHOD M_Reset
+VAR_INPUT
+END_VAR
+</Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

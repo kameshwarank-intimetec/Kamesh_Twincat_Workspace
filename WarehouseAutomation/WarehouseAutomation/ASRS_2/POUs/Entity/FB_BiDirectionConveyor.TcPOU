@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_BiDirectionConveyor" Id="{b2c3d4e5-f6a7-8901-bcde-f23456789012}" SpecialFunc="None">
+    <Declaration>FUNCTION_BLOCK FB_BiDirectionConveyor EXTENDS FB_Conveyor
+VAR_INPUT
+    bEntrySensor        : BOOL;
+    bCraneStationSensor : BOOL;
+END_VAR</Declaration>
+    <Implementation>
+      <ST>SUPER^();
+
+CASE eMode OF
+    E_ConveyorMode.RUNNING_FORWARD:
+        IF bCraneStationSensor THEN
+            eMode := E_ConveyorMode.IDLE;
+        END_IF
+
+    E_ConveyorMode.RUNNING_BACKWARD:
+        IF bEntrySensor THEN
+            eMode := E_ConveyorMode.IDLE;
+        END_IF
+END_CASE</ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_RAT" Id="{a53e8369-ccc0-4a67-aaae-0302ede3efed}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_RAT IMPLEMENTS I_Diverter
+VAR_INPUT
+    bSensorOccupied : BOOL;
+    bSensorIsUp     : BOOL;
+    bSensorIsDown   : BOOL;
+END_VAR
+VAR_OUTPUT
+    bRatError          : BOOL;
+    bIsLiftUp         : BOOL;
+    bDivertMotorRun : BOOL;
+END_VAR
+VAR
+    eRatState          : E_DiverterState := E_DiverterState.IDLE;
+    fbLiftTimer     : TON;
+    fbTravelTimer   : TON;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//fbLiftTimer(
+//    IN := (eRatState = E_DiverterState.LIFTING OR eRatState = E_DiverterState.LOWERING),
+//    PT := GVL_Config.T_RAT_LIFT_TIMEOUT
+//);
+//fbTravelTimer(IN := eRatState = E_DiverterState.DIVERTING, PT := T#6S);
+
+IF fbLiftTimer.Q OR fbTravelTimer.Q THEN
+    eRatState := E_DiverterState.FAULT;
+END_IF
+
+CASE eRatState OF
+    E_DiverterState.IDLE:
+        bIsLiftUp         := FALSE;
+        bDivertMotorRun := FALSE;
+
+    E_DiverterState.LIFTING:
+        bIsLiftUp := TRUE;
+        IF bSensorIsUp THEN
+            eRatState := E_DiverterState.DIVERTING;
+        END_IF
+
+    E_DiverterState.DIVERTING:
+        bIsLiftUp         := TRUE;
+        bDivertMotorRun := TRUE;
+        IF NOT bSensorOccupied THEN
+            eRatState := E_DiverterState.LOWERING;
+        END_IF
+
+    E_DiverterState.LOWERING:
+        bIsLiftUp         := FALSE;
+        bDivertMotorRun := FALSE;
+        IF bSensorIsDown THEN
+            eRatState := E_DiverterState.DONE;
+        END_IF
+	
+    E_DiverterState.FAULT:
+        bIsLiftUp         := FALSE;
+        bDivertMotorRun := FALSE;
+        bRatError          := TRUE;
+END_CASE]]></ST>
+    </Implementation>
+    <Property Name="bError" Id="{bb000001-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[PROPERTY bError : BOOL]]></Declaration>
+      <Get Name="Get" Id="{bb000002-0000-0000-0000-000000000001}">
+        <Declaration><![CDATA[VAR END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[bError := bRatError;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="bLiftUp" Id="{bb000003-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[PROPERTY bLiftUp : BOOL]]></Declaration>
+      <Get Name="Get" Id="{bb000004-0000-0000-0000-000000000001}">
+        <Declaration><![CDATA[VAR END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[bLiftUp := bIsLiftUp;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="bTravelMotorRun" Id="{bb000005-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[PROPERTY bTravelMotorRun : BOOL]]></Declaration>
+      <Get Name="Get" Id="{bb000006-0000-0000-0000-000000000001}">
+        <Declaration><![CDATA[VAR END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[bTravelMotorRun := bDivertMotorRun;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="eState" Id="{bb000007-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[PROPERTY eState : E_DiverterState]]></Declaration>
+      <Get Name="Get" Id="{bb000008-0000-0000-0000-000000000001}">
+        <Declaration><![CDATA[VAR END_VAR]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[eState := eRatState;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="M_Divert" Id="{bb000009-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[METHOD M_Divert
+VAR_INPUT
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF eRatState = E_DiverterState.IDLE THEN
+    eRatState := E_DiverterState.LIFTING;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_Stop" Id="{bb000010-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[METHOD M_Stop
+VAR_INPUT
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bIsLiftUp         := FALSE;
+bDivertMotorRun := FALSE;
+eRatState          := E_DiverterState.IDLE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_RAT">
+      <LineId Id="234" Count="33" />
+      <LineId Id="288" Count="0" />
+      <LineId Id="269" Count="3" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_RAT.bError.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_RAT.bLiftUp.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_RAT.bTravelMotorRun.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_RAT.eState.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_RAT.M_Divert">
+      <LineId Id="3" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_RAT.M_Stop">
+      <LineId Id="3" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_InFeedController" Id="{c4d5e6f7-a8b9-0123-4567-890123456789}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_InFeedController
+VAR_OUTPUT
+    bParcelReady    : BOOL;
+    bError          : BOOL;
+    stParcel        : ST_Parcel;
+	
+END_VAR
+VAR_INPUT
+	iInfeedBelt     : I_Conveyor;
+    iInfeedRat      : I_Diverter;
+END_VAR
+VAR
+    nState : (IDLE, CONVEYING, WAIT_RAT_CLEAR, DONE) := IDLE;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Write physical outputs
+GVL_IO.bInfeedMotor   := iInfeedBelt.bMotorRun;
+GVL_IO.bInfeedRatLift := iInfeedRat.bLiftUp;
+GVL_IO.bInfeedRatTravel := iInfeedRat.bTravelMotorRun;
+
+CASE nState OF
+
+    IDLE:
+        bParcelReady := FALSE;
+        // Parcel arrived at infeed sensor
+        IF GVL_IO.bInfeedSensor THEN
+            // Stop parcel with blocker if infeed RAT is busy
+            GVL_IO.bInfeedBlocker := iInfeedRat.eState = E_DiverterState.IDLE;
+            IF GVL_IO.bInfeedBlocker THEN
+                iInfeedBelt.M_Run(bForward := TRUE);
+                nState := CONVEYING;
+				GVL_IO.bInfeedBlocker := FALSE;
+            END_IF
+        END_IF
+
+    CONVEYING:
+        // Belt running, move parcel toward RAT
+        // When parcel reaches RAT position, stop belt and divert
+        IF GVL_IO.bInfeedRatSensor THEN
+            iInfeedBelt.M_Stop();
+            iInfeedRat.M_Divert();
+            nState := WAIT_RAT_CLEAR;
+        END_IF
+
+    WAIT_RAT_CLEAR:
+        // Wait for RAT to complete divert and return to idle
+        IF NOT GVL_IO.bInfeedRatSensor THEN
+            bParcelReady := TRUE;
+			GVL_IO.bInfeedRatSensor := FALSE;
+            nState := DONE;
+        END_IF
+
+    DONE:
+        // Warehouse controller reads stParcel and clears bParcelReady
+        IF NOT bParcelReady THEN
+            nState := IDLE;
+        END_IF
+
+END_CASE
+
+bError := iInfeedRat.bError OR iInfeedBelt.bError;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_InFeedController">
+      <LineId Id="3" Count="15" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="19" Count="7" />
+      <LineId Id="28" Count="7" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="36" Count="6" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="44" Count="2" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

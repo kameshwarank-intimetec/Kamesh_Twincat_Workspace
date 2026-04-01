@@ -13,7 +13,7 @@
     <Name>WareHouse_HMI</Name>
     <HmiCommunicationRouterPort>10101</HmiCommunicationRouterPort>
     <HmiFrameworkVersion>Latest</HmiFrameworkVersion>
-    <HmiCommunicationServerPort>3000</HmiCommunicationServerPort>
+    <HmiCommunicationServerPort>3001</HmiCommunicationServerPort>
     <HmiInitial>1.10.1342.3</HmiInitial>
     <HmiRecent>1.10.1342.3</HmiRecent>
   </PropertyGroup>
@@ -83,6 +83,12 @@
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <Target Name="Clean" DependsOnTargets="BaseClean" />
   <ItemGroup>
+    <Content Include="UserControl\DataShowing.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\DataShowing.usercontrol.json">
+      <SubType>Content</SubType>
+    </Content>
     <Folder Include=".hmipkgs" />
     <Folder Include="Libraries" />
     <Folder Include="Images" />
@@ -91,6 +97,8 @@
     <Folder Include="Imports\Images" />
     <Folder Include="Imports\Videos" />
     <Folder Include="Localization" />
+    <Folder Include="Content" />
+    <Folder Include="UserControl" />
     <Folder Include="Server\Extensions\ADS" />
     <Folder Include="Server\Extensions\TcHmiEventLogger" />
     <Folder Include="Server\Extensions\TcHmiLua" />
@@ -118,6 +126,15 @@
     <Content Include=".hmipkgs\packages.hmipkgs">
       <SubType>Content</SubType>
       <Visible>true</Visible>
+    </Content>
+    <Content Include="Content\Content1.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Home.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Operations.content">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="FavIcon.ico">
       <SubType>Content</SubType>

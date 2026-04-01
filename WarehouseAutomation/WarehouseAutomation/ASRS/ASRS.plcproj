@@ -8,7 +8,7 @@
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>ASRS_2</Name>
+    <Name>ASRS</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
     <Application>{de62d69e-00d3-4f47-8889-6d5343391534}</Application>
     <TypeSystem>{c6909fd0-ae3b-4b0f-950e-1d9b8c9b46f9}</TypeSystem>
@@ -140,11 +140,6 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ASRS.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <PlaceholderResolution Include="Tc2_Standard">
       <Resolution>Tc2_Standard, 3.4.5.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
@@ -156,7 +151,7 @@
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ASRS_2.tmc">
+    <None Include="ASRS.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>

@@ -1,0 +1,19 @@
+﻿<div id="Infeed" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="800" data-tchmi-height="300">
+
+<div id="Sensors_Actuators_1" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="177" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Sensors_Actuators.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="800" data-tchmi-width-unit="px" data-tchmi-component1="False" data-tchmi-component2="False" data-tchmi-component3="False" data-tchmi-componentname1="Infeed Sensor" data-tchmi-componentname2="Infeed Blocker" data-tchmi-componentname3="Infeed RAT Sensor" data-tchmi-componentname4="Infeed RAT Up" data-tchmi-componentname5="Infeed RAT Down" data-tchmi-componentname6="Infeed RAT Lifting" data-tchmi-componentvalue4="%s%PLC1.GVL_IO.bInfeedRatUp%/s%" data-tchmi-componentvalue1="%s%PLC1.GVL_IO.bInfeedSensor%/s%" data-tchmi-componentvalue2="%s%PLC1.GVL_IO.bInfeedBlocker%/s%" data-tchmi-componentvalue3="%s%PLC1.GVL_IO.bInfeedRatSensor%/s%" data-tchmi-componentname7="Infeed RAT Diverting" data-tchmi-componentname8="Infeed Conveyor Running" data-tchmi-componentvalue5="%s%PLC1.GVL_IO.bInfeedRatDown%/s%" data-tchmi-componentvalue6="%s%PLC1.GVL_IO.bInfeedRatLift%/s%" data-tchmi-componentvalue7="%s%PLC1.GVL_IO.bInfeedRatTravel%/s%" data-tchmi-componentvalue8="%s%PLC1.GVL_IO.bInfeedMotor%/s%">
+
+</div>
+
+<div id="StateShowing_1" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="90" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="200" data-tchmi-top-unit="px" data-tchmi-width="230" data-tchmi-width-unit="px" data-tchmi-name="Conveyor" data-tchmi-state="%f%ConveyorEnumValueConverter(%s%PLC1.MAIN.fbWarehouse.fbInfeedBelt.eMode%/s%)%/f%">
+
+</div>
+
+<div id="StateShowing_2" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="319" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="200" data-tchmi-top-unit="px" data-tchmi-width="230" data-tchmi-width-unit="px" data-tchmi-name="RAT" data-tchmi-state="%f%DiverterStateConverter(%s%PLC1.MAIN.fbWarehouse.fbInfeedRat.eRatState%/s%)%/f%">
+
+</div>
+
+<div id="TcHmiTextblock_22" data-tchmi-type="tchmi-textblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-text="Machine State" data-tchmi-top="195" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20">
+
+</div>
+
+</div>

@@ -24,7 +24,84 @@
     "DEFAULTTIMEFORMATLOCALE": "client",
     "DEFAULTTIMEZONE": "client",
     "DEFAULTUSERGROUP": "__SystemUsers",
-    "DEFINITIONS": {},
+    "DEFINITIONS": {
+        "PLC1.E_ConveyorMode": {
+            "allOf": [
+                {
+                    "enum": [
+                        0,
+                        10,
+                        20,
+                        99
+                    ],
+                    "options": [
+                        {
+                            "label": "IDLE",
+                            "value": 0
+                        },
+                        {
+                            "label": "RUNNING_FORWARD",
+                            "value": 10
+                        },
+                        {
+                            "label": "RUNNING_BACKWARD",
+                            "value": 20
+                        },
+                        {
+                            "label": "FAULT",
+                            "value": 99
+                        }
+                    ]
+                },
+                {
+                    "$ref": "tchmi:general#/definitions/INT16"
+                }
+            ]
+        },
+        "PLC1.E_DiverterState": {
+            "allOf": [
+                {
+                    "enum": [
+                        0,
+                        10,
+                        20,
+                        30,
+                        40,
+                        99
+                    ],
+                    "options": [
+                        {
+                            "label": "IDLE",
+                            "value": 0
+                        },
+                        {
+                            "label": "LIFTING",
+                            "value": 10
+                        },
+                        {
+                            "label": "DIVERTING",
+                            "value": 20
+                        },
+                        {
+                            "label": "LOWERING",
+                            "value": 30
+                        },
+                        {
+                            "label": "DONE",
+                            "value": 40
+                        },
+                        {
+                            "label": "FAULT",
+                            "value": 99
+                        }
+                    ]
+                },
+                {
+                    "$ref": "tchmi:general#/definitions/INT16"
+                }
+            ]
+        }
+    },
     "DEFLATECOMPRESSIONLEVEL": 5,
     "DISCOVERY": 2,
     "ENDPOINTS": [
@@ -1712,6 +1789,112 @@
                 "writeValue": {
                     "type": "string"
                 }
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bInfeedBlocker": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bInfeedBlocker",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bInfeedMotor": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bInfeedMotor",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bInfeedRatDown": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bInfeedRatDown",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bInfeedRatLift": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bInfeedRatLift",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bInfeedRatSensor": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bInfeedRatSensor",
+            "OPTIONS": {
+                "comment": " Infeed RAT (transfers parcel from infeed conveyor onto loop)"
+            },
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bInfeedRatTravel": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bInfeedRatTravel",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bInfeedRatUp": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bInfeedRatUp",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bInfeedSensor": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bInfeedSensor",
+            "OPTIONS": {
+                "comment": " Infeed conveyor"
+            },
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbInfeedBelt.eMode": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbInfeedBelt::eMode",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_ConveyorMode"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbInfeedRat.eRatState": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbInfeedRat::eRatState",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_DiverterState"
             },
             "USEMAPPING": true
         },

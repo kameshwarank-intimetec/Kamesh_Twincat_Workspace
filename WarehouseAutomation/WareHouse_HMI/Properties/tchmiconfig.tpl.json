@@ -41,19 +41,38 @@
     },
     {
       "url": "UserControl/Sensors_Actuators.usercontrol"
+    },
+    {
+      "url": "UserControl/StateShowing.usercontrol"
     }
   ],
   "content": [
+    {
+      "url": "Content/Sections/Aisle 1.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Sections/Aisle 2.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Sections/Infeed.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Sections/Loop.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Sections/Outfeed.content",
+      "preload": false
+    },
     {
       "url": "Content/Content1.content",
       "preload": false
     },
     {
       "url": "Content/Home.content",
-      "preload": false
-    },
-    {
-      "url": "Content/Infeed.content",
       "preload": false
     },
     {
@@ -71,12 +90,63 @@
       "preload": false
     }
   ],
-  "userFunctions": [],
+  "userFunctions": [
+    {
+      "url": "Functions/ConveyorEnumValueConverter.js"
+    },
+    {
+      "url": "Functions/DiverterStateConverter.js"
+    },
+    {
+      "url": "Functions/AisleModeConverter.js"
+    },
+    {
+      "url": "Functions/CraneStateConverter.js"
+    },
+    {
+      "url": "Functions/SlotStatusConverter.js"
+    },
+    {
+      "url": "Functions/WarehouseStateConverter.js"
+    }
+  ],
   "symbols": {
-    "internal": {}
+    "internal": {
+      "SelectedSidebar": {
+        "value": "Infeed",
+        "type": "tchmi:general#/definitions/String",
+        "persist": true,
+        "readonly": false
+      }
+    }
   },
   "trigger": [],
-  "actionTemplates": [],
+  "actionTemplates": [
+    {
+      "name": "ContentActionTemplate",
+      "category": "Action Templates",
+      "actions": [
+        {
+          "objectType": "WriteToSymbol",
+          "active": true,
+          "symbolExpression": "%ctrl%TcHmiRegion_3::TargetContent%/ctrl%",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": {
+            "objectType": "Symbol",
+            "symbolExpression": "%tp%Content%/tp%"
+          },
+          "asyncWait": true
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Content",
+          "type": "tchmi:framework#/definitions/ContentPath",
+          "description": ""
+        }
+      ]
+    }
+  ],
   "languages": {
     "de-DE": "Localization\\de-DE.localization",
     "en-US": "Localization\\en-US.localization"

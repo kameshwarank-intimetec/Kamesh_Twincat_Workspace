@@ -10,8 +10,14 @@
 </script>
 </div>
 
-<div id="TcHmiRegion_3" data-tchmi-type="tchmi-region" data-tchmi-height="350" data-tchmi-height-unit="px" data-tchmi-left="100" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="800" data-tchmi-width-unit="px">
+<div id="TcHmiRegion_3" data-tchmi-type="tchmi-region" data-tchmi-height="350" data-tchmi-height-unit="px" data-tchmi-left="100" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="800" data-tchmi-width-unit="px" data-tchmi-target-content="Content/Sections/Infeed.content">
 
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(229, 221, 221, 1)"
+}
+</script>
 </div>
 
 </div>

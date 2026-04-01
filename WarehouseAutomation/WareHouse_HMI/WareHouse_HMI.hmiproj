@@ -11,7 +11,7 @@
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
     <Name>WareHouse_HMI</Name>
-    <HmiCommunicationRouterPort>10101</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10102</HmiCommunicationRouterPort>
     <HmiFrameworkVersion>Latest</HmiFrameworkVersion>
     <HmiCommunicationServerPort>3001</HmiCommunicationServerPort>
     <HmiInitial>1.10.1342.3</HmiInitial>
@@ -83,10 +83,58 @@
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <Target Name="Clean" DependsOnTargets="BaseClean" />
   <ItemGroup>
-    <Content Include="Content\Infeed.content">
+    <Content Include="Content\Sections\Aisle 1.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Sections\Aisle 2.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Sections\Infeed.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Sections\Loop.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Sections\Outfeed.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\Sidebar.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\AisleModeConverter.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\AisleModeConverter.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\ConveyorEnumValueConverter.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\ConveyorEnumValueConverter.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\CraneStateConverter.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\CraneStateConverter.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\DiverterStateConverter.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\DiverterStateConverter.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\SlotStatusConverter.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\SlotStatusConverter.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\WarehouseStateConverter.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\WarehouseStateConverter.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="UserControl\DataShowing.usercontrol">
@@ -101,7 +149,14 @@
     <Content Include="UserControl\Sensors_Actuators.usercontrol.json">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="UserControl\StateShowing.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\StateShowing.usercontrol.json">
+      <SubType>Content</SubType>
+    </Content>
     <Folder Include=".hmipkgs" />
+    <Folder Include="Content\Sections" />
     <Folder Include="Libraries" />
     <Folder Include="Images" />
     <Folder Include="Images\Manifest" />
@@ -110,6 +165,7 @@
     <Folder Include="Imports\Videos" />
     <Folder Include="Localization" />
     <Folder Include="Content" />
+    <Folder Include="Functions" />
     <Folder Include="UserControl" />
     <Folder Include="Server\Extensions\ADS" />
     <Folder Include="Server\Extensions\TcHmiEventLogger" />

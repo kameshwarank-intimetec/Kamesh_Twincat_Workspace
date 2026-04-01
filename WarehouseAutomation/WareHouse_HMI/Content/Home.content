@@ -250,4 +250,12 @@
 
 </div>
 
+<div id="DataShowing_3" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="431" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Job Queue" data-tchmi-datavalue="2">
+
+</div>
+
+<div id="DataShowing_4" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="632" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Total Occupency" data-tchmi-datavalue="9">
+
+</div>
+
 </div>

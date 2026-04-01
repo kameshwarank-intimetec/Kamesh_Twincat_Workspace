@@ -38,6 +38,9 @@
   "userControls": [
     {
       "url": "UserControl/DataShowing.usercontrol"
+    },
+    {
+      "url": "UserControl/Sensors_Actuators.usercontrol"
     }
   ],
   "content": [
@@ -50,7 +53,15 @@
       "preload": false
     },
     {
+      "url": "Content/Infeed.content",
+      "preload": false
+    },
+    {
       "url": "Content/Operations.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Sidebar.content",
       "preload": false
     }
   ],

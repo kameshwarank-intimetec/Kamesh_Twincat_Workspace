@@ -8,6 +8,14 @@
       "frameworkUserControlConfig": "UserControl\\DataShowing.usercontrol.json",
       "type": "object",
       "id": "tchmi:project#/definitions/UserControl_DataShowing"
+    },
+    "UserControl_Sensors_Actuators": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Sensors_Actuators.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_Sensors_Actuators"
     }
   }
 }

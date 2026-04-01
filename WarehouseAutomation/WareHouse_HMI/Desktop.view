@@ -13,7 +13,7 @@
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
 {
-  "color": "rgba(7, 54, 158, 1)"
+  "color": "rgba(58, 78, 226, 1)"
 }
 </script>
 
@@ -36,6 +36,12 @@
   "right": "Solid",
   "top": "Solid",
   "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(0, 0, 0, 1)"
 }
 </script>
 </div>
@@ -67,7 +73,7 @@
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
 {
-  "color": "rgba(244, 238, 238, 1)"
+  "color": "rgba(244, 232, 232, 1)"
 }
 </script>
 </div>

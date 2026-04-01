@@ -83,10 +83,22 @@
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <Target Name="Clean" DependsOnTargets="BaseClean" />
   <ItemGroup>
+    <Content Include="Content\Infeed.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Sidebar.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="UserControl\DataShowing.usercontrol">
       <SubType>Content</SubType>
     </Content>
     <Content Include="UserControl\DataShowing.usercontrol.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\Sensors_Actuators.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\Sensors_Actuators.usercontrol.json">
       <SubType>Content</SubType>
     </Content>
     <Folder Include=".hmipkgs" />

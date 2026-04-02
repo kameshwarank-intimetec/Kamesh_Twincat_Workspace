@@ -13,7 +13,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
       "frameworkControlType": "tchmi-user-control-host",
       "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
-      "frameworkUserControlConfig": "UserControl\\Sensors_Actuators.usercontrol.json",
+      "frameworkUserControlConfig": "UserControl\\Sensors_Actuators_group_7.usercontrol.json",
       "type": "object",
       "id": "tchmi:project#/definitions/UserControl_Sensors_Actuators"
     },
@@ -24,6 +24,14 @@
       "frameworkUserControlConfig": "UserControl\\StateShowing.usercontrol.json",
       "type": "object",
       "id": "tchmi:project#/definitions/UserControl_StateShowing"
+    },
+    "UserControl_Sensors_Actuators_group_4": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Sensors_Actuators_group_4.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_Sensors_Actuators_group_4"
     }
   }
 }

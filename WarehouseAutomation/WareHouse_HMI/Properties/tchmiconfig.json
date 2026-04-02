@@ -40,7 +40,10 @@
       "url": "UserControl/DataShowing.usercontrol"
     },
     {
-      "url": "UserControl/Sensors_Actuators.usercontrol"
+      "url": "UserControl/Sensors_Actuators_group_4.usercontrol"
+    },
+    {
+      "url": "UserControl/Sensors_Actuators_group_7.usercontrol"
     },
     {
       "url": "UserControl/StateShowing.usercontrol"
@@ -81,6 +84,10 @@
     },
     {
       "url": "Content/Sidebar.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Storage.content",
       "preload": false
     }
   ],

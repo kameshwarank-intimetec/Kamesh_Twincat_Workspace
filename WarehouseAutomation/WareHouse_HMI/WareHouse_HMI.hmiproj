@@ -11,7 +11,7 @@
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
     <Name>WareHouse_HMI</Name>
-    <HmiCommunicationRouterPort>10102</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10103</HmiCommunicationRouterPort>
     <HmiFrameworkVersion>Latest</HmiFrameworkVersion>
     <HmiCommunicationServerPort>3001</HmiCommunicationServerPort>
     <HmiInitial>1.10.1342.3</HmiInitial>
@@ -101,6 +101,9 @@
     <Content Include="Content\Sidebar.content">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Content\Storage.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Functions\AisleModeConverter.function.json">
       <SubType>Content</SubType>
     </Content>
@@ -143,10 +146,16 @@
     <Content Include="UserControl\DataShowing.usercontrol.json">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UserControl\Sensors_Actuators.usercontrol">
+    <Content Include="UserControl\Sensors_Actuators_group_7.usercontrol">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UserControl\Sensors_Actuators.usercontrol.json">
+    <Content Include="UserControl\Sensors_Actuators_group_7.usercontrol.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\Sensors_Actuators_group_4.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\Sensors_Actuators_group_4.usercontrol.json">
       <SubType>Content</SubType>
     </Content>
     <Content Include="UserControl\StateShowing.usercontrol">

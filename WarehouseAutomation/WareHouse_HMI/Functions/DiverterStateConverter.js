@@ -17,9 +17,10 @@
             20: 'DIVERTING',
             30: 'LOWERING',
             40: 'DONE',
-            90: 'FAULT'
+            90: 'FAULT',
+           
         };
-
+        
         // Return the mapped string, or the raw value if not found
         return stateMap[state] !== undefined ? stateMap[state] : 'UNKNOWN (' + state + ')';
     };

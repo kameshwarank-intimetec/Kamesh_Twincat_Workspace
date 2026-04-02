@@ -10,7 +10,7 @@
 </script>
 </div>
 
-<div id="TcHmiRegion_3" data-tchmi-type="tchmi-region" data-tchmi-height="350" data-tchmi-height-unit="px" data-tchmi-left="100" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="800" data-tchmi-width-unit="px" data-tchmi-target-content="Content/Sections/Infeed.content">
+<div id="TcHmiRegion_3" data-tchmi-type="tchmi-region" data-tchmi-height="350" data-tchmi-height-unit="px" data-tchmi-left="100" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="800" data-tchmi-width-unit="px" data-tchmi-target-content="Content/Sections/Infeed.content" data-tchmi-scrolling="Yes" data-tchmi-scale-mode="None">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">

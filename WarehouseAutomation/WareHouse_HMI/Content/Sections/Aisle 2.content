@@ -1,6 +1,22 @@
-﻿<div id="Aisle 2" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="800" data-tchmi-height="640">
+﻿<div id="Aisle2" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="783" data-tchmi-height="379">
 
-<div id="TcHmiTextblock_25" data-tchmi-type="tchmi-textblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="211" data-tchmi-left-unit="px" data-tchmi-text="Aisle 2" data-tchmi-top="234" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+<div id="TcHmiTextblock_38" data-tchmi-type="tchmi-textblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-text="Sensors &amp; Actuators" data-tchmi-top="17" data-tchmi-top-unit="px" data-tchmi-width="189" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px">
+
+</div>
+
+<div id="Sensors_Actuators_group_6" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="115" data-tchmi-height-unit="px" data-tchmi-left="35" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Sensors_Actuators_group_4.usercontrol" data-tchmi-top="64" data-tchmi-top-unit="px" data-tchmi-width="669" data-tchmi-width-unit="px" data-tchmi-componentname1="Aisle 2 Entry Sensor" data-tchmi-componentname2="Aisle 2 Crane Station" data-tchmi-componentname3="Aisle 2 Motor Forward" data-tchmi-componentname4="Aisle 2 Motor Reverse" data-tchmi-componentvalue1="%s%PLC1.GVL_IO.bAisle2EntrySensor%/s%" data-tchmi-componentvalue2="%s%PLC1.GVL_IO.bAisle2CraneStation%/s%" data-tchmi-componentvalue3="%s%PLC1.GVL_IO.bAisle2MotorForward%/s%" data-tchmi-componentvalue4="%s%PLC1.GVL_IO.bAisle2MotorReverse%/s%">
+
+</div>
+
+<div id="StateShowing_9" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="59" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="247" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Aisle 2 Conveyor" data-tchmi-state="%f%ConveyorEnumValueConverter(%s%PLC1.MAIN.fbWarehouse.fbAisle2Belt.eMode%/s%)%/f%">
+
+</div>
+
+<div id="TcHmiTextblock_39" data-tchmi-type="tchmi-textblock" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-text="Machine State" data-tchmi-top="211" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20">
+
+</div>
+
+<div id="StateShowing_10" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="356" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="247" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Aisle 2 Status" data-tchmi-state="%f%AisleModeConverter(%s%PLC1.MAIN.fbWarehouse.fbAisle2.eMode%/s%)%/f%">
 
 </div>
 

@@ -25,13 +25,16 @@
     "DEFAULTTIMEZONE": "client",
     "DEFAULTUSERGROUP": "__SystemUsers",
     "DEFINITIONS": {
-        "PLC1.E_ConveyorMode": {
+        "PLC1.E_AisleMode": {
             "allOf": [
                 {
                     "enum": [
                         0,
                         10,
                         20,
+                        30,
+                        40,
+                        50,
                         99
                     ],
                     "options": [
@@ -40,16 +43,61 @@
                             "value": 0
                         },
                         {
-                            "label": "RUNNING_FORWARD",
+                            "label": "RECEIVING_FROM_LOOP",
                             "value": 10
                         },
                         {
-                            "label": "RUNNING_BACKWARD",
+                            "label": "TRANSPORT_TO_CRANE",
                             "value": 20
+                        },
+                        {
+                            "label": "WAITING_FOR_PICK",
+                            "value": 30
+                        },
+                        {
+                            "label": "READY_FOR_DROP",
+                            "value": 40
+                        },
+                        {
+                            "label": "TRANSPORT_TO_LOOP",
+                            "value": 50
                         },
                         {
                             "label": "FAULT",
                             "value": 99
+                        }
+                    ]
+                },
+                {
+                    "$ref": "tchmi:general#/definitions/INT16"
+                }
+            ]
+        },
+        "PLC1.E_ConveyorMode": {
+            "allOf": [
+                {
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ],
+                    "options": [
+                        {
+                            "label": "IDLE",
+                            "value": 0
+                        },
+                        {
+                            "label": "RUNNING_FORWARD",
+                            "value": 1
+                        },
+                        {
+                            "label": "RUNNING_BACKWARD",
+                            "value": 2
+                        },
+                        {
+                            "label": "FAULT",
+                            "value": 3
                         }
                     ]
                 },
@@ -67,7 +115,7 @@
                         20,
                         30,
                         40,
-                        99
+                        90
                     ],
                     "options": [
                         {
@@ -92,7 +140,68 @@
                         },
                         {
                             "label": "FAULT",
-                            "value": 99
+                            "value": 90
+                        }
+                    ]
+                },
+                {
+                    "$ref": "tchmi:general#/definitions/INT16"
+                }
+            ]
+        },
+        "PLC1.Implicit_Enum__FB_LoopController__nState": {
+            "allOf": [
+                {
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ],
+                    "options": [
+                        {
+                            "label": "MONITORING",
+                            "value": 0
+                        },
+                        {
+                            "label": "DIVERT_A1",
+                            "value": 1
+                        },
+                        {
+                            "label": "DIVERT_A2",
+                            "value": 2
+                        },
+                        {
+                            "label": "DIVERT_OUT",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "$ref": "tchmi:general#/definitions/INT16"
+                }
+            ]
+        },
+        "PLC1.Implicit_Enum__FB_OutFeedController__nState": {
+            "allOf": [
+                {
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "options": [
+                        {
+                            "label": "IDLE",
+                            "value": 0
+                        },
+                        {
+                            "label": "RUNNING",
+                            "value": 1
+                        },
+                        {
+                            "label": "DONE",
+                            "value": 2
                         }
                     ]
                 },
@@ -1792,6 +1901,92 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL_IO.bAisle1CraneStation": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bAisle1CraneStation",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bAisle1EntrySensor": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bAisle1EntrySensor",
+            "OPTIONS": {
+                "comment": " Aisle 1 conveyor"
+            },
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bAisle1MotorForward": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bAisle1MotorForward",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bAisle1MotorReverse": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bAisle1MotorReverse",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bAisle2CraneStation": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bAisle2CraneStation",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bAisle2EntrySensor": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bAisle2EntrySensor",
+            "OPTIONS": {
+                "comment": " Aisle 2 conveyor"
+            },
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bAisle2MotorForward": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bAisle2MotorForward",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bAisle2MotorReverse": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bAisle2MotorReverse",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL_IO.bInfeedBlocker": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",
@@ -1878,6 +2073,66 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.fbWarehouse.fbAisle1.eMode": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbAisle1::eMode",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_AisleMode"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbAisle1Belt.eMode": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbAisle1Belt::eMode",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_ConveyorMode"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbAisle1Rat.eRatState": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbAisle1Rat::eRatState",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_DiverterState"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbAisle2.eMode": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbAisle2::eMode",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_AisleMode"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbAisle2Belt.eMode": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbAisle2Belt::eMode",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_ConveyorMode"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbAisle2Rat.eRatState": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbAisle2Rat::eRatState",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_DiverterState"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.fbWarehouse.fbInfeedBelt.eMode": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",
@@ -1893,6 +2148,56 @@
             "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "MAPPING": "PLC1::MAIN::fbWarehouse::fbInfeedRat::eRatState",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_DiverterState"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbLoop.nState": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbLoop::nState",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.Implicit_Enum__FB_LoopController__nState"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbLoopBelt.eMode": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbLoopBelt::eMode",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_ConveyorMode"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbOutfeed.nState": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbOutfeed::nState",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.Implicit_Enum__FB_OutFeedController__nState"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbOutfeedBelt.eMode": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbOutfeedBelt::eMode",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_ConveyorMode"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.fbOutfeedRat.eRatState": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::fbOutfeedRat::eRatState",
             "SCHEMA": {
                 "$ref": "tchmi:server#/definitions/PLC1.E_DiverterState"
             },

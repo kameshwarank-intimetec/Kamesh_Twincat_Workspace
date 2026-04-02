@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Conveyer" Id="{9cc60f3c-fe0a-4a51-bb77-a7cc286b637c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Conveyer IMPLEMENTS I_Conveyer
+
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Start" Id="{5f11bbe9-a744-40ff-9fa2-2b141ea96d70}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Start : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Start := GVL_HMI.bConveyerRunning := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Stop" Id="{e594c64a-6bac-48ae-aa9b-1c5ddd37c96b}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Stop : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Stop := GVL_HMI.bConveyerRunning := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Conveyer">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Conveyer.Start">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Conveyer.Stop">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

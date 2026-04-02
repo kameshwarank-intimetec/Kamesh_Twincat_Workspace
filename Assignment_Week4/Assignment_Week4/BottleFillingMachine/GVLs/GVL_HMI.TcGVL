@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="GVL_HMI" Id="{72c67734-bad7-4451-b499-be4b8c05e0c1}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	bStart : BOOL;
+	bStop : BOOL;
+	bLevelSensor : BOOL;
+	bBottleSensor : BOOL;
+	bReset : BOOL;
+	
+	bConveyerRunning : BOOL;
+	bFillingValve : BOOL;
+	bAlarmLamp : BOOL;
+	eAlarmState : E_AlarmState;
+	
+	nBottleCounter : UDINT ;
+	eMachineMode : E_MachineMode;
+	eMachineState : E_MachineState; 
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

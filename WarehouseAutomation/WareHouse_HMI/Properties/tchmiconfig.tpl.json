@@ -71,11 +71,11 @@
       "preload": false
     },
     {
-      "url": "Content/Content1.content",
+      "url": "Content/Home.content",
       "preload": false
     },
     {
-      "url": "Content/Home.content",
+      "url": "Content/Navbar.content",
       "preload": false
     },
     {

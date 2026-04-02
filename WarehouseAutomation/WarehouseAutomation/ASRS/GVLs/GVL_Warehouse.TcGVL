@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <GVL Name="GVL_Warehouse" Id="{a1b2c3d4-e5f6-7890-abcd-ef1234567890}">
-    <Declaration>{attribute 'qualified_only'}
+    <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL PERSISTENT
     arrRack              : ARRAY[1..10, 1..4] OF ST_StorageSlot;
     nTotalStoredCount    : UDINT;
     nTotalRetrievedCount : UDINT;
     sWarehouseName       : STRING := 'IntimeTec_ASRS_01';
     bRackInitialized     : BOOL;
+	arrNum : ARRAY[1..10, 1..4] OF INT := [40(5)];
 END_VAR
 
 VAR_GLOBAL
@@ -15,6 +16,6 @@ VAR_GLOBAL
     bEmergencyStop       : BOOL := FALSE;
     sSystemStatusMsg     : STRING(80) := 'System Ready';
     stHmiSearch          : ST_HMI_Search;
-END_VAR</Declaration>
+END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

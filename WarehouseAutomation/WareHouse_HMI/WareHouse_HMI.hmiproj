@@ -204,7 +204,7 @@
       <SubType>Content</SubType>
       <Visible>true</Visible>
     </Content>
-    <Content Include="Content\Content1.content">
+    <Content Include="Content\Navbar.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\Home.content">

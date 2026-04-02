@@ -25,6 +25,21 @@
     "DEFAULTTIMEZONE": "client",
     "DEFAULTUSERGROUP": "__SystemUsers",
     "DEFINITIONS": {
+        "PLC1.ARRAY (1..10,1..4) OF ST_StorageSlot": {
+            "items": {
+                "items": {
+                    "$ref": "#/definitions/PLC1.ST_StorageSlot"
+                },
+                "maxItems": 4,
+                "minItems": 4,
+                "startOffset": 1,
+                "type": "array"
+            },
+            "maxItems": 10,
+            "minItems": 10,
+            "startOffset": 1,
+            "type": "array"
+        },
         "PLC1.E_AisleMode": {
             "allOf": [
                 {
@@ -149,6 +164,44 @@
                 }
             ]
         },
+        "PLC1.E_SlotStatus": {
+            "allOf": [
+                {
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "options": [
+                        {
+                            "label": "EMPTY",
+                            "value": 0
+                        },
+                        {
+                            "label": "RESERVED_IN",
+                            "value": 1
+                        },
+                        {
+                            "label": "OCCUPIED",
+                            "value": 2
+                        },
+                        {
+                            "label": "RESERVED_OUT",
+                            "value": 3
+                        },
+                        {
+                            "label": "BLOCKED",
+                            "value": 4
+                        }
+                    ]
+                },
+                {
+                    "$ref": "tchmi:general#/definitions/INT16"
+                }
+            ]
+        },
         "PLC1.Implicit_Enum__FB_LoopController__nState": {
             "allOf": [
                 {
@@ -209,6 +262,57 @@
                     "$ref": "tchmi:general#/definitions/INT16"
                 }
             ]
+        },
+        "PLC1.ST_Parcel": {
+            "properties": {
+                "bIsHeavy": {
+                    "$ref": "tchmi:general#/definitions/BOOL"
+                },
+                "fWeight": {
+                    "$ref": "tchmi:general#/definitions/REAL"
+                },
+                "nTargetAisle": {
+                    "$ref": "tchmi:general#/definitions/INT"
+                },
+                "sDescription": {
+                    "allOf": [
+                        {
+                            "maxLength": 40
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
+                },
+                "sID": {
+                    "allOf": [
+                        {
+                            "maxLength": 20
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PLC1.ST_StorageSlot": {
+            "properties": {
+                "bIsRear": {
+                    "$ref": "tchmi:general#/definitions/BOOL"
+                },
+                "bMaintenance": {
+                    "$ref": "tchmi:general#/definitions/BOOL"
+                },
+                "eStatus": {
+                    "$ref": "#/definitions/PLC1.E_SlotStatus"
+                },
+                "stParcel": {
+                    "$ref": "#/definitions/PLC1.ST_Parcel"
+                }
+            },
+            "type": "object"
         }
     },
     "DEFLATECOMPRESSIONLEVEL": 5,
@@ -2070,6 +2174,32 @@
             },
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.arrNum.0": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::arrNum[0]",
+            "SCHEMA": {
+                "items": {
+                    "$ref": "tchmi:general#/definitions/INT"
+                },
+                "maxItems": 4,
+                "minItems": 4,
+                "startOffset": 1,
+                "type": "array"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.arrRack": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::arrRack",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY (1..10,1..4) OF ST_StorageSlot"
             },
             "USEMAPPING": true
         },

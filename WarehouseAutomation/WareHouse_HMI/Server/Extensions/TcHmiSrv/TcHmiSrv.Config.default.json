@@ -2203,6 +2203,33 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL_Warehouse.arrRack.0.0.eStatus": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::arrRack[0][0]::eStatus",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_SlotStatus"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.arrRack.0.0.stParcel.sID": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::arrRack[0][0]::stParcel::sID",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 20
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.fbWarehouse.fbAisle1.eMode": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",

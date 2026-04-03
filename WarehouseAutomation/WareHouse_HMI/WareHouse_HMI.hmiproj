@@ -11,7 +11,7 @@
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
     <Name>WareHouse_HMI</Name>
-    <HmiCommunicationRouterPort>10103</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10104</HmiCommunicationRouterPort>
     <HmiFrameworkVersion>Latest</HmiFrameworkVersion>
     <HmiCommunicationServerPort>3001</HmiCommunicationServerPort>
     <HmiInitial>1.10.1342.3</HmiInitial>
@@ -162,6 +162,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="UserControl\StateShowing.usercontrol.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\Storage_Rack.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\Storage_Rack.usercontrol.json">
       <SubType>Content</SubType>
     </Content>
     <Folder Include=".hmipkgs" />

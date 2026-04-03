@@ -1,3 +1,167 @@
-﻿<div id="Storage" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="850" data-tchmi-height="545">
+﻿<div id="Storage" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="902" data-tchmi-height="411">
+
+<div id="TcHmiContainer" data-tchmi-type="tchmi-container" data-tchmi-height="345" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="780" data-tchmi-width-unit="px">
+
+<div id="Storage_Rack_2" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="51" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px" data-tchmi-parcel_id="%s%PLC1.GVL_Warehouse.arrRack.0.0.stParcel.sID%/s%" data-tchmi-rack_state="%s%PLC1.GVL_Warehouse.arrRack.0.0.eStatus%/s%">
+
+</div>
+
+<div id="Storage_Rack_3" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="121" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_4" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="191" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_5" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="262" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_6" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="332" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_7" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="402" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_8" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="472" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_9" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="544" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_10" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="614" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_12" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="51" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_13" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="121" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_14" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="191" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_15" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="262" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_16" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="332" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_17" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="402" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_18" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="472" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_19" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="544" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_20" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="614" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_22" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="51" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_23" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="121" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_24" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="191" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_25" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="262" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_26" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="332" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_27" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="402" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_28" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="472" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_29" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="544" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_30" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="614" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_32" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="51" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_33" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="121" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_34" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="191" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_35" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="262" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_36" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="332" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_37" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="402" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_38" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="472" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_39" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="544" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_40" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="614" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_1" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="684" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_11" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="684" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="118" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_21" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="684" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+<div id="Storage_Rack_31" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="684" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Storage_Rack.usercontrol" data-tchmi-top="258" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="px">
+
+</div>
+
+</div>
 
 </div>

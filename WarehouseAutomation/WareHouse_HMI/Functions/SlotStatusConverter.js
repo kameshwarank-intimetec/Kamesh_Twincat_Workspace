@@ -8,17 +8,19 @@
 /// <reference path="C:\TwinCAT\Functions\TE2000-HMI-Engineering\Infrastructure\TcHmiFramework\Latest\TcHmi.js" />
 
 (function (TcHmi) {
-
     var SlotStatusConverter = function (state) {
-        let arrState = [
-            'EMPTY',
-            'RESERVED_IN',
-            'OCCUPIED',
-            'RESERVED_OUT',
-            'BLOCKED'
+        
+        // 0: None (Transparent/Default), 1: Yellow, 2: Green, 3: Orange, 4: Red
+        var colorMap = [
+                '#00000000', // 0: None (Fully Transparent - 8 values)
+                '#FFFF00FF', // 1: Yellow (Solid - 8 values)
+                '#008000FF', // 2: Green (Solid)
+                '#FFA500FF', // 3: Orange (Solid)
+                '#FF0000FF'  // 4: Red (Solid)
         ];
 
-        return arrState[state] !== undefined ? arrState[state] : 'UNKNOWN (' + state + ')';
+        // Return the color if it exists, otherwise return a fallback color (Gray)
+        return colorMap[state] !== undefined ? colorMap[state] : '#808080';
     };
 
     TcHmi.Functions.registerFunction('SlotStatusConverter', SlotStatusConverter);

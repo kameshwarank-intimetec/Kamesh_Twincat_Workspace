@@ -47,6 +47,9 @@
     },
     {
       "url": "UserControl/StateShowing.usercontrol"
+    },
+    {
+      "url": "UserControl/Storage_Rack.usercontrol"
     }
   ],
   "content": [

@@ -32,6 +32,14 @@
       "frameworkUserControlConfig": "UserControl\\Sensors_Actuators_group_4.usercontrol.json",
       "type": "object",
       "id": "tchmi:project#/definitions/UserControl_Sensors_Actuators_group_4"
+    },
+    "UserControl_Storage_Rack": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Storage_Rack.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_Storage_Rack"
     }
   }
 }

@@ -37,7 +37,13 @@
   ],
   "userControls": [
     {
+      "url": "UserControl/Crane_Status.usercontrol"
+    },
+    {
       "url": "UserControl/DataShowing.usercontrol"
+    },
+    {
+      "url": "UserControl/DemoControl.usercontrol"
     },
     {
       "url": "UserControl/Sensors_Actuators_group_4.usercontrol"
@@ -74,6 +80,14 @@
       "preload": false
     },
     {
+      "url": "Content/Crane.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Demo.content",
+      "preload": false
+    },
+    {
       "url": "Content/Home.content",
       "preload": false
     },
@@ -95,6 +109,10 @@
     }
   ],
   "views": [
+    {
+      "url": "Demo.view",
+      "preload": false
+    },
     {
       "url": "Desktop.view",
       "preload": false

@@ -9,18 +9,19 @@
 
 (function (TcHmi) {
     var SlotStatusConverter = function (state) {
-        
-        // 0: None (Transparent/Default), 1: Yellow, 2: Green, 3: Orange, 4: Red
         var colorMap = [
-                '#00000000', // 0: None (Fully Transparent - 8 values)
-                '#FFFF00FF', // 1: Yellow (Solid - 8 values)
-                '#008000FF', // 2: Green (Solid)
-                '#FFA500FF', // 3: Orange (Solid)
-                '#FF0000FF'  // 4: Red (Solid)
+            '#000000', // 0: None
+            '#FFFF00',          // 1: Yellow
+            '#008000',          // 2: Green
+            '#FFA500',          // 3: Orange
+            '#FF0000'           // 4: Red
         ];
 
-        // Return the color if it exists, otherwise return a fallback color (Gray)
-        return colorMap[state] !== undefined ? colorMap[state] : '#808080';
+        var selectedColor = colorMap[state] !== undefined ? colorMap[state] : '#808080';
+
+        return {
+            "color": selectedColor
+        };
     };
 
     TcHmi.Functions.registerFunction('SlotStatusConverter', SlotStatusConverter);

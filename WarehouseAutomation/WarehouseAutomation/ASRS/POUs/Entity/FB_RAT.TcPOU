@@ -52,7 +52,11 @@ CASE eRatState OF
         IF bSensorIsDown THEN
             eRatState := E_DiverterState.DONE;
         END_IF
-	
+	E_DiverterState.DONE:
+		GVL_IO.bInfeedRatUp := FALSE;
+		GVL_IO.bInfeedRatDown := FALSE;
+		eRatState := E_DiverterState.IDLE;
+		
     E_DiverterState.FAULT:
         bIsLiftUp         := FALSE;
         bDivertMotorRun := FALSE;
@@ -118,6 +122,10 @@ eRatState          := E_DiverterState.IDLE;]]></ST>
     <LineIds Name="FB_RAT">
       <LineId Id="234" Count="33" />
       <LineId Id="288" Count="0" />
+      <LineId Id="304" Count="0" />
+      <LineId Id="306" Count="0" />
+      <LineId Id="308" Count="0" />
+      <LineId Id="305" Count="0" />
       <LineId Id="269" Count="3" />
       <LineId Id="2" Count="0" />
     </LineIds>

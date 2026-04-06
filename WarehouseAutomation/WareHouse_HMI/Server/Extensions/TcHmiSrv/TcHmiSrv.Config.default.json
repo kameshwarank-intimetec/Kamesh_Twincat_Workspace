@@ -40,6 +40,21 @@
             "startOffset": 1,
             "type": "array"
         },
+        "PLC1.ARRAY (1..4,1..10) OF ST_StorageSlot": {
+            "items": {
+                "items": {
+                    "$ref": "#/definitions/PLC1.ST_StorageSlot"
+                },
+                "maxItems": 10,
+                "minItems": 10,
+                "startOffset": 1,
+                "type": "array"
+            },
+            "maxItems": 4,
+            "minItems": 4,
+            "startOffset": 1,
+            "type": "array"
+        },
         "PLC1.E_AisleMode": {
             "allOf": [
                 {
@@ -2091,6 +2106,66 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL_IO.bCrane1ForksHome": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bCrane1ForksHome",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bCrane1MotorX": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bCrane1MotorX",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bCrane1MotorY": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bCrane1MotorY",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bCrane2ForksExtended": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bCrane2ForksExtended",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bCrane2ForksHome": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bCrane2ForksHome",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.bCrane2MotorY": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::bCrane2MotorY",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL_IO.bInfeedBlocker": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",
@@ -2177,19 +2252,49 @@
             },
             "USEMAPPING": true
         },
-        "PLC1.GVL_Warehouse.arrNum.0": {
+        "PLC1.GVL_IO.fCrane1PosX": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
-            "MAPPING": "PLC1::GVL_Warehouse::arrNum[0]",
+            "MAPPING": "PLC1::GVL_IO::fCrane1PosX",
+            "OPTIONS": {
+                "comment": " Crane 1"
+            },
             "SCHEMA": {
-                "items": {
-                    "$ref": "tchmi:general#/definitions/INT"
-                },
-                "maxItems": 4,
-                "minItems": 4,
-                "startOffset": 1,
-                "type": "array"
+                "$ref": "tchmi:general#/definitions/LREAL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.fCrane1PosY": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::fCrane1PosY",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/LREAL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.fCrane2PosX": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::fCrane2PosX",
+            "OPTIONS": {
+                "comment": " Crane 2"
+            },
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/LREAL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_IO.fCrane2PosY": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_IO::fCrane2PosY",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/LREAL"
             },
             "USEMAPPING": true
         },
@@ -2199,7 +2304,7 @@
             "DOMAIN": "ADS",
             "MAPPING": "PLC1::GVL_Warehouse::arrRack",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/PLC1.ARRAY (1..10,1..4) OF ST_StorageSlot"
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY (1..4,1..10) OF ST_StorageSlot"
             },
             "USEMAPPING": true
         },
@@ -2227,6 +2332,26 @@
                         "$ref": "tchmi:general#/definitions/String"
                     }
                 ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.nTotalRetrievedCount": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::nTotalRetrievedCount",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/UDINT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.nTotalStoredCount": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::nTotalStoredCount",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/UDINT"
             },
             "USEMAPPING": true
         },
@@ -2357,6 +2482,16 @@
             "MAPPING": "PLC1::MAIN::fbWarehouse::fbOutfeedRat::eRatState",
             "SCHEMA": {
                 "$ref": "tchmi:server#/definitions/PLC1.E_DiverterState"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.nCount": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::fbWarehouse::nCount",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/INT"
             },
             "USEMAPPING": true
         },

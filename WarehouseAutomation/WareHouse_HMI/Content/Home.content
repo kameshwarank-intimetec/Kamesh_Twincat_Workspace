@@ -242,19 +242,19 @@
   "color": "None"
 }
 </script>
-<div id="DataShowing_1" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="31" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-dataname="Total Stored" data-tchmi-datavalue="20">
+<div id="DataShowing_1" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="31" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-dataname="Total Stored" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.nTotalStoredCount%/s%">
 
 </div>
 
-<div id="DataShowing_2" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="231" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Total Retrieved" data-tchmi-datavalue="11">
+<div id="DataShowing_2" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="231" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Total Retrieved" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.nTotalRetrievedCount%/s%">
 
 </div>
 
-<div id="DataShowing_3" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="431" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Job Queue" data-tchmi-datavalue="2">
+<div id="DataShowing_3" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="431" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Job Queue" data-tchmi-datavalue="%s%PLC1.MAIN.fbWarehouse.nCount%/s%">
 
 </div>
 
-<div id="DataShowing_4" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="632" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Total Occupency" data-tchmi-datavalue="9">
+<div id="DataShowing_4" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="632" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="109" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Total Occupency" data-tchmi-datavalue="%f%%s%PLC1.GVL_Warehouse.nTotalStoredCount%/s%- %s%PLC1.GVL_Warehouse.nTotalRetrievedCount%/s%%/f%">
 
 </div>
 

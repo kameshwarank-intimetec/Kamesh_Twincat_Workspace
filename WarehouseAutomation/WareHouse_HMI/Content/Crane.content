@@ -1,0 +1,11 @@
+﻿<div id="Crane" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="800" data-tchmi-height="391">
+
+<div id="Crane_Status_1" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="314" data-tchmi-height-unit="px" data-tchmi-left="16" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Crane_Status.usercontrol" data-tchmi-top="22" data-tchmi-top-unit="px" data-tchmi-width="339" data-tchmi-width-unit="px" data-tchmi-cranename="Crane 1" data-tchmi-componentname1="Crane Pos X" data-tchmi-componentname2="Crane Pos Y" data-tchmi-componentvalue1="%s%PLC1.GVL_IO.fCrane1PosX%/s%" data-tchmi-componentvalue2="%s%PLC1.GVL_IO.fCrane1PosY%/s%" data-tchmi-componentvalue3="%s%PLC1.GVL_IO.bCrane2ForksExtended%/s%" data-tchmi-componentvalue4="%s%PLC1.GVL_IO.bCrane1ForksHome%/s%" data-tchmi-componentvalue5="%s%PLC1.GVL_IO.bCrane1MotorX%/s%" data-tchmi-componentvalue6="%s%PLC1.GVL_IO.bCrane1MotorY%/s%">
+
+</div>
+
+<div id="Crane_Status_2" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="314" data-tchmi-height-unit="px" data-tchmi-left="395" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Crane_Status.usercontrol" data-tchmi-top="22" data-tchmi-top-unit="px" data-tchmi-width="339" data-tchmi-width-unit="px" data-tchmi-cranename="Crane 2" data-tchmi-componentvalue1="%s%PLC1.GVL_IO.fCrane2PosX%/s%" data-tchmi-componentvalue2="%s%PLC1.GVL_IO.fCrane2PosY%/s%" data-tchmi-componentvalue3="%s%PLC1.GVL_IO.bCrane2ForksExtended%/s%" data-tchmi-componentvalue4="%s%PLC1.GVL_IO.bCrane2ForksHome%/s%" data-tchmi-componentvalue5="%s%PLC1.GVL_IO.bCrane1MotorX%/s%" data-tchmi-componentvalue6="%s%PLC1.GVL_IO.bCrane2MotorY%/s%">
+
+</div>
+
+</div>

@@ -40,6 +40,22 @@
       "frameworkUserControlConfig": "UserControl\\Storage_Rack.usercontrol.json",
       "type": "object",
       "id": "tchmi:project#/definitions/UserControl_Storage_Rack"
+    },
+    "UserControl_Crane_Status": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Crane_Status.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_Crane_Status"
+    },
+    "UserControl_DemoControl": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\DemoControl.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_DemoControl"
     }
   }
 }

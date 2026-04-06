@@ -3,6 +3,9 @@
   <GVL Name="GVL_IO" Id="{188d908f-b3e5-47c1-a697-e6e007a07ac5}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
+	
+
+	bParcelReady            : BOOL;
     // Infeed conveyor
     bInfeedSensor           : BOOL;
     bInfeedBlocker          : BOOL;

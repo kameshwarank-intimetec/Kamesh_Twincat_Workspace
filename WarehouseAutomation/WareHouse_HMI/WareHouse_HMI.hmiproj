@@ -11,7 +11,7 @@
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
     <Name>WareHouse_HMI</Name>
-    <HmiCommunicationRouterPort>10104</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10106</HmiCommunicationRouterPort>
     <HmiFrameworkVersion>Latest</HmiFrameworkVersion>
     <HmiCommunicationServerPort>3001</HmiCommunicationServerPort>
     <HmiInitial>1.10.1342.3</HmiInitial>
@@ -83,6 +83,12 @@
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <Target Name="Clean" DependsOnTargets="BaseClean" />
   <ItemGroup>
+    <Content Include="Content\Crane.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Demo.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Content\Sections\Aisle 1.content">
       <SubType>Content</SubType>
     </Content>
@@ -102,6 +108,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\Storage.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Demo.view">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Functions\AisleModeConverter.function.json">
@@ -140,10 +149,22 @@
     <Content Include="Functions\WarehouseStateConverter.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="UserControl\Crane_Status.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\Crane_Status.usercontrol.json">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="UserControl\DataShowing.usercontrol">
       <SubType>Content</SubType>
     </Content>
     <Content Include="UserControl\DataShowing.usercontrol.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\DemoControl.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UserControl\DemoControl.usercontrol.json">
       <SubType>Content</SubType>
     </Content>
     <Content Include="UserControl\Sensors_Actuators_group_7.usercontrol">

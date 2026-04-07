@@ -32,6 +32,11 @@ CASE eRatState OF
     E_DiverterState.IDLE:
         bIsLiftUp         := FALSE;
         bDivertMotorRun := FALSE;
+		IF GVL_IO.bRat1Sensor THEN
+           	
+            GVL_IO.bAisle1StopBlocker := FALSE;
+           
+        END_IF
 
     E_DiverterState.LIFTING:
         bIsLiftUp := TRUE;
@@ -120,7 +125,10 @@ eRatState          := E_DiverterState.IDLE;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_RAT">
-      <LineId Id="234" Count="33" />
+      <LineId Id="234" Count="13" />
+      <LineId Id="325" Count="3" />
+      <LineId Id="324" Count="0" />
+      <LineId Id="248" Count="19" />
       <LineId Id="288" Count="0" />
       <LineId Id="304" Count="0" />
       <LineId Id="306" Count="0" />

@@ -84,7 +84,7 @@
       "preload": false
     },
     {
-      "url": "Content/Demo.content",
+      "url": "Content/Error.content",
       "preload": false
     },
     {
@@ -97,6 +97,14 @@
     },
     {
       "url": "Content/Operations.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Popup.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Retrieve.content",
       "preload": false
     },
     {

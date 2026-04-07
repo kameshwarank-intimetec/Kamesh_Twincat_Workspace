@@ -83,10 +83,16 @@
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <Target Name="Clean" DependsOnTargets="BaseClean" />
   <ItemGroup>
+    <Content Include="Content\Error.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Content\Crane.content">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Content\Demo.content">
+    <Content Include="Content\Popup.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Retrieve.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\Sections\Aisle 1.content">

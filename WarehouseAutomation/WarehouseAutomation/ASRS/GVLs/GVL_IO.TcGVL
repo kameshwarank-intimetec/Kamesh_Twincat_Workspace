@@ -21,7 +21,7 @@ VAR_GLOBAL
     // Main loop conveyor
     bLoopMotor              : BOOL;
     bLoopSensor             : BOOL;
-
+	bLoopParcelMainBlocker  : BOOL;
     // Aisle 1 junction on loop
     bAisle1ApproachSensor   : BOOL;
     bAisle1StopBlocker      : BOOL;
@@ -75,7 +75,8 @@ VAR_GLOBAL
     bCrane1MotorY           : BOOL;
     bCrane1ForksOut         : BOOL;
     bCrane1EStop            : BOOL;
-
+	bCrane1pick             : BOOL;
+	bCrane1drop             : BOOL;
     // Crane 2
     fCrane2PosX             : LREAL;
     fCrane2PosY             : LREAL;
@@ -85,6 +86,8 @@ VAR_GLOBAL
     bCrane2MotorY           : BOOL;
     bCrane2ForksOut         : BOOL;
     bCrane2EStop            : BOOL;
+	bCrane2pick				: BOOL;
+	bCrane2drop             : BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

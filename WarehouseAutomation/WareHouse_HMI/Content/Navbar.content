@@ -210,7 +210,7 @@
   "color": "None"
 }
 </script>
-<div id="TcHmiButton_10" data-tchmi-type="tchmi-button" data-tchmi-height="44" data-tchmi-height-unit="px" data-tchmi-left="430" data-tchmi-left-unit="px" data-tchmi-text="Demo" data-tchmi-top="6" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="22">
+<div id="TcHmiButton_10" data-tchmi-type="tchmi-button" data-tchmi-height="44" data-tchmi-height-unit="px" data-tchmi-left="430" data-tchmi-left-unit="px" data-tchmi-text="Retrieve" data-tchmi-top="6" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="22">
 
 
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
@@ -238,7 +238,7 @@
         "value": {
           "objectType": "StaticValue",
           "valueType": "tchmi:framework#/definitions/ContentPath",
-          "value": "Content/Demo.content"
+          "value": "Content/Retrieve.content"
         },
         "asyncWait": true
       }

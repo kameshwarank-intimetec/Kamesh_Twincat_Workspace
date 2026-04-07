@@ -53,12 +53,19 @@ CASE nState OF
 
     EXECUTING:
         IF iCrane.eState = E_CraneState.IDLE THEN
-            IF bIsStore THEN
-                bDropDone := TRUE;
-            ELSE
-                bPickDone := TRUE;
-            END_IF
-            nState := DONE;
+           // IF bIsStore THEN
+           //     bPickDone := TRUE;
+           // ELSE
+			//	bDropDone := TRUE;
+           // END_IF
+			IF GVL_IO.bAisle1CraneStation OR GVL_IO.bAisle2CraneStation THEN
+				IF nAisleNumber = 1 THEN
+					GVL_IO.bCrane1pick := TRUE;
+				ELSIF nAisleNumber = 2 THEN
+					GVL_IO.bCrane2pick := TRUE;
+				END_IF
+				nState := DONE;
+			END_IF
         END_IF
 
     DONE:
@@ -106,7 +113,12 @@ M_AssignStore := TRUE;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_CraneController">
-      <LineId Id="3" Count="49" />
+      <LineId Id="3" Count="34" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="39" Count="1" />
+      <LineId Id="87" Count="4" />
+      <LineId Id="85" Count="1" />
+      <LineId Id="41" Count="11" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_CraneController.M_AssignRetrieve">

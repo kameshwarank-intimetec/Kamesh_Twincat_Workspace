@@ -21,6 +21,7 @@ VAR
     stPlacePos      : ST_Position;
     fbMoveTimeout   : TON;
     fbForkTimeout   : TON;
+	fbMoveTimer     : TON;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[//fbMoveTimeout(IN := bMotorX OR bMotorY, PT := GVL_Config.T_CRANE_MOVE_TIMEOUT);
@@ -38,15 +39,16 @@ CASE eCraneState OF
         bForksOut:= FALSE;
 
     E_CraneState.MOVING_TO_PICK:
-        bCraneBusy   := TRUE;
-        bMotorX := TRUE;
-        bMotorY := TRUE;
-        IF ABS(fPosX - stPickPos.fTargetX) < GVL_Config.CRANE_POS_TOLERANCE AND
-           ABS(fPosY - stPickPos.fTargetY) < GVL_Config.CRANE_POS_TOLERANCE THEN
-            bMotorX := FALSE;
-            bMotorY := FALSE;
-            eCraneState  := E_CraneState.PICKING;
-        END_IF
+		bCraneBusy := TRUE;
+		bMotorX    := TRUE;
+		bMotorY    := TRUE;
+		fbMoveTimer(IN := TRUE, PT := T#10S);
+		IF fbMoveTimer.Q THEN
+			fbMoveTimer(IN := FALSE);
+			bMotorX     := FALSE;
+			bMotorY     := FALSE;
+			eCraneState := E_CraneState.PICKING;
+		END_IF
 
     E_CraneState.PICKING:
         bCraneBusy    := TRUE;
@@ -62,12 +64,15 @@ CASE eCraneState OF
             bMotorX := TRUE;
             bMotorY := TRUE;
         END_IF
-        IF ABS(fPosX - stPlacePos.fTargetX) < GVL_Config.CRANE_POS_TOLERANCE AND
-           ABS(fPosY - stPlacePos.fTargetY) < GVL_Config.CRANE_POS_TOLERANCE THEN
-            bMotorX := FALSE;
+        fbMoveTimer(IN := TRUE, PT := T#10S);
+		IF fbMoveTimer.Q THEN    
+			fbMoveTimer(IN := FALSE);  
+			bMotorX := FALSE;
             bMotorY := FALSE;
             eCraneState  := E_CraneState.PLACING;
-        END_IF
+		END_IF      
+       
+
 
     E_CraneState.PLACING:
         bCraneBusy    := TRUE;
@@ -82,13 +87,14 @@ CASE eCraneState OF
         bCraneBusy   := TRUE;
         bMotorX := TRUE;
         bMotorY := TRUE;
-        IF ABS(fPosX - GVL_Config.HOME_X) < GVL_Config.CRANE_POS_TOLERANCE AND
-           ABS(fPosY - GVL_Config.HOME_Y) < GVL_Config.CRANE_POS_TOLERANCE THEN
-            bMotorX := FALSE;
+        fbMoveTimer(IN := TRUE, PT := T#10S);
+		IF fbMoveTimer.Q THEN
+			fbMoveTimer(IN := FALSE);
+			bMotorX := FALSE;
             bMotorY := FALSE;
             bCraneBusy   := FALSE;
             eCraneState  := E_CraneState.IDLE;
-        END_IF
+		END_IF
 
     E_CraneState.FAULT:
         bMotorX  := FALSE;
@@ -152,7 +158,22 @@ M_StartJob := TRUE;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_Crane">
-      <LineId Id="302" Count="72" />
+      <LineId Id="302" Count="13" />
+      <LineId Id="415" Count="9" />
+      <LineId Id="325" Count="15" />
+      <LineId Id="431" Count="1" />
+      <LineId Id="455" Count="0" />
+      <LineId Id="438" Count="1" />
+      <LineId Id="437" Count="0" />
+      <LineId Id="346" Count="0" />
+      <LineId Id="426" Count="0" />
+      <LineId Id="425" Count="0" />
+      <LineId Id="347" Count="13" />
+      <LineId Id="440" Count="1" />
+      <LineId Id="456" Count="0" />
+      <LineId Id="452" Count="2" />
+      <LineId Id="445" Count="0" />
+      <LineId Id="367" Count="7" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Crane.bBusy.Get">

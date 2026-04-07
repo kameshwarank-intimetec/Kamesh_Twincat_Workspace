@@ -54,7 +54,6 @@ CASE nState OF
         // Wait for RAT to complete divert and return to idle
         IF NOT GVL_IO.bInfeedRatSensor THEN
             GVL_IO.bParcelReady := TRUE;
-			GVL_IO.bInfeedRatSensor := FALSE;
             nState := DONE;
         END_IF
 
@@ -77,9 +76,7 @@ bError := iInfeedRat.bError OR iInfeedBelt.bError;]]></ST>
       <LineId Id="26" Count="0" />
       <LineId Id="28" Count="1" />
       <LineId Id="89" Count="0" />
-      <LineId Id="30" Count="5" />
-      <LineId Id="70" Count="0" />
-      <LineId Id="36" Count="4" />
+      <LineId Id="30" Count="10" />
       <LineId Id="92" Count="0" />
       <LineId Id="42" Count="0" />
       <LineId Id="44" Count="2" />

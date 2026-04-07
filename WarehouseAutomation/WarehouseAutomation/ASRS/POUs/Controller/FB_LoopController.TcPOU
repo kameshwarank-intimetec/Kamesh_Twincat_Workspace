@@ -28,27 +28,39 @@ GVL_IO.bAisle2RatTravel    := iAisle2Rat.bTravelMotorRun;
 GVL_IO.bOutfeedRatLift     := iOutfeedRat.bLiftUp;
 GVL_IO.bOutfeedRatTravel   := iOutfeedRat.bTravelMotorRun;
 
+
+IF iAisle1Rat.eState = E_ConveyorMode.RUNNING_BACKWARD AND GVL_IO.bRat1Sensor THEN
+	GVL_IO.bAisle1StopBlocker := FALSE;
+END_IF
+IF iAisle2Rat.eState = E_ConveyorMode.RUNNING_BACKWARD AND GVL_IO.bRat2Sensor THEN
+	GVL_IO.bAisle2StopBlocker := FALSE;
+END_IF
+
+
 CASE nState OF
 
     MONITORING:
         bLoopReady := TRUE;
         iLoopBelt.M_Run(bForward := TRUE);
-
+		
         // Parcel at Aisle 1 junction and Aisle 1 is the target
         IF GVL_IO.bAisle1ApproachSensor AND nTargetAisle = 1
             AND iAisle1Rat.eState = E_DiverterState.IDLE THEN
+			GVL_IO.bLoopParcelMainBlocker := FALSE;
             GVL_IO.bAisle1StopBlocker := TRUE;
             nState := DIVERT_A1;
 
         // Parcel at Aisle 2 junction and Aisle 2 is the target
         ELSIF GVL_IO.bAisle2ApproachSensor AND nTargetAisle = 2
             AND iAisle2Rat.eState = E_DiverterState.IDLE THEN
+			GVL_IO.bLoopParcelMainBlocker := FALSE;
             GVL_IO.bAisle2StopBlocker := TRUE;
             nState := DIVERT_A2;
 
         // Parcel at outfeed junction
         ELSIF GVL_IO.bOutfeedApproachSensor AND bOutfeedRequest
             AND iOutfeedRat.eState = E_DiverterState.IDLE THEN
+			GVL_IO.bLoopParcelMainBlocker := FALSE;
             GVL_IO.bOutfeedStopBlocker := TRUE;
             nState := DIVERT_OUT;
         END_IF
@@ -94,7 +106,24 @@ END_CASE
 bError := iLoopBelt.bError OR iAisle1Rat.bError OR iAisle2Rat.bError OR iOutfeedRat.bError;]]></ST>
     </Implementation>
     <LineIds Name="FB_LoopController">
-      <LineId Id="3" Count="42" />
+      <LineId Id="3" Count="7" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="107" Count="1" />
+      <LineId Id="110" Count="1" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="114" Count="0" />
+      <LineId Id="12" Count="4" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="18" Count="2" />
+      <LineId Id="118" Count="0" />
+      <LineId Id="21" Count="5" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="27" Count="5" />
+      <LineId Id="120" Count="0" />
+      <LineId Id="33" Count="12" />
       <LineId Id="90" Count="0" />
       <LineId Id="46" Count="10" />
       <LineId Id="89" Count="0" />

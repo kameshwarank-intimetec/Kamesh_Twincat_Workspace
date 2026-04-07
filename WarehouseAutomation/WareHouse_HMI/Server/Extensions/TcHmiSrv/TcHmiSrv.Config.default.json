@@ -2308,6 +2308,16 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL_Warehouse.arrRack.0.0": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::arrRack[0][0]",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ST_StorageSlot"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL_Warehouse.arrRack.0.0.eStatus": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",
@@ -2335,6 +2345,36 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL_Warehouse.bRetrievalCol": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::bRetrievalCol",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/INT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.bRetrievalRow": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::bRetrievalRow",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/INT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.bStartRetrieval": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::bStartRetrieval",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL_Warehouse.nTotalRetrievedCount": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",
@@ -2352,6 +2392,127 @@
             "MAPPING": "PLC1::GVL_Warehouse::nTotalStoredCount",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/UDINT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.sSystemStatusMsg": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::sSystemStatusMsg",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/STRING(80)"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.stHmiSearch.bMatchFound": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::stHmiSearch::bMatchFound",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.stHmiSearch.bTriggerSearch": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::stHmiSearch::bTriggerSearch",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.stHmiSearch.eSelectedStatus": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::stHmiSearch::eSelectedStatus",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.E_SlotStatus"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.stHmiSearch.nFoundCol": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::stHmiSearch::nFoundCol",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/INT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.stHmiSearch.nFoundRow": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::stHmiSearch::nFoundRow",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/INT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.stHmiSearch.sSearchID": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::stHmiSearch::sSearchID",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 20
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.stHmiSearch.stSelectedParcel.sDescription": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::stHmiSearch::stSelectedParcel::sDescription",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 40
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.stHmiSearch.stSelectedParcel.sID": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::GVL_Warehouse::stHmiSearch::stSelectedParcel::sID",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 20
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.bStart": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "MAPPING": "PLC1::MAIN::bStart",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
             },
             "USEMAPPING": true
         },

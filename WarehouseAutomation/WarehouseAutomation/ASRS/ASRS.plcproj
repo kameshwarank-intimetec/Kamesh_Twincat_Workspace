@@ -19,6 +19,9 @@
     <CompilerVersion>3.1.4024.0</CompilerVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Class Diagram.TcCD">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Enum\E_ConveyorMode.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -65,9 +68,6 @@
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Class Diagram.TcCD">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\ITFs\I_Conveyor.TcIO">

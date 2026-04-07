@@ -14,16 +14,19 @@ VAR_OUTPUT
     bBoxAtPickPoint     : BOOL;
     bReadyForRetrieval  : BOOL;
     bError              : BOOL;
+	eMode               : E_AisleMode := E_AisleMode.IDLE;
 END_VAR
 
 VAR
-    eMode               : E_AisleMode := E_AisleMode.IDLE;
+    
     bEntrySensor        : BOOL;
     bCraneStation       : BOOL;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Read sensors based on aisle number
-
+IF bOutboundRequest THEN
+	GVL_IO.bAisle1EntrySensor := TRUE;
+END_IF
 ACT_ConfigureAisle();
 CASE eMode OF
 
@@ -57,7 +60,10 @@ CASE eMode OF
 
     E_AisleMode.WAITING_FOR_PICK:
         IF bCranePickDone THEN
+			
             bBoxAtPickPoint := FALSE;
+			GVL_IO.bAisle1EntrySensor := FALSE;
+			GVL_IO.bAisle1CraneStation := FALSE;
             eMode := E_AisleMode.IDLE;
         END_IF
 
@@ -105,7 +111,13 @@ END_IF]]></ST>
     </Action>
     <LineIds Name="FB_AisleController">
       <LineId Id="3" Count="0" />
-      <LineId Id="14" Count="62" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="100" Count="1" />
+      <LineId Id="15" Count="32" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="97" Count="1" />
+      <LineId Id="49" Count="27" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_AisleController.ACT_ConfigureAisle">

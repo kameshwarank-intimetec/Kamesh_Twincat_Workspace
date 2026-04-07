@@ -162,6 +162,10 @@
 
 </div>
 
+<div id="TcHmiRegion_4" data-tchmi-type="tchmi-region" data-tchmi-height="250" data-tchmi-height-unit="px" data-tchmi-left="80" data-tchmi-left-unit="px" data-tchmi-top="96" data-tchmi-top-unit="px" data-tchmi-width="500" data-tchmi-width-unit="px">
+
+</div>
+
 </div>
 
 <div id="TcHmiTextblock_41" data-tchmi-type="tchmi-textblock" data-tchmi-height="36" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-text="Aisle 1" data-tchmi-top="95" data-tchmi-top-unit="px" data-tchmi-width="125" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20">

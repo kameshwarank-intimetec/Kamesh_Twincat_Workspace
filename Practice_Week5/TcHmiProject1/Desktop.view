@@ -159,11 +159,149 @@
 
 </div>
 
-<div id="TcHmiImage" data-tchmi-type="tchmi-image" data-tchmi-height="135" data-tchmi-height-unit="px" data-tchmi-left="51" data-tchmi-left-unit="px" data-tchmi-src="Images/chicken 65 image.jpg" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="252" data-tchmi-width-unit="px">
+<div id="TcHmiImage" data-tchmi-type="tchmi-image" data-tchmi-height="53" data-tchmi-height-unit="px" data-tchmi-left="%s%PLC1.MAIN.nCount%/s%" data-tchmi-left-unit="px" data-tchmi-src="Images/chicken 65 image.jpg" data-tchmi-top="563" data-tchmi-top-unit="px" data-tchmi-width="79" data-tchmi-width-unit="px">
 
 </div>
 
-<div id="TcHmiRadialGauge" data-tchmi-type="tchmi-radial-gauge" data-tchmi-base-animation-time="1000" data-tchmi-height="300" data-tchmi-height-unit="px" data-tchmi-label-range="20" data-tchmi-left="572" data-tchmi-left-unit="px" data-tchmi-show-labels="True" data-tchmi-show-ticks="True" data-tchmi-show-value-text="True" data-tchmi-start-from-zero="True" data-tchmi-top="188" data-tchmi-top-unit="px" data-tchmi-width="300" data-tchmi-width-unit="px">
+<div id="TcHmiRadialGauge" data-tchmi-type="tchmi-radial-gauge" data-tchmi-base-animation-time="1000" data-tchmi-height="455" data-tchmi-height-unit="px" data-tchmi-label-range="20" data-tchmi-left="425" data-tchmi-left-unit="px" data-tchmi-show-labels="True" data-tchmi-show-ticks="True" data-tchmi-show-value-text="True" data-tchmi-start-from-zero="True" data-tchmi-top="-4" data-tchmi-top-unit="px" data-tchmi-width="487" data-tchmi-width-unit="px" data-tchmi-max-value="500" data-tchmi-value="%s%PLC1.MAIN.nCount%/s%" data-tchmi-range="[
+  {
+    &quot;color&quot;: {
+      &quot;color&quot;: &quot;rgba(0, 128, 0, 1)&quot;
+    },
+    &quot;start&quot;: 0.0,
+    &quot;end&quot;: 300.0
+  },
+  {
+    &quot;color&quot;: {
+      &quot;color&quot;: &quot;rgba(255, 165, 0, 1)&quot;
+    },
+    &quot;start&quot;: 301.0,
+    &quot;end&quot;: 400.0
+  },
+  {
+    &quot;color&quot;: {
+      &quot;color&quot;: &quot;rgba(255, 0, 0, 1)&quot;
+    },
+    &quot;start&quot;: 401.0,
+    &quot;end&quot;: 500.0
+  }
+]">
+<script data-tchmi-target-attribute="data-tchmi-range" type="application/json">
+[
+  {
+    &quot;color&quot;: {
+      &quot;color&quot;: &quot;rgba(0, 128, 0, 1)&quot;
+    },
+    &quot;start&quot;: 0.0,
+    &quot;end&quot;: 300.0
+  },
+  {
+    &quot;color&quot;: {
+      &quot;color&quot;: &quot;rgba(255, 165, 0, 1)&quot;
+    },
+    &quot;start&quot;: 301.0,
+    &quot;end&quot;: 400.0
+  },
+  {
+    &quot;color&quot;: {
+      &quot;color&quot;: &quot;rgba(255, 0, 0, 1)&quot;
+    },
+    &quot;start&quot;: 401.0,
+    &quot;end&quot;: 500.0
+  }
+]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-value-format" type="application/json">
+{
+  "objectType": "Function",
+  "fn": "GaugeValueFormatter",
+  "fnParams": []
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-tick-definition" type="application/json">
+{
+  "mainTickRange": 20,
+  "subTickRange": 5
+}
+</script>
+
+</div>
+
+<div id="TcHmiTextbox" data-tchmi-type="tchmi-textbox" data-tchmi-height="37" data-tchmi-height-unit="px" data-tchmi-left="103" data-tchmi-left-unit="px" data-tchmi-text="%ctrl%TcHmiLinearGauge_2::Value%/ctrl%" data-tchmi-top="367" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-text-font-size="20">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+</div>
+
+<div id="TcHmiButton" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="96" data-tchmi-left-unit="px" data-tchmi-text="Start/Stop" data-tchmi-top="482" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "TcHmiButton.onPressed",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "expressions": [
+          {
+            "compare1": {
+              "objectType": "Symbol",
+              "symbolExpression": "%s%PLC1.MAIN.bStart%/s%"
+            },
+            "compare2": {
+              "objectType": "StaticValue",
+              "valueType": "tchmi:general#/definitions/BOOL",
+              "value": true
+            },
+            "compareOperator": "==",
+            "logic": null
+          }
+        ],
+        "true": [
+          {
+            "objectType": "WriteToSymbol",
+            "active": true,
+            "symbolExpression": "%s%PLC1.MAIN.bStart%/s%",
+            "valueType": "tchmi:general#/definitions/BOOL",
+            "value": {
+              "objectType": "StaticValue",
+              "valueType": "tchmi:general#/definitions/BOOL",
+              "value": false
+            },
+            "asyncWait": true
+          }
+        ],
+        "false": [
+          {
+            "objectType": "WriteToSymbol",
+            "active": true,
+            "symbolExpression": "%s%PLC1.MAIN.bStart%/s%",
+            "valueType": "tchmi:general#/definitions/BOOL",
+            "value": {
+              "objectType": "StaticValue",
+              "valueType": "tchmi:general#/definitions/BOOL",
+              "value": true
+            },
+            "asyncWait": true
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
+</div>
+
+<div id="TcHmiLinearGauge_2" data-tchmi-type="tchmi-linear-gauge" data-tchmi-base-animation-time="1000" data-tchmi-height="587" data-tchmi-height-unit="px" data-tchmi-label-range="20" data-tchmi-left="905" data-tchmi-left-unit="px" data-tchmi-show-labels="True" data-tchmi-show-ticks="True" data-tchmi-show-value-text="True" data-tchmi-start-from-zero="True" data-tchmi-top="27" data-tchmi-top-unit="px" data-tchmi-width="96" data-tchmi-width-unit="px" data-tchmi-editable="True" data-tchmi-step="2" data-tchmi-click-anywhere-to-edit="False" data-tchmi-unit-orientation="Theme" data-tchmi-orientation="Vertical">
 <script data-tchmi-target-attribute="data-tchmi-range" type="application/json">
 [
   {

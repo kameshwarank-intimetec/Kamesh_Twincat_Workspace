@@ -52,7 +52,7 @@ CASE nState OF
     EXECUTING:
         IF iCrane.eState = E_CraneState.IDLE THEN
 			//IF GVL_IO.bAisle1CraneStation OR GVL_IO.bAisle2CraneStation THEN
-				//IF nAisleNumber = 1 THEN
+			//	IF nAisleNumber = 1 THEN
 				//	GVL_IO.bCrane1pick := TRUE;
 				//ELSIF nAisleNumber = 2 THEN
 				//	GVL_IO.bCrane2pick := TRUE;

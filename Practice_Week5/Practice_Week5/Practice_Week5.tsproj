@@ -13,7 +13,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{F9D3BA40-9C2B-4868-A849-616D4377F687}" Name="Practice_TDD" PrjFilePath="Practice_TDD\Practice_TDD.plcproj" TmcFilePath="Practice_TDD\Practice_TDD.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{FEA04215-6375-F12C-4941-C8AFF9C6E4E6}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Practice_TDD\Practice_TDD.tmc" TmcHash="{315AFF38-1FAE-679B-7846-8BDD45187E6C}">
 					<Name>Practice_TDD Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -40,9 +40,5 @@
 				</Instance>
 			</Project>
 		</Plc>
-		<Io/>
 	</Project>
-	<Mappings>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
-	</Mappings>
 </TcSmProject>

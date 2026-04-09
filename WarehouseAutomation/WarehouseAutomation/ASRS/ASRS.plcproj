@@ -22,6 +22,9 @@
     <Compile Include="Class Diagram.TcCD">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Class Diagram_1.TcCD">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\Enum\E_ConveyorMode.TcDUT">
       <SubType>Code</SubType>
     </Compile>

@@ -96,15 +96,15 @@
       "preload": false
     },
     {
-      "url": "Content/Operations.content",
-      "preload": false
-    },
-    {
       "url": "Content/Popup.content",
       "preload": false
     },
     {
       "url": "Content/Retrieve.content",
+      "preload": false
+    },
+    {
+      "url": "Content/Sections.content",
       "preload": false
     },
     {
@@ -144,12 +144,15 @@
     },
     {
       "url": "Functions/WarehouseStateConverter.js"
+    },
+    {
+      "url": "Functions/FunctionJS1.js"
     }
   ],
   "symbols": {
     "internal": {
-      "SelectedSidebar": {
-        "value": "Infeed",
+      "SelectedNavbarElement": {
+        "value": "Home",
         "type": "tchmi:general#/definitions/String",
         "persist": true,
         "readonly": false

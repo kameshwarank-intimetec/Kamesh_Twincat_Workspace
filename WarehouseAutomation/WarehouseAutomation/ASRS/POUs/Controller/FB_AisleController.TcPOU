@@ -60,7 +60,6 @@ CASE eMode OF
 
     E_AisleMode.WAITING_FOR_PICK:
         IF bCranePickDone THEN
-			
             bBoxAtPickPoint := FALSE;
 			GVL_IO.bAisle1EntrySensor := FALSE;
 			GVL_IO.bAisle1CraneStation := FALSE;
@@ -113,9 +112,7 @@ END_IF]]></ST>
       <LineId Id="3" Count="0" />
       <LineId Id="14" Count="0" />
       <LineId Id="100" Count="1" />
-      <LineId Id="15" Count="32" />
-      <LineId Id="96" Count="0" />
-      <LineId Id="48" Count="0" />
+      <LineId Id="15" Count="33" />
       <LineId Id="97" Count="1" />
       <LineId Id="49" Count="27" />
       <LineId Id="2" Count="0" />

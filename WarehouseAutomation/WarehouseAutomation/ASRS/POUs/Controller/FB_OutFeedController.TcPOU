@@ -24,6 +24,7 @@ CASE nState OF
         bComplete := FALSE;
         // Parcel appears at outfeed sensor after loop RAT diverted it
         IF GVL_IO.bOutfeedApproachSensor AND NOT GVL_IO.bOutfeedExitSensor THEN
+			GVL_IO.bOutfeedStopBlocker := TRUE;
             iOutfeedBelt.M_Run(bForward := TRUE);
             bBusy  := TRUE;
             nState := RUNNING;
@@ -46,7 +47,9 @@ END_CASE
 bError := iOutfeedBelt.bError;]]></ST>
     </Implementation>
     <LineIds Name="FB_OutFeedController">
-      <LineId Id="3" Count="27" />
+      <LineId Id="3" Count="8" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="12" Count="18" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

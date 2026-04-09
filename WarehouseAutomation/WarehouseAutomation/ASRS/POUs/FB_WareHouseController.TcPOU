@@ -79,14 +79,12 @@ fbOutfeedRat(
 fbCrane1(
     fPosX          := GVL_IO.fCrane1PosX,
     fPosY          := GVL_IO.fCrane1PosY,
-    bForksHome     := GVL_IO.bCrane1ForksHome,
-    bForksExtended := GVL_IO.bCrane1ForksExtended
+    bForksHome     := GVL_IO.bCrane1ForksHome
 );
 fbCrane2(
     fPosX          := GVL_IO.fCrane2PosX,
     fPosY          := GVL_IO.fCrane2PosY,
-    bForksHome     := GVL_IO.bCrane2ForksHome,
-    bForksExtended := GVL_IO.bCrane2ForksExtended
+    bForksHome     := GVL_IO.bCrane2ForksHome 
 );
 
 // ── 2. Write crane physical outputs ──────────────────────────────────────────
@@ -96,6 +94,9 @@ GVL_IO.bCrane1ForksOut:= fbCrane1.bForksOut;
 GVL_IO.bCrane2MotorX  := fbCrane2.bMotorX;
 GVL_IO.bCrane2MotorY  := fbCrane2.bMotorY;
 GVL_IO.bCrane2ForksOut:= fbCrane2.bForksOut;
+GVL_IO.bCrane2ForksExtended  := fbCrane2.bForksExtended;
+GVL_IO.bCrane1ForksExtended :=  fbCrane1.bForksExtended  ;
+
 
 // ── 3. Emergency stop ─────────────────────────────────────────────────────────
 IF GVL_Warehouse.bEmergencyStop THEN
@@ -192,6 +193,7 @@ END_IF]]></ST>
       <Declaration><![CDATA[METHOD PRIVATE M_DispatchJobs
 VAR
     stJob : ST_CraneJob;
+	stEmptySlot : ST_StorageSlot;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF nCount = 0 THEN RETURN; END_IF
@@ -216,14 +218,14 @@ IF stJob.bIsStore THEN
 ELSE
 	IF stJob.nAisle = 1 AND NOT fbCraneCtrl1.bBusy THEN
 		IF fbCraneCtrl1.M_AssignRetrieve(stPos := stJob.stRackPos) THEN
-			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol].eStatus := E_SlotStatus.RESERVED_OUT;
+			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol] := stEmptySlot;
 			arrJobs[nHead].bValid := FALSE;
 			nHead  := nHead MOD 20 + 1;
 			nCount := nCount - 1;
 		END_IF
 	ELSIF stJob.nAisle = 2 AND NOT fbCraneCtrl2.bBusy THEN
 		IF fbCraneCtrl2.M_AssignStore(stPos := stJob.stRackPos) THEN
-			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol].eStatus := E_SlotStatus.RESERVED_OUT;
+			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol] := stEmptySlot;
 			arrJobs[nHead].bValid := FALSE;
 			nHead  := nHead MOD 20 + 1;
 			nCount := nCount - 1;
@@ -307,7 +309,7 @@ IF GVL_Warehouse.arrRack[nRow, nCol].eStatus <> E_SlotStatus.OCCUPIED THEN
     RETURN;
 END_IF
 
-GVL_Warehouse.arrRack[nRow, nCol].eStatus := E_SlotStatus.EMPTY;
+GVL_Warehouse.arrRack[nRow, nCol].eStatus := E_SlotStatus.RESERVED_OUT;
 
 stJob.bValid             := TRUE;
 stJob.bIsStore           := FALSE;
@@ -403,7 +405,13 @@ GVL_Warehouse.sSystemStatusMsg  := 'Parcel stored';]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_WareHouseController">
-      <LineId Id="3" Count="67" />
+      <LineId Id="3" Count="38" />
+      <LineId Id="43" Count="4" />
+      <LineId Id="49" Count="8" />
+      <LineId Id="256" Count="0" />
+      <LineId Id="259" Count="0" />
+      <LineId Id="257" Count="0" />
+      <LineId Id="58" Count="12" />
       <LineId Id="74" Count="9" />
       <LineId Id="191" Count="15" />
       <LineId Id="100" Count="9" />

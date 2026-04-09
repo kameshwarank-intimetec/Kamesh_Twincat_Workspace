@@ -11,7 +11,7 @@
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
     <Name>WareHouse_HMI</Name>
-    <HmiCommunicationRouterPort>10106</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10107</HmiCommunicationRouterPort>
     <HmiFrameworkVersion>Latest</HmiFrameworkVersion>
     <HmiCommunicationServerPort>3001</HmiCommunicationServerPort>
     <HmiInitial>1.10.1342.3</HmiInitial>
@@ -143,6 +143,12 @@
     <Content Include="Functions\DiverterStateConverter.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Functions\FunctionJS1.function.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\FunctionJS1.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Functions\SlotStatusConverter.function.json">
       <SubType>Content</SubType>
     </Content>
@@ -243,7 +249,7 @@
     <Content Include="Content\Home.content">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Content\Operations.content">
+    <Content Include="Content\Sections.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="FavIcon.ico">

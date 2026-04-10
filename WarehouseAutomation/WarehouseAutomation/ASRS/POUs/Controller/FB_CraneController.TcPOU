@@ -13,11 +13,13 @@ VAR_OUTPUT
 END_VAR
 
 VAR
+	stCraneJob      : ST_CraneJob;
     stAisleStation  : ST_Position;
     stRackTarget    : ST_Position;
     bJobPending     : BOOL;
     bIsStore        : BOOL;
     nState          : (IDLE, DISPATCHING, EXECUTING, DONE) := IDLE;
+	stEmptySlot : ST_StorageSlot;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Wire physical IO based on aisle
@@ -50,16 +52,27 @@ CASE nState OF
         nState      := EXECUTING;
 
     EXECUTING:
-        IF iCrane.eState = E_CraneState.IDLE THEN
-			//IF GVL_IO.bAisle1CraneStation OR GVL_IO.bAisle2CraneStation THEN
-			//	IF nAisleNumber = 1 THEN
-				//	GVL_IO.bCrane1pick := TRUE;
-				//ELSIF nAisleNumber = 2 THEN
-				//	GVL_IO.bCrane2pick := TRUE;
-				//END_IF
-				nState := DONE;
-			//END_IF
+    IF iCrane.eState = E_CraneState.IDLE THEN
+
+        IF stCraneJob.bIsStore THEN
+            GVL_Warehouse.arrRack[stCraneJob.stRackPos.nRow, stCraneJob.stRackPos.nCol].eStatus := E_SlotStatus.OCCUPIED;
+            IF nAisleNumber = 1 THEN
+                GVL_IO.bCrane1pick := TRUE;    
+            ELSIF nAisleNumber = 2 THEN
+                GVL_IO.bCrane2pick := TRUE;    
+            END_IF
+
+        ELSE
+            GVL_Warehouse.arrRack[stCraneJob.stRackPos.nRow, stCraneJob.stRackPos.nCol].eStatus := E_SlotStatus.EMPTY;     
+			GVL_Warehouse.arrRack[stCraneJob.stRackPos.nRow, stCraneJob.stRackPos.nCol].stParcel := stEmptySlot.stParcel;     
+            IF nAisleNumber = 1 THEN
+                GVL_IO.bCrane1drop := TRUE;    
+            ELSIF nAisleNumber = 2 THEN
+                GVL_IO.bCrane2drop := TRUE;    
+            END_IF
         END_IF
+        nState := DONE;
+    END_IF
 
     DONE:
         nState    := IDLE;
@@ -74,14 +87,15 @@ END_IF]]></ST>
     <Method Name="M_AssignRetrieve" Id="{dd000002-0000-0000-0000-000000000001}">
       <Declaration><![CDATA[METHOD M_AssignRetrieve : BOOL
 VAR_INPUT
-    stPos : ST_Position;
+   stJob : ST_CraneJob;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF nState <> IDLE OR bJobPending THEN
     M_AssignRetrieve := FALSE;
     RETURN;
 END_IF
-stRackTarget     := stPos;
+stCraneJob := stJob;
+stRackTarget  := stJob.stRackPos;
 bIsStore         := FALSE;
 bJobPending      := TRUE;
 M_AssignRetrieve := TRUE;]]></ST>
@@ -90,14 +104,15 @@ M_AssignRetrieve := TRUE;]]></ST>
     <Method Name="M_AssignStore" Id="{dd000001-0000-0000-0000-000000000001}">
       <Declaration><![CDATA[METHOD M_AssignStore : BOOL
 VAR_INPUT
-    stPos : ST_Position;
+    stJob : ST_CraneJob;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF nState <> IDLE OR bJobPending THEN
     M_AssignStore := FALSE;
     RETURN;
 END_IF
-stRackTarget  := stPos;
+stCraneJob := stJob;
+stRackTarget  := stJob.stRackPos;
 bIsStore      := TRUE;
 bJobPending   := TRUE;
 M_AssignStore := TRUE;]]></ST>
@@ -105,20 +120,28 @@ M_AssignStore := TRUE;]]></ST>
     </Method>
     <LineIds Name="FB_CraneController">
       <LineId Id="3" Count="12" />
-      <LineId Id="17" Count="17" />
-      <LineId Id="40" Count="0" />
-      <LineId Id="87" Count="4" />
-      <LineId Id="85" Count="1" />
+      <LineId Id="17" Count="15" />
+      <LineId Id="117" Count="3" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="125" Count="6" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="144" Count="0" />
+      <LineId Id="136" Count="5" />
+      <LineId Id="143" Count="0" />
       <LineId Id="41" Count="2" />
       <LineId Id="46" Count="6" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_CraneController.M_AssignRetrieve">
-      <LineId Id="3" Count="6" />
+      <LineId Id="3" Count="3" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="7" Count="2" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_CraneController.M_AssignStore">
-      <LineId Id="3" Count="6" />
+      <LineId Id="3" Count="3" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="7" Count="2" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

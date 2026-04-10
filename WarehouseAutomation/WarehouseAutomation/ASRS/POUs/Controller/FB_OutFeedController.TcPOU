@@ -33,6 +33,7 @@ CASE nState OF
     RUNNING:
         // Run until parcel clears the exit sensor
         IF GVL_IO.bOutfeedExitSensor THEN
+			GVL_IO.bOutfeedReq := FALSE;
             iOutfeedBelt.M_Stop();
             bComplete := TRUE;
             nState    := DONE;
@@ -49,7 +50,9 @@ bError := iOutfeedBelt.bError;]]></ST>
     <LineIds Name="FB_OutFeedController">
       <LineId Id="3" Count="8" />
       <LineId Id="43" Count="0" />
-      <LineId Id="12" Count="18" />
+      <LineId Id="12" Count="7" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="20" Count="10" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

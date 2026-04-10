@@ -36,7 +36,7 @@ VAR
     nCount          : INT := 0;
 
     nTargetAisle    : INT := 0;
-    bOutfeedReq     : BOOL;
+    
 	bAisle1RetrievalPending : BOOL;   
 	bAisle2RetrievalPending : BOOL; 
 END_VAR]]></Declaration>
@@ -113,7 +113,7 @@ fbInfeed(iInfeedBelt := fbInfeedBelt, iInfeedRat := fbInfeedRat);
 
 fbLoop(
     nTargetAisle    := nTargetAisle,
-    bOutfeedRequest := bOutfeedReq,
+    bOutfeedRequest := GVL_IO.bOutfeedReq,
     iLoopBelt       := fbLoopBelt,
     iAisle1Rat      := fbAisle1Rat,
     iAisle2Rat      := fbAisle2Rat,
@@ -148,15 +148,24 @@ IF GVL_IO.bParcelReady THEN
     M_RouteParcel();
 END_IF
 
-IF GVL_IO.bCrane1pick THEN
-    GVL_IO.bCrane1pick := FALSE;
+IF GVL_IO.bCrane1drop THEN
+    GVL_IO.bCrane1drop := FALSE;
     nTargetAisle := 0;
     bAisle1RetrievalPending := FALSE;   
+END_IF
+IF GVL_IO.bCrane2drop THEN
+    GVL_IO.bCrane2drop := FALSE;
+    nTargetAisle := 0;
+    bAisle2RetrievalPending := FALSE;   
+END_IF
+
+IF GVL_IO.bCrane1pick THEN
+    GVL_IO.bCrane1pick := FALSE;
+    nTargetAisle := 0;   
 END_IF
 IF GVL_IO.bCrane2pick THEN
     GVL_IO.bCrane2pick := FALSE;
     nTargetAisle := 0;
-    bAisle2RetrievalPending := FALSE;   
 END_IF
 
 IF GVL_Warehouse.bStartRetrieval THEN
@@ -178,7 +187,6 @@ M_DispatchJobs();
 // ── 7. HMI search ─────────────────────────────────────────────────────────────
 IF GVL_Warehouse.stHmiSearch.bTriggerSearch THEN
     M_HmiSearch();
-	GVL_Warehouse.stHmiSearch.bTriggerSearch := FALSE;
 END_IF
 
 // ── 8. Propagate errors ───────────────────────────────────────────────────────
@@ -201,15 +209,15 @@ END_VAR]]></Declaration>
 stJob := arrJobs[nHead];
 IF stJob.bIsStore THEN
 	IF stJob.nAisle = 1 AND NOT fbCraneCtrl1.bBusy THEN
-		IF fbCraneCtrl1.M_AssignStore(stPos := stJob.stRackPos) THEN
-			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol].eStatus := E_SlotStatus.OCCUPIED;
+		IF fbCraneCtrl1.M_AssignStore(stJob := stJob) THEN
+			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol].eStatus := E_SlotStatus.RESERVED_IN;
 			arrJobs[nHead].bValid := FALSE;
 			nHead  := nHead MOD 20 + 1;
 			nCount := nCount - 1;
 		END_IF
 	ELSIF stJob.nAisle = 2 AND NOT fbCraneCtrl2.bBusy THEN
-		IF fbCraneCtrl2.M_AssignStore(stPos := stJob.stRackPos) THEN
-			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol].eStatus := E_SlotStatus.OCCUPIED;
+		IF fbCraneCtrl2.M_AssignStore(stJob := stJob) THEN
+			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol].eStatus := E_SlotStatus.RESERVED_IN;
 			arrJobs[nHead].bValid := FALSE;
 			nHead  := nHead MOD 20 + 1;
 			nCount := nCount - 1;
@@ -217,15 +225,15 @@ IF stJob.bIsStore THEN
 	END_IF
 ELSE
 	IF stJob.nAisle = 1 AND NOT fbCraneCtrl1.bBusy THEN
-		IF fbCraneCtrl1.M_AssignRetrieve(stPos := stJob.stRackPos) THEN
-			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol] := stEmptySlot;
+		IF fbCraneCtrl1.M_AssignRetrieve(stJob := stJob) THEN
+			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol].eStatus := E_SlotStatus.RESERVED_OUT;
 			arrJobs[nHead].bValid := FALSE;
 			nHead  := nHead MOD 20 + 1;
 			nCount := nCount - 1;
 		END_IF
 	ELSIF stJob.nAisle = 2 AND NOT fbCraneCtrl2.bBusy THEN
-		IF fbCraneCtrl2.M_AssignStore(stPos := stJob.stRackPos) THEN
-			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol] := stEmptySlot;
+		IF fbCraneCtrl2.M_AssignRetrieve(stJob := stJob) THEN
+			GVL_Warehouse.arrRack[stJob.stRackPos.nRow, stJob.stRackPos.nCol].eStatus := E_SlotStatus.RESERVED_OUT;
 			arrJobs[nHead].bValid := FALSE;
 			nHead  := nHead MOD 20 + 1;
 			nCount := nCount - 1;
@@ -329,7 +337,7 @@ IF stJob.nAisle = 1 THEN
 ELSIF stJob.nAisle = 2 THEN
     bAisle2RetrievalPending := TRUE;
 END_IF
-bOutfeedReq := TRUE;
+GVL_IO.bOutfeedReq := TRUE;
 M_RequestRetrieval := TRUE;]]></ST>
       </Implementation>
     </Method>
@@ -340,13 +348,23 @@ VAR
     nCol   : INT;
     nRow   : INT;
     bFound : BOOL;
+	nDecideRow : INT;
+	nDecideCol : INT;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[// Determine aisle by weight
-IF fbInfeed.stParcel.bIsHeavy THEN
-    nTargetAisle := GVL_Config.CRANE2_AISLE;
+        <ST><![CDATA[
+IF nTargetAisle = 0 THEN
+    IF fbInfeed.stParcel.bIsHeavy THEN
+        nTargetAisle := GVL_Config.CRANE2_AISLE;
+		nDecideRow := GVL_Config.HEAVY_RACK_STARTING_ROW;
+    ELSE
+        nTargetAisle := GVL_Config.CRANE1_AISLE;
+		nDecideRow := 1;
+    END_IF
 ELSE
-    nTargetAisle := GVL_Config.CRANE1_AISLE;
+    // Loop is busy with another parcel — hold this one at infeed
+    GVL_IO.bInfeedBlocker := TRUE;
+    RETURN;   // come back next scan when loop is free
 END_IF
 
 // Fill rear slots first (row 2, 4), then front (row 1, 3)
@@ -354,8 +372,9 @@ END_IF
 // Front: row 1 and 3 (odd rows = front)
 bFound := FALSE;
 
+
 // Pass 1: rear slots
-FOR nRow := 1 TO GVL_Config.MAX_ROWS DO
+FOR nRow := nDecideRow TO GVL_Config.MAX_ROWS DO
     FOR nCol := 1 TO GVL_Config.MAX_COLUMNS DO
         IF GVL_Warehouse.arrRack[nRow, nCol].bIsRear
             AND GVL_Warehouse.arrRack[nRow, nCol].eStatus = E_SlotStatus.EMPTY
@@ -369,7 +388,7 @@ END_FOR
 
 // Pass 2: front slots if no rear slot found
 IF NOT bFound THEN
-    FOR nRow := 1 TO GVL_Config.MAX_ROWS DO
+    FOR nRow := nDecideRow TO GVL_Config.MAX_ROWS DO
     	FOR nCol := 1 TO GVL_Config.MAX_COLUMNS DO
         	IF NOT GVL_Warehouse.arrRack[nRow, nCol].bIsRear
             	AND GVL_Warehouse.arrRack[nRow, nCol].eStatus = E_SlotStatus.EMPTY
@@ -419,6 +438,9 @@ GVL_Warehouse.sSystemStatusMsg  := 'Parcel stored';]]></ST>
       <LineId Id="171" Count="0" />
       <LineId Id="182" Count="8" />
       <LineId Id="176" Count="0" />
+      <LineId Id="299" Count="3" />
+      <LineId Id="304" Count="3" />
+      <LineId Id="298" Count="0" />
       <LineId Id="163" Count="0" />
       <LineId Id="162" Count="0" />
       <LineId Id="164" Count="0" />
@@ -428,9 +450,7 @@ GVL_Warehouse.sSystemStatusMsg  := 'Parcel stored';]]></ST>
       <LineId Id="165" Count="0" />
       <LineId Id="207" Count="2" />
       <LineId Id="213" Count="1" />
-      <LineId Id="112" Count="6" />
-      <LineId Id="216" Count="0" />
-      <LineId Id="119" Count="6" />
+      <LineId Id="112" Count="13" />
       <LineId Id="217" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
@@ -462,7 +482,19 @@ GVL_Warehouse.sSystemStatusMsg  := 'Parcel stored';]]></ST>
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_WareHouseController.M_RouteParcel">
-      <LineId Id="3" Count="26" />
+      <LineId Id="91" Count="3" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="95" Count="1" />
+      <LineId Id="103" Count="0" />
+      <LineId Id="97" Count="1" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="100" Count="1" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="105" Count="1" />
+      <LineId Id="12" Count="1" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="14" Count="15" />
       <LineId Id="68" Count="9" />
       <LineId Id="40" Count="21" />
       <LineId Id="2" Count="0" />

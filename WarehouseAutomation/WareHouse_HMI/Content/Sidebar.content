@@ -18,10 +18,10 @@
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
 {
-  "topLeft": 0.0,
-  "topRight": 0.0,
-  "bottomLeft": 0.0,
-  "bottomRight": 0.0,
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
   "topLeftUnit": "px",
   "topRightUnit": "px",
   "bottomLeftUnit": "px",
@@ -31,13 +31,13 @@
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
 {
-  "color": "rgba(44, 80, 224, 1)"
+  "color": "rgba(255, 255, 255, 1)"
 }
 </script>
 
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
 {
-  "color": "rgba(255, 255, 255, 1)"
+  "color": "rgba(44, 80, 224, 1)"
 }
 </script>
 
@@ -58,6 +58,146 @@
           }
         ],
         "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
       }
     ]
   }
@@ -66,7 +206,7 @@
 
 <script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
 {
-  "color": "rgba(58, 78, 226, 1)"
+  "color": "rgba(44, 80, 224, 1)"
 }
 </script>
 
@@ -86,7 +226,7 @@
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
 {
   "left": "Solid",
-  "right": "None",
+  "right": "Solid",
   "top": "Solid",
   "bottom": "Solid"
 }
@@ -111,9 +251,9 @@
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
 {
-  "topLeft": 0.0,
+  "topLeft": 10.0,
   "topRight": 10.0,
-  "bottomLeft": 0.0,
+  "bottomLeft": 10.0,
   "bottomRight": 10.0,
   "topLeftUnit": "px",
   "topRightUnit": "px",
@@ -151,10 +291,178 @@
           }
         ],
         "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
       }
     ]
   }
 ]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(44, 80, 224, 1)"
+}
 </script>
 </div>
 
@@ -176,9 +484,9 @@
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
 {
-  "topLeft": 0.0,
+  "topLeft": 10.0,
   "topRight": 10.0,
-  "bottomLeft": 0.0,
+  "bottomLeft": 10.0,
   "bottomRight": 10.0,
   "topLeftUnit": "px",
   "topRightUnit": "px",
@@ -216,10 +524,248 @@
           }
         ],
         "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Infeed::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Aisle_1::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Aisle_2::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Loop::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Outfeed::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
       }
     ]
   }
 ]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(44, 80, 224, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
 </script>
 </div>
 
@@ -241,9 +787,9 @@
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
 {
-  "topLeft": 0.0,
+  "topLeft": 10.0,
   "topRight": 10.0,
-  "bottomLeft": 0.0,
+  "bottomLeft": 10.0,
   "bottomRight": 10.0,
   "topLeftUnit": "px",
   "topRightUnit": "px",
@@ -281,10 +827,248 @@
           }
         ],
         "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Infeed::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Aisle_1::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Aisle_2::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Loop::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Outfeed::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
       }
     ]
   }
 ]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
+{
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
+  "leftUnit": "px",
+  "rightUnit": "px",
+  "topUnit": "px",
+  "bottomUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(44, 80, 224, 1)"
+}
 </script>
 </div>
 
@@ -306,9 +1090,9 @@
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
 {
-  "topLeft": 0.0,
+  "topLeft": 10.0,
   "topRight": 10.0,
-  "bottomLeft": 0.0,
+  "bottomLeft": 10.0,
   "bottomRight": 10.0,
   "topLeftUnit": "px",
   "topRightUnit": "px",
@@ -331,10 +1115,10 @@
 
 <script data-tchmi-target-attribute="data-tchmi-border-width" type="application/json">
 {
-  "left": 0,
-  "right": 10,
-  "top": 0,
-  "bottom": 10,
+  "left": 2,
+  "right": 2,
+  "top": 2,
+  "bottom": 2,
   "leftUnit": "px",
   "rightUnit": "px",
   "topUnit": "px",
@@ -359,10 +1143,235 @@
           }
         ],
         "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Infeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Infeed::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_1::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Aisle_1::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Aisle_2::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Aisle_2::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Loop::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Loop::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::BackgroundColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(255, 255, 255, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%btn_Outfeed::TextColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/SolidColor",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/SolidColor",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": false,
+        "symbolExpression": "%ctrl%btn_Outfeed::BorderColor%/ctrl%",
+        "valueType": "tchmi:framework#/definitions/Color",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/Color",
+          "value": {
+            "color": "rgba(44, 80, 224, 1)"
+          }
+        },
+        "asyncWait": true
       }
     ]
   }
 ]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(44, 80, 224, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
+{
+  "left": "Solid",
+  "right": "Solid",
+  "top": "Solid",
+  "bottom": "Solid"
+}
 </script>
 </div>
 

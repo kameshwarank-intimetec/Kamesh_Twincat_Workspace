@@ -6,6 +6,7 @@ VAR_GLOBAL
 	
 
 	bParcelReady            : BOOL;
+	bOutfeedReq             : BOOL;
     // Infeed conveyor
     bInfeedSensor           : BOOL;
     bInfeedBlocker          : BOOL;

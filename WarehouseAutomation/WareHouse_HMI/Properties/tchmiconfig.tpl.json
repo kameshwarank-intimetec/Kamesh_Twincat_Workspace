@@ -156,6 +156,18 @@
         "type": "tchmi:general#/definitions/String",
         "persist": true,
         "readonly": false
+      },
+      "SearchButtonPressed": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "ParcelMessage": {
+        "value": "Search for Parcel",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
       }
     }
   },

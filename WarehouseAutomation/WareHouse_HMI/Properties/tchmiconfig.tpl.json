@@ -158,7 +158,7 @@
         "readonly": false
       },
       "SearchButtonPressed": {
-        "value": false,
+        "value": "False",
         "type": "tchmi:general#/definitions/BOOL",
         "persist": false,
         "readonly": false

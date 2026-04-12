@@ -289,7 +289,6 @@ END_VAR]]></Declaration>
     FOR nCol := 1 TO GVL_Config.MAX_COLUMNS DO
         GVL_Warehouse.arrRack[nRow, nCol].eStatus     := E_SlotStatus.EMPTY;
         GVL_Warehouse.arrRack[nRow, nCol].bMaintenance:= FALSE;
-        // Even rows are rear/deep slots
         GVL_Warehouse.arrRack[nRow, nCol].bIsRear     := (nRow MOD 2 = 0);
     END_FOR
 END_FOR
@@ -473,7 +472,8 @@ GVL_Warehouse.sSystemStatusMsg  := 'Parcel stored';]]></ST>
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_WareHouseController.M_InitRack">
-      <LineId Id="3" Count="7" />
+      <LineId Id="3" Count="3" />
+      <LineId Id="8" Count="2" />
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_WareHouseController.M_RequestRetrieval">

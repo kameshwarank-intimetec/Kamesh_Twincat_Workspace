@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{db8aabc3-04c4-4f13-a554-30056803d64a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbAdsRead   : ADSREAD;
+    bExecute    : BOOL := FALSE;
+    nReadValue  : INT;           // Variable to store the read result
+    bBusy       : BOOL;
+    bError      : BOOL;
+    nErrId      : UDINT;
+	sSymbol     : STRING := 'GVL_Config.nNumber';
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbAdsRead(
+    NETID    := '',              // '' = local machine; use '1.2.3.4.1.1' for remote
+    PORT     := 852,             // Target PLC Runtime port (851=R1, 852=R2...)
+    IDXGRP   := 16#F00C,         // Index Group for symbolic access (0xF005)
+    IDXOFFS  := TO_UDINT(ADR(sSymbol)),         // Index Offset (get from TwinCAT symbol info)
+    LEN      := SIZEOF(nReadValue),
+    DESTADDR := ADR(nReadValue), // Pointer to local variable
+    READ     := bExecute,        // Rising edge triggers read
+    BUSY     => bBusy,
+    ERR      => bError,
+    ERRID    => nErrId
+);]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="21" Count="10" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -47,29 +47,41 @@ CASE eCraneState OF
 			fbMoveTimer(IN := FALSE);
 			bMotorX     := FALSE;
 			bMotorY     := FALSE;
-			eCraneState := E_CraneState.PICKING;
+			eCraneState := E_CraneState.READY_TO_PICK;
 		END_IF
-
+		
+	E_CraneState.READY_TO_PICK:
+	IF GVL_IO.bOutfeedReq OR GVL_IO.bAisle1CraneStation THEN
+		eCraneState := E_CraneState.PICKING;
+		bForksOut := TRUE;
+		GVL_IO.bCrane1ForksHome := FALSE;
+	END_IF
+	
+	
+	
     E_CraneState.PICKING:
         bCraneBusy    := TRUE;
         IF bForksOut THEN
 			IF bForksExtended THEN
 					bForksOut := FALSE;
 					bForksExtended := FALSE;
-					eCraneState := E_CraneState.MOVING_TO_PLACE;
+					eCraneState := E_CraneState.READY_TO_MOVE;
 			END_IF
         END_IF
+		
+	 E_CraneState.READY_TO_MOVE:
+		bCraneBusy     := TRUE;
+        bForksExtended := FALSE;
+		 IF bForksHome THEN
+			 bForksOut := FALSE; 
+			 eCraneState := E_CraneState.MOVING_TO_PLACE;
+		 END_IF
 
     E_CraneState.MOVING_TO_PLACE:
-        bCraneBusy    := TRUE;
-        bForksOut:= FALSE;
-		
-        IF bForksHome THEN
+       
             bMotorX := TRUE;
             bMotorY := TRUE;
 			fbMoveTimer(IN := TRUE, PT := T#10S);
-        END_IF
-       
 		IF fbMoveTimer.Q THEN    
 			fbMoveTimer(IN := FALSE);  
 			bMotorX := FALSE;
@@ -147,38 +159,49 @@ eCraneState := E_CraneState.RETURNING_HOME;]]></ST>
       </Implementation>
     </Method>
     <Method Name="M_StartJob" Id="{cc000007-0000-0000-0000-000000000001}">
-      <Declaration><![CDATA[METHOD M_StartJob : BOOL
+      <Declaration><![CDATA[METHOD M_StartJob 
 VAR_INPUT
     stPick  : ST_Position;
     stPlace : ST_Position;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF eCraneState <> E_CraneState.IDLE THEN
-    M_StartJob := FALSE;
     RETURN;
 END_IF
 stPickPos  := stPick;
 stPlacePos := stPlace;
 eCraneState     := E_CraneState.MOVING_TO_PICK;
-M_StartJob := TRUE;]]></ST>
+]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_Crane">
       <LineId Id="302" Count="13" />
       <LineId Id="415" Count="9" />
-      <LineId Id="325" Count="3" />
+      <LineId Id="325" Count="0" />
+      <LineId Id="559" Count="0" />
+      <LineId Id="326" Count="0" />
+      <LineId Id="544" Count="0" />
+      <LineId Id="548" Count="0" />
+      <LineId Id="550" Count="0" />
+      <LineId Id="560" Count="0" />
+      <LineId Id="549" Count="0" />
+      <LineId Id="545" Count="2" />
+      <LineId Id="327" Count="1" />
       <LineId Id="330" Count="0" />
       <LineId Id="501" Count="0" />
       <LineId Id="514" Count="0" />
       <LineId Id="521" Count="0" />
       <LineId Id="509" Count="0" />
       <LineId Id="503" Count="0" />
-      <LineId Id="332" Count="4" />
-      <LineId Id="512" Count="0" />
-      <LineId Id="337" Count="2" />
+      <LineId Id="332" Count="0" />
+      <LineId Id="557" Count="0" />
+      <LineId Id="551" Count="3" />
+      <LineId Id="558" Count="0" />
+      <LineId Id="555" Count="1" />
+      <LineId Id="333" Count="2" />
+      <LineId Id="338" Count="1" />
       <LineId Id="513" Count="0" />
-      <LineId Id="340" Count="0" />
-      <LineId Id="431" Count="1" />
+      <LineId Id="432" Count="0" />
       <LineId Id="455" Count="0" />
       <LineId Id="438" Count="1" />
       <LineId Id="437" Count="0" />
@@ -211,7 +234,8 @@ M_StartJob := TRUE;]]></ST>
       <LineId Id="2" Count="0" />
     </LineIds>
     <LineIds Name="FB_Crane.M_StartJob">
-      <LineId Id="3" Count="6" />
+      <LineId Id="3" Count="0" />
+      <LineId Id="5" Count="4" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

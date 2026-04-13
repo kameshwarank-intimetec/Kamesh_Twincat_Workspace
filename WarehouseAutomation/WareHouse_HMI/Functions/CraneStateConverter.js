@@ -13,7 +13,9 @@
         var stateMap = {
             0: 'IDLE',
             10: 'MOVING_TO_PICK',
+            15 : 'READY_TO_PICK',
             20: 'PICKING',
+            25 : 'READY_TO_MOVE',
             30: 'MOVING_TO_PLACE',
             40: 'PLACING',
             50: 'RETURNING_HOME',

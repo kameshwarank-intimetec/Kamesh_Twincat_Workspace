@@ -52,7 +52,9 @@ bError := iOutfeedBelt.bError;]]></ST>
       <LineId Id="43" Count="0" />
       <LineId Id="12" Count="7" />
       <LineId Id="56" Count="0" />
-      <LineId Id="20" Count="10" />
+      <LineId Id="20" Count="4" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="26" Count="4" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

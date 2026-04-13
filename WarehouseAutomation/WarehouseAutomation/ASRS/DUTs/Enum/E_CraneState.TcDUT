@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <DUT Name="E_CraneState" Id="{c3d4e5f6-a7b8-9012-cdef-345678901234}">
-    <Declaration>{attribute 'qualified_only'}
+    <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'strict'}
 TYPE E_CraneState :
 (
     IDLE            := 0,
     MOVING_TO_PICK  := 10,
+	READY_TO_PICK   := 15,
     PICKING         := 20,
+	READY_TO_MOVE   := 25,
     MOVING_TO_PLACE := 30,
     PLACING         := 40,
     RETURNING_HOME  := 50,
     FAULT           := 99
 );
-END_TYPE</Declaration>
+END_TYPE]]></Declaration>
   </DUT>
 </TcPlcObject>

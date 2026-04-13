@@ -11,26 +11,28 @@ END_VAR]]></Declaration>
       <ST><![CDATA[IF bFirstScan THEN
     GVL_Warehouse.bSystemAutoMode := FALSE;
     GVL_Warehouse.bEmergencyStop  := FALSE;
-    GVL_Warehouse.sSystemStatusMsg:= 'System Ready to start';
     IF NOT GVL_Warehouse.bRackInitialized THEN
         fbWarehouse.M_InitRack();
     END_IF
     bFirstScan := FALSE;
 END_IF
 
-IF bStart THEN
+IF bStart AND NOT GVL_Warehouse.bEmergencyStop  THEN
 	fbWarehouse();
 	GVL_Warehouse.sSystemStatusMsg:= 'System Operating';
 ELSE
 	GVL_Warehouse.sSystemStatusMsg:= 'System Stopped';
-END_IF]]></ST>
+END_IF
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="3" Count="9" />
+      <LineId Id="3" Count="2" />
+      <LineId Id="7" Count="5" />
       <LineId Id="2" Count="0" />
       <LineId Id="18" Count="0" />
       <LineId Id="20" Count="2" />
       <LineId Id="19" Count="0" />
+      <LineId Id="28" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

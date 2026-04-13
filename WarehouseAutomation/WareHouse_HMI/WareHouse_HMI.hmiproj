@@ -104,6 +104,9 @@
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <ItemGroup>
+    <Content Include="Content\Alarm.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Content\Error.content">
       <SubType>Content</SubType>
     </Content>
@@ -268,9 +271,11 @@
     <Folder Include="Imports" />
     <Folder Include="Imports\Images" />
     <Folder Include="Imports\Videos" />
+    <Folder Include="KeyboardLayouts\" />
     <Folder Include="Localization" />
     <Folder Include="Content" />
     <Folder Include="Functions" />
+    <Folder Include="Themes\Base\Images\" />
     <Folder Include="UserControl" />
     <Folder Include="Server\ADS" />
     <Folder Include="Server\TcHmiEventLogger" />

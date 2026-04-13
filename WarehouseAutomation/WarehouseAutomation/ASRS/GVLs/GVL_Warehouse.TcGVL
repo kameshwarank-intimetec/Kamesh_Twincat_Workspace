@@ -18,6 +18,11 @@ VAR_GLOBAL
 	bStartRetrieval      : BOOL;
 	bRetrievalRow        : INT;
 	bRetrievalCol        : INT;
+	
+	bAlarmActive         : BOOL;
+    sAlarmMessage        : STRING;
+    arrAlarms            : ARRAY[1..10] OF ST_Alarm;
+    nAlarmCount          : INT;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

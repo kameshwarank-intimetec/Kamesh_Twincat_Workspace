@@ -60,6 +60,15 @@
             "startOffset": 1,
             "type": "array"
         },
+        "PLC1.ARRAY_1..10_OF-ST_Alarm": {
+            "items": {
+                "$ref": "#/definitions/PLC1.ST_Alarm"
+            },
+            "maxItems": 10,
+            "minItems": 10,
+            "startOffset": 1,
+            "type": "array"
+        },
         "PLC1.E_AisleMode": {
             "allOf": [
                 {
@@ -282,6 +291,43 @@
                     "$ref": "tchmi:general#/definitions/INT16"
                 }
             ]
+        },
+        "PLC1.ST_Alarm": {
+            "properties": {
+                "bActive": {
+                    "allOf": [
+                        {
+                            "$ref": "tchmi:general#/definitions/BOOL"
+                        },
+                        {
+                            "propertyOrder": 1
+                        }
+                    ]
+                },
+                "sMessage": {
+                    "allOf": [
+                        {
+                            "maxLength": 100,
+                            "propertyOrder": 3
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
+                },
+                "sSource": {
+                    "allOf": [
+                        {
+                            "maxLength": 50,
+                            "propertyOrder": 2
+                        },
+                        {
+                            "$ref": "tchmi:general#/definitions/String"
+                        }
+                    ]
+                }
+            },
+            "type": "object"
         },
         "PLC1.ST_Parcel": {
             "properties": {
@@ -3380,6 +3426,16 @@
             "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
+        "PLC1.GVL_Warehouse.arrAlarms": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_Warehouse::arrAlarms",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.ARRAY_1..10_OF-ST_Alarm"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL_Warehouse.arrRack": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",
@@ -3441,6 +3497,26 @@
                 ]
             },
             "SUBSYMBOL_MAPPING": "",
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.bAlarmActive": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_Warehouse::bAlarmActive",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.bEmergencyStop": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_Warehouse::bEmergencyStop",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
             "USEMAPPING": true
         },
         "PLC1.GVL_Warehouse.bRetrievalCol": {
@@ -3511,6 +3587,23 @@
                 "$ref": "tchmi:general#/definitions/UDINT"
             },
             "SUBSYMBOL_MAPPING": "",
+            "USEMAPPING": true
+        },
+        "PLC1.GVL_Warehouse.sAlarmMessage": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL_Warehouse::sAlarmMessage",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 100
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
             "USEMAPPING": true
         },
         "PLC1.GVL_Warehouse.sSystemStatusMsg": {
@@ -3672,6 +3765,23 @@
                 "$ref": "tchmi:general#/definitions/BOOL"
             },
             "SUBSYMBOL_MAPPING": "",
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.fbWarehouse.bReset": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::fbWarehouse::bReset",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 28
+                    }
+                ]
+            },
             "USEMAPPING": true
         },
         "PLC1.MAIN.fbWarehouse.fbAisle1.eMode": {
@@ -5437,6 +5547,11 @@
                 "LocalizeText": 3,
                 "Login": 3,
                 "Logout": 3,
+                "PLC1.GVL_Warehouse.arrAlarms": 3,
+                "PLC1.GVL_Warehouse.bAlarmActive": 3,
+                "PLC1.GVL_Warehouse.bEmergencyStop": 3,
+                "PLC1.GVL_Warehouse.sAlarmMessage": 3,
+                "PLC1.MAIN.fbWarehouse.bReset": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiEventLogger.Diagnostics": 1,

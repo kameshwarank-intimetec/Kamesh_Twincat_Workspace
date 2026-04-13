@@ -1,34 +1,34 @@
-﻿<div id="Loop" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="779" data-tchmi-height="946">
+<div id="Loop" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="779" data-tchmi-height="946">
 
-<div id="Sensors_Actuators_2" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="180" data-tchmi-height-unit="px" data-tchmi-left="17" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Sensors_Actuators_group_7.usercontrol" data-tchmi-top="302" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-componentname1="Aisle 1 Approach Sensor" data-tchmi-componentname2="Aisle 1 Blocker" data-tchmi-componentname3="Aisle 1 Rat Sensor" data-tchmi-componentname4="Aisle 1 Rat Lifting" data-tchmi-componentname5="Aisle 1 Rat Up" data-tchmi-componentname6="Aisle 1 Rat Down" data-tchmi-componentname7="Aisle 1 Rat Travel">
-
-</div>
-
-<div id="Sensors_Actuators_3" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="180" data-tchmi-height-unit="px" data-tchmi-left="17" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Sensors_Actuators_group_7.usercontrol" data-tchmi-top="482" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-componentname1="Aisle2 Approach Sensor" data-tchmi-componentname2="Aisle2 Blocker" data-tchmi-componentname3="Aisle2 Rat Sensor" data-tchmi-componentname4="Aisle2 Rat Lifting" data-tchmi-componentname5="Aisle2 Rat Up" data-tchmi-componentname6="Aisle2 Rat Down" data-tchmi-componentname7="Aisle2 Rat  Travel">
+<div id="Sensors_Actuators_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="180" data-tchmi-height-unit="px" data-tchmi-left="17" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Sensors_Actuators_group_7.usercontrol" data-tchmi-top="302" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-componentname1="Aisle 1 Approach Sensor" data-tchmi-componentname2="Aisle 1 Blocker" data-tchmi-componentname3="Aisle 1 Rat Sensor" data-tchmi-componentname4="Aisle 1 Rat Lifting" data-tchmi-componentname5="Aisle 1 Rat Up" data-tchmi-componentname6="Aisle 1 Rat Down" data-tchmi-componentname7="Aisle 1 Rat Travel">
 
 </div>
 
-<div id="Sensors_Actuators_4" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="180" data-tchmi-height-unit="px" data-tchmi-left="17" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Sensors_Actuators_group_7.usercontrol" data-tchmi-top="663" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-componentname1="Outfeed Approach Sensor" data-tchmi-componentname2="Outfeed Blocker" data-tchmi-componentname3="Outfeed Rat Sensor" data-tchmi-componentname4="Outfeed Rat Up" data-tchmi-componentname5="Outfeed Rat Down" data-tchmi-componentname6="Outfeed Rat Lifting" data-tchmi-componentname7="Outfeed Rat Travel">
+<div id="Sensors_Actuators_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="180" data-tchmi-height-unit="px" data-tchmi-left="17" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Sensors_Actuators_group_7.usercontrol" data-tchmi-top="482" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-componentname1="Aisle2 Approach Sensor" data-tchmi-componentname2="Aisle2 Blocker" data-tchmi-componentname3="Aisle2 Rat Sensor" data-tchmi-componentname4="Aisle2 Rat Lifting" data-tchmi-componentname5="Aisle2 Rat Up" data-tchmi-componentname6="Aisle2 Rat Down" data-tchmi-componentname7="Aisle2 Rat  Travel">
 
 </div>
 
-<div id="StateShowing_3" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="83" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="63" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Loop Conveyor" data-tchmi-state="%f%ConveyorEnumValueConverter(%s%PLC1.MAIN.fbWarehouse.fbLoopBelt.eMode%/s%)%/f%">
+<div id="Sensors_Actuators_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="180" data-tchmi-height-unit="px" data-tchmi-left="17" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Sensors_Actuators_group_7.usercontrol" data-tchmi-top="663" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-componentname1="Outfeed Approach Sensor" data-tchmi-componentname2="Outfeed Blocker" data-tchmi-componentname3="Outfeed Rat Sensor" data-tchmi-componentname4="Outfeed Rat Up" data-tchmi-componentname5="Outfeed Rat Down" data-tchmi-componentname6="Outfeed Rat Lifting" data-tchmi-componentname7="Outfeed Rat Travel">
 
 </div>
 
-<div id="StateShowing_4" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="361" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="63" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Aisle 1 RAT" data-tchmi-state="%f%DiverterStateConverter(%s%PLC1.MAIN.fbWarehouse.fbAisle1Rat.eRatState%/s%)%/f%">
+<div id="StateShowing_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="83" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="63" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Loop Conveyor" data-tchmi-state="%f%ConveyorEnumValueConverter(%s%PLC1.MAIN.fbWarehouse.fbLoopBelt.eMode%/s%)%/f%">
 
 </div>
 
-<div id="StateShowing_5" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="83" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="166" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Aisle2 RAT" data-tchmi-state="%f%DiverterStateConverter(%s%PLC1.MAIN.fbWarehouse.fbAisle2Rat.eRatState%/s%)%/f%">
+<div id="StateShowing_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="361" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="63" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Aisle 1 RAT" data-tchmi-state="%f%DiverterStateConverter(%s%PLC1.MAIN.fbWarehouse.fbAisle1Rat.eRatState%/s%)%/f%">
 
 </div>
 
-<div id="StateShowing_6" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="361" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="166" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Outfeed RAT" data-tchmi-state="%f%DiverterStateConverter(%s%PLC1.MAIN.fbWarehouse.fbOutfeedRat.eRatState%/s%)%/f%">
+<div id="StateShowing_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="83" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="166" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Aisle2 RAT" data-tchmi-state="%f%DiverterStateConverter(%s%PLC1.MAIN.fbWarehouse.fbAisle2Rat.eRatState%/s%)%/f%">
 
 </div>
 
-<div id="TcHmiTextblock_89" data-tchmi-type="tchmi-textblock" data-tchmi-height="45" data-tchmi-height-unit="px" data-tchmi-left="26" data-tchmi-left-unit="px" data-tchmi-text="Sensors &amp; Actuators" data-tchmi-top="246" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px">
+<div id="StateShowing_6" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="361" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="166" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Outfeed RAT" data-tchmi-state="%f%DiverterStateConverter(%s%PLC1.MAIN.fbWarehouse.fbOutfeedRat.eRatState%/s%)%/f%">
+
+</div>
+
+<div id="TcHmiTextblock_89" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="45" data-tchmi-height-unit="px" data-tchmi-left="26" data-tchmi-left-unit="px" data-tchmi-text="Sensors &amp; Actuators" data-tchmi-top="246" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
@@ -63,7 +63,7 @@
 </script>
 </div>
 
-<div id="TcHmiTextblock_97" data-tchmi-type="tchmi-textblock" data-tchmi-height="45" data-tchmi-height-unit="px" data-tchmi-left="26" data-tchmi-left-unit="px" data-tchmi-text="Machine State" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20">
+<div id="TcHmiTextblock_97" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="45" data-tchmi-height-unit="px" data-tchmi-left="26" data-tchmi-left-unit="px" data-tchmi-text="Machine State" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">

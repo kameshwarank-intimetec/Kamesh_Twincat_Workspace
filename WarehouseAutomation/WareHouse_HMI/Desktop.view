@@ -1,4 +1,4 @@
-﻿<div id="Desktop" data-tchmi-type="tchmi-view"
+<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView"
      data-tchmi-top="0" data-tchmi-left="0"
      data-tchmi-width-mode="Content"
      data-tchmi-min-width="100" data-tchmi-min-width-unit="%"
@@ -8,7 +8,7 @@
      data-tchmi-background-image-height="100" data-tchmi-background-image-width="100"
      data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width-unit="%">
 
-<div id="TcHmiRectangle" data-tchmi-type="tchmi-rectangle" data-tchmi-height="590" data-tchmi-height-unit="px" data-tchmi-left="33" data-tchmi-left-unit="px" data-tchmi-top="32" data-tchmi-top-unit="px" data-tchmi-width="940" data-tchmi-width-unit="px">
+<div id="TcHmiRectangle" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRectangle" data-tchmi-height="590" data-tchmi-height-unit="px" data-tchmi-left="33" data-tchmi-left-unit="px" data-tchmi-top="32" data-tchmi-top-unit="px" data-tchmi-width="940" data-tchmi-width-unit="px">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
@@ -46,7 +46,7 @@
 </script>
 </div>
 
-<div id="TcHmiTextblock" data-tchmi-type="tchmi-textblock" data-tchmi-height="67" data-tchmi-height-unit="px" data-tchmi-left="270" data-tchmi-left-unit="px" data-tchmi-text="Automatic Storage And Retrieval System" data-tchmi-top="56" data-tchmi-top-unit="px" data-tchmi-width="435" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="24">
+<div id="TcHmiTextblock" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="67" data-tchmi-height-unit="px" data-tchmi-left="270" data-tchmi-left-unit="px" data-tchmi-text="Automatic Storage And Retrieval System" data-tchmi-top="56" data-tchmi-top-unit="px" data-tchmi-width="435" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="24">
 
 
 <script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
@@ -56,7 +56,7 @@
 </script>
 </div>
 
-<div id="TcHmiRegion" data-tchmi-type="tchmi-region" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="53" data-tchmi-left-unit="px" data-tchmi-top="133" data-tchmi-top-unit="px" data-tchmi-width="900" data-tchmi-width-unit="px" data-tchmi-target-content="Content/Navbar.content">
+<div id="TcHmiRegion" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="60" data-tchmi-height-unit="px" data-tchmi-left="53" data-tchmi-left-unit="px" data-tchmi-top="133" data-tchmi-top-unit="px" data-tchmi-width="900" data-tchmi-width-unit="px" data-tchmi-target-content="Content/Navbar.content">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
@@ -96,7 +96,7 @@
 </script>
 </div>
 
-<div id="TcHmiRegion_1" data-tchmi-type="tchmi-region" data-tchmi-height="400" data-tchmi-height-unit="px" data-tchmi-left="53" data-tchmi-left-unit="px" data-tchmi-top="201" data-tchmi-top-unit="px" data-tchmi-width="900" data-tchmi-width-unit="px" data-tchmi-target-content="Content/Home.content">
+<div id="TcHmiRegion_1" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="400" data-tchmi-height-unit="px" data-tchmi-left="53" data-tchmi-left-unit="px" data-tchmi-top="201" data-tchmi-top-unit="px" data-tchmi-width="900" data-tchmi-width-unit="px" data-tchmi-target-content="Content/Home.content">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">

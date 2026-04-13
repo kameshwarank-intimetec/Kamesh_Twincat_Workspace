@@ -1,9 +1,6 @@
-﻿<div id="Storage_Rack" data-tchmi-type="tchmi-user-control" 
-     data-tchmi-top="0" data-tchmi-left="0" 
-     data-tchmi-width="70" data-tchmi-height="70" data-tchmi-width-unit="px" data-tchmi-height-unit="px"
-     data-tchmi-creator-viewport-width="500" data-tchmi-creator-viewport-height="500">
+<div id="Storage_Rack" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="70" data-tchmi-height="70" data-tchmi-width-unit="px" data-tchmi-height-unit="px" data-tchmi-creator-viewport-width="500" data-tchmi-creator-viewport-height="500">
 
-<div id="TcHmiTextblock_40" data-tchmi-type="tchmi-textblock" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="50" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="18" data-tchmi-text="%pp%Parcel_ID%/pp%" data-tchmi-border-color="%f%SlotStatusConverter(%pp%Rack_State%/pp%)%/f%">
+<div id="TcHmiTextblock_40" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="50" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="18" data-tchmi-text="%pp%Parcel_ID%/pp%" data-tchmi-border-color="%f%SlotStatusConverter(%pp%Rack_State%/pp%)%/f%">
 
 
 
@@ -59,8 +56,7 @@
 ]
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "TcHmiTextblock_40.onMouseMove",
     "actions": [
@@ -182,8 +178,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 
 <script data-tchmi-target-attribute="data-tchmi-box-shadow" type="application/json">
 [

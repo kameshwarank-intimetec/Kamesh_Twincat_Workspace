@@ -1,22 +1,22 @@
-﻿<div id="Popup" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="762" data-tchmi-height="330">
+<div id="Popup" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="762" data-tchmi-height="330">
 
-<div id="DataShowing_5" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="19" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Parcel ID" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.stHmiSearch.stSelectedParcel.sID%/s%">
-
-</div>
-
-<div id="DataShowing_6" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="205" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.stHmiSearch.stSelectedParcel.sDescription%/s%" data-tchmi-dataname="Description">
+<div id="DataShowing_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="19" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Parcel ID" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.stHmiSearch.stSelectedParcel.sID%/s%">
 
 </div>
 
-<div id="DataShowing_7" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="577" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Row" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.stHmiSearch.nFoundRow%/s%">
+<div id="DataShowing_6" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="205" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.stHmiSearch.stSelectedParcel.sDescription%/s%" data-tchmi-dataname="Description">
 
 </div>
 
-<div id="DataShowing_8" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="391" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.stHmiSearch.nFoundCol%/s%" data-tchmi-dataname="Column">
+<div id="DataShowing_7" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="577" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Row" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.stHmiSearch.nFoundRow%/s%">
 
 </div>
 
-<div id="TcHmiButton_35" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="243" data-tchmi-left-unit="px" data-tchmi-text="Retrieve" data-tchmi-top="155" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="15">
+<div id="DataShowing_8" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="391" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="35" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.stHmiSearch.nFoundCol%/s%" data-tchmi-dataname="Column">
+
+</div>
+
+<div id="TcHmiButton_35" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="243" data-tchmi-left-unit="px" data-tchmi-text="Retrieve" data-tchmi-top="155" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="15">
 
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
@@ -50,8 +50,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "TcHmiButton_35.onPressed",
     "actions": [
@@ -115,11 +114,10 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 
-<div id="TcHmiButton_36" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="364" data-tchmi-left-unit="px" data-tchmi-text="Cancel" data-tchmi-top="155" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="15">
+<div id="TcHmiButton_36" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="364" data-tchmi-left-unit="px" data-tchmi-text="Cancel" data-tchmi-top="155" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="15">
 
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
@@ -153,8 +151,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "TcHmiButton_36.onPressed",
     "actions": [
@@ -184,8 +181,7 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 
 </div>

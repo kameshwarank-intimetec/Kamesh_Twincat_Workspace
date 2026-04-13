@@ -1,6 +1,6 @@
-﻿<div id="Home" data-tchmi-type="tchmi-content" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="900" data-tchmi-height="350" data-tchmi-left-unit="px" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-height-unit="px">
+<div id="Home" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="900" data-tchmi-height="350" data-tchmi-left-unit="px" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-height-unit="px">
 
-<div id="btn_Start" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="31" data-tchmi-left-unit="px" data-tchmi-text="Start" data-tchmi-top="51" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="20">
+<div id="btn_Start" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="31" data-tchmi-left-unit="px" data-tchmi-text="Start" data-tchmi-top="51" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="20">
 
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
@@ -28,8 +28,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "btn_Start.onPressed",
     "actions": [
@@ -47,11 +46,10 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 
-<div id="btn_Stop" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="154" data-tchmi-left-unit="px" data-tchmi-text="Stop" data-tchmi-top="51" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="20">
+<div id="btn_Stop" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="154" data-tchmi-left-unit="px" data-tchmi-text="Stop" data-tchmi-top="51" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="20">
 
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
@@ -79,8 +77,7 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "btn_Stop.onPressed",
     "actions": [
@@ -98,11 +95,10 @@
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 
-<div id="btn_Reset" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="280" data-tchmi-left-unit="px" data-tchmi-text="Reset" data-tchmi-top="51" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="20">
+<div id="btn_Reset" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="280" data-tchmi-left-unit="px" data-tchmi-text="Reset" data-tchmi-top="51" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="20">
 
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
@@ -131,7 +127,7 @@
 </script>
 </div>
 
-<div id="btn_Emergency_Stop" data-tchmi-type="tchmi-button" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="607" data-tchmi-left-unit="px" data-tchmi-text="Emergency Stop" data-tchmi-top="378" data-tchmi-top-unit="px" data-tchmi-width="162" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="20">
+<div id="btn_Emergency_Stop" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="607" data-tchmi-left-unit="px" data-tchmi-text="Emergency Stop" data-tchmi-top="378" data-tchmi-top-unit="px" data-tchmi-width="162" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="20">
 
 
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
@@ -187,97 +183,101 @@
 }
 </script>
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
   {
     "event": "btn_Emergency_Stop.onPressed",
     "actions": [
       {
         "objectType": "Condition",
         "active": true,
-        "expressions": [
+        "asyncWait": true,
+        "parts": [
           {
-            "compare1": {
-              "objectType": "Symbol",
-              "symbolExpression": "%ctrl%btn_Emergency_Stop::BackgroundColor%/ctrl%"
-            },
-            "compare2": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:framework#/definitions/Color",
-              "value": {
-                "color": "rgba(244, 39, 39, 1)"
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "symbolExpression": "%ctrl%btn_Emergency_Stop::BackgroundColor%/ctrl%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(244, 39, 39, 1)"
+                  }
+                },
+                "compareOperator": "==",
+                "logic": null
               }
-            },
-            "compareOperator": "==",
-            "logic": null
-          }
-        ],
-        "true": [
-          {
-            "objectType": "WriteToSymbol",
-            "active": true,
-            "symbolExpression": "%ctrl%btn_Emergency_Stop::BackgroundColor%/ctrl%",
-            "valueType": "tchmi:framework#/definitions/Color",
-            "value": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:framework#/definitions/Color",
-              "value": {
-                "color": "None"
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btn_Emergency_Stop::BackgroundColor%/ctrl%",
+                "valueType": "tchmi:framework#/definitions/Color",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "None"
+                  }
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btn_Emergency_Stop::TextColor%/ctrl%",
+                "valueType": "tchmi:framework#/definitions/SolidColor",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/SolidColor",
+                  "value": {
+                    "color": "rgba(3, 0, 0, 1)"
+                  }
+                },
+                "asyncWait": true
               }
-            },
-            "asyncWait": true
+            ]
           },
           {
-            "objectType": "WriteToSymbol",
-            "active": true,
-            "symbolExpression": "%ctrl%btn_Emergency_Stop::TextColor%/ctrl%",
-            "valueType": "tchmi:framework#/definitions/SolidColor",
-            "value": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:framework#/definitions/SolidColor",
-              "value": {
-                "color": "rgba(3, 0, 0, 1)"
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btn_Emergency_Stop::BackgroundColor%/ctrl%",
+                "valueType": "tchmi:framework#/definitions/Color",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/Color",
+                  "value": {
+                    "color": "rgba(244, 39, 39, 1)"
+                  }
+                },
+                "asyncWait": true
+              },
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%ctrl%btn_Emergency_Stop::TextColor%/ctrl%",
+                "valueType": "tchmi:framework#/definitions/SolidColor",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:framework#/definitions/SolidColor",
+                  "value": {
+                    "color": "rgba(255, 253, 253, 1)"
+                  }
+                },
+                "asyncWait": true
               }
-            },
-            "asyncWait": true
+            ]
           }
-        ],
-        "false": [
-          {
-            "objectType": "WriteToSymbol",
-            "active": true,
-            "symbolExpression": "%ctrl%btn_Emergency_Stop::BackgroundColor%/ctrl%",
-            "valueType": "tchmi:framework#/definitions/Color",
-            "value": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:framework#/definitions/Color",
-              "value": {
-                "color": "rgba(244, 39, 39, 1)"
-              }
-            },
-            "asyncWait": true
-          },
-          {
-            "objectType": "WriteToSymbol",
-            "active": true,
-            "symbolExpression": "%ctrl%btn_Emergency_Stop::TextColor%/ctrl%",
-            "valueType": "tchmi:framework#/definitions/SolidColor",
-            "value": {
-              "objectType": "StaticValue",
-              "valueType": "tchmi:framework#/definitions/SolidColor",
-              "value": {
-                "color": "rgba(255, 253, 253, 1)"
-              }
-            },
-            "asyncWait": true
-          }
-        ],
-        "asyncWait": true
+        ]
       }
     ]
   }
-]
-</script>
+]</script>
 </div>
 
 
@@ -286,23 +286,23 @@
   "color": "None"
 }
 </script>
-<div id="DataShowing_1" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="31" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="206" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-dataname="Total Stored" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.nTotalStoredCount%/s%">
+<div id="DataShowing_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="31" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="206" data-tchmi-top-unit="px" data-tchmi-width="200" data-tchmi-width-unit="px" data-tchmi-dataname="Total Stored" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.nTotalStoredCount%/s%">
 
 </div>
 
-<div id="DataShowing_2" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="231" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="206" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Total Retrieved" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.nTotalRetrievedCount%/s%">
+<div id="DataShowing_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="100" data-tchmi-height-unit="px" data-tchmi-left="231" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="206" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Total Retrieved" data-tchmi-datavalue="%s%PLC1.GVL_Warehouse.nTotalRetrievedCount%/s%">
 
 </div>
 
-<div id="DataShowing_3" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="431" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="206" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Job Queue" data-tchmi-datavalue="%s%PLC1.MAIN.fbWarehouse.nCount%/s%">
+<div id="DataShowing_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="431" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="206" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Job Queue" data-tchmi-datavalue="%s%PLC1.MAIN.fbWarehouse.nCount%/s%">
 
 </div>
 
-<div id="DataShowing_4" data-tchmi-type="tchmi-user-control-host" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="632" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="206" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Total Occupency" data-tchmi-datavalue="%f%%s%PLC1.GVL_Warehouse.nTotalStoredCount%/s%- %s%PLC1.GVL_Warehouse.nTotalRetrievedCount%/s%%/f%">
+<div id="DataShowing_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="89" data-tchmi-height-unit="px" data-tchmi-left="632" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/DataShowing.usercontrol" data-tchmi-top="206" data-tchmi-top-unit="px" data-tchmi-width="176" data-tchmi-width-unit="px" data-tchmi-dataname="Total Occupency" data-tchmi-datavalue="%f%%s%PLC1.GVL_Warehouse.nTotalStoredCount%/s%- %s%PLC1.GVL_Warehouse.nTotalRetrievedCount%/s%%/f%">
 
 </div>
 
-<div id="TcHmiTextblock_88" data-tchmi-type="tchmi-textblock" data-tchmi-height="59" data-tchmi-height-unit="px" data-tchmi-left="107" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.GVL_Warehouse.sSystemStatusMsg%/s%" data-tchmi-top="124" data-tchmi-top-unit="px" data-tchmi-width="581" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20">
+<div id="TcHmiTextblock_88" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="59" data-tchmi-height-unit="px" data-tchmi-left="107" data-tchmi-left-unit="px" data-tchmi-text="%s%PLC1.GVL_Warehouse.sSystemStatusMsg%/s%" data-tchmi-top="124" data-tchmi-top-unit="px" data-tchmi-width="581" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20">
 
 
 <script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">

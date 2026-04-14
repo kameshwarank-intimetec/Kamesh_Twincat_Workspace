@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_WriteExampl1" Id="{05803967-bd2d-43d3-8dfc-4480053f0039}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WriteExampl1
+
+VAR
+	fbRead1     :  FB_WriteAdsSymByName;
+	bEnable     : BOOL;
+	sSymbol     : STRING := 'GVL_Config.nNumber';
+	nReadValue  : INT := 200;
+	eComMode    :  E_AdsComMode := eAdsComModeSecureCom;
+	bBusy       : BOOL;
+    bError      : BOOL;
+    nErrId      : UDINT;
+	bExecute: BOOL;
+	fbTimer : TON := (PT := T#100MS); // Adjust the speed here
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+	fbRead1(
+	bWrite:= bEnable, 
+	sNetId:= '', 
+	nPort:= 852, 
+	sVarName:= sSymbol, 
+	nSrcAddr:= ADR(nReadValue), 
+	nLen:= SIZEOF(nReadValue), 
+	tTimeout:= , 
+	eComMode:= eComMode,  
+	bBusy=> bBusy, 
+	bError=> bError, 
+	nErrorId=> nErrId);
+bEnable := FALSE;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_WriteExampl1">
+      <LineId Id="27" Count="9" />
+      <LineId Id="38" Count="2" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

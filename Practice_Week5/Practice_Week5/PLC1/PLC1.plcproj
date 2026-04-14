@@ -18,6 +18,9 @@
     <LibraryReferences>{9a4cb978-4573-4730-826c-ae8c44626043}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\ST_StorageSlot.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\GVL_Config.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>

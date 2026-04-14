@@ -5,6 +5,7 @@
 
 VAR_GLOBAL
 	nNumber : INT := 454;
+	arrRack : ARRAY[1..10] OF ST_StorageSlot;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

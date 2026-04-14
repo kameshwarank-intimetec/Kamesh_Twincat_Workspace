@@ -12,10 +12,14 @@ VAR
     nErrId      : UDINT;
 	sSymbol     : STRING := 'GVL_Config.nNumber';
 	fbAdsRead1   : ADSRDWRTEX;
-	fbAdsRead2   : ADSRDWRTEX;
+	fbAdsRead2   : ADSREAD;
 	hVariable   : DWORD;
 	
-	fbRead : FB_Example1;
+	fbRead1 : FB_Example1;
+	fbRead2 : FB_Example2;
+	fbWrite1 : FB_WriteExampl1;
+	
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -33,30 +37,37 @@ END_VAR
             WRTRD:= TRUE, 
             BUSY => bBusy, ERR => bError, ERRID => nErrId);	
 END_IF
+
 IF bExecute2 THEN
-	
 	fbAdsRead2(
-		NETID:= '' , 
-		PORT:= 852, 
-		IDXGRP:= 16#F005, 
-		IDXOFFS:= hVariable, 
-		READLEN:= SIZEOF(nReadValue) ,  
-		DESTADDR:= ADR(nReadValue) , 
-		WRTRD:= TRUE , 
-		BUSY => bBusy,
-		ERR  => bError,
-		ERRID => nErrId );
+	NETID:= '', 
+	PORT:= 852, 
+	IDXGRP:= 16#F005 , 
+	IDXOFFS:= hVariable, 
+	LEN:= SIZEOF(nReadValue), 
+	DESTADDR:= ADR(nReadValue), 
+	READ:= bExecute2 , 
+	BUSY => bBusy, 
+	ERR => bError, 
+	ERRID => nErrId);	
 END_IF
-fbRead();
-]]></ST>
+fbRead1();
+fbRead2();
+fbWrite1();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="471" Count="0" />
       <LineId Id="513" Count="0" />
       <LineId Id="472" Count="10" />
-      <LineId Id="485" Count="13" />
+      <LineId Id="485" Count="0" />
+      <LineId Id="551" Count="0" />
+      <LineId Id="486" Count="0" />
+      <LineId Id="535" Count="7" />
+      <LineId Id="498" Count="0" />
+      <LineId Id="546" Count="1" />
       <LineId Id="124" Count="0" />
       <LineId Id="515" Count="0" />
+      <LineId Id="534" Count="0" />
       <LineId Id="514" Count="0" />
     </LineIds>
   </POU>

@@ -1,15 +1,59 @@
 /**
+* About font inclusion in TcHmi
+* 
+* As a default we include Roboto Condensed (in Fonts folder) as a webfont which will render latin, greek, vietnamese, cyrillic glyphs.
+* 
+* If Roboto does not render the glyphs we use some preinstalled fallback
+* 'Microsoft YaHei' (Windows), 'Hiragino Sans GB' (macOS/iOS), 'Noto Sans CJK SC/TC' (Android), 'WenQuanYi Micro Hei' (Linux) renders chinese
+* 'Meiryo' (Windows), 'Hiragino Kaku Gothic Pro' (macOS/iOS), 'Noto Sans CJK JP' (Android) renders japanese
+* 
+* For other fonts you can add the woff files into the TcHmi project and 
+* add a @font-face section yourself.
+* The noto family from Google tries to cover all of the world, is free to use and fits nicely with Roboto
+* see https://fonts.google.com/noto and https://fonts.google.com/earlyaccess 
+* 
+* The font usage is defined in the main CSS file of the active theme (for example Themes/Base/Style.css).
+*/
+html {
+    font-family: RobotoCondensed, 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB', '冬青黑体', 'STXihei', '华文细黑', 'WenQuanYi Micro Hei', 'Meiryo', 'メイリオ', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ ProN', 'Noto Sans CJK SC', 'Noto Sans CJK TC', 'Noto Sans CJK JP', 'Noto Sans CJK KR', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+    height: 100%;
+}
+
+/* Is defined in html tag of runtime html only. */
+.tchmi-html-runtime {
+}
+
+/* Is defined in body tag of runtime html only. */
+.tchmi-body-runtime {
+}
+
+/*  Views */
+div[data-tchmi-type="TcHmi.Controls.System.TcHmiView"] {
+    background-image: url(Images/Background.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/**
  * Splash Screen Dialog
  */
 #tchmi-splash-container {
     position: relative;
     width: 100%;
     height: 100%;
+    background-image: url(Images/Background.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     overflow: auto;
     display: flex;
 }
 
-@media screen and (min-width: 800px)  {
+
+@media screen and (min-width: 800px) {
 
     @media screen and (min-height: 600px) {
 
@@ -66,7 +110,6 @@
             height: 20px;
             font-size: 12px;
         }
-
     }
 
     @media not screen and (min-height: 600px) {
@@ -124,12 +167,10 @@
             height: 20px;
             font-size: 10px;
         }
-
     }
-
 }
 
-@media not screen and (min-width: 800px)  {
+@media not screen and (min-width: 800px) {
 
     @media screen and (min-height: 534px) {
 
@@ -243,9 +284,7 @@
             height: 20px;
             font-size: 10px;
         }
-
     }
-
 }
 
 /** 

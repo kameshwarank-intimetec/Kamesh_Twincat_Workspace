@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_Example1" Id="{89346506-8ec0-490c-b077-4346a28facfa}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Example1
+
+VAR
+	fbRead1     :  FB_ReadAdsSymByName;
+	bEnable     : BOOL;
+	sSymbol     : STRING := 'GVL_Config.nNumber';
+	nReadValue  : INT;
+	eComMode    :  E_AdsComMode := eAdsComModeFastCom;
+	bBusy       : BOOL;
+    bError      : BOOL;
+    nErrId      : UDINT;
+	bExecute: BOOL;
+	fbTimer : TON := (PT := T#100MS); // Adjust the speed here
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+fbTimer(IN := NOT fbTimer.Q); // This creates a self-resetting pulse
+
+IF fbTimer.Q THEN
+    bEnable := TRUE; // Trigger your FB_ReadAdsSymByName
+END_IF
+
+	fbRead1(
+	bRead:= bEnable, 
+	sNetId:= '', 
+	nPort:= 852, 
+	sVarName:= sSymbol, 
+	nDestAddr:= ADR(nReadValue), 
+	nLen:= SIZEOF(nReadValue), 
+	tTimeout:= , 
+	eComMode:= eComMode, 
+	bClearOnError:= , 
+	bBusy=> bBusy, 
+	bError=> bError, 
+	nErrorId=> nErrId);
+bEnable := FALSE;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Example1">
+      <LineId Id="70" Count="5" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="53" Count="11" />
+      <LineId Id="50" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

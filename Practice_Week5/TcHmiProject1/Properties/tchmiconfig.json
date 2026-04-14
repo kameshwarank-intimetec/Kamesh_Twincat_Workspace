@@ -6,23 +6,34 @@
   "loginPage": "",
   "tcHmiServer": {
     "websocketIntervalTime": 500,
-    "websocketTimeout": 10000,
-    "websocketSystemTimeout": 0,
+    "websocketTimeout": 20000,
+    "websocketSystemTimeout": 60000,
     "websocketSubscriptionMode": "Change"
   },
   "activeTheme": "Base",
   "themes": {
+    "Base-Dark": {
+      "resources": [
+        {
+          "name": "Themes/Base-Dark/Base-DarkStyle.css",
+          "description": "",
+          "type": "Stylesheet"
+        },
+        {
+          "name": "Themes/Base-Dark/Base-Dark.theme",
+          "description": "",
+          "type": "ThemedValues"
+        }
+      ],
+      "replacesThemeForControls": [],
+      "replacesThemeForPackageComponents": []
+    },
     "Base": {
       "resources": [
         {
           "name": "Themes/Base/Base.theme",
           "description": "",
           "type": "ThemedValues"
-        },
-        {
-          "name": "Themes/Base/Style.css",
-          "description": "",
-          "type": "Stylesheet"
         },
         {
           "name": "Themes/Base/BaseStyle.css",
@@ -59,15 +70,15 @@
   "trigger": [],
   "actionTemplates": [],
   "languages": {
-    "de-DE": "Localization/de-DE.localization",
-    "en-US": "Localization/en-US.localization"
+    "de": "Localization/de.localization",
+    "en": "Localization/en.localization"
   },
   "languageFallback": "",
   "disableLoadingOptimization": false,
   "creatorSettings": {
     "viewport": {
-      "defaultWidth": 1024,
-      "defaultHeight": 768
+      "defaultWidth": 800,
+      "defaultHeight": 600
     }
   },
   "binding": {
@@ -92,20 +103,23 @@
       "url": "KeyboardLayouts/German - compact.keyboard.json"
     },
     {
+      "url": "KeyboardLayouts/Numpad (plusminus).keyboard.json"
+    },
+    {
       "url": "KeyboardLayouts/US - compact.keyboard.json"
     }
   ],
   "systemKeyboard": {
     "providerName": "",
     "projectKeyboardMapping": {
-      "de-DE": {
-        "text": "",
-        "decimal": "",
+      "de": {
+        "text": "KeyboardLayouts/German - compact.keyboard.json",
+        "decimal": "KeyboardLayouts/Numpad (plusminus).keyboard.json",
         "numeric": ""
       },
-      "en-US": {
-        "text": "",
-        "decimal": "",
+      "en": {
+        "text": "KeyboardLayouts/US - compact.keyboard.json",
+        "decimal": "KeyboardLayouts/Numpad (plusminus).keyboard.json",
         "numeric": ""
       }
     }

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_SendingData" Id="{ad5a99aa-9b16-4636-8c02-6ad35f0f0b60}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SendingData
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="FB_SendingData">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

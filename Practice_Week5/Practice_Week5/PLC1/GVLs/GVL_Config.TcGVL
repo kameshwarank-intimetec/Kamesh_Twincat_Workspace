@@ -2,8 +2,9 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
   <GVL Name="GVL_Config" Id="{9064ae18-6aa3-4688-baf7-dd118d9dd659}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
+
 VAR_GLOBAL
-	nNumber : INT;
+	nNumber : INT := 454;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

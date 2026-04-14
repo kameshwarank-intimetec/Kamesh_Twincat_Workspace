@@ -8,8 +8,8 @@
     "CACHEMAXAGE": "P30D",
     "CACHEMAXENTRYSIZE": 1048576,
     "CACHEMAXSIZE": 2097152,
-    "CERTIFICATE": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUR3VENDQXFtZ0F3SUJBZ0lKQU5qR3hDcWxYNitCTUEwR0NTcUdTSWIzRFFFQkN3VUFNRWt4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4SFRBYkJnTlZCQU1NRkVsVQpWQzFMUVUxRlUwaFhRVkpCVGw5eWIyOTBNQjRYRFRJMk1EUXdPVEE0TkRjeE0xb1hEVEkzTURRd09UQTRORGN4Ck0xb3dSREVMTUFrR0ExVUVCaE1DUkVVeEd6QVpCZ05WQkFvTUVsUjNhVzVEUVZRZ1NFMUpJRk5sY25abGNqRVkKTUJZR0ExVUVBd3dQU1ZSVUxVdEJUVVZUU0ZkQlVrRk9NSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QQpNSUlCQ2dLQ0FRRUFwZlFDZlFEN0RHTytWMlBsUDd4dzJYRU83bEl1OTVBdUJXTG1XTWdKU1p6WUt4a1A3VXZGCmJqYnpNT21wY2tCZ0RlQ2JIc0NTdzFYYmJXcndRa3g0TFVxNnNLd1BaWitVcXR4RDB5RkJOUC9IdE5Fa2xyL0QKV0phanBBN0F3VUg2UUVPMFFDUzF0ekRnQWhWeWRMd3JOdU9QbXBRY3hFUGdsT1FzZ3kxSlVBK3VBN2xvbUFBdQpjQkEvQ3RPVDZFYm95cXNIQXZCaEx0TmJxaHZLY0VBYW1KSWhGMnhFTWFRZ2JpRHJWWG9HcmhjM1I3Ty83YjAxCkl4d3lTYi9ZZy9tZU1UWWc4dnFvY2JOSnlxSHR0YXBTby9ZOVo4RmZNbDRhVEZoSGNCYUZhTWpFZnQzYURRQkkKNWpGVkR5VVZCUGl1dkJ5UHEwK1UrNXBTTDB4NHJPMU1id0lEQVFBQm80R3dNSUd0TUg0R0ExVWRFUVIzTUhXQwpDV3h2WTJGc2FHOXpkSWNFZndBQUFZY1FBQUFBQUFBQUFBQUFBQUFBQUFBQUFZSVBTVlJVTFV0QlRVVlRTRmRCClVrRk9nZzlKVkZRdFMwRk5SVk5JVjBGU1FVNkhCS24rR21PSEJLbitXSnlIQktuK2JTeUhCS3dXQVE2SEVBQUEKQUFBQUFBQUFBQUFBQUFBQUFBR0hCSDhBQUFFd0hRWURWUjBPQkJZRUZKN2lUQWRiOUtjUkJDVmphWE5BRm1xbgpyQzdBTUF3R0ExVWRFd0VCL3dRQ01BQXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBQmRicEdZNVd5UW5UZmp0CmM2VlVGdmYzUUpHbEwxejMva2xxR29lYVg4R2xsam9ncWxLNW1HOWZuMUR6aktwMTBmSlhJb0NrUi9kYkZ0U3MKekZocHBnQWJIaUpkVUU4cU9pT2FBOTY4Z0hEeHlOeWp4L1l6bXVhY3BsSWhuOUZ3NWVKNXRyQXFMUkxXOVJRRApyMHoyK1EvWXFXUExvdHYvRkl4V1FlSmcvc1JUb0hjd05XeWF2L0VPVko2aVFBR2ROVzY5QU1WWmM3V3BnV1VWCmd5R3hGN2lnOVA0dTRyVGtzc2Ewb2FYRjhzOVoxdURBWWo0bksrK3JCMXQ1UG1ib0JPTlFNQmtFU1Y4QlVtRU0KeFRGMGQvSk85dmxmejRtRllxa3lzUWl2TldGQS9xU1BvNzNINUhZLzgyU1dZaVlMWlZudHV6a1htTVhaKzB0WQo4TllRNG9jPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlEeVRDQ0FyR2dBd0lCQWdJSkFKVmdNaFFINVptNU1BMEdDU3FHU0liM0RRRUJDd1VBTUVreEN6QUpCZ05WCkJBWVRBa1JGTVJzd0dRWURWUVFLREJKVWQybHVRMEZVSUVoTlNTQlRaWEoyWlhJeEhUQWJCZ05WQkFNTUZFbFUKVkMxTFFVMUZVMGhYUVZKQlRsOXliMjkwTUI0WERUSTJNRFF3T1RBNE5EY3hNMW9YRFRJM01EUXdPVEE0TkRjeApNMW93U1RFTE1Ba0dBMVVFQmhNQ1JFVXhHekFaQmdOVkJBb01FbFIzYVc1RFFWUWdTRTFKSUZObGNuWmxjakVkCk1Cc0dBMVVFQXd3VVNWUlVMVXRCVFVWVFNGZEJVa0ZPWDNKdmIzUXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUEKQTRJQkR3QXdnZ0VLQW9JQkFRQ3R6NmpleUNRcWlST3NycFZrY0NUNTh1dVd1TWYvNkpjeU0wd21tci9BWEhVZQpDVElyZWFWVWo4U256QVpYQlMyR1J6RUR2R2sxeCtGejNrZHQ4Qi93TnB4ZUlmRVJZbU5IYTZRdzBqc3NiTi9BCjhlWUk3TjJieG9ZdVlKSytkWEFxZFFiZXFCNmVuMTIveUlCUTM1VWRhTGEwQjRoZmRKUWFoa21yd1MyL2F4M0QKU1hhRThnQ0RidHJlekdhTG1LTmFUcUNvYmcrdjJtdndTUTJOeXhqY0M0TVdodm85WEg4akdrRnRKcHY4U2s2Qwp0Rkw1ZlVaa3JVMDR0RkMzcWdQcUlESHhZamFBQnFWdEVMRS9kWUVWWWVCblhocmdrS0VTN2xyRVc1OTFuR0dFCmVWSzNSaGRIL0lRUGNLb2h1NW9uQkZLZ1UyamlYQU1Ub3ViQ1lSeGRBZ01CQUFHamdiTXdnYkF3ZmdZRFZSMFIKQkhjd2RZSUpiRzlqWVd4b2IzTjBod1IvQUFBQmh4QUFBQUFBQUFBQUFBQUFBQUFBQUFBQmdnOUpWRlF0UzBGTgpSVk5JVjBGU1FVNkNEMGxVVkMxTFFVMUZVMGhYUVZKQlRvY0VxZjRhWTRjRXFmNVluSWNFcWY1dExJY0VyQllCCkRvY1FBQUFBQUFBQUFBQUFBQUFBQUFBQUFZY0Vmd0FBQVRBZEJnTlZIUTRFRmdRVUpoNHJkYU03SmlpSWpwNTcKODJYVmJrUkw1cUF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBTy9vdApJK3pEUFErNnA2dzVWMlB1V2oyUjIyd05qYUdUTUNkSVk1eWRlSCthY1owR2RvcGJQSkZBN2lGNE01NXJvWnR6CksrSkV4dDZwZktnSkRnZUVSU0JRR0NhR2Q5YWpSbzV5MFkyS1ZCcDh6ZG4zOUlPVTQvZXVFV29FZGpqZGR1c2oKbUpVNVNGL0dOaytJemJpTCtteElsNlJRdU9MR3hhbG5ZOUhPc2lpWkx2THhiZUJka2I2TTFpQUdSMEFkN013agpxL2MveEx1M3ZZWFcwY1FFWEZSaU9qVlprSFB5ZVRCMkZXeGhmVGZiY05YK3dPaDJJT1lzRG9tWXRVUzY3ZWFGCjVHemVTSDFoMnJMa2hRNUtSa1l6Z0UvS1ZhS2d4RTJvR21MRGRmemYyalhGeTlHNFlkYnhmYi8rNTloRnpUL2MKanVJeE1FZlNMczQ4N0R4Z2pnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
-    "CERTIFICATEEXPIRATION": "P365D",
+    "CERTIFICATE": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURxVENDQXBHZ0F3SUJBZ0lKQUlLTTFnMVVOVzNlTUEwR0NTcUdTSWIzRFFFQkN3VUFNRWt4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4SFRBYkJnTlZCQU1NRkVsVQpWQzFMUVUxRlUwaFhRVkpCVGw5eWIyOTBNQjRYRFRJMk1EUXhOREF6TlRBek9Gb1hEVEk1TURReE16SXhOVEF6Ck9Gb3dSREVMTUFrR0ExVUVCaE1DUkVVeEd6QVpCZ05WQkFvTUVsUjNhVzVEUVZRZ1NFMUpJRk5sY25abGNqRVkKTUJZR0ExVUVBd3dQU1ZSVUxVdEJUVVZUU0ZkQlVrRk9NSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QQpNSUlCQ2dLQ0FRRUF2eGdlY2FkWkRlVm9JNjRNeC82RVBMWU9PcGt2UExoWVdEdllXNG9EaEc1M3BSZnJKNmZLCjk1OXZVdUV1eFVRRTYxTmNPSGloM3dTOHJXVmMwc3h0eWdIUlFPNE1uZzVxenJIUmdRa0V5NC9lcnR5bjl2VlUKSk5HZDRFd3FCZFVQZVBpN0ROY045N1JiengwWng1ZnBiTFNmRVZsOUFkeGFvVDdCUUJobnBYVHhPazVLUVM1cworOVFZVUFTU2QxQmZCdWg5NjBLT1JiU0dWOWRvcm1sY1NEZ3pkdnlJYzh2M2doeTMzRkgrR1ZuZ2d0V2wxTEZ5CnlWNlRISWJTNUJJMGQ4Y0tpWUc0QzR1RVV2TUVUMDhaaHZLa2RnNWVacXZ4cXRLQkE2OWU2OFc4RlRQdFBSZFUKT25manFYMDQ0UTZHNVYwQTRxZ1I2ZHFYSnRXNzMxUFphUUlEQVFBQm80R1lNSUdWTUdZR0ExVWRFUVJmTUYyQwpDV3h2WTJGc2FHOXpkSWNFZndBQUFZY1FBQUFBQUFBQUFBQUFBQUFBQUFBQUFZSVBTVlJVTFV0QlRVVlRTRmRCClVrRk9nZzlKVkZRdFMwRk5SVk5JVjBGU1FVNkhCS3dXQVE2SEVQNkFBQUFBQUFBQXdDY3ZGOXRseFU0d0hRWUQKVlIwT0JCWUVGRmNyZno5YlVsRzVxV2pGeFZlREl5UXpOZHNMTUF3R0ExVWRFd0VCL3dRQ01BQXdEUVlKS29aSQpodmNOQVFFTEJRQURnZ0VCQUdSZDRjZUZvQ0cwcjJhaDNoMmpZUnQ1UFVaaTZPcmJEcy9kc3Vpb2FqK0piTndWCi9yaXljaXIzdkhZSjg3N1VaWEJTd2psMW4remROZ2s0OXF4UWNWZi91Mk9yUjQxTlkwcW9ibXRTYWx2V1VsL1YKTVE4MjIrUHhnQ0JaVUtJQTRjdm4vVXpZd0xsaUE4czJxcklMUXNtUy9UQi9VbzBMeFlNUkRaSGNhRnM2RWZ6SwpNMjBvNVQ1b2EzcnRoN0xCS3BKak1obThoa0Z1UEg4bzZRdFpmNW0vTE1mRnVaWXppSjJTeE9tRGJqdE96ZDVRCk01Zjdlb0c4bDQ0WWdUVnVKR1Y1ZDhkdjd3cWRFdlVCT2Q3enViMldzS3kzbGxockEzWHFSQnlwMHRwYi8yV0EKM0kwSkdNMVRUb041T1Y3bHNlU3k2aGRyMXg2VmxKRjVINzNQNVFrPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlEc1RDQ0FwbWdBd0lCQWdJSkFObmZiM3FVdmFmd01BMEdDU3FHU0liM0RRRUJDd1VBTUVreEN6QUpCZ05WCkJBWVRBa1JGTVJzd0dRWURWUVFLREJKVWQybHVRMEZVSUVoTlNTQlRaWEoyWlhJeEhUQWJCZ05WQkFNTUZFbFUKVkMxTFFVMUZVMGhYUVZKQlRsOXliMjkwTUI0WERUSTJNRFF4TkRBek5UQXpPRm9YRFRJNU1EUXhNekl4TlRBegpPRm93U1RFTE1Ba0dBMVVFQmhNQ1JFVXhHekFaQmdOVkJBb01FbFIzYVc1RFFWUWdTRTFKSUZObGNuWmxjakVkCk1Cc0dBMVVFQXd3VVNWUlVMVXRCVFVWVFNGZEJVa0ZPWDNKdmIzUXdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUEKQTRJQkR3QXdnZ0VLQW9JQkFRQ3BXODU1MXJ3aXRpSTBTZU1QeEJncUNxS2ZXSDIrREF4dDgxZk5XNWVRN1Y1Qgo4bFkrRzM4d1dHNTl2UHB6L2hNelp0MnBmcXhiVXFsUmZva3JZSHRKaDE4R0J2dnRuSnVJZ0FCd2JhK1h6NkJRClVCcTlKRUF3alIwTlZxL2gvTFdNdkoxelE4R2ZubU5JZjB1cXJBeVlWRWlRQTRhcFE2RVk3K3lEc3Axd1hNZW0KbzhNV0RaRWVlbjZFcUd3MHpqMkpVZ0lBRU9YOVRXYWQrSHFFQXo4cUF6Q3JqMTJQWmlSaGJwVXFLaGlqbjloeApmbnhveGxicElBT2JaWS9lOVlhZW0vYlFuUzBEc3A5UUppbUdZOWdQQnU2ZFFVaTM0Q1EzOFlNWk9kTEVyNlhXCk1IdDl0ZkgwZEhaLy8vcUg2SExwMzllVlUrYXhudVJPb0YyNm1WY3hBZ01CQUFHamdac3dnWmd3WmdZRFZSMFIKQkY4d1hZSUpiRzlqWVd4b2IzTjBod1IvQUFBQmh4QUFBQUFBQUFBQUFBQUFBQUFBQUFBQmdnOUpWRlF0UzBGTgpSVk5JVjBGU1FVNkNEMGxVVkMxTFFVMUZVMGhYUVZKQlRvY0VyQllCRG9jUS9vQUFBQUFBQUFEQUp5OFgyMlhGClRqQWRCZ05WSFE0RUZnUVVYVVk0OEI4V0l6RDhBeGI0WThScEplL3g3SWd3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBTkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQVExTVNzRmluUG9uNzFKUFNIWmxSRDRLUW5hbVA5bU12eXdOcgoycXkzeVQxdUsxN2lydVJrTm0wYklocGpZSjhnSzdrZXpKQ2dmelROOG9FUGw0TmkvSDh2WlpXUGxXYjdzVEZRCmdZVTJUNkhzekJEcnRlVlAyU2xpaDVlWmsrNG4xTVRyZUxPaU4xdGJ1Y1hKZXV0VEZTZGNSZ0R2SS9tbXVWVWEKYVdWb3g2LzEvczgwblVqTXZCSWc2SzVVUXpNNUU5enMyYUZPSW1saE16NTEzakptV1JRc0ZKclpKS09pS3VCNQpZK05ZZ0k0K1JpbWFzZWt6bk1ta3dYWHpsaUN1QlRzL0RnZlVPbi9YTDJaSzc0RjlpMWMzL1prbzdVOSt2b1NSCmJuYm5ITjJnbEVmeTFLcFl0U1RzZC9xd1JyMVpFaS9SV2FqNHpZTVE1NGpmZ2FxdTJRPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+    "CERTIFICATEEXPIRATION": "P1095DT18H",
     "CHECKSUMENABLED": true,
     "CHUNKSIZE": 1048576,
     "CLIENTCERTIFICATES": [],
@@ -46,14 +46,7 @@
             "NAME": "TcHmiAds",
             "PATH": "TcHmiAds\\",
             "PROCESSID": -1,
-            "REQUIRED": false,
-            "STARTUPTYPE": 1
-        },
-        "TcHmiEventLogger": {
-            "ENABLED": true,
-            "NAME": "TcHmiEventLogger",
-            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.EventLogger.19.0.220\\runtimes\\win-x64\\native\\",
-            "REQUIRED": false,
+            "REQUIRED": true,
             "STARTUPTYPE": 1
         },
         "TcHmiLua": {
@@ -62,21 +55,7 @@
             "PATH": "TcHmiLua\\",
             "PROCESSID": -1,
             "REQUIRED": true,
-            "STARTUPTYPE": 1
-        },
-        "TcHmiRecipeManagement": {
-            "ENABLED": true,
-            "NAME": "TcHmiRecipeManagement",
-            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.RecipeManagement.19.0.220\\runtimes\\win-x64\\native\\",
-            "REQUIRED": false,
-            "STARTUPTYPE": 1
-        },
-        "TcHmiSqliteHistorize": {
-            "ENABLED": true,
-            "NAME": "TcHmiSqliteHistorize",
-            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.SqliteHistorize.19.0.220\\runtimes\\win-x64\\native\\",
-            "REQUIRED": false,
-            "STARTUPTYPE": 1
+            "STARTUPTYPE": 0
         },
         "TcHmiSqliteLogger": {
             "ENABLED": true,
@@ -85,14 +64,6 @@
             "PROCESSID": -1,
             "REQUIRED": true,
             "STARTUPTYPE": 0
-        },
-        "TcHmiTextStorage": {
-            "ENABLED": true,
-            "NAME": "TcHmiTextStorage",
-            "PATH": "TcHmiTextStorage\\",
-            "PROCESSID": -1,
-            "REQUIRED": false,
-            "STARTUPTYPE": 1
         },
         "TcHmiUserManagement": {
             "ENABLED": true,
@@ -121,17 +92,17 @@
     ],
     "FLOODPROTECTION": 500,
     "FLOODPROTECTION_LOG_INTERVAL": "PT1M",
-    "GLOBALHTTPHEADERS": "{LASTMODIFIED}",
+    "GLOBALHTTPHEADERS": "{LASTMODIFIED}\nStrict-Transport-Security: max-age=31536000; includeSubDomains\nX-Content-Type-Options: nosniff",
     "GZIPENABLED": true,
     "GZIPMINSIZE": 800,
     "HTTP_FLOODPROTECTION": 100,
     "INITTIMEOUT": "PT10S",
     "KEEP_ALIVE": "PT40S",
-    "KEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ2w5QUo5QVBzTVk3NVgKWStVL3ZIRFpjUTd1VWk3M2tDNEZZdVpZeUFsSm5OZ3JHUS90UzhWdU52TXc2YWx5UUdBTjRKc2V3SkxEVmR0dAphdkJDVEhndFNycXdyQTlsbjVTcTNFUFRJVUUwLzhlMDBTU1d2OE5ZbHFPa0RzREJRZnBBUTdSQUpMVzNNT0FDCkZYSjB2Q3MyNDQrYWxCekVRK0NVNUN5RExVbFFENjREdVdpWUFDNXdFRDhLMDVQb1J1aktxd2NDOEdFdTAxdXEKRzhwd1FCcVlraUVYYkVReHBDQnVJT3RWZWdhdUZ6ZEhzNy90dlRVakhESkp2OWlEK1o0eE5pRHkrcWh4czBuSwpvZTIxcWxLajlqMW53Vjh5WGhwTVdFZHdGb1ZveU1SKzNkb05BRWptTVZVUEpSVUUrSzY4SEkrclQ1VDdtbEl2ClRIaXM3VXh2QWdNQkFBRUNnZ0VBQXN1cGZ4R1ZLUkJGRkpQS09OaWp6Z1hwaW5vMzhGT3Rjc25IdDVjbkVPWmoKZmRaZVBsRVljbExhcGVoSnduTHpLMGl0VkVkS01hQXdvaGM3Rk9MVTQyNXUxcXNQVjFibzJqZjdySUxTNW1HbwpxNU1hV3EvQVNxMis4L1NMcXJYQjBYTlNoZ0lZVFkyMU9GUEVLZE5CcHhzT1FEeGVmNi9sQ0owUFl1WlFaZGpXCjBwRnczZlJjL2dvaVpUZGVjTGVyQWg2Snk2bTZ1YVpjNWRBRjhRNkc0ZU9tTW1lTGRFQjZrRzdqM1ZDS01sK2EKUnBtOUhVZkZhcUpNTWxqWUU4ZmFkQzJUL242WFpDQk1SMTQzRnZSdlRVL05VbURYcjRiV09SVG1FZ2NmR08zRgprRzdtQjZTNGUzSzFYMWZ4WlNTM0VrL0ZEcU5qZHBOMXcyZUNyZmtqQVFLQmdRRFdFd0NmNWloaDFDcHFDRjdMClM3VWREVGtkdUNaSy9WTHY3ZWxpdEk0SDhBVEFZaVIwQ045OXdRZjJNUytqaU5OZUJycmlVQ0puWk40dFd2NEgKZStkQzBVSXc0Mkk1Ukk4VGhlUm5nczNhRDFmTHhXSDNGdGJyVVFURzE1OHdGZUtlamFoc3pjQktQWnNjWlg0VQpiWEFiR3lRSFlOMzUzNDBpZExsZVlsNGVxUUtCZ1FER2RGN3hwWC90Y1c4QnJwR2Q3TWE2b1VLZ2J4TE82c0d2Clo1UGFmMHdPMmcxYm1COS9nc0V6S1F6VW9Xb0piVElUTFgyUnlQNWFLOElBSlQyTFVrcHJJcnBqL0hIMzBsQ2oKeTVVUi9EOHhyc3cxeERDTkg1U3cyeERxbFdnN1YxWE5VS003ZjRvckpDTUVQcTVBVnd0UE40QVpXd2s4QzVzRgpVMUtlbGJ0NVZ3S0JnRlNscXVlUElJU2VXaThYSkRTS3VSREZ1OEh1b09XaUNYdHB2WkVVQjkxSG9QbFpWVVMwCmhYcTZLeVhFQ1N4RzNCMGYyQ0hJd2ZIVVJxMzBmdUlDc2swUFpYYmpVbUdHcEhSNXl2akxGZzZWWm9maWdud3IKZ2N3R2V6Y001NXNoN0R2NWs1R0NRZmlaSjQ0dzY0dTBRbEhWaDRlTFcvcUQxTkM5Q3RjeFdqb1JBb0dCQUlETApvNWJHcHhqTnhwSmIza3VWRUlDdENkV2ZZS0NEZ1FJNmdaMkxnaXdkWGcvMDBYUnF3c0pXUU9wNmU1djBqMHdjCitPSzFoRVczSW1mL3cwcDVOSzBGVTl4eVNQRGlRTTJjNFhsVHNSdW9hd1gxOXVDUC8yc3NNWFZkVTlFM1pBc2sKNjF0QThjWC81TzNyVkNHVG5GWmtHYkhiQUVwRTZlM3gzcXZuVjAxdkFvR0FXV1U4eU5RSzB2TEFHb0k2cFZ4OQo1Q255eGZYUVNtTnBEcFl5ZFQ0Qi9uOWZHeG5RMHFHV3VhU1diSDBORlpDWmxlc1VMc0hZSFlZOWwrYUY5MkswCkttV3cvZ2krWmpUNmdObzN0bGRJZTVmRWZ6dUxIUUYwcmxGRkdpeURsdHRFdEo5SUd6cTE5cFhGcTI0QTM0MmMKUi8rWVdYTVcwTmZmNnFKQ3kwSGVzVEk9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+    "KEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQy9HQjV4cDFrTjVXZ2oKcmd6SC9vUTh0ZzQ2bVM4OHVGaFlPOWhiaWdPRWJuZWxGK3NucDhyM24yOVM0UzdGUkFUclUxdzRlS0hmQkx5dApaVnpTekczS0FkRkE3Z3llRG1yT3NkR0JDUVRMajk2dTNLZjI5VlFrMFozZ1RDb0YxUTk0K0xzTTF3MzN0RnZQCkhSbkhsK2xzdEo4UldYMEIzRnFoUHNGQUdHZWxkUEU2VGtwQkxtejcxQmhRQkpKM1VGOEc2SDNyUW81RnRJWlgKMTJpdWFWeElPRE4yL0loenkvZUNITGZjVWY0WldlQ0MxYVhVc1hMSlhwTWNodExrRWpSM3h3cUpnYmdMaTRSUwo4d1JQVHhtRzhxUjJEbDVtcS9HcTBvRURyMTdyeGJ3Vk0rMDlGMVE2ZCtPcGZUamhEb2JsWFFEaXFCSHAycGNtCjFidmZVOWxwQWdNQkFBRUNnZ0VBUGhqSDE5WHlQZTVFeTRkbEZ0NVJ1V3JOcitRVWNnNVRnd1NiZDQrZk9mc3QKdlFQTFFoMG4reFNmdDlaOS9OTndKOHAwWnROb2dwREhBUysxbkxpYW1yREJmM0I3d0NiZU5XR2FPMnlqVnNUZgpMNEo3d0dnVFdrMlZtSXdYZ2NLdEh2bnd5cWpkbkpkSzJFQlVIc1J5TVlWMlJVeUhyMEdjWDlhRk5OOVpXdTNZCkJvLzNwbm1ZcTVvTThTWmF0eDAzY0FZcG1RWkdCOUNPbFF1VU9UTDR4NEJyZGJDTXlubldEY1FFTThIZjNqdmQKWnMrTnNheHAzamZaN3ZCR3RlMlBTSkNBOVFoRHJITFBpUGlmVUtJT2IzRm9UekRsbCtUSXA1bUI2ZDBjZmZPTgpqZDkxeWlsR0NNb0J6RU13RzhCL1U1UkU5b2diNHpjU2J1bE1wczlqNHdLQmdRRG45Zk9ickFMN2tTRVJBRzdzCkhMLzRDbzREWG1CcUREangvd1RpOGo0Qnl3QWZ2Z3Q0UEFXbTk3UlRKblBqenBiUXc4cXpSTVZaS1VtUXA3amEKRGluOUxUWHpCZ3k2elZFRGJpSHRQeGQrNElCT2VVaVo2YlVwb1RhdHlqTW5LVjhvb1hRNG5Qdk5pZGFDTm1iagpXMVQ4QWVXS244b0JCV0t1RFlkRlc3RGlvd0tCZ1FEUzVmU1FKeUQxalhSbVgrWXd4R0l6TEdTbkh2d3pxNDhECkpCcDRLcERNQUY1OVpVUGJSYXRNTUJ0bW5sRnBDRjVZRDU1UTNrakdDeDVGRDA0SWlEL3czMGk2QllyOW9aWVYKZEhaL2pQbmxEWHA0alVpWGpSTENWY2hDZU9CYU9OMWI1N2FBY1I0ZFA4ajUyZmtaNU9YWUZieDltaTNvcDdRMwpoYis2VGM2Z2d3S0JnRGtjallaZXE3MVUxbGRoUys1R2hkMkVlOExJa2VTS2Jkcm5kMFNKY0Vyd3VHOFlVNnFlCjNLVm5oN2FSV1NkVnpqeEllTGY2enJ4Tk5oZXZ0QXU4UVFwYy8xTit3ZE9jaWIzV2QvUDUvTWI0YjU3aXJjVjMKald0YWppUHNEUHd2YTRhTmVoZ1dUc2tranZRd2dOU3B3QnJzUEtBTkI2ZUlzK3MyMlg5eU8vTVJBb0dCQUtZbQpFaEZMTWxVaGx2VmNVZTVUbVFXMTBLbzA1LzRSQjM4eS8wTnlUVmJhWjVha285dm92RFl1cERlcFBIdmg0dW0vCmpEc3JrK3VxTUxPNWhnR0V6ZE1ISmJXZnprdFk5UE44S0NyK3RwVDBsR3JLNjhpeGxIalR1Z3hjVEd2bjVzU1QKL1J5ZGdWc0x1RnJXbGNBSHErZ2IzNzZZSzlqaDNrSHJ0Z3VoWnNyZkFvR0FjcDhJRmFkNkZWb21xQlhkQW00aQpVN1JlOGN4dk1PQlk0a2xSODZaeXZuK2JYWGVhdk9OZG1aOWJnbUEwWFU3NEd1NlFnVnVtQjE4UWRqellyTXphCksyUkw5azMvalNnc1VRUUNvTFBaWWcweStjUHJGRGp2UHVuVDhVZW9uM1dLUWVnSGlVcmtrTlN4NDNJL2k2RDIKTlhCb2ZBejY4ZkM5OVJWbnlSYVZLaXc9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
     "KEYPASSWORD": "",
     "LOCKOUT_PROTECTION_CLIENT_CERTIFICATE": true,
     "MAXCONNECTIONSPERCLIENT": 32,
-    "MAXHTTPHEADERSIZE": 8192,
+    "MAXHTTPHEADERSIZE": 32768,
     "MAXREQUESTSIZE": 1048576,
     "MAXSESSIONS": 128,
     "MIME": {
@@ -273,7 +244,7 @@
             "MIME_ENABLE_CHUNKING": true,
             "MIME_ENABLE_GZIP": true,
             "MIME_HTTP_HEADERS": "",
-            "MIME_TYPE": "application/javascript"
+            "MIME_TYPE": "text/javascript"
         },
         "json": {
             "MIME_ENABLE_CACHE": true,
@@ -287,7 +258,7 @@
             "MIME_ENABLE_CHUNKING": true,
             "MIME_ENABLE_GZIP": true,
             "MIME_HTTP_HEADERS": "",
-            "MIME_TYPE": "application/javascript"
+            "MIME_TYPE": "text/javascript"
         },
         "localization": {
             "MIME_ENABLE_CACHE": true,
@@ -316,6 +287,13 @@
             "MIME_ENABLE_GZIP": true,
             "MIME_HTTP_HEADERS": "",
             "MIME_TYPE": "application/json"
+        },
+        "mjs": {
+            "MIME_ENABLE_CACHE": true,
+            "MIME_ENABLE_CHUNKING": true,
+            "MIME_ENABLE_GZIP": true,
+            "MIME_HTTP_HEADERS": "",
+            "MIME_TYPE": "text/javascript"
         },
         "mp3": {
             "MIME_ENABLE_CACHE": false,
@@ -443,6 +421,13 @@
             "MIME_HTTP_HEADERS": "",
             "MIME_TYPE": "application/font-woff"
         },
+        "woff2": {
+            "MIME_ENABLE_CACHE": true,
+            "MIME_ENABLE_CHUNKING": true,
+            "MIME_ENABLE_GZIP": false,
+            "MIME_HTTP_HEADERS": "",
+            "MIME_TYPE": "application/font-woff2"
+        },
         "xml": {
             "MIME_ENABLE_CACHE": true,
             "MIME_ENABLE_CHUNKING": true,
@@ -465,8 +450,8 @@
     "REMOTESERVERS_CERTIFICATES": [],
     "REQUIREAUTH": 0,
     "SAMESITE_ATTRIBUTE": 2,
-    "SELFSIGNEDROOTCA": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUR5VENDQXJHZ0F3SUJBZ0lKQUpWZ01oUUg1Wm01TUEwR0NTcUdTSWIzRFFFQkN3VUFNRWt4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4SFRBYkJnTlZCQU1NRkVsVQpWQzFMUVUxRlUwaFhRVkpCVGw5eWIyOTBNQjRYRFRJMk1EUXdPVEE0TkRjeE0xb1hEVEkzTURRd09UQTRORGN4Ck0xb3dTVEVMTUFrR0ExVUVCaE1DUkVVeEd6QVpCZ05WQkFvTUVsUjNhVzVEUVZRZ1NFMUpJRk5sY25abGNqRWQKTUJzR0ExVUVBd3dVU1ZSVUxVdEJUVVZUU0ZkQlVrRk9YM0p2YjNRd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQQpBNElCRHdBd2dnRUtBb0lCQVFDdHo2amV5Q1FxaVJPc3JwVmtjQ1Q1OHV1V3VNZi82SmN5TTB3bW1yL0FYSFVlCkNUSXJlYVZVajhTbnpBWlhCUzJHUnpFRHZHazF4K0Z6M2tkdDhCL3dOcHhlSWZFUlltTkhhNlF3MGpzc2JOL0EKOGVZSTdOMmJ4b1l1WUpLK2RYQXFkUWJlcUI2ZW4xMi95SUJRMzVVZGFMYTBCNGhmZEpRYWhrbXJ3UzIvYXgzRApTWGFFOGdDRGJ0cmV6R2FMbUtOYVRxQ29iZyt2Mm12d1NRMk55eGpjQzRNV2h2bzlYSDhqR2tGdEpwdjhTazZDCnRGTDVmVVprclUwNHRGQzNxZ1BxSURIeFlqYUFCcVZ0RUxFL2RZRVZZZUJuWGhyZ2tLRVM3bHJFVzU5MW5HR0UKZVZLM1JoZEgvSVFQY0tvaHU1b25CRktnVTJqaVhBTVRvdWJDWVJ4ZEFnTUJBQUdqZ2JNd2diQXdmZ1lEVlIwUgpCSGN3ZFlJSmJHOWpZV3hvYjNOMGh3Ui9BQUFCaHhBQUFBQUFBQUFBQUFBQUFBQUFBQUFCZ2c5SlZGUXRTMEZOClJWTklWMEZTUVU2Q0QwbFVWQzFMUVUxRlUwaFhRVkpCVG9jRXFmNGFZNGNFcWY1WW5JY0VxZjV0TEljRXJCWUIKRG9jUUFBQUFBQUFBQUFBQUFBQUFBQUFBQVljRWZ3QUFBVEFkQmdOVkhRNEVGZ1FVSmg0cmRhTTdKaWlJanA1Nwo4MlhWYmtSTDVxQXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFPL290CkkrekRQUSs2cDZ3NVYyUHVXajJSMjJ3TmphR1RNQ2RJWTV5ZGVIK2FjWjBHZG9wYlBKRkE3aUY0TTU1cm9adHoKSytKRXh0NnBmS2dKRGdlRVJTQlFHQ2FHZDlhalJvNXkwWTJLVkJwOHpkbjM5SU9VNC9ldUVXb0VkampkZHVzagptSlU1U0YvR05rK0l6YmlMK214SWw2UlF1T0xHeGFsblk5SE9zaWlaTHZMeGJlQmRrYjZNMWlBR1IwQWQ3TXdqCnEvYy94THUzdllYVzBjUUVYRlJpT2pWWmtIUHllVEIyRld4aGZUZmJjTlgrd09oMklPWXNEb21ZdFVTNjdlYUYKNUd6ZVNIMWgyckxraFE1S1JrWXpnRS9LVmFLZ3hFMm9HbUxEZGZ6ZjJqWEZ5OUc0WWRieGZiLys1OWhGelQvYwpqdUl4TUVmU0xzNDg3RHhnamc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
-    "SELFSIGNEDROOTCAKEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ2w5QUo5QVBzTVk3NVgKWStVL3ZIRFpjUTd1VWk3M2tDNEZZdVpZeUFsSm5OZ3JHUS90UzhWdU52TXc2YWx5UUdBTjRKc2V3SkxEVmR0dAphdkJDVEhndFNycXdyQTlsbjVTcTNFUFRJVUUwLzhlMDBTU1d2OE5ZbHFPa0RzREJRZnBBUTdSQUpMVzNNT0FDCkZYSjB2Q3MyNDQrYWxCekVRK0NVNUN5RExVbFFENjREdVdpWUFDNXdFRDhLMDVQb1J1aktxd2NDOEdFdTAxdXEKRzhwd1FCcVlraUVYYkVReHBDQnVJT3RWZWdhdUZ6ZEhzNy90dlRVakhESkp2OWlEK1o0eE5pRHkrcWh4czBuSwpvZTIxcWxLajlqMW53Vjh5WGhwTVdFZHdGb1ZveU1SKzNkb05BRWptTVZVUEpSVUUrSzY4SEkrclQ1VDdtbEl2ClRIaXM3VXh2QWdNQkFBRUNnZ0VBQXN1cGZ4R1ZLUkJGRkpQS09OaWp6Z1hwaW5vMzhGT3Rjc25IdDVjbkVPWmoKZmRaZVBsRVljbExhcGVoSnduTHpLMGl0VkVkS01hQXdvaGM3Rk9MVTQyNXUxcXNQVjFibzJqZjdySUxTNW1HbwpxNU1hV3EvQVNxMis4L1NMcXJYQjBYTlNoZ0lZVFkyMU9GUEVLZE5CcHhzT1FEeGVmNi9sQ0owUFl1WlFaZGpXCjBwRnczZlJjL2dvaVpUZGVjTGVyQWg2Snk2bTZ1YVpjNWRBRjhRNkc0ZU9tTW1lTGRFQjZrRzdqM1ZDS01sK2EKUnBtOUhVZkZhcUpNTWxqWUU4ZmFkQzJUL242WFpDQk1SMTQzRnZSdlRVL05VbURYcjRiV09SVG1FZ2NmR08zRgprRzdtQjZTNGUzSzFYMWZ4WlNTM0VrL0ZEcU5qZHBOMXcyZUNyZmtqQVFLQmdRRFdFd0NmNWloaDFDcHFDRjdMClM3VWREVGtkdUNaSy9WTHY3ZWxpdEk0SDhBVEFZaVIwQ045OXdRZjJNUytqaU5OZUJycmlVQ0puWk40dFd2NEgKZStkQzBVSXc0Mkk1Ukk4VGhlUm5nczNhRDFmTHhXSDNGdGJyVVFURzE1OHdGZUtlamFoc3pjQktQWnNjWlg0VQpiWEFiR3lRSFlOMzUzNDBpZExsZVlsNGVxUUtCZ1FER2RGN3hwWC90Y1c4QnJwR2Q3TWE2b1VLZ2J4TE82c0d2Clo1UGFmMHdPMmcxYm1COS9nc0V6S1F6VW9Xb0piVElUTFgyUnlQNWFLOElBSlQyTFVrcHJJcnBqL0hIMzBsQ2oKeTVVUi9EOHhyc3cxeERDTkg1U3cyeERxbFdnN1YxWE5VS003ZjRvckpDTUVQcTVBVnd0UE40QVpXd2s4QzVzRgpVMUtlbGJ0NVZ3S0JnRlNscXVlUElJU2VXaThYSkRTS3VSREZ1OEh1b09XaUNYdHB2WkVVQjkxSG9QbFpWVVMwCmhYcTZLeVhFQ1N4RzNCMGYyQ0hJd2ZIVVJxMzBmdUlDc2swUFpYYmpVbUdHcEhSNXl2akxGZzZWWm9maWdud3IKZ2N3R2V6Y001NXNoN0R2NWs1R0NRZmlaSjQ0dzY0dTBRbEhWaDRlTFcvcUQxTkM5Q3RjeFdqb1JBb0dCQUlETApvNWJHcHhqTnhwSmIza3VWRUlDdENkV2ZZS0NEZ1FJNmdaMkxnaXdkWGcvMDBYUnF3c0pXUU9wNmU1djBqMHdjCitPSzFoRVczSW1mL3cwcDVOSzBGVTl4eVNQRGlRTTJjNFhsVHNSdW9hd1gxOXVDUC8yc3NNWFZkVTlFM1pBc2sKNjF0QThjWC81TzNyVkNHVG5GWmtHYkhiQUVwRTZlM3gzcXZuVjAxdkFvR0FXV1U4eU5RSzB2TEFHb0k2cFZ4OQo1Q255eGZYUVNtTnBEcFl5ZFQ0Qi9uOWZHeG5RMHFHV3VhU1diSDBORlpDWmxlc1VMc0hZSFlZOWwrYUY5MkswCkttV3cvZ2krWmpUNmdObzN0bGRJZTVmRWZ6dUxIUUYwcmxGRkdpeURsdHRFdEo5SUd6cTE5cFhGcTI0QTM0MmMKUi8rWVdYTVcwTmZmNnFKQ3kwSGVzVEk9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
+    "SELFSIGNEDROOTCA": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURzVENDQXBtZ0F3SUJBZ0lKQU5uZmIzcVV2YWZ3TUEwR0NTcUdTSWIzRFFFQkN3VUFNRWt4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4SFRBYkJnTlZCQU1NRkVsVQpWQzFMUVUxRlUwaFhRVkpCVGw5eWIyOTBNQjRYRFRJMk1EUXhOREF6TlRBek9Gb1hEVEk1TURReE16SXhOVEF6Ck9Gb3dTVEVMTUFrR0ExVUVCaE1DUkVVeEd6QVpCZ05WQkFvTUVsUjNhVzVEUVZRZ1NFMUpJRk5sY25abGNqRWQKTUJzR0ExVUVBd3dVU1ZSVUxVdEJUVVZUU0ZkQlVrRk9YM0p2YjNRd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQQpBNElCRHdBd2dnRUtBb0lCQVFDcFc4NTUxcndpdGlJMFNlTVB4QmdxQ3FLZldIMitEQXh0ODFmTlc1ZVE3VjVCCjhsWStHMzh3V0c1OXZQcHovaE16WnQycGZxeGJVcWxSZm9rcllIdEpoMThHQnZ2dG5KdUlnQUJ3YmErWHo2QlEKVUJxOUpFQXdqUjBOVnEvaC9MV012SjF6UThHZm5tTklmMHVxckF5WVZFaVFBNGFwUTZFWTcreURzcDF3WE1lbQpvOE1XRFpFZWVuNkVxR3cwemoySlVnSUFFT1g5VFdhZCtIcUVBejhxQXpDcmoxMlBaaVJoYnBVcUtoaWpuOWh4CmZueG94bGJwSUFPYlpZL2U5WWFlbS9iUW5TMERzcDlRSmltR1k5Z1BCdTZkUVVpMzRDUTM4WU1aT2RMRXI2WFcKTUh0OXRmSDBkSFovLy9xSDZITHAzOWVWVStheG51Uk9vRjI2bVZjeEFnTUJBQUdqZ1pzd2daZ3daZ1lEVlIwUgpCRjh3WFlJSmJHOWpZV3hvYjNOMGh3Ui9BQUFCaHhBQUFBQUFBQUFBQUFBQUFBQUFBQUFCZ2c5SlZGUXRTMEZOClJWTklWMEZTUVU2Q0QwbFVWQzFMUVUxRlUwaFhRVkpCVG9jRXJCWUJEb2NRL29BQUFBQUFBQURBSnk4WDIyWEYKVGpBZEJnTlZIUTRFRmdRVVhVWTQ4QjhXSXpEOEF4YjRZOFJwSmUveDdJZ3dEd1lEVlIwVEFRSC9CQVV3QXdFQgovekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBUTFNU3NGaW5Qb243MUpQU0habFJENEtRbmFtUDltTXZ5d05yCjJxeTN5VDF1SzE3aXJ1UmtObTBiSWhwallKOGdLN2tlekpDZ2Z6VE44b0VQbDROaS9IOHZaWldQbFdiN3NURlEKZ1lVMlQ2SHN6QkRydGVWUDJTbGloNWVaays0bjFNVHJlTE9pTjF0YnVjWEpldXRURlNkY1JnRHZJL21tdVZVYQphV1ZveDYvMS9zODBuVWpNdkJJZzZLNVVRek01RTl6czJhRk9JbWxoTXo1MTNqSm1XUlFzRkpyWkpLT2lLdUI1ClkrTllnSTQrUmltYXNla3puTW1rd1hYemxpQ3VCVHMvRGdmVU9uL1hMMlpLNzRGOWkxYzMvWmtvN1U5K3ZvU1IKYm5ibkhOMmdsRWZ5MUtwWXRTVHNkL3F3UnIxWkVpL1JXYWo0ellNUTU0amZnYXF1MlE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+    "SELFSIGNEDROOTCAKEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQy9HQjV4cDFrTjVXZ2oKcmd6SC9vUTh0ZzQ2bVM4OHVGaFlPOWhiaWdPRWJuZWxGK3NucDhyM24yOVM0UzdGUkFUclUxdzRlS0hmQkx5dApaVnpTekczS0FkRkE3Z3llRG1yT3NkR0JDUVRMajk2dTNLZjI5VlFrMFozZ1RDb0YxUTk0K0xzTTF3MzN0RnZQCkhSbkhsK2xzdEo4UldYMEIzRnFoUHNGQUdHZWxkUEU2VGtwQkxtejcxQmhRQkpKM1VGOEc2SDNyUW81RnRJWlgKMTJpdWFWeElPRE4yL0loenkvZUNITGZjVWY0WldlQ0MxYVhVc1hMSlhwTWNodExrRWpSM3h3cUpnYmdMaTRSUwo4d1JQVHhtRzhxUjJEbDVtcS9HcTBvRURyMTdyeGJ3Vk0rMDlGMVE2ZCtPcGZUamhEb2JsWFFEaXFCSHAycGNtCjFidmZVOWxwQWdNQkFBRUNnZ0VBUGhqSDE5WHlQZTVFeTRkbEZ0NVJ1V3JOcitRVWNnNVRnd1NiZDQrZk9mc3QKdlFQTFFoMG4reFNmdDlaOS9OTndKOHAwWnROb2dwREhBUysxbkxpYW1yREJmM0I3d0NiZU5XR2FPMnlqVnNUZgpMNEo3d0dnVFdrMlZtSXdYZ2NLdEh2bnd5cWpkbkpkSzJFQlVIc1J5TVlWMlJVeUhyMEdjWDlhRk5OOVpXdTNZCkJvLzNwbm1ZcTVvTThTWmF0eDAzY0FZcG1RWkdCOUNPbFF1VU9UTDR4NEJyZGJDTXlubldEY1FFTThIZjNqdmQKWnMrTnNheHAzamZaN3ZCR3RlMlBTSkNBOVFoRHJITFBpUGlmVUtJT2IzRm9UekRsbCtUSXA1bUI2ZDBjZmZPTgpqZDkxeWlsR0NNb0J6RU13RzhCL1U1UkU5b2diNHpjU2J1bE1wczlqNHdLQmdRRG45Zk9ickFMN2tTRVJBRzdzCkhMLzRDbzREWG1CcUREangvd1RpOGo0Qnl3QWZ2Z3Q0UEFXbTk3UlRKblBqenBiUXc4cXpSTVZaS1VtUXA3amEKRGluOUxUWHpCZ3k2elZFRGJpSHRQeGQrNElCT2VVaVo2YlVwb1RhdHlqTW5LVjhvb1hRNG5Qdk5pZGFDTm1iagpXMVQ4QWVXS244b0JCV0t1RFlkRlc3RGlvd0tCZ1FEUzVmU1FKeUQxalhSbVgrWXd4R0l6TEdTbkh2d3pxNDhECkpCcDRLcERNQUY1OVpVUGJSYXRNTUJ0bW5sRnBDRjVZRDU1UTNrakdDeDVGRDA0SWlEL3czMGk2QllyOW9aWVYKZEhaL2pQbmxEWHA0alVpWGpSTENWY2hDZU9CYU9OMWI1N2FBY1I0ZFA4ajUyZmtaNU9YWUZieDltaTNvcDdRMwpoYis2VGM2Z2d3S0JnRGtjallaZXE3MVUxbGRoUys1R2hkMkVlOExJa2VTS2Jkcm5kMFNKY0Vyd3VHOFlVNnFlCjNLVm5oN2FSV1NkVnpqeEllTGY2enJ4Tk5oZXZ0QXU4UVFwYy8xTit3ZE9jaWIzV2QvUDUvTWI0YjU3aXJjVjMKald0YWppUHNEUHd2YTRhTmVoZ1dUc2tranZRd2dOU3B3QnJzUEtBTkI2ZUlzK3MyMlg5eU8vTVJBb0dCQUtZbQpFaEZMTWxVaGx2VmNVZTVUbVFXMTBLbzA1LzRSQjM4eS8wTnlUVmJhWjVha285dm92RFl1cERlcFBIdmg0dW0vCmpEc3JrK3VxTUxPNWhnR0V6ZE1ISmJXZnprdFk5UE44S0NyK3RwVDBsR3JLNjhpeGxIalR1Z3hjVEd2bjVzU1QKL1J5ZGdWc0x1RnJXbGNBSHErZ2IzNzZZSzlqaDNrSHJ0Z3VoWnNyZkFvR0FjcDhJRmFkNkZWb21xQlhkQW00aQpVN1JlOGN4dk1PQlk0a2xSODZaeXZuK2JYWGVhdk9OZG1aOWJnbUEwWFU3NEd1NlFnVnVtQjE4UWRqellyTXphCksyUkw5azMvalNnc1VRUUNvTFBaWWcweStjUHJGRGp2UHVuVDhVZW9uM1dLUWVnSGlVcmtrTlN4NDNJL2k2RDIKTlhCb2ZBejY4ZkM5OVJWbnlSYVZLaXc9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
     "SESSIONSTORAGE": {},
     "SHOW_CONFIGURATION_HINTS": true,
     "SHOW_MAINTENANCE_MODE": true,
@@ -475,7 +460,6 @@
     "SYMBOLS": {
         "ADS.AdsSyncReadDeviceInfoReq": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -488,12 +472,10 @@
                     "type": "string"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.AdsSyncReadReq": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -524,12 +506,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.AdsSyncReadStateReq": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -578,12 +558,10 @@
                     ]
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.AdsSyncReadWriteReq": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -620,12 +598,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.AdsSyncWriteControlReq": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -658,12 +634,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.AdsSyncWriteReq": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -696,7 +670,6 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.CheckLicense": {
@@ -729,19 +702,16 @@
         },
         "ADS.Config": {
             "ACCESS": 0,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
             "MAPPING": "Config",
             "OPTIONS": {},
             "SCHEMA": {},
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.Diagnostics": {
             "ACCESS": 1,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -826,12 +796,10 @@
                 "readOnly": true,
                 "type": "object"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.GetDefinitions": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -840,12 +808,10 @@
             "SCHEMA": {
                 "function": true
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.GetSchema": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -857,7 +823,6 @@
                     "type": "string"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.GetSystemId": {
@@ -875,7 +840,6 @@
         },
         "ADS.ListCommonTypes": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -900,12 +864,10 @@
                 },
                 "type": "array"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.ListRoutes": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -935,12 +897,10 @@
                 },
                 "type": "array"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.ListSymbols": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -949,12 +909,10 @@
             "SCHEMA": {
                 "function": true
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ADS.RuntimePorts": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "ADS",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1002,7 +960,6 @@
                     ]
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "AddOrChangeUser": {
@@ -1093,7 +1050,6 @@
         },
         "AddSymbol": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1164,7 +1120,6 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "AddSymbols": {
@@ -1223,7 +1178,6 @@
         },
         "AddToConfiguration": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1254,7 +1208,6 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ChangeUserSettings": {
@@ -1311,7 +1264,6 @@
         },
         "ConfirmAlarm": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1323,7 +1275,6 @@
                     "$ref": "tchmi:server#/definitions/alarm"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Copy": {
@@ -1366,7 +1317,6 @@
         },
         "CreateEvent": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1378,19 +1328,50 @@
                     "$ref": "tchmi:server#/definitions/event"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "DefaultAuthExtension": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
-            "DYNAMIC": true,
+            "DYNAMIC": false,
             "HIDDEN": true,
             "MAPPING": "Config::DEFAULTAUTHEXTENSION",
             "OPTIONS": {},
             "SCHEMA": {
-                "function": true,
+                "category": "CATEGORY_SECURITY",
+                "default": "TcHmiUserManagement",
+                "description": "DESC_DEFAULTAUTHEXTENSION",
+                "optionMethod": {
+                    "filter": [
+                        {
+                            "comparator": "==",
+                            "path": "authExtension",
+                            "value": true
+                        }
+                    ],
+                    "symbol": "ListDomains"
+                },
+                "type": "string"
+            },
+            "SUBSYMBOL_MAPPING": "",
+            "USEMAPPING": true
+        },
+        "DefaultUserGroup": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "TcHmiSrv",
+            "DYNAMIC": false,
+            "HIDDEN": true,
+            "MAPPING": "Config::DEFAULTUSERGROUP",
+            "OPTIONS": {},
+            "SCHEMA": {
+                "category": "CATEGORY_SECURITY",
+                "default": "__SystemUsers",
+                "description": "DESC_DEFAULTUSERGROUP",
+                "optionMethod": {
+                    "symbol": "TcHmiSrv.Config::USERGROUPS"
+                },
                 "type": "string"
             },
             "SUBSYMBOL_MAPPING": "",
@@ -1398,7 +1379,6 @@
         },
         "Delete": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1423,12 +1403,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "DeleteConfiguration": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1440,12 +1418,10 @@
                     "type": "string"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Diagnostics": {
             "ACCESS": 1,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1613,7 +1589,6 @@
                 "readOnly": true,
                 "type": "object"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Export": {
@@ -1649,7 +1624,6 @@
         },
         "ForceLogout": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1690,12 +1664,10 @@
                     ]
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "GetConfiguration": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1723,12 +1695,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "GetCurrentUser": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1786,12 +1756,10 @@
                 },
                 "type": "object"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "GetDefinitions": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1824,7 +1792,6 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "GetFileInformation": {
@@ -1858,7 +1825,6 @@
         },
         "GetSchema": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1897,12 +1863,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "GetServerInformation": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1912,7 +1876,6 @@
                 "function": true,
                 "type": "object"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "GetSymbolAccess": {
@@ -1939,7 +1902,6 @@
         },
         "Heartbeat": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1948,12 +1910,10 @@
             "SCHEMA": {
                 "function": true
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Import": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1965,12 +1925,10 @@
                     "$ref": "tchmi:general#/definitions/Any"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "IsAuthRequired": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -1980,12 +1938,10 @@
                 "function": true,
                 "type": "boolean"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ListActiveSessions": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2119,12 +2075,10 @@
                     ]
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ListConfigurations": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2137,12 +2091,10 @@
                 },
                 "type": "array"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ListDomains": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2231,12 +2183,10 @@
                 "function": true,
                 "type": "object"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ListEvents": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2319,7 +2269,6 @@
                 },
                 "type": "array"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ListFiles": {
@@ -2364,7 +2313,6 @@
         },
         "ListInternalSymbols": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2374,12 +2322,10 @@
                 "function": true,
                 "type": "object"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ListSymbolNames": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2408,12 +2354,10 @@
                     ]
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ListSymbols": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2426,12 +2370,10 @@
                 "function": true,
                 "type": "object"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ListUserNames": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2445,12 +2387,10 @@
                 },
                 "type": "array"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "ListUsers": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2478,12 +2418,10 @@
                 },
                 "type": "array"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "LocalizeText": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2524,12 +2462,10 @@
                     ]
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Login": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2560,12 +2496,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Logout": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2574,162 +2508,10 @@
             "SCHEMA": {
                 "function": true
             },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "MappingUsage": {
-            "ACCESS": 1,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiSrv",
-            "DYNAMIC": true,
-            "HIDDEN": true,
-            "MAPPING": "MappingUsage",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "additionalProperties": false,
-                "function": true,
-                "properties": {
-                    "load": {
-                        "items": {
-                            "additionalProperties": false,
-                            "properties": {
-                                "blockBegin": {
-                                    "format": "date-time",
-                                    "type": "string"
-                                },
-                                "blockSize": {
-                                    "format": "timespan",
-                                    "type": "string"
-                                },
-                                "count": {
-                                    "type": "integer"
-                                },
-                                "subscriptionTickCount": {
-                                    "type": "integer"
-                                },
-                                "writeCount": {
-                                    "type": "integer"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        "type": "array"
-                    },
-                    "loadLive": {
-                        "items": {
-                            "additionalProperties": false,
-                            "properties": {
-                                "blockBegin": {
-                                    "format": "date-time",
-                                    "type": "string"
-                                },
-                                "blockSize": {
-                                    "format": "timespan",
-                                    "type": "string"
-                                },
-                                "count": {
-                                    "type": "integer"
-                                },
-                                "subscriptionTickCount": {
-                                    "type": "integer"
-                                },
-                                "writeCount": {
-                                    "type": "integer"
-                                }
-                            },
-                            "type": "object"
-                        },
-                        "type": "array"
-                    },
-                    "mappings": {
-                        "additionalProperties": {
-                            "count": {
-                                "type": "integer"
-                            },
-                            "distinctSubscriptionIntervals": {
-                                "items": {
-                                    "type": "integer"
-                                },
-                                "type": "array"
-                            },
-                            "subscriptionTickCount": {
-                                "type": "integer"
-                            },
-                            "writeCount": {
-                                "type": "integer"
-                            }
-                        },
-                        "type": "object"
-                    },
-                    "metadata": {
-                        "additionalProperties": false,
-                        "properties": {
-                            "recordingEnd": {
-                                "format": "date-time",
-                                "type": "string"
-                            },
-                            "recordingStart": {
-                                "format": "date-time",
-                                "type": "string"
-                            }
-                        },
-                        "type": "object"
-                    },
-                    "responsiveness": {
-                        "additionalProperties": {
-                            "mean": {
-                                "format": "timespan",
-                                "type": "string"
-                            },
-                            "standardDeviation": {
-                                "format": "timespan",
-                                "type": "string"
-                            }
-                        },
-                        "type": "object"
-                    }
-                },
-                "readOnly": true,
-                "transient": true,
-                "type": "object",
-                "writeValue": {
-                    "type": "string"
-                }
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "PLC1.MAIN.bStart": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "HIDDEN": false,
-            "MAPPING": "PLC1::MAIN::bStart",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "PLC1.MAIN.nCount": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "HIDDEN": false,
-            "MAPPING": "PLC1::MAIN::nCount",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/LREAL"
-            },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "RefreshDefinitions": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2746,12 +2528,10 @@
                     "type": "string"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Remove": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2784,12 +2564,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "RemoveFromConfiguration": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2820,12 +2598,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "RemoveUnusedDefinitions": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2864,7 +2640,6 @@
                     ]
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "RemoveUser": {
@@ -2898,7 +2673,6 @@
         },
         "Rename": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2933,12 +2707,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "RenameConfiguration": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2962,12 +2734,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Restart": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -2976,12 +2746,10 @@
             "SCHEMA": {
                 "function": true
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "SetConfiguration": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -3011,12 +2779,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "SetLocale": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -3029,12 +2795,10 @@
                     "type": "string"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Shutdown": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -3043,12 +2807,10 @@
             "SCHEMA": {
                 "function": true
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "SubscribeEvents": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -3061,629 +2823,20 @@
                     "type": "integer"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiEventLogger.ClearLoggedEvents": {
-            "ACCESS": 3,
-            "DOMAIN": "TcHmiEventLogger",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ClearLoggedEvents",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "writeValue": {
-                    "properties": {
-                        "targetName": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "targetName"
-                    ],
-                    "type": "object"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "TcHmiEventLogger.Config": {
-            "ACCESS": 0,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiEventLogger",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "Config",
-            "OPTIONS": {},
-            "SCHEMA": {},
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiEventLogger.Diagnostics": {
-            "ACCESS": 1,
-            "DOMAIN": "TcHmiEventLogger",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "Diagnostics",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "properties": {
-                    "TARGET_SYSTEMS": {
-                        "additionalProperties": {
-                            "properties": {
-                                "activeAlarmsCount": {
-                                    "propertyOrder": 10,
-                                    "readOnly": true,
-                                    "type": "integer"
-                                },
-                                "cachedAlarmsCount": {
-                                    "hidden": true,
-                                    "propertyOrder": 8,
-                                    "readOnly": true,
-                                    "type": "integer"
-                                },
-                                "cachedInvalidAlarmsCount": {
-                                    "hidden": true,
-                                    "propertyOrder": 9,
-                                    "readOnly": true,
-                                    "type": "integer"
-                                },
-                                "cachedMessagesCount": {
-                                    "hidden": true,
-                                    "propertyOrder": 7,
-                                    "readOnly": true,
-                                    "type": "integer"
-                                },
-                                "connectError": {
-                                    "propertyOrder": 2,
-                                    "readOnly": true,
-                                    "type": "string"
-                                },
-                                "connectionState": {
-                                    "propertyOrder": 1,
-                                    "readOnly": true,
-                                    "type": "string"
-                                },
-                                "importedAlarmsCount": {
-                                    "propertyOrder": 5,
-                                    "readOnly": true,
-                                    "type": "integer"
-                                },
-                                "importedEventsCount": {
-                                    "propertyOrder": 3,
-                                    "readOnly": true,
-                                    "type": "integer"
-                                },
-                                "importedInvalidAlarmsCount": {
-                                    "propertyOrder": 6,
-                                    "readOnly": true,
-                                    "type": "integer"
-                                },
-                                "importedMessagesCount": {
-                                    "propertyOrder": 4,
-                                    "readOnly": true,
-                                    "type": "integer"
-                                }
-                            },
-                            "readOnly": true,
-                            "required": [
-                                "connectionState"
-                            ],
-                            "type": "object"
-                        },
-                        "description": "DESC_TARGET_SYSTEM",
-                        "readOnly": true,
-                        "type": "object"
-                    }
-                },
-                "readOnly": true,
-                "type": "object"
-            },
-            "USEMAPPING": true
-        },
-        "TcHmiEventLogger.ListEnabledTargetSystems": {
-            "ACCESS": 3,
-            "DOMAIN": "TcHmiEventLogger",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ListEnabledTargetSystems",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "items": {
-                    "type": "string"
-                },
-                "type": "array"
-            },
             "USEMAPPING": true
         },
         "TcHmiLua.Config": {
             "ACCESS": 0,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiLua",
             "DYNAMIC": false,
             "HIDDEN": true,
             "MAPPING": "Config",
             "OPTIONS": {},
             "SCHEMA": {},
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiRecipeManagement.ActivateRecipe": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiRecipeManagement",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ActivateRecipe",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "writeValue": {
-                    "properties": {
-                        "path": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "path"
-                    ],
-                    "type": "object"
-                }
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiRecipeManagement.Config": {
-            "ACCESS": 0,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiRecipeManagement",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "Config",
-            "OPTIONS": {},
-            "SCHEMA": {},
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiRecipeManagement.GetActiveRecipes": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiRecipeManagement",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "GetActiveRecipes",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "items": {
-                    "recipe": {
-                        "type": "string"
-                    }
-                },
-                "type": "array",
-                "writeValue": {
-                    "anyOf": [
-                        {
-                            "items": {
-                                "description": "recipe name(s)",
-                                "type": "string"
-                            },
-                            "type": "array"
-                        },
-                        {
-                            "$ref": "tchmi:general#/definitions/VOID"
-                        }
-                    ]
-                }
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiRecipeManagement.GetRecipes": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiRecipeManagement",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "GetRecipes",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "items": {
-                    "recipes": {
-                        "type": "string"
-                    }
-                },
-                "type": "array",
-                "writeValue": {
-                    "properties": {
-                        "recipeTypePath": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "recipeTypePath"
-                    ],
-                    "type": "object"
-                }
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiRecipeManagement.ListRecipeTypes": {
-            "ACCESS": 3,
-            "DOMAIN": "TcHmiRecipeManagement",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ListRecipeTypes",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true
-            },
-            "USEMAPPING": true
-        },
-        "TcHmiRecipeManagement.ListRecipes": {
-            "ACCESS": 3,
-            "DOMAIN": "TcHmiRecipeManagement",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ListRecipes",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true
-            },
-            "USEMAPPING": true
-        },
-        "TcHmiRecipeManagement.ReadFromTarget": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiRecipeManagement",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ReadFromTarget",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "properties": {
-                    "path": {
-                        "type": "string"
-                    },
-                    "values": {
-                        "additionalProperties": {},
-                        "type": "object"
-                    }
-                },
-                "type": "object",
-                "writeValue": {
-                    "properties": {
-                        "path": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "path"
-                    ],
-                    "type": "object"
-                }
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiRecipeManagement.UpdateRecipe": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiRecipeManagement",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "UpdateRecipe",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "properties": {
-                    "info": {
-                        "description": "List of updates made",
-                        "items": {
-                            "type": "string"
-                        },
-                        "type": "array"
-                    }
-                },
-                "type": "object",
-                "writeValue": {
-                    "properties": {
-                        "path": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "path"
-                    ],
-                    "type": "object"
-                }
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiSqliteHistorize.Config": {
-            "ACCESS": 0,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiSqliteHistorize",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "Config",
-            "OPTIONS": {},
-            "SCHEMA": {},
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiSqliteHistorize.DeleteDatabaseEntries": {
-            "ACCESS": 3,
-            "DOMAIN": "TcHmiSqliteHistorize",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "DeleteDatabaseEntries",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "writeValue": {
-                    "properties": {
-                        "disableRecording": {
-                            "type": "boolean"
-                        },
-                        "symbolName": {
-                            "type": "string"
-                        }
-                    },
-                    "type": "object"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "TcHmiSqliteHistorize.Diagnostics": {
-            "ACCESS": 1,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiSqliteHistorize",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "Diagnostics",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "additionalProperties": false,
-                "function": true,
-                "properties": {
-                    "databaseSize": {
-                        "allOf": [
-                            {
-                                "$ref": "tchmi:general#/definitions/Number"
-                            },
-                            {
-                                "displayClass": "byte",
-                                "propertyOrder": 1,
-                                "readOnly": true
-                            }
-                        ]
-                    },
-                    "estimatedDatabaseSize": {
-                        "allOf": [
-                            {
-                                "$ref": "tchmi:general#/definitions/Number"
-                            },
-                            {
-                                "displayClass": "byte",
-                                "propertyOrder": 5,
-                                "readOnly": true
-                            }
-                        ]
-                    },
-                    "estimatedDatabaseSizePerSymbol": {
-                        "additionalProperties": {
-                            "allOf": [
-                                {
-                                    "$ref": "tchmi:general#/definitions/Number"
-                                },
-                                {
-                                    "displayClass": "byte",
-                                    "readOnly": true
-                                }
-                            ]
-                        },
-                        "readOnly": true,
-                        "type": "object"
-                    },
-                    "numEntries": {
-                        "configDescription": "descNumEntries",
-                        "propertyOrder": 2,
-                        "readOnly": true,
-                        "type": "integer"
-                    },
-                    "numEntriesLifetime": {
-                        "configDescription": "descNumEntries",
-                        "propertyOrder": 3,
-                        "readOnly": true,
-                        "type": "number"
-                    },
-                    "recordingTime": {
-                        "format": "timespan",
-                        "propertyOrder": 4,
-                        "readOnly": true,
-                        "type": "string"
-                    }
-                },
-                "readOnly": true,
-                "type": "object"
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiSqliteHistorize.GetTrendLineData": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiSqliteHistorize",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "GetTrendLineData",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "properties": {
-                    "axesData": {
-                        "description": "descAxisData",
-                        "items": {
-                            "items": {
-                                "properties": {
-                                    "error": {
-                                        "type": "number"
-                                    },
-                                    "flags": {
-                                        "description": "descAxisDataFlags",
-                                        "type": "string"
-                                    },
-                                    "x": {
-                                        "description": "descAxisDataX",
-                                        "format": "date-time",
-                                        "type": "string"
-                                    },
-                                    "y": {
-                                        "description": "descAxisDataY",
-                                        "type": "number"
-                                    }
-                                },
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "type": "array"
-                    }
-                },
-                "type": "object",
-                "writeValue": {
-                    "properties": {
-                        "chartName": {
-                            "description": "descChartName",
-                            "type": "string"
-                        },
-                        "displayWidth": {
-                            "minimum": 2.0,
-                            "type": "number"
-                        },
-                        "xAxisEnd": {
-                            "$ref": "tchmi:server#/definitions/stringTypeArray"
-                        },
-                        "xAxisStart": {
-                            "$ref": "tchmi:server#/definitions/stringTypeArray"
-                        },
-                        "yAxes": {
-                            "items": {
-                                "additionalProperties": false,
-                                "properties": {
-                                    "symbol": {
-                                        "description": "descSymbolName",
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "symbol"
-                                ],
-                                "type": "object"
-                            },
-                            "type": "array"
-                        }
-                    },
-                    "required": [
-                        "chartName",
-                        "yAxes",
-                        "xAxisStart",
-                        "displayWidth"
-                    ],
-                    "type": "object"
-                }
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiSqliteHistorize.GetTrendLineWindow": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiSqliteHistorize",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "GetTrendLineWindow",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "properties": {
-                    "xAxisEnd": {
-                        "description": "descTrendLineAxisEndX",
-                        "format": "date-time",
-                        "type": "string"
-                    },
-                    "xAxisStart": {
-                        "description": "descTrendLineAxisStartX",
-                        "format": "date-time",
-                        "type": "string"
-                    }
-                },
-                "type": "object",
-                "writeValue": {
-                    "properties": {
-                        "chartName": {
-                            "description": "descChartName",
-                            "type": "string"
-                        },
-                        "xAxisEnd": {
-                            "$ref": "tchmi:server#/definitions/stringTypeArray"
-                        },
-                        "xAxisStart": {
-                            "$ref": "tchmi:server#/definitions/stringTypeArray"
-                        },
-                        "yAxes": {
-                            "description": "descTrendLineAxisY",
-                            "items": {
-                                "additionalProperties": false,
-                                "properties": {
-                                    "symbol": {
-                                        "description": "descSymbolName",
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "symbol"
-                                ],
-                                "type": "object"
-                            },
-                            "type": "array"
-                        }
-                    },
-                    "required": [
-                        "chartName",
-                        "yAxes",
-                        "xAxisStart"
-                    ],
-                    "type": "object"
-                }
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
-        "TcHmiSqliteHistorize.HistorizeData": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiSqliteHistorize",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "HistorizeData",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true
-            },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiSqliteLogger.Clear": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSqliteLogger",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -3710,19 +2863,16 @@
                     ]
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiSqliteLogger.Config": {
             "ACCESS": 0,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSqliteLogger",
             "DYNAMIC": false,
             "HIDDEN": true,
             "MAPPING": "Config",
             "OPTIONS": {},
             "SCHEMA": {},
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiSqliteLogger.Diagnostics": {
@@ -3870,7 +3020,6 @@
         },
         "TcHmiSqliteLogger.ListEvents": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSqliteLogger",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -3879,24 +3028,20 @@
             "SCHEMA": {
                 "function": true
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiSrv.Config": {
             "ACCESS": 0,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
             "MAPPING": "Config",
             "OPTIONS": {},
             "SCHEMA": {},
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiUserManagement.AddUser": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiUserManagement",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -3927,12 +3072,10 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiUserManagement.ChangePassword": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiUserManagement",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -3954,19 +3097,16 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiUserManagement.Config": {
             "ACCESS": 0,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiUserManagement",
             "DYNAMIC": false,
             "HIDDEN": true,
             "MAPPING": "Config",
             "OPTIONS": {},
             "SCHEMA": {},
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiUserManagement.DisableUser": {
@@ -4017,23 +3157,8 @@
             },
             "USEMAPPING": true
         },
-        "TcHmiUserManagement.ListSymbols": {
-            "ACCESS": 3,
-            "CUSTOMERDATA": "",
-            "DOMAIN": "TcHmiUserManagement",
-            "DYNAMIC": true,
-            "HIDDEN": true,
-            "MAPPING": "ListSymbols",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true
-            },
-            "SUBSYMBOL_MAPPING": "",
-            "USEMAPPING": true
-        },
         "TcHmiUserManagement.ListUsers": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiUserManagement",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -4046,12 +3171,10 @@
                 },
                 "type": "array"
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiUserManagement.RemoveUser": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiUserManagement",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -4064,7 +3187,6 @@
                     "type": "string"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "TcHmiUserManagement.RenameUser": {
@@ -4098,7 +3220,6 @@
         },
         "Unsubscribe": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -4111,12 +3232,10 @@
                     "type": "integer"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "UnsubscribeEvents": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -4129,12 +3248,10 @@
                     "type": "integer"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "UpdateEventsSubscription": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -4147,12 +3264,10 @@
                     "type": "integer"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "Upload": {
             "ACCESS": 3,
-            "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
             "DYNAMIC": false,
             "HIDDEN": true,
@@ -4201,28 +3316,44 @@
                     "type": "object"
                 }
             },
-            "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         },
         "UserSelectType": {
             "ACCESS": 3,
             "CUSTOMERDATA": "",
             "DOMAIN": "TcHmiSrv",
-            "DYNAMIC": true,
+            "DYNAMIC": false,
             "HIDDEN": true,
             "MAPPING": "Config::USERSELECTTYPE",
             "OPTIONS": {},
             "SCHEMA": {
-                "function": true,
-                "type": "number"
+                "category": "CATEGORY_SECURITY",
+                "default": 0,
+                "description": "DESC_USERSELECTTYPE",
+                "enum": [
+                    0,
+                    1
+                ],
+                "options": [
+                    {
+                        "label": "ENUM_COMBOBOX",
+                        "value": 0
+                    },
+                    {
+                        "label": "ENUM_TEXTFIELD",
+                        "value": 1
+                    }
+                ],
+                "propertyOrder": 14,
+                "type": "integer"
             },
             "SUBSYMBOL_MAPPING": "",
             "USEMAPPING": true
         }
     },
     "TEMPDH": "",
-    "THREADPOOLSIZE": 12,
-    "UPLOADTIMEOUT": "PT5S",
+    "THREADPOOLSIZE": 32,
+    "UPLOADTIMEOUT": "PT20S",
     "USEINT64STRING": false,
     "USERGROUPS": {
         "__SystemAdministrators": {
@@ -4244,6 +3375,7 @@
                 "DefaultAuthExtension": 1,
                 "DefaultUserGroup": 1,
                 "GetCurrentUser": 3,
+                "GetSymbolAccess": 3,
                 "Heartbeat": 3,
                 "IsAuthRequired": 3,
                 "ListDomains": 3,
@@ -4280,11 +3412,14 @@
                 "DefaultAuthExtension": 1,
                 "DefaultUserGroup": 1,
                 "Diagnostics": 3,
+                "Export": 3,
                 "GetConfiguration": 3,
                 "GetCurrentUser": 3,
                 "GetDefinitions": 3,
                 "GetFileInformation": 3,
                 "GetSchema": 3,
+                "GetServerInformation": 3,
+                "GetSymbolAccess": 3,
                 "Heartbeat": 3,
                 "IsAuthRequired": 3,
                 "ListDomains": 3,
@@ -4296,20 +3431,6 @@
                 "Logout": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
-                "TcHmiEventLogger.Diagnostics": 1,
-                "TcHmiEventLogger.ListEnabledTargetSystems": 3,
-                "TcHmiRecipeManagement.ActivateRecipe": 3,
-                "TcHmiRecipeManagement.GetActiveRecipes": 3,
-                "TcHmiRecipeManagement.GetRecipes": 3,
-                "TcHmiRecipeManagement.ListRecipeTypes": 3,
-                "TcHmiRecipeManagement.ListRecipes": 3,
-                "TcHmiRecipeManagement.ReadFromTarget": 3,
-                "TcHmiRecipeManagement.UpdateRecipe": 3,
-                "TcHmiSqliteHistorize.DeleteDatabaseEntries": 3,
-                "TcHmiSqliteHistorize.Diagnostics": 1,
-                "TcHmiSqliteHistorize.GetTrendLineData": 3,
-                "TcHmiSqliteHistorize.GetTrendLineWindow": 3,
-                "TcHmiSqliteHistorize.HistorizeData": 3,
                 "TcHmiSqliteLogger.Diagnostics": 1,
                 "TcHmiUserManagement.ChangePassword": 3,
                 "Unsubscribe": 3,
@@ -4322,7 +3443,7 @@
     "USERGROUPUSERS": {
         "TcHmiUserManagement": {
             "__SystemAdministrator": {
-                "USERGROUPUSERS_AUTO_LOGOFF": "P30D",
+                "USERGROUPUSERS_AUTO_LOGOFF": "PT0S",
                 "USERGROUPUSERS_GROUPS": [
                     "__SystemAdministrators"
                 ],
@@ -4331,7 +3452,7 @@
                 "USERGROUPUSERS_TIMEZONE": "project"
             },
             "__SystemGuest": {
-                "USERGROUPUSERS_AUTO_LOGOFF": "P30D",
+                "USERGROUPUSERS_AUTO_LOGOFF": "PT0S",
                 "USERGROUPUSERS_GROUPS": [
                     "__SystemGuests"
                 ],
@@ -4340,7 +3461,7 @@
                 "USERGROUPUSERS_TIMEZONE": "project"
             },
             "__SystemUser": {
-                "USERGROUPUSERS_AUTO_LOGOFF": "P30D",
+                "USERGROUPUSERS_AUTO_LOGOFF": "PT0S",
                 "USERGROUPUSERS_GROUPS": [
                     "__SystemUsers"
                 ],

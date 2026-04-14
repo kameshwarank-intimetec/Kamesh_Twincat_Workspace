@@ -3,32 +3,61 @@
   <POU Name="MAIN" Id="{db8aabc3-04c4-4f13-a554-30056803d64a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fbAdsRead   : ADSREAD;
-    bExecute    : BOOL := FALSE;
-    nReadValue  : INT;           // Variable to store the read result
+	
+    bExecute1    : BOOL := FALSE;
+	bExecute2    : BOOL := FALSE;
+    nReadValue  : INT;           
     bBusy       : BOOL;
     bError      : BOOL;
     nErrId      : UDINT;
 	sSymbol     : STRING := 'GVL_Config.nNumber';
+	fbAdsRead1   : ADSRDWRTEX;
+	fbAdsRead2   : ADSRDWRTEX;
+	hVariable   : DWORD;
+	
+	fbRead : FB_Example1;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbAdsRead(
-    NETID    := '',              // '' = local machine; use '1.2.3.4.1.1' for remote
-    PORT     := 852,             // Target PLC Runtime port (851=R1, 852=R2...)
-    IDXGRP   := 16#F00C,         // Index Group for symbolic access (0xF005)
-    IDXOFFS  := TO_UDINT(ADR(sSymbol)),         // Index Offset (get from TwinCAT symbol info)
-    LEN      := SIZEOF(nReadValue),
-    DESTADDR := ADR(nReadValue), // Pointer to local variable
-    READ     := bExecute,        // Rising edge triggers read
-    BUSY     => bBusy,
-    ERR      => bError,
-    ERRID    => nErrId
-);]]></ST>
+      <ST><![CDATA[IF bExecute1 THEN
+	
+	fbAdsRead1(
+            NETID:= '', 
+            PORT:= 852, 
+            IDXGRP:= 16#F003,     
+            IDXOFFS:= 0, 
+            READLEN:= SIZEOF(hVariable),
+			WRITELEN := INT_TO_UDINT(LEN(sSymbol)),
+            SRCADDR:= ADR(sSymbol), 
+            DESTADDR:= ADR(hVariable), 
+            WRTRD:= TRUE, 
+            BUSY => bBusy, ERR => bError, ERRID => nErrId);	
+END_IF
+IF bExecute2 THEN
+	
+	fbAdsRead2(
+		NETID:= '' , 
+		PORT:= 852, 
+		IDXGRP:= 16#F005, 
+		IDXOFFS:= hVariable, 
+		READLEN:= SIZEOF(nReadValue) ,  
+		DESTADDR:= ADR(nReadValue) , 
+		WRTRD:= TRUE , 
+		BUSY => bBusy,
+		ERR  => bError,
+		ERRID => nErrId );
+END_IF
+fbRead();
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="21" Count="10" />
-      <LineId Id="2" Count="0" />
+      <LineId Id="471" Count="0" />
+      <LineId Id="513" Count="0" />
+      <LineId Id="472" Count="10" />
+      <LineId Id="485" Count="13" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="515" Count="0" />
+      <LineId Id="514" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

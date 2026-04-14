@@ -1,6 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/web-manifest",
   "name": "TcHmiProject1",
+  "short_name": "TcHmiProject1",
   "icons": [
     {
       "src": "../Images/Manifest/launcher-icon-0-75x.png",

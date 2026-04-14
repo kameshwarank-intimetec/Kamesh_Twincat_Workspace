@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.71">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.74">
 	<Project ProjectGUID="{F64F0F7E-5B05-43D3-90C3-C8626F0A08E4}" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
 			<Settings MaxCpus="8" NonWinCpus="1">
@@ -19,7 +19,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{F9D3BA40-9C2B-4868-A849-616D4377F687}" Name="Practice_TDD" PrjFilePath="Practice_TDD\Practice_TDD.plcproj" TmcFilePath="Practice_TDD\Practice_TDD.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Practice_TDD\Practice_TDD.tmc" TmcHash="{CBC3BD4A-2623-7506-DAC5-36419936F5F2}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Practice_TDD\Practice_TDD.tmc" TmcHash="{23139D53-9571-C4BE-4D6F-97321F1EEDF8}">
 					<Name>Practice_TDD Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -46,7 +46,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{988473BC-81CE-42E1-8180-088E1878418A}" Name="PLC1" PrjFilePath="PLC1\PLC1.plcproj" TmcFilePath="PLC1\PLC1.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{4B81D0B7-831E-FCF6-660A-9BE25C3468A6}">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{090C8429-A6CB-209A-29C2-FCE5A141BD89}">
 					<Name>PLC1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
@@ -66,7 +66,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{CF9782E2-6C8A-4C47-B1ED-3388A4DFB152}" Name="PLC2" PrjFilePath="PLC2\PLC2.plcproj" TmcFilePath="PLC2\PLC2.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{1873FC57-BBF1-7E7F-9390-AE4645BA7EE6}">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{05E2FB3A-1027-0E89-2600-921CE7C3089F}">
 					<Name>PLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

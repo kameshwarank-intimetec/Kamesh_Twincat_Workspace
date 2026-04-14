@@ -192,6 +192,12 @@
     <Content Include="Functions\WarehouseStateConverter.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Images\Crane-removebg-preview.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Crane.jpg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="KeyboardLayouts\German - compact.keyboard.json" />
     <Content Include="KeyboardLayouts\US - compact.keyboard.json" />
     <Content Include="packages.config" />

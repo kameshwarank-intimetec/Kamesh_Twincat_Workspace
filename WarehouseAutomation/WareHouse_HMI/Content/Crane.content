@@ -7,4 +7,8 @@
 <div id="Crane_Status_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="314" data-tchmi-height-unit="px" data-tchmi-left="436" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Crane_Status.usercontrol" data-tchmi-top="22" data-tchmi-top-unit="px" data-tchmi-width="339" data-tchmi-width-unit="px" data-tchmi-cranename="Crane 2" data-tchmi-componentvalue1="%s%PLC1.GVL_IO.fCrane2PosX%/s%" data-tchmi-componentvalue2="%s%PLC1.GVL_IO.fCrane2PosY%/s%" data-tchmi-componentvalue3="%s%PLC1.GVL_IO.bCrane2ForksExtended%/s%" data-tchmi-componentvalue4="%s%PLC1.GVL_IO.bCrane2ForksHome%/s%" data-tchmi-componentvalue5="%s%PLC1.GVL_IO.bCrane1MotorX%/s%" data-tchmi-componentvalue6="%s%PLC1.GVL_IO.bCrane2MotorY%/s%">
 
 </div>
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="171" data-tchmi-left-unit="px" data-tchmi-src="Images/Crane-removebg-preview.png" data-tchmi-top="240" data-tchmi-top-unit="px" data-tchmi-width="84" data-tchmi-width-unit="px">
+</div>
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="80" data-tchmi-height-unit="px" data-tchmi-left="561" data-tchmi-left-unit="px" data-tchmi-src="Images/Crane-removebg-preview.png" data-tchmi-top="240" data-tchmi-top-unit="px" data-tchmi-width="84" data-tchmi-width-unit="px">
+</div>
 </div>

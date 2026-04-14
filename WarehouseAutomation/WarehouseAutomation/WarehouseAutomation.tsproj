@@ -21,7 +21,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{D7E5A6AA-69BB-4343-89A2-F80D8804284D}" Name="ASRS" PrjFilePath="ASRS\ASRS.plcproj" TmcFilePath="ASRS\ASRS.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="ASRS\ASRS.tmc" TmcHash="{3508F842-30A6-8CA5-AF11-DF3E994A6A72}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="ASRS\ASRS.tmc" TmcHash="{575912FF-FA6C-10D7-A266-D4E62BFF73B9}">
 					<Name>ASRS Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

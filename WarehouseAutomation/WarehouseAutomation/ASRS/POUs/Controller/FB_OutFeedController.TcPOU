@@ -22,7 +22,7 @@ CASE nState OF
     IDLE:
         bBusy     := FALSE;
         bComplete := FALSE;
-        // Parcel appears at outfeed sensor after loop RAT diverted it
+        
         IF GVL_IO.bOutfeedApproachSensor AND NOT GVL_IO.bOutfeedExitSensor THEN
 			GVL_IO.bOutfeedStopBlocker := TRUE;
             iOutfeedBelt.M_Run(bForward := TRUE);
@@ -31,7 +31,7 @@ CASE nState OF
         END_IF
 
     RUNNING:
-        // Run until parcel clears the exit sensor
+       
         IF GVL_IO.bOutfeedExitSensor THEN
 			GVL_IO.bOutfeedReq := FALSE;
             iOutfeedBelt.M_Stop();

@@ -12,7 +12,7 @@ VAR
     fbJamTimer  : TON;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//fbJamTimer(IN := bConveyorMotorRun, PT := GVL_Config.T_JAM_TIMEOUT);
+      <ST><![CDATA[
 IF fbJamTimer.Q THEN
     eMode := E_ConveyorMode.FAULT;
 END_IF

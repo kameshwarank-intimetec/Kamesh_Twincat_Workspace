@@ -19,18 +19,10 @@ END_VAR
 VAR
     stPickPos       : ST_Position;
     stPlacePos      : ST_Position;
-    fbMoveTimeout   : TON;
-    fbForkTimeout   : TON;
 	fbMoveTimer     : TON;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//fbMoveTimeout(IN := bMotorX OR bMotorY, PT := GVL_Config.T_CRANE_MOVE_TIMEOUT);
-//fbForkTimeout(IN := bForksOut AND NOT bForksExtended, PT := GVL_Config.T_FORK_TIMEOUT);
-
-IF fbMoveTimeout.Q OR fbForkTimeout.Q THEN
-    eCraneState := E_CraneState.FAULT;
-END_IF
-
+      <ST><![CDATA[
 CASE eCraneState OF
     E_CraneState.IDLE:
         bCraneBusy    := FALSE;
@@ -175,7 +167,7 @@ eCraneState     := E_CraneState.MOVING_TO_PICK;
       </Implementation>
     </Method>
     <LineIds Name="FB_Crane">
-      <LineId Id="302" Count="13" />
+      <LineId Id="308" Count="7" />
       <LineId Id="415" Count="9" />
       <LineId Id="325" Count="0" />
       <LineId Id="559" Count="0" />

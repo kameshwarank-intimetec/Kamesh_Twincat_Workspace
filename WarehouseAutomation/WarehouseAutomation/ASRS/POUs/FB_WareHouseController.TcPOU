@@ -29,7 +29,7 @@ VAR
     fbCraneCtrl2    : FB_CraneController;
     fbOutfeed       : FB_OutFeedController;
 
-    // ── Job queue ─────────────────────────────────────────────────────────
+    
     arrJobs         : ARRAY[1..20] OF ST_CraneJob;
     nHead           : INT := 1;
     nTail           : INT := 1;
@@ -42,7 +42,7 @@ VAR
 	bReset: BOOL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// ── 1. Run all entities with their physical IO ────────────────────────────
+      <ST><![CDATA[
 fbInfeedBelt();
 fbLoopBelt();
 
@@ -88,7 +88,7 @@ fbCrane2(
     bForksHome     := GVL_IO.bCrane2ForksHome 
 );
 
-// ── 2. Write crane physical outputs ──────────────────────────────────────────
+
 GVL_IO.bCrane1MotorX  := fbCrane1.bMotorX;
 GVL_IO.bCrane1MotorY  := fbCrane1.bMotorY;
 GVL_IO.bCrane1ForksOut:= fbCrane1.bForksOut;
@@ -99,7 +99,7 @@ GVL_IO.bCrane2ForksExtended  := fbCrane2.bForksExtended;
 GVL_IO.bCrane1ForksExtended :=  fbCrane1.bForksExtended  ;
 
 
-// ── 3. Emergency stop ─────────────────────────────────────────────────────────
+
 IF GVL_Warehouse.bEmergencyStop THEN
     eState := E_WarehouseState.FAULT;
 END_IF
@@ -109,7 +109,7 @@ IF eState = E_WarehouseState.FAULT THEN
     RETURN;
 END_IF
 
-// ── 4. Run controllers (dependency injection via VAR_IN_OUT) ─────────────────
+
 fbInfeed(iInfeedBelt := fbInfeedBelt, iInfeedRat := fbInfeedRat);
 
 fbLoop(
@@ -144,7 +144,7 @@ fbCraneCtrl2(nAisleNumber := 2, iCrane := fbCrane2);
 
 fbOutfeed(iOutfeedBelt := fbOutfeedBelt);
 
-// ── 5. Route incoming parcel ──────────────────────────────────────────────────
+
 IF GVL_IO.bParcelReady THEN
     M_RouteParcel();
 END_IF
@@ -182,16 +182,15 @@ IF fbAisle1.eMode = E_AisleMode.IDLE  AND fbAisle2.eMode = E_AisleMode.IDLE  THE
 ELSE
 	GVL_IO.bLoopParcelMainBlocker := TRUE;
 END_IF
-// ── 6. Dispatch queued jobs to cranes ─────────────────────────────────────────
+
 M_DispatchJobs();
 
-// ── 7. HMI search ─────────────────────────────────────────────────────────────
+
 IF GVL_Warehouse.stHmiSearch.bTriggerSearch THEN
     M_HmiSearch();
 END_IF
 
-// ── 8. Propagate errors ───────────────────────────────────────────────────────
-// ── Alarm Handling ────────────────────────────────────────────────────
+
 bError := fbInfeed.bError OR fbLoop.bError OR fbAisle1.bError OR fbAisle2.bError
           OR fbCraneCtrl1.bError OR fbCraneCtrl2.bError OR fbOutfeed.bError;
 
@@ -364,18 +363,16 @@ IF nTargetAisle = 0 THEN
 		nDecideRow := 1;
     END_IF
 ELSE
-    // Loop is busy with another parcel — hold this one at infeed
+   
     GVL_IO.bInfeedBlocker := TRUE;
-    RETURN;   // come back next scan when loop is free
+    RETURN;   
 END_IF
 
-// Fill rear slots first (row 2, 4), then front (row 1, 3)
-// Rear: row 2 and 4 (even rows = deep)
-// Front: row 1 and 3 (odd rows = front)
+
 bFound := FALSE;
 
 
-// Pass 1: rear slots
+
 FOR nRow := nDecideRow TO GVL_Config.MAX_ROWS DO
     FOR nCol := 1 TO GVL_Config.MAX_COLUMNS DO
         IF GVL_Warehouse.arrRack[nRow, nCol].bIsRear
@@ -390,7 +387,7 @@ FOR nRow := nDecideRow TO GVL_Config.MAX_ROWS DO
 	END_IF
 END_FOR
 
-// Pass 2: front slots if no rear slot found
+
 IF NOT bFound THEN
     FOR nRow := nDecideRow TO GVL_Config.MAX_ROWS DO
     	FOR nCol := 1 TO GVL_Config.MAX_COLUMNS DO
@@ -459,7 +456,7 @@ ELSE
     GVL_Warehouse.sAlarmMessage := 'Error Occurred. See the Alarm Screen';
 END_IF
 
-// ── Check each subsystem ──────────────────────────────────────────────
+
 IF fbInfeed.bError THEN
     GVL_Warehouse.nAlarmCount := GVL_Warehouse.nAlarmCount + 1;
     GVL_Warehouse.arrAlarms[GVL_Warehouse.nAlarmCount].bActive  := TRUE;
@@ -546,7 +543,7 @@ END_IF
       <LineId Id="165" Count="0" />
       <LineId Id="207" Count="2" />
       <LineId Id="213" Count="1" />
-      <LineId Id="112" Count="9" />
+      <LineId Id="112" Count="8" />
       <LineId Id="346" Count="2" />
       <LineId Id="355" Count="1" />
       <LineId Id="350" Count="0" />
@@ -591,7 +588,6 @@ END_IF
       <LineId Id="100" Count="1" />
       <LineId Id="89" Count="0" />
       <LineId Id="9" Count="0" />
-      <LineId Id="105" Count="1" />
       <LineId Id="12" Count="1" />
       <LineId Id="84" Count="0" />
       <LineId Id="14" Count="11" />

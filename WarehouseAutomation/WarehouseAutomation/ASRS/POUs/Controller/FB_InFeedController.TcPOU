@@ -25,7 +25,7 @@ CASE nState OF
 
     IDLE:
         GVL_IO.bParcelReady := FALSE;
-        // Parcel arrived at infeed sensor
+        
         IF GVL_IO.bInfeedSensor THEN
     
 			IF NOT GVL_IO.bInfeedRatSensor THEN
@@ -39,8 +39,7 @@ CASE nState OF
         END_IF
 
     CONVEYING:
-        // Belt running, move parcel toward RAT
-        // When parcel reaches RAT position, stop belt and divert
+        
         IF GVL_IO.bInfeedRatSensor THEN
 			GVL_IO.bInfeedSensor := FALSE;
 			GVL_IO.bInfeedBlocker := TRUE;
@@ -51,14 +50,14 @@ CASE nState OF
         END_IF
 
     WAIT_RAT_CLEAR:
-        // Wait for RAT to complete divert and return to idle
+        
         IF NOT GVL_IO.bInfeedRatSensor THEN
             GVL_IO.bParcelReady := TRUE;
             nState := DONE;
         END_IF
 
     DONE:
-        // Warehouse controller reads stParcel and clears bParcelReady
+       
 		GVL_IO.bParcelReady := FALSE;
         nState := IDLE;
 
@@ -70,7 +69,8 @@ bError := iInfeedRat.bError OR iInfeedBelt.bError;]]></ST>
       <LineId Id="3" Count="11" />
       <LineId Id="86" Count="2" />
       <LineId Id="91" Count="0" />
-      <LineId Id="16" Count="9" />
+      <LineId Id="16" Count="7" />
+      <LineId Id="25" Count="0" />
       <LineId Id="84" Count="0" />
       <LineId Id="90" Count="0" />
       <LineId Id="26" Count="0" />

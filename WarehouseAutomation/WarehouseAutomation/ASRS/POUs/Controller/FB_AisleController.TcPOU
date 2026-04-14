@@ -38,7 +38,7 @@ CASE eMode OF
         END_IF
 
     E_AisleMode.RECEIVING_FROM_LOOP:
-        // Belt running forward, wait for parcel at crane station
+       
         IF bCraneStation THEN
             iAisleBelt.M_Stop();
             bBoxAtPickPoint := TRUE;
@@ -69,7 +69,7 @@ CASE eMode OF
     END_IF
 
     E_AisleMode.READY_FOR_DROP:
-        // Crane will drop parcel at crane station
+       
         bReadyForRetrieval := TRUE;
         IF bCraneDropDone THEN
             bReadyForRetrieval := FALSE;
@@ -78,7 +78,7 @@ CASE eMode OF
         END_IF
 
     E_AisleMode.TRANSPORT_TO_LOOP:
-        // Belt running backward toward loop entry
+        
         IF bEntrySensor THEN
             iAisleBelt.M_Stop();
             eMode := E_AisleMode.IDLE;

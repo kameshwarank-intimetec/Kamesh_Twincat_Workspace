@@ -18,16 +18,7 @@ VAR
     fbTravelTimer   : TON;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//fbLiftTimer(
-//    IN := (eRatState = E_DiverterState.LIFTING OR eRatState = E_DiverterState.LOWERING),
-//    PT := GVL_Config.T_RAT_LIFT_TIMEOUT
-//);
-//fbTravelTimer(IN := eRatState = E_DiverterState.DIVERTING, PT := T#6S);
-
-IF fbLiftTimer.Q OR fbTravelTimer.Q THEN
-    eRatState := E_DiverterState.FAULT;
-END_IF
-
+      <ST><![CDATA[
 CASE eRatState OF
     E_DiverterState.IDLE:
         bIsLiftUp         := FALSE;
@@ -123,7 +114,7 @@ eRatState          := E_DiverterState.IDLE;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_RAT">
-      <LineId Id="234" Count="13" />
+      <LineId Id="243" Count="4" />
       <LineId Id="325" Count="3" />
       <LineId Id="324" Count="0" />
       <LineId Id="248" Count="19" />

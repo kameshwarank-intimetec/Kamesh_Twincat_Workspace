@@ -355,7 +355,7 @@ END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[
 IF nTargetAisle = 0 THEN
-    IF fbInfeed.stParcel.bIsHeavy THEN
+    IF fbInfeed.stParcel.fWeight > 100 THEN
         nTargetAisle := GVL_Config.CRANE2_AISLE;
 		nDecideRow := GVL_Config.HEAVY_RACK_STARTING_ROW;
     ELSE

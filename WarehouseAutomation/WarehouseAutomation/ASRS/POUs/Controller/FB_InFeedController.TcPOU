@@ -3,10 +3,8 @@
   <POU Name="FB_InFeedController" Id="{c4d5e6f7-a8b9-0123-4567-890123456789}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_InFeedController
 VAR_OUTPUT
-	
     bError          : BOOL;
     stParcel        : ST_Parcel;
-	
 END_VAR
 VAR_INPUT
 	iInfeedBelt     : I_Conveyor;
@@ -52,6 +50,7 @@ CASE nState OF
     WAIT_RAT_CLEAR:
         
         IF NOT GVL_IO.bInfeedRatSensor THEN
+			
             GVL_IO.bParcelReady := TRUE;
             nState := DONE;
         END_IF
@@ -76,7 +75,9 @@ bError := iInfeedRat.bError OR iInfeedBelt.bError;]]></ST>
       <LineId Id="26" Count="0" />
       <LineId Id="28" Count="1" />
       <LineId Id="89" Count="0" />
-      <LineId Id="30" Count="10" />
+      <LineId Id="30" Count="4" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="35" Count="5" />
       <LineId Id="92" Count="0" />
       <LineId Id="42" Count="0" />
       <LineId Id="44" Count="2" />

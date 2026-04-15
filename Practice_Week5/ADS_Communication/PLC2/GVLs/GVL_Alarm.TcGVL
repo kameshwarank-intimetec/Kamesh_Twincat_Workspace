@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="GVL_Alarm" Id="{195def8a-f121-4541-8c9d-57fdf33d6963}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'TcAdsSymEntry'}
+VAR_GLOBAL
+    // ── Values READ from PLC1 ────────────────────────────────────────
+    nTankLevel      : INT;
+    bOverflow       : BOOL;
+    bUnderflow      : BOOL;
+    sStatusMsg      : STRING;
+
+    // ── Alarm panel variables (PLC2 own logic) ───────────────────────
+    bAlarmActive    : BOOL;
+    sAlarmMessage   : STRING := 'No Alarms';
+    bAckAlarm       : BOOL;       // HMI operator presses this
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

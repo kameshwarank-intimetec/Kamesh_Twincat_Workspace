@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_TankController" Id="{a3593fbf-2b06-4d02-8f32-557dd2437004}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TankController
+VAR
+    fbFillTimer     : TON;
+    fbDrainTimer    : TON;
+    nSimLevel       : INT := 0;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+// ── Simulate tank filling when pump is ON ────────────────────────────
+fbFillTimer(IN := GVL_Tank.bPumpOn, PT := T#1S);
+IF fbFillTimer.Q THEN
+    fbFillTimer(IN := FALSE);
+    IF nSimLevel < 100 THEN
+        nSimLevel := nSimLevel + 5;
+    END_IF
+END_IF
+
+// ── Simulate tank draining when valve is OPEN ────────────────────────
+fbDrainTimer(IN := GVL_Tank.bValveOpen, PT := T#1S);
+IF fbDrainTimer.Q THEN
+    fbDrainTimer(IN := FALSE);
+    IF nSimLevel > 0 THEN
+        nSimLevel := nSimLevel - 3;
+    END_IF
+END_IF
+
+// ── Update level ─────────────────────────────────────────────────────
+GVL_Tank.nTankLevel := nSimLevel;
+
+// ── Check overflow ───────────────────────────────────────────────────
+IF GVL_Tank.nTankLevel >= 90 THEN
+    GVL_Tank.bOverflow   := TRUE;
+    GVL_Tank.bPumpOn     := FALSE;   // auto stop pump
+    GVL_Tank.sStatusMsg  := 'OVERFLOW WARNING - Pump Stopped';
+
+ELSIF GVL_Tank.nTankLevel <= 10 THEN
+    GVL_Tank.bUnderflow  := TRUE;
+    GVL_Tank.bValveOpen  := FALSE;   // auto close valve
+    GVL_Tank.sStatusMsg  := 'UNDERFLOW WARNING - Valve Closed';
+
+ELSE
+    GVL_Tank.bOverflow   := FALSE;
+    GVL_Tank.bUnderflow  := FALSE;
+    GVL_Tank.sStatusMsg  := 'Running Normal';
+END_IF
+
+// ── Reset from PLC2 acknowledgement ──────────────────────────────────
+IF GVL_Tank.bResetAlarm THEN
+    GVL_Tank.bOverflow      := FALSE;
+    GVL_Tank.bUnderflow     := FALSE;
+    GVL_Tank.sStatusMsg     := 'Alarm Reset by Operator';
+    GVL_Tank.bResetAlarm    := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="FB_TankController">
+      <LineId Id="15" Count="45" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

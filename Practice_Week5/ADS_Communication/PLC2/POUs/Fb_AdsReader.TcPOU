@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="Fb_AdsReader" Id="{b4e92dd9-6112-4fac-b084-5b0a27fb5996}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AdsReader
+VAR_INPUT
+    sSymbol         : STRING;       // Symbol name to read e.g. 'GVL_Tank.nTankLevel'
+    nPort           : UINT;         // Target PLC port e.g. 851
+    tCycleTime      : TIME;         // How often to read e.g. T#500MS
+    pDestAddr       : POINTER TO BYTE; // Pointer to local variable
+    nDestSize       : UDINT;        // Size of local variable
+END_VAR
+VAR_OUTPUT
+    bBusy           : BOOL;
+    bError          : BOOL;
+    nErrId          : UDINT;
+    bNewValue       : BOOL;         // Pulses TRUE when fresh value arrives
+END_VAR
+VAR
+    fbAdsRead       : ADSREAD;
+    fbCycleTimer    : TON;
+    bTrigger        : BOOL;
+    bLastBusy       : BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+// ── Cycle timer — fires every tCycleTime ─────────────────────────────
+fbCycleTimer(IN := NOT fbCycleTimer.Q, PT := tCycleTime);
+
+// ── Trigger a new read when timer fires and not already busy ─────────
+IF fbCycleTimer.Q AND NOT bBusy THEN
+    bTrigger := TRUE;
+ELSE
+    bTrigger := FALSE;
+END_IF
+
+// ── Execute ADSREAD ──────────────────────────────────────────────────
+fbAdsRead(
+    NETID    := '',
+    PORT     := nPort,
+    IDXGRP   := 16#F005,
+    IDXOFFS  := TO_UDINT(ADR(sSymbol)),
+    LEN      := nDestSize,
+    DESTADDR := pDestAddr,
+    READ     := bTrigger,
+    BUSY     => bBusy,
+    ERR      => bError,
+    ERRID    => nErrId
+);
+
+// ── bNewValue pulses TRUE for one scan when read completes ───────────
+bNewValue := bLastBusy AND NOT bBusy AND NOT bError;
+bLastBusy := bBusy;]]></ST>
+    </Implementation>
+    <LineIds Name="Fb_AdsReader">
+      <LineId Id="29" Count="27" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

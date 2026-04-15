@@ -3,34 +3,32 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{cf9782e2-6c8a-4c47-b1ed-3388a4dfb152}</ProjectGuid>
+    <ProjectGuid>{4a638842-30a9-437b-b2e2-d6693dd6a0b8}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>PLC2</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
-    <Application>{262d57c9-6bee-4d3c-afff-5d253a5bdce6}</Application>
-    <TypeSystem>{cfd5d338-6302-46ff-9be3-aa7d6fc2b84b}</TypeSystem>
-    <Implicit_Task_Info>{9e25fa58-6a76-474d-b37b-208ccf9cb817}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{e2e60ac0-1d27-4cbb-9c5a-6564c21be6dd}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{9617a4eb-f5b3-4366-91ab-783b4cec96ce}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{59e9fbd9-e99c-4170-b113-836fba9d15bb}</LibraryReferences>
+    <Application>{3f788511-1144-4c9e-8558-60361e31e109}</Application>
+    <TypeSystem>{5f2ce32d-7c37-4c0d-a478-b6c6c86b4a6d}</TypeSystem>
+    <Implicit_Task_Info>{66a9af04-82fc-4d19-86af-01bb2090bed4}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{dbd8a8e0-6fad-4c5a-8cf7-a015b540cc2f}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{923c46c3-49eb-4fb7-b018-3806943f101d}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{733be6e1-5ca4-448c-8f08-ae8e9ac4f4fe}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\ST_StorageSlot.TcDUT">
+    <Compile Include="GVLs\GVL_Alarm.TcGVL">
       <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_Example1.TcPOU">
+    <Compile Include="POUs\Fb_AdsReader.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_Example2.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FB_WriteExampl1.TcPOU">
+    <Compile Include="POUs\FB_AlarmController.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -44,9 +42,6 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="Tc2_DataExchange">
-      <DefaultResolution>Tc2_DataExchange, * (Beckhoff Automation GmbH)</DefaultResolution>
-    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -89,6 +84,12 @@
               <d n="Values" t="Hashtable" />
             </o>
           </d>
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
+        <o>
+          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
+          <d n="SubKeys" t="Hashtable" />
           <d n="Values" t="Hashtable" />
         </o>
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>

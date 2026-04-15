@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_AlarmController" Id="{8f87621e-c11d-433d-af9b-61f6b5539561}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AlarmController
+VAR
+    // ── ADS Readers — one per variable ──────────────────────────────
+    fbReadLevel     : FB_AdsReader;
+    fbReadOverflow  : FB_AdsReader;
+    fbReadUnderflow : FB_AdsReader;
+    fbReadStatus    : FB_AdsReader;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// ── Read nTankLevel from PLC1 every 500ms ────────────────────────────
+fbReadLevel(
+    sSymbol     := 'GVL_Tank.nTankLevel',
+    nPort       := 851,
+    tCycleTime  := T#500MS,
+    pDestAddr   := ADR(GVL_Alarm.nTankLevel),
+    nDestSize   := SIZEOF(GVL_Alarm.nTankLevel)
+);
+
+// ── Read bOverflow from PLC1 every 500ms ─────────────────────────────
+fbReadOverflow(
+    sSymbol     := 'GVL_Tank.bOverflow',
+    nPort       := 851,
+    tCycleTime  := T#500MS,
+    pDestAddr   := ADR(GVL_Alarm.bOverflow),
+    nDestSize   := SIZEOF(GVL_Alarm.bOverflow)
+);
+
+// ── Read bUnderflow from PLC1 every 500ms ────────────────────────────
+fbReadUnderflow(
+    sSymbol     := 'GVL_Tank.bUnderflow',
+    nPort       := 851,
+    tCycleTime  := T#500MS,
+    pDestAddr   := ADR(GVL_Alarm.bUnderflow),
+    nDestSize   := SIZEOF(GVL_Alarm.bUnderflow)
+);
+
+// ── Read sStatusMsg from PLC1 every 1s ───────────────────────────────
+fbReadStatus(
+    sSymbol     := 'GVL_Tank.sStatusMsg',
+    nPort       := 851,
+    tCycleTime  := T#1S,
+    pDestAddr   := ADR(GVL_Alarm.sStatusMsg),
+    nDestSize   := SIZEOF(GVL_Alarm.sStatusMsg)
+);
+
+// ── Alarm logic based on received values ─────────────────────────────
+IF GVL_Alarm.bOverflow THEN
+    GVL_Alarm.bAlarmActive  := TRUE;
+    GVL_Alarm.sAlarmMessage := 'CRITICAL — Tank Overflow Detected';
+
+ELSIF GVL_Alarm.bUnderflow THEN
+    GVL_Alarm.bAlarmActive  := TRUE;
+    GVL_Alarm.sAlarmMessage := 'WARNING — Tank Underflow Detected';
+
+ELSE
+    GVL_Alarm.bAlarmActive  := FALSE;
+    GVL_Alarm.sAlarmMessage := 'No Alarms';
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="FB_AlarmController">
+      <LineId Id="18" Count="48" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

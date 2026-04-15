@@ -10,7 +10,7 @@
     "websocketSystemTimeout": 0,
     "websocketSubscriptionMode": "Change"
   },
-  "activeTheme": "Base",
+  "activeTheme": "",
   "themes": {
     "Base": {
       "resources": [

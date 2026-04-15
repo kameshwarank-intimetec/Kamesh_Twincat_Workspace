@@ -6,7 +6,7 @@
 VAR
 	fbRead1     :  FB_WriteAdsSymByName;
 	bEnable     : BOOL;
-	sSymbol     : STRING := 'GVL_Config.nNumber';
+	sSymbol     : STRING := 'GVL_Config.arrRack[1]';
 	nReadValue  : INT := 200;
 	eComMode    :  E_AdsComMode := eAdsComModeSecureCom;
 	bBusy       : BOOL;
@@ -14,6 +14,7 @@ VAR
     nErrId      : UDINT;
 	bExecute: BOOL;
 	fbTimer : TON := (PT := T#100MS); // Adjust the speed here
+	stStorageSlot : ST_StorageSlot := (nStorageId := 101, nStorageName := 'machine parts', bMaintanence := TRUE);
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[
@@ -22,8 +23,8 @@ END_VAR]]></Declaration>
 	sNetId:= '', 
 	nPort:= 852, 
 	sVarName:= sSymbol, 
-	nSrcAddr:= ADR(nReadValue), 
-	nLen:= SIZEOF(nReadValue), 
+	nSrcAddr:= ADR(stStorageSlot), 
+	nLen:= SIZEOF(stStorageSlot), 
 	tTimeout:= , 
 	eComMode:= eComMode,  
 	bBusy=> bBusy, 

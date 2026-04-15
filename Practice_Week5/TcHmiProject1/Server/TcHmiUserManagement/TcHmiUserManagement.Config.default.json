@@ -1,5 +1,11 @@
 {
     "USERS": {
+        "Kamesh": {
+            "ALGORITHM": 1,
+            "ENABLED": true,
+            "PASSWORD": "7d39822421bad66453c6f9935704d8f9f23bb8ca1c9f34013ad98295e97db3fef23653d1425586b9ce4cca6529541e5c10b0d2610355ea76d9e3e16baf106fa7",
+            "SALT": "D1HWm7bozD1DyLGAPg+YfzlrzCDJn8E7haNRnDmhRQq2ugLb2+wOlf4gRX/a1faLs6JL65Xe+lqybzUGY/NjzQ=="
+        },
         "__SystemAdministrator": {
             "ALGORITHM": 0,
             "ENABLED": false,

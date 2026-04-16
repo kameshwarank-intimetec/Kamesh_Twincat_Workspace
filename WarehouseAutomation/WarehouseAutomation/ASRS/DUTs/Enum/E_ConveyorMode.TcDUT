@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="E_ConveyorMode" Id="{e2a1b3c4-d5e6-7890-abcd-ef1234567890}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+
+TYPE E_ConveyorMode :
+(
+    IDLE              := 0,
+    RUNNING_FORWARD   := 1,
+    RUNNING_BACKWARD  := 2,
+    FAULT             := 3
+);
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

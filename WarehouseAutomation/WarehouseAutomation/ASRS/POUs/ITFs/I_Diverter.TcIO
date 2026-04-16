@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_Diverter" Id="{84cfe86d-85ae-4d1c-a69c-ff269d5b2ee5}">
+    <Declaration>INTERFACE I_Diverter
+</Declaration>
+    <Property Name="bError" Id="{3e4f5a6b-c7d8-9012-4567-123456789012}">
+      <Declaration>PROPERTY bError : BOOL</Declaration>
+      <Get Name="Get" Id="{4f5a6b7c-d8e9-0123-5678-234567890123}">
+        <Declaration />
+      </Get>
+    </Property>
+    <Property Name="bLiftUp" Id="{5a6b7c8d-e9f0-1234-6789-345678901234}">
+      <Declaration>PROPERTY bLiftUp : BOOL</Declaration>
+      <Get Name="Get" Id="{6b7c8d9e-f0a1-2345-7890-456789012345}">
+        <Declaration />
+      </Get>
+    </Property>
+    <Property Name="bTravelMotorRun" Id="{7c8d9e0f-a1b2-3456-8901-567890123456}">
+      <Declaration>PROPERTY bTravelMotorRun : BOOL</Declaration>
+      <Get Name="Get" Id="{8d9e0f1a-b2c3-4567-9012-678901234567}">
+        <Declaration />
+      </Get>
+    </Property>
+    <Property Name="eState" Id="{9e0f1a2b-c3d4-5678-0123-789012345678}">
+      <Declaration>PROPERTY eState : E_DiverterState</Declaration>
+      <Get Name="Get" Id="{0f1a2b3c-d4e5-6789-1234-890123456789}">
+        <Declaration />
+      </Get>
+    </Property>
+    <Method Name="M_Divert" Id="{1a2b3c4d-e5f6-7890-2345-901234567890}">
+      <Declaration>METHOD M_Divert
+VAR_INPUT
+END_VAR
+</Declaration>
+    </Method>
+    <Method Name="M_Stop" Id="{2b3c4d5e-f6a7-8901-3456-012345678901}">
+      <Declaration>METHOD M_Stop
+VAR_INPUT
+END_VAR
+</Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

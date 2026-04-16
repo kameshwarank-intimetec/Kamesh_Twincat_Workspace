@@ -1,0 +1,351 @@
+{
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.762.57/runtimes/native1.12-tchmi/Schema/TchmiConfig.Schema.json",
+  "basePath": "./framework",
+  "scaleMode": "None",
+  "startupView": "Desktop.view",
+  "loginPage": "",
+  "tcHmiServer": {
+    "websocketIntervalTime": 500,
+    "websocketTimeout": 10000,
+    "websocketSystemTimeout": 0,
+    "websocketSubscriptionMode": "Change"
+  },
+  "activeTheme": "",
+  "themes": {
+    "Base": {
+      "resources": [
+        {
+          "name": "Themes/Base/Base.theme",
+          "description": "",
+          "type": "ThemedValues"
+        },
+        {
+          "name": "Themes/Base/Style.css",
+          "description": "",
+          "type": "Stylesheet"
+        },
+        {
+          "name": "Themes/Base/BaseStyle.css",
+          "description": "",
+          "type": "Stylesheet"
+        }
+      ],
+      "replacesThemeForControls": [],
+      "replacesThemeForPackageComponents": []
+    }
+  },
+  "dependencyFiles": [
+    {
+      "name": "Fonts/Fonts.css",
+      "description": "",
+      "type": "Stylesheet"
+    },
+    {
+      "name": "Functions/AisleModeConverter.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/ConveyorEnumValueConverter.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/CraneStateConverter.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/DiverterStateConverter.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/FunctionJS1.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/SlotStatusConverter.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/WarehouseStateConverter.js",
+      "description": "",
+      "type": "JavaScript"
+    }
+  ],
+  "userControls": [
+    {
+      "url": "UserControl/Crane_Status.usercontrol"
+    },
+    {
+      "url": "UserControl/DataShowing.usercontrol"
+    },
+    {
+      "url": "UserControl/DemoControl.usercontrol"
+    },
+    {
+      "url": "UserControl/Sensors_Actuators_group_7.usercontrol"
+    },
+    {
+      "url": "UserControl/Sensors_Actuators_group_4.usercontrol"
+    },
+    {
+      "url": "UserControl/StateShowing.usercontrol"
+    },
+    {
+      "url": "UserControl/Storage_Rack.usercontrol"
+    }
+  ],
+  "content": [
+    {
+      "url": "Content/Alarm.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Error.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Crane.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Popup.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Retrieve.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Sections/Aisle 1.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Sections/Aisle 2.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Sections/Infeed.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Sections/Loop.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Sections/Outfeed.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Sidebar.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Storage.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Navbar.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Home.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Content/Sections.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    }
+  ],
+  "views": [
+    {
+      "url": "Demo.view",
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
+    },
+    {
+      "url": "Desktop.view",
+      "preload": false,
+      "keepAlive": false,
+      "preloadBindings": false
+    }
+  ],
+  "userFunctions": [
+    {
+      "url": "Functions/AisleModeConverter.js"
+    },
+    {
+      "url": "Functions/ConveyorEnumValueConverter.js"
+    },
+    {
+      "url": "Functions/CraneStateConverter.js"
+    },
+    {
+      "url": "Functions/DiverterStateConverter.js"
+    },
+    {
+      "url": "Functions/FunctionJS1.js"
+    },
+    {
+      "url": "Functions/SlotStatusConverter.js"
+    },
+    {
+      "url": "Functions/WarehouseStateConverter.js"
+    }
+  ],
+  "symbols": {
+    "internal": {
+      "SelectedNavbarElement": {
+        "value": "Home",
+        "type": "tchmi:general#/definitions/String",
+        "persist": true,
+        "readonly": false
+      },
+      "SearchButtonPressed": {
+        "value": false,
+        "type": "tchmi:general#/definitions/BOOL",
+        "persist": false,
+        "readonly": false
+      },
+      "ParcelMessage": {
+        "value": "Search for Parcel",
+        "type": "tchmi:general#/definitions/String",
+        "persist": false,
+        "readonly": false
+      }
+    },
+    "themedResources": {}
+  },
+  "trigger": [],
+  "actionTemplates": [
+    {
+      "name": "ContentActionTemplate",
+      "category": "Action Templates",
+      "actions": [
+        {
+          "objectType": "WriteToSymbol",
+          "active": true,
+          "symbolExpression": "%ctrl%TcHmiRegion_3::TargetContent%/ctrl%",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": {
+            "objectType": "Symbol",
+            "symbolExpression": "%tp%Content%/tp%"
+          },
+          "asyncWait": true
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Content",
+          "type": "tchmi:framework#/definitions/ContentPath",
+          "description": ""
+        }
+      ]
+    }
+  ],
+  "languages": {
+    "de-DE": "Localization/de-DE.localization",
+    "en-US": "Localization/en-US.localization"
+  },
+  "languageFallback": "",
+  "disableLoadingOptimization": false,
+  "creatorSettings": {
+    "viewport": {
+      "defaultWidth": 1024,
+      "defaultHeight": 768
+    }
+  },
+  "binding": {
+    "symbolError": "Ignore"
+  },
+  "packages": [
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Controls",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Controls"
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Framework",
+      "basePath": "/framework"
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Functions",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Functions"
+    }
+  ],
+  "keyboardLayouts": [
+    {
+      "url": "KeyboardLayouts/German - compact.keyboard.json"
+    },
+    {
+      "url": "KeyboardLayouts/US - compact.keyboard.json"
+    }
+  ],
+  "systemKeyboard": {
+    "providerName": "",
+    "projectKeyboardMapping": {
+      "de-DE": {
+        "text": "",
+        "decimal": "",
+        "numeric": ""
+      },
+      "en-US": {
+        "text": "",
+        "decimal": "",
+        "numeric": ""
+      }
+    }
+  },
+  "systemPopups": {
+    "providerName": "Beckhoff.TcHmiPopups"
+  }
+}

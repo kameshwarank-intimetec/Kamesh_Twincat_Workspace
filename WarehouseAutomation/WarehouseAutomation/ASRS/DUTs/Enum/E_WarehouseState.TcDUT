@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="E_WarehouseState" Id="{f6a7b8c9-d0e1-2345-f012-678901234567}">
+    <Declaration>{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_WarehouseState :
+(
+    IDLE    := 0,
+    RUNNING := 1,
+    PAUSED  := 2,
+    FAULT   := 99
+);
+END_TYPE</Declaration>
+  </DUT>
+</TcPlcObject>

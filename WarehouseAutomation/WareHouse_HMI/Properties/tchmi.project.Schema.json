@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "UserControl_DataShowing": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\DataShowing.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_DataShowing"
+    },
+    "UserControl_Sensors_Actuators": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Sensors_Actuators_group_7.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_Sensors_Actuators"
+    },
+    "UserControl_StateShowing": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\StateShowing.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_StateShowing"
+    },
+    "UserControl_Sensors_Actuators_group_4": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Sensors_Actuators_group_4.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_Sensors_Actuators_group_4"
+    },
+    "UserControl_Storage_Rack": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Storage_Rack.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_Storage_Rack"
+    },
+    "UserControl_Crane_Status": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\Crane_Status.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_Crane_Status"
+    },
+    "UserControl_DemoControl": {
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff",
+      "frameworkControlType": "tchmi-user-control-host",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkUserControlConfig": "UserControl\\DemoControl.usercontrol.json",
+      "type": "object",
+      "id": "tchmi:project#/definitions/UserControl_DemoControl"
+    }
+  }
+}

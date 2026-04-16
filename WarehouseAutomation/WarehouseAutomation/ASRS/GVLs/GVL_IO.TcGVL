@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="GVL_IO" Id="{188d908f-b3e5-47c1-a697-e6e007a07ac5}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+
+	bParcelReady            : BOOL;
+	bOutfeedReq             : BOOL;
+    // Infeed conveyor
+    bInfeedSensor           : BOOL;
+    bInfeedBlocker          : BOOL;
+    bInfeedMotor            : BOOL;
+
+    // Infeed RAT (transfers parcel from infeed conveyor onto loop)
+    bInfeedRatSensor        : BOOL;
+    bInfeedRatLift          : BOOL;
+    bInfeedRatTravel        : BOOL;
+    bInfeedRatUp            : BOOL;
+    bInfeedRatDown          : BOOL;
+
+    // Main loop conveyor
+    bLoopMotor              : BOOL;
+    bLoopSensor             : BOOL;
+	bLoopParcelMainBlocker  : BOOL;
+    // Aisle 1 junction on loop
+    bAisle1ApproachSensor   : BOOL;
+    bAisle1StopBlocker      : BOOL;
+    bAisle1RatLift          : BOOL;
+    bAisle1RatTravel        : BOOL;
+    bRat1Sensor             : BOOL;
+    bRat1Up                 : BOOL;
+    bRat1Down               : BOOL;
+
+    // Aisle 2 junction on loop
+    bAisle2ApproachSensor   : BOOL;
+    bAisle2StopBlocker      : BOOL;
+    bAisle2RatLift          : BOOL;
+    bAisle2RatTravel        : BOOL;
+    bRat2Sensor             : BOOL;
+    bRat2Up                 : BOOL;
+    bRat2Down               : BOOL;
+
+    // Outfeed junction on loop
+    bOutfeedApproachSensor  : BOOL;
+	bOutfeedExitSensor      : BOOL;
+    bOutfeedStopBlocker     : BOOL;
+    bOutfeedRatLift         : BOOL;
+    bOutfeedRatTravel       : BOOL;
+    bOutfeedRatSensor       : BOOL;
+    bOutfeedRatUp           : BOOL;
+    bOutfeedRatDown         : BOOL;
+
+    // Aisle 1 conveyor
+    bAisle1EntrySensor      : BOOL;
+    bAisle1CraneStation     : BOOL;
+    bAisle1MotorForward     : BOOL;
+    bAisle1MotorReverse     : BOOL;
+
+    // Aisle 2 conveyor
+    bAisle2EntrySensor      : BOOL;
+    bAisle2CraneStation     : BOOL;
+    bAisle2MotorForward     : BOOL;
+    bAisle2MotorReverse     : BOOL;
+
+    // Outfeed conveyor
+    bOutfeedSensor          : BOOL;
+    bOutfeedMotor           : BOOL;
+
+    // Crane 1
+    fCrane1PosX             : LREAL;
+    fCrane1PosY             : LREAL;
+    bCrane1ForksExtended    : BOOL;
+    bCrane1ForksHome        : BOOL;
+    bCrane1MotorX           : BOOL;
+    bCrane1MotorY           : BOOL;
+    bCrane1ForksOut         : BOOL;
+    bCrane1EStop            : BOOL;
+	bCrane1pick             : BOOL;
+	bCrane1drop             : BOOL;
+    // Crane 2
+    fCrane2PosX             : LREAL;
+    fCrane2PosY             : LREAL;
+    bCrane2ForksExtended    : BOOL;
+    bCrane2ForksHome        : BOOL;
+    bCrane2MotorX           : BOOL;
+    bCrane2MotorY           : BOOL;
+    bCrane2ForksOut         : BOOL;
+    bCrane2EStop            : BOOL;
+	bCrane2pick				: BOOL;
+	bCrane2drop             : BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

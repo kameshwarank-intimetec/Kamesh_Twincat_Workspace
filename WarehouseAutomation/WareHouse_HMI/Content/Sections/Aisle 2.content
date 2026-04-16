@@ -1,0 +1,79 @@
+<div id="Aisle2" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="783" data-tchmi-height="314">
+
+<div id="Sensors_Actuators_group_6" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="115" data-tchmi-height-unit="px" data-tchmi-left="34" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/Sensors_Actuators_group_4.usercontrol" data-tchmi-top="51" data-tchmi-top-unit="px" data-tchmi-width="669" data-tchmi-width-unit="px" data-tchmi-componentname1="Aisle 2 Entry Sensor" data-tchmi-componentname2="Aisle 2 Crane Station" data-tchmi-componentname3="Aisle 2 Motor Forward" data-tchmi-componentname4="Aisle 2 Motor Reverse" data-tchmi-componentvalue1="%s%PLC1.GVL_IO.bAisle2EntrySensor%/s%" data-tchmi-componentvalue2="%s%PLC1.GVL_IO.bAisle2CraneStation%/s%" data-tchmi-componentvalue3="%s%PLC1.GVL_IO.bAisle2MotorForward%/s%" data-tchmi-componentvalue4="%s%PLC1.GVL_IO.bAisle2MotorReverse%/s%">
+
+</div>
+
+<div id="StateShowing_9" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="58" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="234" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Aisle 2 Conveyor" data-tchmi-state="%f%ConveyorEnumValueConverter(%s%PLC1.MAIN.fbWarehouse.fbAisle2Belt.eMode%/s%)%/f%">
+
+</div>
+
+<div id="StateShowing_10" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="70" data-tchmi-height-unit="px" data-tchmi-left="355" data-tchmi-left-unit="px" data-tchmi-target-user-control="UserControl/StateShowing.usercontrol" data-tchmi-top="234" data-tchmi-top-unit="px" data-tchmi-width="235" data-tchmi-width-unit="px" data-tchmi-name="Aisle 2 Status" data-tchmi-state="%f%AisleModeConverter(%s%PLC1.MAIN.fbWarehouse.fbAisle2.eMode%/s%)%/f%">
+
+</div>
+
+<div id="TcHmiTextblock_91" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="45" data-tchmi-height-unit="px" data-tchmi-left="34" data-tchmi-left-unit="px" data-tchmi-text="Sensors &amp; Actuators" data-tchmi-top="6" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-text-font-size-unit="px">
+
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(44, 80, 224, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 5.0,
+  "topRight": 5.0,
+  "bottomLeft": 5.0,
+  "bottomRight": 5.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+</div>
+
+<div id="TcHmiTextblock_95" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="45" data-tchmi-height-unit="px" data-tchmi-left="34" data-tchmi-left-unit="px" data-tchmi-text="Machine State" data-tchmi-top="177" data-tchmi-top-unit="px" data-tchmi-width="640" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20">
+
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(44, 80, 224, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-text-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 5.0,
+  "topRight": 5.0,
+  "bottomLeft": 5.0,
+  "bottomRight": 5.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+</div>
+
+</div>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_CraneController" Id="{a8b9c0d1-e2f3-4567-8901-234567890123}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CraneController
+VAR_INPUT
+    nAisleNumber    : INT;
+	iCrane          : I_Crane;
+END_VAR
+VAR_OUTPUT
+    bBusy           : BOOL;
+    bError          : BOOL;
+   
+END_VAR
+
+VAR
+	stCraneJob      : ST_CraneJob;
+    stAisleStation  : ST_Position;
+    stRackTarget    : ST_Position;
+    bJobPending     : BOOL;
+    bIsStore        : BOOL;
+    nState          : (IDLE, DISPATCHING, EXECUTING, DONE) := IDLE;
+	stEmptySlot : ST_StorageSlot;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+bBusy  := iCrane.bBusy;
+bError := iCrane.bError;
+
+CASE nState OF
+
+    IDLE:
+       
+        IF bJobPending THEN
+            nState := DISPATCHING;
+        END_IF
+
+    DISPATCHING:
+        stAisleStation.fTargetX        := GVL_Config.HOME_X;
+        stAisleStation.fTargetY        := GVL_Config.HOME_Y;
+        stAisleStation.bIsAisleStation := TRUE;
+        IF bIsStore THEN
+            iCrane.M_StartJob(stPick := stAisleStation, stPlace := stRackTarget);
+        ELSE
+            iCrane.M_StartJob(stPick := stRackTarget, stPlace := stAisleStation);
+        END_IF
+        bJobPending := FALSE;
+        nState      := EXECUTING;
+
+    EXECUTING:
+    IF iCrane.eState = E_CraneState.IDLE THEN
+
+        IF stCraneJob.bIsStore THEN
+            GVL_Warehouse.arrRack[stCraneJob.stRackPos.nRow, stCraneJob.stRackPos.nCol].eStatus := E_SlotStatus.OCCUPIED;
+			GVL_Warehouse.nTotalStoredCount := GVL_Warehouse.nTotalStoredCount + 1;
+        ELSE
+            GVL_Warehouse.arrRack[stCraneJob.stRackPos.nRow, stCraneJob.stRackPos.nCol].eStatus := E_SlotStatus.EMPTY;     
+			GVL_Warehouse.arrRack[stCraneJob.stRackPos.nRow, stCraneJob.stRackPos.nCol].stParcel := stEmptySlot.stParcel;     
+			GVL_Warehouse.nTotalRetrievedCount := GVL_Warehouse.nTotalRetrievedCount + 1;
+            
+        END_IF
+        nState := DONE;
+    END_IF
+
+    DONE:
+        nState    := IDLE;
+
+END_CASE
+
+IF iCrane.bError THEN
+    bJobPending := FALSE;
+    nState      := IDLE;
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="M_AssignRetrieve" Id="{dd000002-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[METHOD M_AssignRetrieve : BOOL
+VAR_INPUT
+   stJob : ST_CraneJob;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF nState <> IDLE OR bJobPending THEN
+    M_AssignRetrieve := FALSE;
+    RETURN;
+END_IF
+stCraneJob := stJob;
+stRackTarget  := stJob.stRackPos;
+bIsStore         := FALSE;
+bJobPending      := TRUE;
+M_AssignRetrieve := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_AssignStore" Id="{dd000001-0000-0000-0000-000000000001}">
+      <Declaration><![CDATA[METHOD M_AssignStore : BOOL
+VAR_INPUT
+    stJob : ST_CraneJob;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF nState <> IDLE OR bJobPending THEN
+    M_AssignStore := FALSE;
+    RETURN;
+END_IF
+stCraneJob := stJob;
+stRackTarget  := stJob.stRackPos;
+bIsStore      := TRUE;
+bJobPending   := TRUE;
+M_AssignStore := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_CraneController">
+      <LineId Id="8" Count="7" />
+      <LineId Id="17" Count="15" />
+      <LineId Id="117" Count="3" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="169" Count="1" />
+      <LineId Id="172" Count="1" />
+      <LineId Id="171" Count="0" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="141" Count="0" />
+      <LineId Id="143" Count="0" />
+      <LineId Id="41" Count="2" />
+      <LineId Id="46" Count="6" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_CraneController.M_AssignRetrieve">
+      <LineId Id="3" Count="3" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="7" Count="2" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_CraneController.M_AssignStore">
+      <LineId Id="3" Count="3" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="7" Count="2" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

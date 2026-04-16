@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_AisleController" Id="{f7a8b9c0-d1e2-3456-7890-123456789012}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AisleController
+VAR_INPUT
+    nAisleNumber        : INT;
+    bInboundRequest     : BOOL;
+    bOutboundRequest    : BOOL;
+    bCranePickDone      : BOOL;
+    bCraneDropDone      : BOOL;
+	iAisleBelt          : I_Conveyor;
+END_VAR
+VAR_OUTPUT
+    bBoxAtPickPoint     : BOOL;
+    bReadyForRetrieval  : BOOL;
+    bError              : BOOL;
+	eMode               : E_AisleMode := E_AisleMode.IDLE;
+END_VAR
+
+VAR
+    
+    bEntrySensor        : BOOL;
+    bCraneStation       : BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+ACT_ConfigureAisle();
+CASE eMode OF
+
+    E_AisleMode.IDLE:
+        bBoxAtPickPoint    := FALSE;
+        bReadyForRetrieval := FALSE;
+        IF bInboundRequest THEN
+            iAisleBelt.M_Run(bForward := TRUE);
+            eMode := E_AisleMode.RECEIVING_FROM_LOOP;
+        ELSIF bOutboundRequest THEN
+            eMode := E_AisleMode.READY_FOR_DROP;
+        END_IF
+
+    E_AisleMode.RECEIVING_FROM_LOOP:
+       
+        IF bCraneStation THEN
+			GVL_IO.bAisle1ApproachSensor := FALSE;
+            iAisleBelt.M_Stop();
+            bBoxAtPickPoint := TRUE;
+            eMode := E_AisleMode.WAITING_FOR_PICK;
+        ELSIF bEntrySensor AND NOT bCraneStation THEN
+            eMode := E_AisleMode.TRANSPORT_TO_CRANE;
+        END_IF
+
+    E_AisleMode.TRANSPORT_TO_CRANE:
+        iAisleBelt.M_Run(bForward := TRUE);
+        IF bCraneStation THEN
+            iAisleBelt.M_Stop();
+            bBoxAtPickPoint := TRUE;
+            eMode := E_AisleMode.WAITING_FOR_PICK;
+        END_IF
+
+    E_AisleMode.WAITING_FOR_PICK:
+    IF bCranePickDone THEN
+        bBoxAtPickPoint := FALSE;
+        IF nAisleNumber = 1 THEN
+            GVL_IO.bAisle1EntrySensor  := FALSE;
+            GVL_IO.bAisle1CraneStation := FALSE;
+        ELSE
+            GVL_IO.bAisle2EntrySensor  := FALSE;
+            GVL_IO.bAisle2CraneStation := FALSE;
+        END_IF
+        eMode := E_AisleMode.IDLE;
+    END_IF
+
+    E_AisleMode.READY_FOR_DROP:
+       
+        bReadyForRetrieval := TRUE;
+        IF bCraneDropDone AND bCraneStation THEN
+            bReadyForRetrieval := FALSE;
+            iAisleBelt.M_Run(bForward := FALSE);
+            eMode := E_AisleMode.TRANSPORT_TO_LOOP;
+        END_IF
+
+    E_AisleMode.TRANSPORT_TO_LOOP:
+        
+        IF bEntrySensor THEN
+            iAisleBelt.M_Stop();
+            eMode := E_AisleMode.IDLE;
+			
+        END_IF
+
+    E_AisleMode.FAULT:
+        bBoxAtPickPoint    := FALSE;
+        bReadyForRetrieval := FALSE;
+        bError             := TRUE;
+
+END_CASE
+
+IF iAisleBelt.bError THEN
+    eMode := E_AisleMode.FAULT;
+END_IF]]></ST>
+    </Implementation>
+    <Action Name="ACT_ConfigureAisle" Id="{97e9bfea-ae9e-43c0-aa08-49e36ab47ee0}">
+      <Implementation>
+        <ST><![CDATA[IF nAisleNumber = 1 THEN
+    bEntrySensor  := GVL_IO.bAisle1EntrySensor;
+    bCraneStation := GVL_IO.bAisle1CraneStation;
+    GVL_IO.bAisle1MotorForward := iAisleBelt.bMotorRun AND NOT iAisleBelt.bMotorReverse;
+    GVL_IO.bAisle1MotorReverse := iAisleBelt.bMotorRun AND iAisleBelt.bMotorReverse;
+ELSE
+    bEntrySensor  := GVL_IO.bAisle2EntrySensor;
+    bCraneStation := GVL_IO.bAisle2CraneStation;
+    GVL_IO.bAisle2MotorForward := iAisleBelt.bMotorRun AND NOT iAisleBelt.bMotorReverse;
+    GVL_IO.bAisle2MotorReverse := iAisleBelt.bMotorRun AND iAisleBelt.bMotorReverse;
+END_IF]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="FB_AisleController">
+      <LineId Id="101" Count="0" />
+      <LineId Id="15" Count="15" />
+      <LineId Id="154" Count="0" />
+      <LineId Id="31" Count="14" />
+      <LineId Id="123" Count="10" />
+      <LineId Id="50" Count="15" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="66" Count="10" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_AisleController.ACT_ConfigureAisle">
+      <LineId Id="2" Count="9" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

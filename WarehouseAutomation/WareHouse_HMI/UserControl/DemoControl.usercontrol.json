@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "data-tchmi-componentname",
+      "displayName": "ComponentName",
+      "visible": true,
+      "type": "tchmi:general#/definitions/String",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "ComponentName",
+      "propertySetterName": "setComponentName",
+      "propertyGetterName": "getComponentName"
+    },
+    {
+      "name": "data-tchmi-componentbindingvarialbe",
+      "displayName": "ComponentBindingVarialbe",
+      "visible": true,
+      "type": "tchmi:general#/definitions/String",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "ComponentBindingVarialbe",
+      "propertySetterName": "setComponentBindingVarialbe",
+      "propertyGetterName": "getComponentBindingVarialbe"
+    },
+    {
+      "name": "data-tchmi-componentvalue",
+      "displayName": "ComponentValue",
+      "visible": true,
+      "type": "tchmi:general#/definitions/String",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "ComponentValue",
+      "propertySetterName": "setComponentValue",
+      "propertyGetterName": "getComponentValue"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.762.57/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

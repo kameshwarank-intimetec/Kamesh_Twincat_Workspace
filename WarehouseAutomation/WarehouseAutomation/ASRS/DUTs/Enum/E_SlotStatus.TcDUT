@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="E_SlotStatus" Id="{e5f6a7b8-c9d0-1234-ef01-567890123456}">
+    <Declaration>{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_SlotStatus :
+(
+    EMPTY        := 0,
+    RESERVED_IN  := 1,
+    OCCUPIED     := 2,
+    RESERVED_OUT := 3,
+    BLOCKED      := 4
+);
+END_TYPE</Declaration>
+  </DUT>
+</TcPlcObject>

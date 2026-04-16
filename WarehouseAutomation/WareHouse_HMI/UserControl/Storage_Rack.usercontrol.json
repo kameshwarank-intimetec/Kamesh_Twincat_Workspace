@@ -1,0 +1,37 @@
+{
+  "parameters": [
+    {
+      "name": "data-tchmi-parcel_id",
+      "displayName": "Parcel_ID",
+      "visible": true,
+      "type": "tchmi:general#/definitions/String",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "Parcel_ID",
+      "propertySetterName": "setParcel_ID",
+      "propertyGetterName": "getParcel_ID"
+    },
+    {
+      "name": "data-tchmi-rack_state",
+      "displayName": "Rack_State",
+      "visible": true,
+      "type": "tchmi:general#/definitions/INT",
+      "category": "",
+      "description": "",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "propertyName": "Rack_State",
+      "propertySetterName": "setRack_State",
+      "propertyGetterName": "getRack_State"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.762.57/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

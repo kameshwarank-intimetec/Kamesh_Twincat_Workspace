@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <Itf Name="I_Crane" Id="{0aaef61f-066b-45f1-a3b6-75f98e8b3795}">
+    <Declaration><![CDATA[INTERFACE I_Crane
+]]></Declaration>
+    <Property Name="bBusy" Id="{3c4d5e6f-a7b8-9012-4567-123456789013}">
+      <Declaration><![CDATA[PROPERTY bBusy : BOOL]]></Declaration>
+      <Get Name="Get" Id="{4d5e6f7a-b8c9-0123-5678-234567890124}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="bError" Id="{5e6f7a8b-c9d0-1234-6789-345678901235}">
+      <Declaration><![CDATA[PROPERTY bError : BOOL]]></Declaration>
+      <Get Name="Get" Id="{6f7a8b9c-d0e1-2345-7890-456789012346}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="eState" Id="{7a8b9c0d-e1f2-3456-8901-567890123457}">
+      <Declaration><![CDATA[PROPERTY eState : E_CraneState]]></Declaration>
+      <Get Name="Get" Id="{8b9c0d1e-f2a3-4567-9012-678901234568}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="M_Reset" Id="{0d1e2f3a-b4c5-6789-1234-890123456780}">
+      <Declaration><![CDATA[METHOD M_Reset
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="M_StartJob" Id="{9c0d1e2f-a3b4-5678-0123-789012345679}">
+      <Declaration><![CDATA[METHOD M_StartJob
+VAR_INPUT
+    stPick  : ST_Position;
+    stPlace : ST_Position;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

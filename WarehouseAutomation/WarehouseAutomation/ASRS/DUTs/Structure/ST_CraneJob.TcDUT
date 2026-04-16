@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <DUT Name="ST_CraneJob" Id="{d0e1f2a3-b4c5-6789-3456-012345678901}">
+    <Declaration>TYPE ST_CraneJob :
+STRUCT
+    bValid    : BOOL;
+    bIsStore  : BOOL;
+    nAisle    : INT;
+    stRackPos : ST_Position;
+    stParcel  : ST_Parcel;
+END_STRUCT
+END_TYPE</Declaration>
+  </DUT>
+</TcPlcObject>

@@ -10,7 +10,7 @@
     <HmiVerboseLevel>2</HmiVerboseLevel>
     <HmiVersion>1.0.0.0</HmiVersion>
     <Name>WareHouse_HMI</Name>
-    <HmiCommunicationRouterPort>10107</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10108</HmiCommunicationRouterPort>
     <HmiCommunicationServerPort>3001</HmiCommunicationServerPort>
     <HmiInitial>1.10.1342.3</HmiInitial>
     <HmiRecent>1.12.762.57</HmiRecent>

@@ -183,15 +183,15 @@
 <script data-tchmi-target-attribute="data-tchmi-box-shadow" type="application/json">
 [
   {
+    "blur": 5.0,
+    "blurUnit": "px",
     "color": "%f%SlotStatusConverter(%pp%Rack_State%/pp%)%/f%",
+    "inset": false,
     "offsetX": 0.0,
     "offsetXUnit": "px",
     "offsetY": 0.0,
     "offsetYUnit": "px",
-    "inset": false,
-    "blur": 7.0,
-    "blurUnit": "px",
-    "spread": 2.0,
+    "spread": 1.0,
     "spreadUnit": "px"
   }
 ]

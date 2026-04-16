@@ -72,7 +72,7 @@ CASE nState OF
             GVL_IO.bAisle1StopBlocker := FALSE;
             iAisle1Rat.M_Divert();
         END_IF
-        IF NOT GVL_IO.bAisle1ApproachSensor AND iAisle1Rat.eState = E_DiverterState.IDLE AND NOT GVL_IO.bRat1Sensor THEN
+        IF NOT GVL_IO.bAisle1EntrySensor AND iAisle1Rat.eState = E_DiverterState.IDLE AND NOT GVL_IO.bRat1Sensor THEN
 			iAisle1Rat.M_Stop();
             nState := MONITORING;
         END_IF
@@ -84,7 +84,7 @@ CASE nState OF
             GVL_IO.bAisle2StopBlocker := FALSE;
             iAisle2Rat.M_Divert();
         END_IF
-        IF NOT GVL_IO.bAisle2ApproachSensor AND iAisle2Rat.eState = E_DiverterState.IDLE AND NOT GVL_IO.bRat2Sensor THEN
+        IF NOT GVL_IO.bAisle2EntrySensor AND iAisle2Rat.eState = E_DiverterState.IDLE AND NOT GVL_IO.bRat2Sensor THEN
 			iAisle2Rat.M_Stop();
             nState := MONITORING;
         END_IF
@@ -96,7 +96,7 @@ CASE nState OF
             GVL_IO.bOutfeedStopBlocker := FALSE;
             iOutfeedRat.M_Divert();
         END_IF
-        IF iOutfeedRat.eState = E_DiverterState.IDLE AND NOT GVL_IO.bOutfeedRatSensor THEN
+        IF GVL_IO.bOutfeedExitSensor AND  iOutfeedRat.eState = E_DiverterState.IDLE AND NOT GVL_IO.bOutfeedRatSensor THEN
             nState := MONITORING;
         END_IF
 

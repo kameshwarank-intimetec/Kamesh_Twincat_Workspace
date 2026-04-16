@@ -40,6 +40,7 @@ CASE eMode OF
     E_AisleMode.RECEIVING_FROM_LOOP:
        
         IF bCraneStation THEN
+			GVL_IO.bAisle1ApproachSensor := FALSE;
             iAisleBelt.M_Stop();
             bBoxAtPickPoint := TRUE;
             eMode := E_AisleMode.WAITING_FOR_PICK;
@@ -71,7 +72,7 @@ CASE eMode OF
     E_AisleMode.READY_FOR_DROP:
        
         bReadyForRetrieval := TRUE;
-        IF bCraneDropDone THEN
+        IF bCraneDropDone AND bCraneStation THEN
             bReadyForRetrieval := FALSE;
             iAisleBelt.M_Run(bForward := FALSE);
             eMode := E_AisleMode.TRANSPORT_TO_LOOP;
@@ -113,7 +114,9 @@ END_IF]]></ST>
     </Action>
     <LineIds Name="FB_AisleController">
       <LineId Id="101" Count="0" />
-      <LineId Id="15" Count="30" />
+      <LineId Id="15" Count="15" />
+      <LineId Id="154" Count="0" />
+      <LineId Id="31" Count="14" />
       <LineId Id="123" Count="10" />
       <LineId Id="50" Count="15" />
       <LineId Id="122" Count="0" />

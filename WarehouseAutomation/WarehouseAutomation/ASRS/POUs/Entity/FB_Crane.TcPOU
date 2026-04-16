@@ -29,7 +29,7 @@ CASE eCraneState OF
         bMotorX  := FALSE;
         bMotorY  := FALSE;
         bForksOut:= FALSE;
-
+		
     E_CraneState.MOVING_TO_PICK:
 		bCraneBusy := TRUE;
 		bMotorX    := TRUE;
@@ -162,7 +162,7 @@ END_VAR]]></Declaration>
 END_IF
 stPickPos  := stPick;
 stPlacePos := stPlace;
-eCraneState     := E_CraneState.MOVING_TO_PICK;
+eCraneState := E_CraneState.MOVING_TO_PICK;
 ]]></ST>
       </Implementation>
     </Method>

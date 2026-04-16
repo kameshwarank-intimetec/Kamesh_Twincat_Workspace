@@ -16,44 +16,18 @@ VAR_OUTPUT
     bNewValue       : BOOL;         // Pulses TRUE when fresh value arrives
 END_VAR
 VAR
+	fbAdsHandle     : ADSRDWRTEX;
     fbAdsRead       : ADSREAD;
     fbCycleTimer    : TON;
     bTrigger        : BOOL;
-    bLastBusy       : BOOL;
+   
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-
-// ── Cycle timer — fires every tCycleTime ─────────────────────────────
-fbCycleTimer(IN := NOT fbCycleTimer.Q, PT := tCycleTime);
-
-// ── Trigger a new read when timer fires and not already busy ─────────
-IF fbCycleTimer.Q AND NOT bBusy THEN
-    bTrigger := TRUE;
-ELSE
-    bTrigger := FALSE;
-END_IF
-
-// ── Execute ADSREAD ──────────────────────────────────────────────────
-fbAdsRead(
-    NETID    := '',
-    PORT     := nPort,
-    IDXGRP   := 16#F005,
-    IDXOFFS  := TO_UDINT(ADR(sSymbol)),
-    LEN      := nDestSize,
-    DESTADDR := pDestAddr,
-    READ     := bTrigger,
-    BUSY     => bBusy,
-    ERR      => bError,
-    ERRID    => nErrId
-);
-
-// ── bNewValue pulses TRUE for one scan when read completes ───────────
-bNewValue := bLastBusy AND NOT bBusy AND NOT bError;
-bLastBusy := bBusy;]]></ST>
+]]></ST>
     </Implementation>
     <LineIds Name="Fb_AdsReader">
-      <LineId Id="29" Count="27" />
+      <LineId Id="29" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>

@@ -50,6 +50,16 @@
       "name": "Fonts/Fonts.css",
       "description": "",
       "type": "Stylesheet"
+    },
+    {
+      "name": "Functions/ColorChanging.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Functions/FunctionJS1.js",
+      "description": "",
+      "type": "JavaScript"
     }
   ],
   "userControls": [],
@@ -84,7 +94,14 @@
       "preloadBindings": false
     }
   ],
-  "userFunctions": [],
+  "userFunctions": [
+    {
+      "url": "Functions/ColorChanging.js"
+    },
+    {
+      "url": "Functions/FunctionJS1.js"
+    }
+  ],
   "symbols": {
     "internal": {},
     "themedResources": {}

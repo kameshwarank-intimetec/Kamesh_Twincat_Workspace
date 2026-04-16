@@ -4,7 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_WriteExampl1
 
 VAR
-	fbRead1     :  FB_WriteAdsSymByName;
+	fbWrite1     :  FB_WriteAdsSymByName;
 	bEnable     : BOOL;
 	sSymbol     : STRING := 'GVL_Config.arrRack[1]';
 	nReadValue  : INT := 200;
@@ -18,7 +18,7 @@ VAR
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-	fbRead1(
+	fbWrite1(
 	bWrite:= bEnable, 
 	sNetId:= '', 
 	nPort:= 852, 

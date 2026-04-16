@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <GVL Name="GVL_Tank_Previous" Id="{5cd03d75-57c3-4d8d-88cf-01c73873a8f6}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'TcAdsSymEntry'}
+VAR_GLOBAL
+    nTankLevel_prev      : INT := 0;       // 0-100 percent
+    bPumpOn_prev         : BOOL := FALSE;
+    bValveOpen_prev      : BOOL := FALSE;
+    bOverflow_prev       : BOOL := FALSE;
+    bUnderflow_prev      : BOOL := FALSE;
+    sStatusMsg_prev      : STRING := 'System Ready';
+    bResetAlarm_prev     : BOOL := FALSE;  // PLC2 writes this to reset
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

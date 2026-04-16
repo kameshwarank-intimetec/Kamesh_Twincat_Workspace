@@ -4,13 +4,16 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	fbTank : FB_TankController;
+	fbHandle : FB_UpdateHandler;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbTank();]]></ST>
+      <ST><![CDATA[fbTank();
+fbHandle();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
+      <LineId Id="8" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

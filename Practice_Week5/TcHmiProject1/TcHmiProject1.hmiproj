@@ -119,6 +119,7 @@
     <Folder Include="KeyboardLayouts\" />
     <Folder Include="Localization" />
     <Folder Include="Content" />
+    <Folder Include="Functions" />
     <Folder Include="Themes" />
     <Folder Include="Themes\Base-Dark\Images\" />
     <Folder Include="Themes\Base\" />
@@ -137,6 +138,23 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\Content3.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Desktop.view">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\ColorChanging.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Functions\ColorChanging.js</DependentUpon>
+    </Content>
+    <Content Include="Functions\ColorChanging.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Functions\FunctionJS1.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Functions\FunctionJS1.js</DependentUpon>
+    </Content>
+    <Content Include="Functions\FunctionJS1.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Server\TcHmiLua\TcHmiLua.Config.default.json">
@@ -340,10 +358,6 @@
       <Visible>true</Visible>
     </Content>
     <Content Include="Images\Manifest\launcher-icon-4x.png">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Desktop.view">
       <SubType>Content</SubType>
       <Visible>true</Visible>
     </Content>

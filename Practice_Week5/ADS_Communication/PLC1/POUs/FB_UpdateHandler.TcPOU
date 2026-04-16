@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_UpdateHandler" Id="{c7d9a50e-0398-4d77-aa2a-acc8a4c419f8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_UpdateHandler
+VAR
+	fbWrite1     :  FB_WriteAdsSymByName;
+	bEnable     : BOOL;
+	sSymbol     : STRING := 'GVL_Alarm.bOverflow';
+	eComMode    :  E_AdsComMode := eAdsComModeFastCom;
+	bBusy       : BOOL;
+    bError      : BOOL;
+    nErrId      : UDINT;
+	bExecute: BOOL;
+	fbTimer : TON := (PT := T#100MS); // Adjust the speed here
+	bTriggerWrite: BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// 1. Detect Change (Edge Detection)
+IF GVL_Tank.bOverflow <> GVL_Tank_Previous.bOverflow_prev AND NOT fbWrite1.bBusy THEN
+    bTriggerWrite := TRUE;
+    // Update previous value only when we start the write
+    GVL_Tank_Previous.bOverflow_prev := GVL_Tank.bOverflow;
+END_IF
+
+// 2. Call the Function Block
+fbWrite1(
+    bWrite   := bTriggerWrite, 
+    sNetId   := '', 
+    nPort    := 851, // Check if target is 851 or 852
+    sVarName := sSymbol, 
+    nSrcAddr := ADR(GVL_Tank.bOverflow), 
+    nLen     := SIZEOF(GVL_Tank.bOverflow), 
+    tTimeout := T#5S
+);
+
+// 3. Reset Trigger when finished
+//IF NOT fbWrite1.bBusy THEN
+  //  bTriggerWrite := FALSE;
+//END_IF]]></ST>
+    </Implementation>
+    <Method Name="M_UpdateValueByADS" Id="{eab1cae7-bebc-4643-aa1c-09c8779c2440}">
+      <Declaration><![CDATA[METHOD M_UpdateValueByADS : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_UpdateHandler">
+      <LineId Id="64" Count="21" />
+      <LineId Id="58" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_UpdateHandler.M_UpdateValueByADS">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

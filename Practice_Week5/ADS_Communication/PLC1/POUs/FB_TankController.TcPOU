@@ -48,6 +48,8 @@ ELSE
     GVL_Tank.sStatusMsg  := 'Running Normal';
 END_IF
 
+
+
 // ── Reset from PLC2 acknowledgement ──────────────────────────────────
 IF GVL_Tank.bResetAlarm THEN
     GVL_Tank.bOverflow      := FALSE;
@@ -57,7 +59,9 @@ IF GVL_Tank.bResetAlarm THEN
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="FB_TankController">
-      <LineId Id="15" Count="45" />
+      <LineId Id="15" Count="38" />
+      <LineId Id="66" Count="1" />
+      <LineId Id="54" Count="6" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>
